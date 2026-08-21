@@ -1,0 +1,409 @@
+# Milgam Event Dashboard — Product Requirements Document
+
+## Document status
+
+- App name: `milgam-dashboard`
+- App source: `src/apps/milgam-dashboard/`
+- Primary language: Hebrew
+- Runtime direction: RTL/LTR from SimplyLog host context
+- Default background: `#f2f5fc`
+- Data transport: SimplyLog dynamic entity-report endpoints only
+- External report contract: `docs/milgam-dashboard-procedures.spec.md`
+
+## 1. Outcome
+
+Build a SimplyLog hosted mini-app for Milgam that summarizes all active, authorized events for a selected calendar month. It runs inside:
+
+`/App/milgam-dashboard`
+
+The dashboard shows organizational distribution, headquarters-versus-branches volume, category mix, closed-event totals, and average closure duration.
+
+## 2. Non-negotiable implementation boundary
+
+The mini-app must not:
+
+- create, alter, deploy, or execute database-definition scripts;
+- create or modify any stored procedure;
+- change the SimplyLog backend;
+- call `/api/EventStatistics/byAverage` or any other EventStatistics endpoint;
+- make a direct database connection;
+- hardcode an API URL or token;
+- fall back to a production URL or fabricated runtime data.
+
+The required `dbo.Report_ByEntity_MilgamDashboard*` procedures are an assumed external contract. Another team/process will implement them from `docs/milgam-dashboard-procedures.spec.md`.
+
+SimplyVibe implements only the hosted mini-app, its API client, response validation, response-to-UI mapping, state flow, and tests.
+
+## 3. Confirmed metric decisions
+
+1. Dashboard filtering is based on `Event.StartTime`.
+2. The user selects a year and then a month.
+3. The latest month returned by the month report is selected by default.
+4. Active event means `RowStatus = 0`.
+5. “All events” means all active events in the selected month that the authenticated user is authorized to see.
+6. Headquarters means resolved `SiteGeoGroupId = 4`.
+7. Branches means every other event, including an event whose site geo group cannot be resolved.
+8. Closed event means `Status = 2`.
+9. Average closure duration is measured in days:
+
+   `AVG(DATEDIFF(minute, StartTime, CloseTime)) / 1440.0`
+
+10. The average includes only rows where `CloseTime` is not null and `CloseTime >= StartTime`.
+11. Closed totals include every `Status = 2` event, even if its duration is invalid or missing.
+12. Null/blank division and category names display as `לא משויך`.
+
+## 4. Required entity reports
+
+The app uses exactly these five report entities:
+
+| Stored procedure assumed to exist | Entity endpoint |
+| --- | --- |
+| `dbo.Report_ByEntity_MilgamDashboardByMonth` | `POST /api/Entity/MilgamDashboardByMonth/Search` |
+| `dbo.Report_ByEntity_MilgamDashboardByDivision` | `POST /api/Entity/MilgamDashboardByDivision/Search` |
+| `dbo.Report_ByEntity_MilgamDashboardSummary` | `POST /api/Entity/MilgamDashboardSummary/Search` |
+| `dbo.Report_ByEntity_MilgamDashboardByCategory` | `POST /api/Entity/MilgamDashboardByCategory/Search` |
+| `dbo.Report_ByEntity_MilgamDashboardClosureByCategory` | `POST /api/Entity/MilgamDashboardClosureByCategory/Search` |
+
+Do not include `Report_ByEntity_` in a URL. Never send `*` literally. The server adds the prefix internally.
+
+The exact expected columns, types, calculations, examples, and reconciliation rules are defined in `docs/milgam-dashboard-procedures.spec.md`.
+
+## 5. Runtime and authentication
+
+Wait for a valid SimplyLog host `postMessage` before any request.
+
+Build the client from:
+
+- base URL: `context.ApiAddress`, with trailing slashes removed;
+- token type: `context.Token.token_type`, default `Bearer`;
+- access token: `context.Token.access_token`.
+
+Every report request sends:
+
+```http
+Authorization: <token_type> <access_token>
+Content-Type: application/json
+```
+
+The token must never be logged, persisted, rendered, placed in an error message, or forwarded anywhere except the SimplyLog authorization header.
+
+Register the message listener early, accept string/object payloads, and validate `event.origin` against a fixed deployment allowlist before trusting the context. Never accept wildcard origins.
+
+## 6. Common entity-search request
+
+The generic entity endpoint uses a JSON body rather than year/month query parameters:
+
+```json
+{
+  "PageIndex": 1,
+  "StartIndex": 0,
+  "PageSize": 1000,
+  "Filter": null,
+  "OrderBy": null,
+  "SortDirection": null,
+  "OrderBySecondary": null,
+  "SortDirectionSecondary": null,
+  "ItemStatus": 0,
+  "FromDate": "2026-08-01T00:00:00",
+  "ToDate": "2026-08-31T23:59:59"
+}
+```
+
+For the selected month:
+
+- `FromDate`: first day at `00:00:00`;
+- `ToDate`: final day at `23:59:59`;
+- do not append a timezone suffix.
+
+The initial `MilgamDashboardByMonth` discovery call uses `2000-01-01T00:00:00` through the end of the current month. The remaining four reports use the selected month.
+
+## 7. Common response envelope
+
+All endpoints return a paged object:
+
+```json
+{
+  "Items": [],
+  "IsPaged": true,
+  "StartIndex": 0,
+  "PageIndex": 1,
+  "PageSize": 1000,
+  "TotalCount": 0
+}
+```
+
+The API-client function must:
+
+1. parse JSON;
+2. require `Items` to be an array;
+3. return `response.Items`;
+4. treat a missing/non-array `Items` as an invalid response;
+5. treat an empty `Items` array as a valid empty result;
+6. preserve the response body when constructing HTTP errors;
+7. never include request headers or tokens in an error.
+
+Aggregate reports are expected to return fewer than 1,000 rows. If `TotalCount > Items.length`, treat the dataset as incomplete and show an error rather than silently rendering partial data.
+
+## 8. Filter behavior
+
+### Year selector
+
+- Options come from `MilgamDashboardByMonth`.
+- Single-select.
+- Sort newest to oldest.
+- Default to the latest year with data.
+
+### Month selector
+
+- Enabled after a year is selected.
+- Show only months returned for the chosen year.
+- Display Hebrew month names.
+- Sort January through December in the menu.
+- Default to the latest month with data in the selected year.
+
+Changing the period reloads the four selected-month datasets in parallel. Cancel superseded requests with `AbortController` and prevent stale responses from replacing the latest selection.
+
+## 9. Dashboard layout and mappings
+
+### 9.1 חלוקה לפי חטיבות
+
+- Source: `MilgamDashboardByDivision`.
+- Visualization: donut/pie.
+- Map `DivisionName -> label`.
+- Map `EventCount -> count`.
+- Display percentage with one decimal and formatted count.
+- Sort count descending.
+
+### 9.2 בניין מטה מול סניפים
+
+- Source: `MilgamDashboardSummary`.
+- Visualization: one horizontal 100% stacked bar.
+- Map `ScopeKey -> stable segment key`.
+- Map `ScopeLabel -> display label`.
+- Map `EventCount -> count`.
+- Display percentage with one decimal and formatted count.
+- Expected scope keys: `headquarters`, `branches`.
+
+### 9.3 תמהיל קריאות מטה
+
+- Source: `MilgamDashboardByCategory`.
+- Filter `ScopeKey === "headquarters"`.
+- Visualization: horizontal bars.
+- Map `CategoryName -> label`.
+- Map `EventCount -> count`.
+- Sort count descending.
+
+### 9.4 תמהיל קריאות סניפים
+
+- Source: `MilgamDashboardByCategory`.
+- Filter `ScopeKey === "branches"`.
+- Same mapping and visualization as headquarters.
+
+### 9.5 ממוצע ימים לסגירת קריאה – מטה
+
+- Source: `MilgamDashboardSummary`.
+- Select `ScopeKey === "headquarters"`.
+- Card `סה״כ קריאות סגורות`: `ClosedCount`.
+- Card `ממוצע זמן סגירה`: `AverageCloseDays`, one decimal plus `ימים`.
+- A null average displays `—`, not zero.
+
+### 9.6 Headquarters closure table
+
+- Source: `MilgamDashboardClosureByCategory`.
+- Filter `ScopeKey === "headquarters"`.
+- Columns:
+  - `CategoryName -> קטגוריה`
+  - `AverageCloseDays -> ממוצע זמן סגירה (ימים)`
+- Sort average descending.
+- Place directly below the headquarters cards with no visible section title.
+
+### 9.7 ממוצע ימים לסגירת קריאה – סניפים
+
+- Source: `MilgamDashboardSummary`.
+- Select `ScopeKey === "branches"`.
+- Same card mappings and formatting as headquarters.
+
+### 9.8 Branch closure table
+
+- Source: `MilgamDashboardClosureByCategory`.
+- Filter `ScopeKey === "branches"`.
+- Same columns and sorting as the headquarters table.
+- Place directly below the branch cards with no visible section title.
+
+## 10. Page structure
+
+1. Header: `דשבורד קריאות מילגם`
+2. Host-connection status and last refresh time
+3. Year and month selectors
+4. Two-column row: division pie and headquarters/branches bar
+5. Two-column row: headquarters and branch category mix
+6. Full-width headquarters cards and table
+7. Full-width branch cards and table
+
+Desktop uses two columns for the first two content rows. Tablet/mobile collapses to one column without page-level horizontal scrolling.
+
+## 11. State model
+
+Use XState 4.38.3 with:
+
+- `awaitingHost`
+- `loadingPeriods`
+- `loadingDashboard`
+- `ready`
+- `empty`
+- `unauthorized`
+- `forbidden`
+- `badRequest`
+- `serverError`
+- `error`
+
+Events:
+
+- `HOST_CONTEXT_RECEIVED`
+- `PERIODS_LOADED`
+- `YEAR_CHANGED`
+- `MONTH_CHANGED`
+- `REFRESH`
+- `RETRY`
+
+Do not request data before valid host context. Guard duplicate host messages and stale request completion.
+
+## 12. HTTP and validation errors
+
+- 400: show a request/report configuration error.
+- 401: show session-expired guidance.
+- 403: show insufficient-permission guidance.
+- 500: show report execution/server error.
+- Other network/HTTP failures: show retry while retaining the selected period.
+- Invalid JSON, missing `Items`, invalid row fields, an incomplete page, or missing required scope rows: show a dataset-specific invalid-response error.
+
+Preserve status and response body in the internal error object for diagnostics, but sanitize user-visible text and never expose the token.
+
+## 13. Direct-load fallback
+
+If no valid host context arrives within three seconds:
+
+- show `הדשבורד זמין מתוך SimplyLog`;
+- instruct the user to open `/App/milgam-dashboard`;
+- keep listening for a valid context;
+- switch immediately to loading when valid context arrives.
+
+The fallback uses `#f2f5fc` and is recoverable, not a terminal error.
+
+## 14. Visual and accessibility requirements
+
+- Hebrew-first, semantic HTML, runtime RTL/LTR.
+- Visible keyboard focus and labeled controls.
+- Locale-aware number formatting.
+- Stable, color-blind-conscious colors.
+- Do not communicate categories by color alone.
+- Every chart has a text/legend equivalent with the same values.
+- Long labels retain their complete accessible name.
+- Tables have headers and visually hidden captions.
+- Empty selected period displays `אין נתונים לתקופה שנבחרה`.
+- Honor `prefers-reduced-motion`.
+
+## 15. App files
+
+Keep implementation under `src/apps/milgam-dashboard/`:
+
+- `index.html`
+- `app.css`
+- `app.js`
+- optional focused modules such as `api-client.js`, `data-mappers.js`, and `date-range.js`
+- `docs/dashboard.prd`
+- `docs/milgam-dashboard-procedures.spec.md`
+- `tests/`
+
+Use static HTML/CSS/JavaScript and XState. Keep all API access behind one client wrapper.
+
+## 16. Mini-app implementation plan
+
+### Phase 1 — Host bootstrap and client
+
+1. Build the secure host-context listener and runtime direction.
+2. Build a generic entity-report POST client.
+3. Implement request-body/date helpers.
+4. Implement response-envelope and HTTP-error validation.
+
+### Phase 2 — Dataset orchestration and mappings
+
+1. Load `MilgamDashboardByMonth`.
+2. Select the latest available period.
+3. Load the other four datasets in parallel.
+4. Map the exact columns defined in the external report spec.
+5. Reject incomplete/invalid datasets.
+
+### Phase 3 — Dashboard UI
+
+1. Implement all eight requested components.
+2. Implement responsive RTL/LTR behavior.
+3. Implement loading, empty, and error states.
+
+### Phase 4 — Tests and handoff
+
+1. Test request paths, bodies, headers, and token safety.
+2. Test all five response mappings.
+3. Test reconciliation, empty data, HTTP errors, delayed host, invalid origin, and stale requests.
+4. Report required procedure names as external dependencies.
+
+No phase contains backend or stored-procedure work.
+
+## 17. Acceptance criteria
+
+1. No request uses `/api/EventStatistics/byAverage`.
+2. Only the five entity endpoints in section 4 are used.
+3. Every endpoint URL is based on host `ApiAddress`.
+4. Every request sends the host token and the common JSON body.
+5. The client returns `response.Items`.
+6. Missing `Items` fails; empty `Items` succeeds as empty.
+7. All eight components use the mappings in section 9.
+8. Division and summary event counts reconcile.
+9. Category totals reconcile to their corresponding summary scope.
+10. Closure averages reconcile using `EligibleDurationCount`.
+11. 400, 401, 403, 500, network, invalid-response, and stale-request cases are tested.
+12. No token or API URL is hardcoded, logged, or persisted.
+13. No database or backend file is created or changed.
+14. Runtime fixtures cannot be enabled in production.
+15. RTL and LTR layouts pass responsive checks.
+
+## 18. Out of scope
+
+- implementing or changing any `Report_ByEntity_MilgamDashboard*` procedure;
+- changing SimplyLog controllers, services, contracts, or database projects;
+- direct database access;
+- EventStatistics API fallback;
+- production deployment without explicit approval;
+- event drill-down, exports, custom date ranges, and additional filters.
+
+## 19. Exact SimplyVibe prompt
+
+```text
+Create the SimplyLog hosted mini-app named milgam-dashboard.
+
+Work only under src/apps/milgam-dashboard. Before coding, read:
+- src/apps/milgam-dashboard/docs/dashboard.prd
+- src/apps/milgam-dashboard/docs/milgam-dashboard-procedures.spec.md
+- the installed simplylog-mini-app-builder host-context, API, and XState references
+
+Assume the five dbo.Report_ByEntity_MilgamDashboard* procedures listed in the specs already exist. Do not create, alter, inspect through a database connection, or write any stored procedure. Do not change the SimplyLog backend.
+
+Use only POST {context.ApiAddress}/api/Entity/<entityName>/Search with the exact entity names in the specs. Never include Report_ByEntity_ in the URL and never send * literally. Remove all use of /api/EventStatistics/byAverage and do not add any production or direct-database fallback.
+
+Wait for validated host postMessage context. Use context.ApiAddress after removing trailing slashes, context.Token.token_type with default Bearer, and context.Token.access_token. Send Authorization and Content-Type application/json. Never hardcode, log, display, or persist the token.
+
+Send the exact common request body from the PRD, placing FromDate and ToDate in the JSON body. Require a paged JSON response with an Items array and return response.Items from the client. An empty Items array is valid; missing Items is invalid. Preserve HTTP response bodies in sanitized error objects and handle 400, 401, 403, and 500.
+
+Implement the exact response-to-UI mappings from the procedure spec, all eight dashboard components, the XState states, the direct-load fallback, runtime RTL/LTR, accessibility, stale-request cancellation, and reconciliation validation.
+
+Use fixtures only in automated tests or an unmistakable local-development mode that cannot run in production. If an assumed endpoint is unavailable, show a dataset-specific runtime error; do not fabricate data or change the backend.
+
+Run the available local tests. At completion, show:
+1. every exact entity endpoint called;
+2. the exact request body;
+3. the response-column-to-UI mapping;
+4. files changed;
+5. test results and external endpoint availability blockers.
+
+Do not provision or deploy GitHub/Cloudflare unless I explicitly request it.
+```
