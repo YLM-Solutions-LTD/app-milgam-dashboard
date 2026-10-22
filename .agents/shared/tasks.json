@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "batchKey": "event-436697-batch-64aedcef61f479aaf509",
+  "appName": "milgam-dashboard",
+  "planRevision": 3,
+  "summary": "Add an authenticated current-state snapshot for event totals/open counts, permit status counts with board navigation, and equipment total/facts while preserving the existing date-driven Hebrew RTL dashboard. Snapshot requests are independent, stale-safe, strictly validated, and never fabricate zeros or unsupported equipment validity classifications.",
+  "source": {
+    "includeDescription": false,
+    "actionIds": [536946, 536949, 537034, 537037, 537040]
+  },
+  "assumptions": [
+    "The three documented current-snapshot entity-search routes are existing authorized server contracts; no backend or SQL work is requested.",
+    "The host runtime exposes or can be adapted to the existing ready, executeCommand, and ToDisplayDate contracts without embedding credentials or inventing navigation parameters.",
+    "Equipment validity and overdue classification is intentionally unavailable until additional business rules are supplied; this does not block equipment total/facts or the other snapshot metrics.",
+    "Live authenticated verification may be unavailable locally and must not be represented as completed when skipped.",
+    "Approved SimplyLog parent and API origins are explicit configuration; production trust is HTTPS-only, while any localhost exception is isolated to test/development with synthetic credentials and data.",
+    "Performance timing ceilings are deterministic local regression budgets, not claims about live SimplyLog network latency."
+  ],
+  "tasks": [
+    {
+      "id": "T-101",
+      "title": "Extend authenticated transport for current snapshot searches",
+      "component": "API client and dataset constants",
+      "objective": "Add the three existing current-report searches to the browser client with exact endpoint, authentication, empty-body, envelope, cancellation, and redaction behavior while leaving all monthly analytical requests unchanged.",
+      "dependsOn": [],
+      "requirements": [
+        "Define currentEvents, currentPermits, and currentEquipment dataset keys for the exact documented POST routes.",
+        "Provide a current-search operation that sends JSON {} exactly once per dataset, using host ApiAddress, Authorization, Content-Type application/json, and AbortSignal.",
+        "Return both Items and normalized TotalCount for current reports; reject missing, non-array, negative, fractional, or nonnumeric TotalCount and incomplete/malformed envelopes, but leave dataset-specific cardinality checks to the adapters so equipment can deduplicate before population reconciliation.",
+        "Do not add dates, filters, location, pagination, username, or administrator identity to these requests, and do not change the existing analytical request body builder.",
+        "Before constructing any authorization-bearing URL, require an immutable host context created by the validated window.parent/approved-origin binding path and recognized by a non-forgeable module-private brand; a plain object with __trustedHostOrigin, or any other matching public shape, is unbound and rejected. If exposed for compatibility, __hostContextBound must also equal true but is not sufficient by itself.",
+        "Sanitize tokens and response errors; never log, persist, render, or place credentials in agent artifacts."
+      ],
+      "acceptanceCriteria": [
+        "A snapshot load produces exactly three concurrent POSTs to the exact current-report paths and each serialized body equals {}.",
+        "The caller receives Items and TotalCount distinctly, so domain totals cannot be confused with envelope row counts.",
+        "Abort, HTTP/permission, network, invalid JSON, and malformed envelope failures remain typed errors and never resolve as empty arrays or zero metrics.",
+        "Existing monthly endpoint tests still observe their current date-range bodies without regression."
+        ,"Rejected/unbound contexts and unapproved API origins cause zero snapshot or analytical authenticated requests."
+      ],
+      "validationScenarios": [
+        "Capture fetch calls and assert method, URL, auth headers, body {}, and signal for all three current datasets.",
+        "Return 401, 403, missing procedure/server error, invalid JSON, missing Items, and invalid TotalCount; assert safe typed failures with no token leakage.",
+        "Run existing analytical API tests and confirm date bodies remain unchanged."
+      ]
+    },
+    {
+      "id": "T-102",
+      "title": "Map and validate current event, permit, and equipment reports",
+      "component": "Current snapshot data adapters",
+      "objective": "Convert report envelopes into strict UI-ready snapshot data, reconcile scope counts, preserve permit semantics, deduplicate equipment facts, and explicitly withhold unsupported equipment validity classification.",
+      "dependsOn": ["T-101"],
+      "requirements": [
+        "Current events require exactly overall, headquarters, and branches rows with unique ScopeKey, non-negative integer TotalCount/OpenCount, OpenCount not exceeding TotalCount, and present AsOf.",
+        "Validate headquarters plus branches equals overall for both total and open counts; treat envelope TotalCount only as report row count.",
+        "Current permits require exactly one row with separate non-negative integer ValidCount, MissingCount, OverdueCount, plus AsOf and ValueDate; never derive or label a combined invalid count.",
+        "Equipment accepts the documented fact fields and nullable treatment/configuration fields, includes active and inactive items, and deduplicates by EquipmentId using a map; conflicting duplicates are invalid.",
+        "For equipment, validate envelope shape and TotalCount first, normalize and deduplicate rows second, then require TotalCount to equal the unique EquipmentId population. Do not require raw Items.length to equal TotalCount; identical duplicates are valid, while conflicting duplicates are invalid.",
+        "Map and deduplicate in one linear pass keyed by EquipmentId, retaining normalized output rather than obsolete raw response generations.",
+        "Report dates must remain raw adapter inputs for the host ToDisplayDate boundary; never append Z or parse them into analytical filters."
+      ],
+      "acceptanceCriteria": [
+        "Valid fixtures map to event scope metrics, three separate permit metrics, and a deduplicated equipment total/facts collection; two identical rows for one EquipmentId with envelope TotalCount 1 succeed with total 1.",
+        "Any reconciliation, required-field, type, uniqueness, duplicate-conflict, or population mismatch yields invalid-response rather than fabricated data.",
+        "Inactive, never-treated, null-date, null-configuration, and arbitrary LastTreatmentStatus equipment stays countable but never receives a browser-invented valid/overdue result.",
+        "No displayed or mapped field calls Missing plus Overdue invalid certificates."
+        ,"After one warm-up on the recorded project CI/runtime, a synthetic 10,000-row equipment envelope maps and deduplicates within 100 ms; duplicate-heavy input remains linear and returns the expected unique count."
+      ],
+      "validationScenarios": [
+        "Map a reconciled three-row event response and reject missing scopes, duplicate scopes, open greater than total, and HQ/branches mismatches.",
+        "Map permit counts including zeros independently and reject multiple rows, negative/fractional counts, or missing report dates.",
+        "With Items containing two identical EquipmentId rows and TotalCount 1, assert successful deduplication to one fact; reject the same fixture when duplicate facts conflict or when TotalCount differs from the unique count. Also accept nullable treatment fields and inactive equipment.",
+        "Measure 0, 1, 1,000, and 10,000-row equipment fixtures, including duplicate-heavy and nullable variants, and record runtime/version, duration, unique count, retained normalized size, and decoded response bytes.",
+        "Assert equipment output exposes classification unavailable in all unresolved fact combinations."
+      ]
+    },
+    {
+      "id": "T-103",
+      "title": "Add an independent stale-safe snapshot lifecycle",
+      "component": "Dashboard state machine and data orchestration",
+      "objective": "Load the three current reports after authenticated host bootstrap with snapshot-local loading/error/ready/stale state, concurrency cancellation, and no coupling to analytical month selection.",
+      "dependsOn": ["T-101", "T-102"],
+      "requirements": [
+        "Start snapshot loading only after one valid host context is accepted, in parallel with but logically independent from period discovery and monthly dashboard loading.",
+        "Track a snapshot request ID and AbortController; abort superseded loads and ignore every late completion whose ID is not current.",
+        "Fetch the three current reports concurrently and commit a coherent snapshot only after all validate.",
+        "For each initial load or refresh, issue exactly three requests, zero automatic retries, and at most three requests belonging to the current generation in flight; initiate the three calls within 50 ms under mocked transport.",
+        "Maintain snapshot-specific status, sanitized error, refreshedAt, and optional lastGoodData; first-load failure shows no numbers, refresh failure retains prior data marked stale.",
+        "Year/month selection must not clear, reload, or mutate snapshot state. An explicit/global refresh may start both lifecycles while preserving separate IDs and status.",
+        "Expose a snapshot retry that does not force analytical data to reload."
+        ,"A 10-refresh burst aborts superseded work, commits only generation 10, retains at most one lastGoodData snapshot, and does not create a retry/request storm."
+      ],
+      "acceptanceCriteria": [
+        "The analytical dashboard can be ready while the snapshot is loading or failed, and the snapshot can be ready while analytical data changes period.",
+        "Changing year/month produces no current-report request and leaves snapshot data/timestamp intact.",
+        "Late success or failure from an aborted/superseded snapshot cannot overwrite the newest snapshot state.",
+        "A failed refresh retains last good snapshot values with stale/error treatment; an initial failure shows no zeros."
+        ,"Period changes issue zero snapshot requests; one load/refresh issues exactly three with no pagination or automatic retry."
+      ],
+      "validationScenarios": [
+        "Drive host acceptance and assert snapshot and period loading begin without cross-clearing state.",
+        "Resolve two overlapping snapshot requests in reverse order and assert only the newest commits.",
+        "Change analytical periods during snapshot loading and assert independence and no extra current calls.",
+        "Test initial failure, retry success, and refresh failure with retained stale data."
+        ,"Run a 10-refresh burst and assert only the newest generation commits, at most three newest-generation requests are active, and only one last-good snapshot is retained."
+      ]
+    },
+    {
+      "id": "T-104",
+      "title": "Integrate host date formatting and permit-board navigation",
+      "component": "Host service boundary and snapshot commands",
+      "objective": "Use existing host services for report-date display and exact permit-board navigation while keeping permissions and navigation failures explicit.",
+      "dependsOn": ["T-102"],
+      "requirements": [
+        "Adapt the authenticated host integration to expose ready, executeCommand, and ToDisplayDate only from an immutable context produced by successful parent/source/origin validation. Brand bound contexts through module-private state or an equivalent non-forgeable factory boundary; a caller-supplied public marker is never sufficient.",
+        "Accept bootstrap and host-service messages only when event.source is window.parent and event.origin is an explicitly approved HTTPS parent origin; remove production-style HTTP trust.",
+        "Normalize ApiAddress to its origin and allow only approved HTTPS SimplyLog API origins corresponding to the trusted environment. Any localhost exception is explicit test/development-only and cannot carry a production bearer token.",
+        "Bind command and date-service responses to the same accepted parent source and origin. Direct/top-level access, timeout, malformed/rejected context, fallback mode, or response source/origin mismatch permits no authenticated fetch or privileged command.",
+        "Pass AsOf and ValueDate unchanged to ToDisplayDate; do not append Z or introduce local timezone interpretation.",
+        "All valid, missing, and overdue permit indicators call ready then executeCommand Navigate with exactly { Url: '#/Permits/Dashboard' } and no filter parameters.",
+        "Prevent duplicate activation while navigation is pending; restore interaction afterward and surface a non-destructive accessible failure if readiness or navigation rejects.",
+        "Twenty rapid activations while navigation is pending must produce exactly one ready/Navigate chain and unlock after either resolution or rejection.",
+        "Do not navigate from event or equipment metrics unless a separate contract is supplied."
+      ],
+      "acceptanceCriteria": [
+        "Date display delegates each report value to the host adapter unchanged.",
+        "Each permit metric invokes the same exact unfiltered board URL after host readiness and no URL/query data is derived from the count.",
+        "Navigation failure leaves snapshot data visible and produces user-facing feedback without leaking internal response details.",
+        "Existing authenticated-host and permission behavior remains intact."
+        ,"A same-origin non-parent sender, production HTTP origin, HTTP ApiAddress, unapproved HTTPS ApiAddress, direct access, mismatched command response, and an unbound plain object carrying an approved __trustedHostOrigin are rejected before any authenticated fetch or privileged command."
+      ],
+      "validationScenarios": [
+        "Spy on ToDisplayDate and assert exact raw report date arguments without a Z suffix.",
+        "Activate each permit metric by click and keyboard and assert call order and exact Navigate payload.",
+        "Delay and reject host readiness/executeCommand; assert busy-lock, recovery, and accessible error feedback."
+        ,"Exercise the negative trust-boundary matrix, including an approved-origin plain object with no valid binding brand and contexts mutated after creation, and assert zero authenticated requests/commands; then issue 20 rapid permit activations and assert one in-flight command chain."
+      ]
+    },
+    {
+      "id": "T-105",
+      "title": "Render the responsive accessible current snapshot",
+      "component": "Dashboard snapshot region, metric cards, and styles",
+      "objective": "Present event, permit, and equipment indicators as a Hebrew-first responsive region that follows runtime direction, preserves current charts, and clearly distinguishes unavailable data from zero.",
+      "dependsOn": ["T-103", "T-104"],
+      "requirements": [
+        "Insert the current-snapshot region before analytical period controls/charts with a semantic heading, independent status, and refreshed/report-date context.",
+        "Show overall, headquarters, and branches event total/open values with labels that do not imply analytical-period filtering.",
+        "Show valid, missing, and overdue permits as three separately named native interactive controls; never present their sum as invalid.",
+        "Show total equipment and a textual valid/overdue classification unavailable state; do not render plausible placeholder numbers.",
+        "Provide snapshot-local loading, first-load error/retry, refresh-stale warning, and navigation-error presentation; use polite announcements without replacing the entire analytical dashboard.",
+        "Use logical layout properties, visible focus, sufficient contrast, locale-aware number formatting, and stacked small-screen layout. Preserve runtime RTL/LTR and existing chart/date-range behavior."
+        ,"Render equipment only as aggregate total plus unavailable classification: input growth must add zero equipment fact/list nodes, and the entire ready snapshot must contain at most 80 DOM elements."
+      ],
+      "acceptanceCriteria": [
+        "A user can distinguish current snapshot values from selected-month analytics, and changing the period does not visually clear the snapshot.",
+        "Zero is rendered only when supplied as a validated count; loading, errors, and unavailable classification use text/skeleton/status rather than 0.",
+        "All permit controls are keyboard reachable, have distinct accessible names, and retain visible focus; meaning is not conveyed by color alone.",
+        "At narrow widths panels stack without horizontal clipping; at RTL and LTR directions reading order, spacing, and focus order remain coherent.",
+        "Existing analytical charts and controls remain present and functional."
+        ,"On the recorded browser/runtime, one ready-state render completes within 50 ms at 390×844 and 1440×900 for the representative 10,000-row normalized fixture."
+      ],
+      "validationScenarios": [
+        "Render ready data with real zeros and nonzeros; inspect accessible names and ensure unavailable equipment classification is textual.",
+        "Render loading, initial error, stale refresh error, and navigation failure without removing analytical content.",
+        "Check keyboard-only activation/focus and screen-reader status semantics.",
+        "Check phone/tablet/desktop widths in both dir=rtl and dir=ltr and verify existing chart regression."
+        ,"Count snapshot DOM elements and measure one ready render at 390×844 and 1440×900; confirm the same node count for 1-row and 10,000-row equipment inputs."
+      ]
+    },
+    {
+      "id": "T-106",
+      "title": "Cover snapshot contracts, concurrency, UI, and regressions",
+      "component": "Automated local test suite and fixtures",
+      "objective": "Add deterministic tests proving exact current-report behavior, strict validation, concurrency safety, host integration, accessibility contracts, and preservation of existing analytics.",
+      "dependsOn": ["T-101", "T-102", "T-103", "T-104", "T-105"],
+      "requirements": [
+        "Use synthetic, non-secret fixtures for valid and malformed envelopes; do not copy raw controller/event payloads into tests.",
+        "Cover exact three-request transport behavior and ensure no pagination or date/filter fields are sent.",
+        "Cover mapper edge cases and event/equipment reconciliation, including nullable facts, inactive equipment, identical duplicate IDs accepted before envelope population reconciliation, conflicting duplicates rejected, unique-count mismatch rejected, and unavailable classification.",
+        "Cover independent state transitions, abort/stale suppression, retry, retained last-good data, and no fabricated zeros.",
+        "Cover exact host date/navigation calls, keyboard semantics, RTL/LTR markup/classes, and existing monthly dashboard regression.",
+        "Cover parent-window source binding, non-forgeable bound-context recognition, approved HTTPS parent/API origins, command-response binding, production HTTP rejection, unapproved API rejection, and zero authenticated fetch/command behavior for an unbound approved-origin-shaped object and in direct, timeout, fallback, malformed, mutated, and rejected-context modes.",
+        "Cover numeric performance budgets with 0/1/1,000/10,000-row and duplicate-heavy equipment fixtures, a 10-refresh burst, 20 rapid permit activations, fixed DOM count, render timings, request concurrency, and decoded-byte recording.",
+        "Keep tests local and deterministic; live credentials or provider availability must not be required."
+      ],
+      "acceptanceCriteria": [
+        "All existing and new local tests pass with no secrets, network dependency, or live SimplyLog requirement.",
+        "Tests fail if a snapshot body gains a filter/date, if permit navigation gains parameters, if stale data overwrites current state, if equipment classification is inferred, if identical equipment duplicates are rejected before deduplication, or if an unbound host-shaped object is accepted.",
+        "Tests distinguish validated zero from loading/error/unavailable and protect existing analytical date/chart behavior."
+        ,"Recorded results identify CI/runtime and browser versions, fixture sizes, mapping/render durations, decoded bytes, DOM count, peak current-generation request count, and navigation command count; all stated numeric ceilings pass."
+      ],
+      "validationScenarios": [
+        "Run the project test command and report pass/fail counts.",
+        "Inspect fixture and test output for credentials, raw event text, or signed URLs.",
+        "Run targeted API, mapper, machine, host, and UI contract tests plus the full regression suite."
+        ,"Run and record the trust-boundary negative matrix and representative-volume performance suite, including actual measurements rather than pass/fail alone."
+      ]
+    },
+    {
+      "id": "T-107",
+      "title": "Document flag-safe verification and delivery evidence",
+      "component": "Runtime flag boundary and verification record",
+      "objective": "Make current-snapshot live-call enablement explicit and reversible for controller-owned verification, while honestly recording local and unavailable live checks without turning deployment into application implementation.",
+      "dependsOn": ["T-106"],
+      "requirements": [
+        "Keep CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED false in default/local source state and isolate its effect to current snapshot calls, not monthly analytics.",
+        "Document that the controller may enable it for one authorized deployment without testsl verification; application work must not itself deploy or call lifecycle APIs.",
+        "Run all available local checks during implementation and record exact results; report authenticated live checks as skipped when host/runtime access is unavailable.",
+        "Record environment identity and performance evidence: runtime/CI version, browser/version, fixture row counts, decoded response bytes, mapping/render duration, DOM element count, request concurrency, refresh generation result, and navigation command count.",
+        "If verification cannot run, restore the local flag to false and do not request or trigger another deployment solely for the revert.",
+        "Do not claim procedure availability, production verification, or deployment completion from contract documentation alone."
+      ],
+      "acceptanceCriteria": [
+        "The delivered local source leaves the flag false unless the controller explicitly manages a temporary verification revision.",
+        "Verification evidence separates local automated checks from authenticated live checks and labels every skipped check honestly.",
+        "No Git, deployment, provider, SimplyLog lifecycle, SQL, or issue-tracker action is included in the implementation task."
+      ],
+      "validationScenarios": [
+        "Inspect the final local configuration and assert the live-call flag is false by default.",
+        "Review the verification record for exact commands/results and an explicit skipped-live-check reason when applicable.",
+        "Confirm no deployment artifact, SQL change, SearchAllEvents change, or lifecycle API call was introduced."
+      ]
+    }
+  ]
+}

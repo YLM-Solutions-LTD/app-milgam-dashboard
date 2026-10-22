@@ -1,0 +1,143 @@
+TAP version 13
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'https://evil.invalid',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://evil.invalid' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'http://localhost:5500',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'http://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'https://api.ylm.co.il'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: T-101/T-103: accepted synthetic postMessage context fans out exactly three concurrent empty-body calls
+ok 1 - T-101/T-103: accepted synthetic postMessage context fans out exactly three concurrent empty-body calls
+  ---
+  duration_ms: 4.866375
+  ...
+# Subtest: T-101/T-104: an unbound object cannot construct an authorization-bearing API client
+not ok 2 - T-101/T-104: an unbound object cannot construct an authorization-bearing API client
+  ---
+  duration_ms: 0.753327
+  location: '/workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:57:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:59:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: T-101/T-104: synthetic postMessage trust rejects wrong source, origin, HTTP, and cross-environment API
+ok 3 - T-101/T-104: synthetic postMessage trust rejects wrong source, origin, HTTP, and cross-environment API
+  ---
+  duration_ms: 0.985636
+  ...
+# Subtest: T-102: identical equipment rows deduplicate to the complete population while conflicts reject
+not ok 4 - T-102: identical equipment rows deduplicate to the complete population while conflicts reject
+  ---
+  duration_ms: 0.883532
+  location: '/workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:75:1'
+  failureType: 'testCodeFailure'
+  error: 'MilgamDashboardCurrentEquipment returned invalid data'
+  code: 'ERR_TEST_FAILURE'
+  name: 'DatasetValidationError'
+  stack: |-
+    invalid (file:///workspace/src/apps/milgam-dashboard/site/current-snapshot.js:107:43)
+    requireEnvelope (file:///workspace/src/apps/milgam-dashboard/site/current-snapshot.js:102:103)
+    mapCurrentEquipment (file:///workspace/src/apps/milgam-dashboard/site/current-snapshot.js:61:3)
+    TestContext.<anonymous> (file:///workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:77:18)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: T-102: current-equipment transport preserves duplicate rows for mapper deduplication
+not ok 5 - T-102: current-equipment transport preserves duplicate rows for mapper deduplication
+  ---
+  duration_ms: 0.56052
+  location: '/workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:86:1'
+  failureType: 'testCodeFailure'
+  error: 'MilgamDashboardCurrentEquipment returned an invalid response'
+  code: 'ERR_TEST_FAILURE'
+  name: 'DashboardRequestError'
+  stack: |-
+    validateCompleteEnvelope (file:///workspace/src/apps/milgam-dashboard/site/api-client.js:169:11)
+    Object.requestCurrent (file:///workspace/src/apps/milgam-dashboard/site/api-client.js:158:12)
+    async TestContext.<anonymous> (file:///workspace/src/apps/milgam-dashboard/tests/qc/snapshot-qc.test.js:89:20)
+    async Test.run (node:internal/test_runner/test:797:9)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: T-103: newest refresh wins and failed refresh retains only last good snapshot
+ok 6 - T-103: newest refresh wins and failed refresh retains only last good snapshot
+  ---
+  duration_ms: 0.82183
+  ...
+# Subtest: T-104: host date and navigation boundaries preserve exact arguments and sequencing
+ok 7 - T-104: host date and navigation boundaries preserve exact arguments and sequencing
+  ---
+  duration_ms: 0.529519
+  ...
+# Subtest: T-105/T-106: static UI contract exposes one polite non-atomic status, semantic controls, focus, responsive stack and bidi
+ok 8 - T-105/T-106: static UI contract exposes one polite non-atomic status, semantic controls, focus, responsive stack and bidi
+  ---
+  duration_ms: 8.87192
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 5
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 80.168184

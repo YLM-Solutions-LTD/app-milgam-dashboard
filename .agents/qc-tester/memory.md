@@ -1,0 +1,21 @@
+# QC tester memory
+
+- App: `milgam-dashboard`.
+- Treat the app, shared plan and task board, controller inputs, and other role homes as read-only.
+- Current test-authoring scope is the accepted T-101 through T-107 board for frozen action IDs 536946, 536949, 537034, 537037, and 537040; description content is excluded.
+- Planning deliverables must define functional, responsive, accessibility, visual, RTL/LTR, failure, concurrency, and quantitative checks without creating executable tests.
+- Preview-stage QC must identify the exact preview, instrument console/network/runtime behavior, and record reproducible evidence per failure.
+- Attempt 2 must reconcile accepted planning-2 role reports, use deterministic fixture IDs and measurable thresholds, and preserve handled action order exactly as `[536946, 536949, 537034, 537037, 537040]`.
+- Test-authoring cycle 1 owns executable deterministic fixtures only under `tests/qc/`; use synthetic host `postMessage` context and synthetic API responses, never real tenant tokens or network/live-host dependencies.
+- Current run evidence and report belong only in `.agents/qc-tester/runs/event-436697-batch-64aedcef61f479aaf509/test-authoring-1/`.
+- Test-authoring cycle 1 result: reject. Stable findings are `QC-HOST-BOUNDARY-001` (forged approved-origin marker accepted without `__hostContextBound`) and `QC-EQUIPMENT-DEDUPE-001` (transport/mapper enforce `TotalCount === Items.length` before required identical-row deduplication). QC suite: 5/8 pass; existing site suite: 47/47 pass.
+- Test-authoring cycle 1 process attempt 2 reopens the same mutable run folder to re-run deterministic QC against the current read-only source and verify whether those stable findings remain reproducible.
+- Process attempt 2 remains `reject`: expanded QC is 8/11 passing with both stable findings reproduced; the app regression remains 47/47 passing. QC digest: `db57cb9b47c2a73174dba5fd3ca3272cd12d71cf6ff6623c17586cbba93be0ac`.
+- Current assignment is implementation-planning cycle 2 for `event-436697-batch-64aedcef61f479aaf509`; plan only, create no executable tests, and write only under the corresponding `implementation-planning-2/` run folder.
+- Reconcile every accepted planning-2 report plus prior implementation/QC evidence, trace all cases to unchanged task IDs from `tasks.json`, preserve action order exactly as `[536946,536949,537034,537037,537040]`, and exclude description content (`includeDescription: false`).
+- Implementation-planning cycle 2 process attempt 2 is ready: QC-201 through QC-212 cover all 33 acceptance criteria for T-101 through T-107, with deterministic fixtures, a privileged-effect trust matrix, responsive/a11y RTL/LTR coverage, concurrency regressions, and numeric request/mapper/render/DOM/navigation instrumentation. No test or preview execution occurred.
+- Preserve `QC-HOST-BOUNDARY-001` and `QC-EQUIPMENT-DEDUPE-001` as mandatory execution-time regression gates; plan revision 3 addresses them structurally but planning does not prove source remediation.
+- Current assignment is test-authoring cycle 2 for `event-436697-batch-64aedcef61f479aaf509`; executable deterministic QC may be edited only under `tests/qc/`, with evidence/report confined to `test-authoring-2/` and all previous run folders immutable.
+- Test only synthetic host `postMessage` and API fixtures with no real tenant token or network, preserve task IDs T-101 through T-107, and re-run the two stable regression fingerprints before any approval decision.
+- Test-authoring cycle 2 result: approve for deterministic local scope. Expanded QC 20/20, app regression 49/49, accepted UAT 13/13 on Node.js v20.20.2. `QC-HOST-BOUNDARY-001` and `QC-EQUIPMENT-DEDUPE-001` are closed by passing regression fixtures; QC digest `ce38acb798c2a7664a1b0b413526af100988efc142118454589f1269b1c6fdac`.
+- Exact preview/browser QC remains unexecuted because no controller-supplied preview identity or approved host harness was supplied; preview-stage responsive geometry, screenshots, contrast, keyboard/focus, zoom, console/network, DOM-count, and render-budget checks must not be inferred from source-level assertions.
