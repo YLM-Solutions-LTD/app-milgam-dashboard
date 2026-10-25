@@ -73,3 +73,18 @@
 - Verdict: approve for deterministic test authoring. Synthetic UAT passed 13/13 and app regression passed 55/55 on Node.js v20.20.2.
 - Cycle-3 coverage adds authorization revocation/late-result denial/fresh generation re-entry, guarded permit cleanup, and flag-false/local-XState/CSP source contracts while retaining `UAT-001` through `UAT-012` and `T-101` through `T-107` traceability.
 - No exact preview/browser or approved real-host harness was supplied. Runtime CSP/network/deployed-byte checks, DOM focus variants, and real authorization expiry/re-entry remain unexecuted and are not claimed.
+
+## Current assignment — preview review cycle 3
+
+- Exact authorized preview: `https://c9756759.app-milgam-dashboard.pages.dev`.
+- Exact head: `50972d0b555115d3b1c9da90f7df0dc4790c6e8e`.
+- Execute stable `UAT-001` through `UAT-012` for tasks `T-101` through `T-107` using Playwright synthetic SimplyLog `postMessage` context and intercepted API fixtures only; never use a real tenant token.
+- Treat synthetic context as diagnostic and apply `T-107` honestly: real-host authorization lifecycle remains unproved without an approved host harness.
+- Own only this memory and `.agents/uat-tester/runs/event-436697-batch-64aedcef61f479aaf509/preview-review-3/`; app, tests, shared artifacts, prior runs, other role homes, Git, preview, provider state, and controller state remain read-only.
+
+## Preview review cycle 3 result
+
+- Verdict: reject. Exact preview ships `CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED=false`; accepted synthetic context renders analytics but shows the snapshot disabled, disables refresh, and issues zero current-report requests. Stable finding: `uat:exact-preview-current-snapshot-disabled:v1`.
+- Deployed CSP and executable-network evidence pass: `script-src 'self'`, all observed executable requests same-origin, and deployed/local XState SHA-256 match. Direct access produces zero API calls; disabled-state RTL/LTR layouts do not overflow.
+- Supporting suites pass 13/13 UAT and 55/55 site assertions, but exact-preview snapshot workflows remain unexecutable and cannot be replaced by local evidence.
+- Stable real-host lifecycle finding `uat:real-host-authorization-lifecycle:unverified:v1` remains open because no approved SimplyLog host or faithful controller harness was supplied.

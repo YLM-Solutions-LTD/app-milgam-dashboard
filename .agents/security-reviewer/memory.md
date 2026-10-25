@@ -46,3 +46,11 @@
 - Stable finding `simplyvibe:dependency-integrity:cdn-script-token-realm:v1`: the exact preview executes XState from jsDelivr without Subresource Integrity and sends no Content-Security-Policy. The dependency executes before host-context acceptance in the same realm that later receives and uses the bearer token.
 - The earlier fingerprint `simplyvibe:host-boundary:parent-source-https-api-confinement:v1` is closed for exercised paths: approved synthetic parent/API fixtures produced exact requests and navigation, while direct forged context produced zero requests and commands.
 - All shared tasks `T-101` through `T-107` were covered. Full result: `runs/event-436697-batch-64aedcef61f479aaf509/preview-review-2/report.md`.
+# Preview review cycle 3
+
+- Batch: event-436697-batch-64aedcef61f479aaf509
+- Exact preview: https://c9756759.app-milgam-dashboard.pages.dev
+- Exact head: 50972d0b555115d3b1c9da90f7df0dc4790c6e8e
+- Scope: T-101 through T-107; read-only source and deployed trust-boundary review.
+- Never use a real tenant token; exercise only synthetic host context and fixtures.
+- Result: approved with no concrete security findings. Prior dependency-integrity fingerprint closed by deployed self-only CSP, same-origin executable trace, and matching pinned XState digest. Real-host authorization lifecycle remains an external T-107 acceptance prerequisite and was not claimed from synthetic evidence.
