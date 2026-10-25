@@ -41,6 +41,8 @@ let snapshotController = null;
 let hostServices = null;
 let permitNavigationPending = false;
 let activeContext = null;
+let refreshPending = null;
+let refreshAnalyticsRequested = false;
 
 console.info(LOG_PREFIX, "Bootstrapping mini-app", {
   title: document.title,
@@ -149,16 +151,29 @@ window.addEventListener("pagehide", () => {
 
 snapshotRefreshElement.addEventListener("click", () => { void refreshAuthorization(); });
 
-async function refreshAuthorization({ analytics = true } = {}) {
-  try {
-    const previousContext = activeContext;
-    const verified = await hostBootstrap.verify();
-    if (verified.context !== previousContext) return; // Fresh re-entry already loads its data.
-    if (analytics) service.send("RETRY");
-    await snapshotController?.refresh();
-  } catch (error) {
-    console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
-  }
+function refreshAuthorization({ analytics = true } = {}) {
+  refreshAnalyticsRequested ||= analytics;
+  if (refreshPending) return refreshPending;
+  refreshPending = (async () => {
+    try {
+      const previousContext = activeContext;
+      const verified = await hostBootstrap.verify();
+      if (verified.context !== previousContext || activeContext !== previousContext) return; // Fresh re-entry already loads its data.
+      if (refreshAnalyticsRequested) service.send("RETRY");
+      await snapshotController?.refresh();
+    } catch (error) {
+      console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
+    } finally {
+      refreshPending = null;
+      refreshAnalyticsRequested = false;
+      if (snapshotController) renderSnapshot(snapshotController.getState());
+      if (service) renderControls(service.state);
+    }
+  })();
+  snapshotRefreshElement.disabled = true;
+  const analyticalRefresh = controlsElement.querySelector("#refresh-button");
+  if (analyticalRefresh) analyticalRefresh.disabled = true;
+  return refreshPending;
 }
 
 async function dispatchAuthorized(event) {
@@ -227,7 +242,7 @@ function renderControls(state) {
       </select>
       <span id="period-label" class="sr-only">${selectedPeriod ? `תווית תקופה: ${escapeHtml(selectedPeriod.label)}` : "לא נבחרה תקופה"}</span>
     </div>
-    <button id="refresh-button" class="button" type="button" ${!selectedPeriod ? "disabled" : ""}>רענון נתונים</button>
+    <button id="refresh-button" class="button" type="button" ${!selectedPeriod || refreshPending ? "disabled" : ""}>רענון נתונים</button>
     <span class="refresh-note">עדכון אחרון: ${escapeHtml(refreshed)}</span>
   `;
 
@@ -243,7 +258,7 @@ function renderControls(state) {
 }
 
 function renderSnapshot(state) {
-  snapshotRefreshElement.disabled = state.status === "loading" || state.status === "disabled";
+  snapshotRefreshElement.disabled = Boolean(refreshPending) || state.status === "loading" || state.status === "disabled";
   if (state.status === "disabled") {
     snapshotStatusElement.textContent = "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.";
     snapshotContentElement.replaceChildren();

@@ -1,5 +1,15 @@
 # UAT tester memory
 
+## Active run — test authoring cycle 3, process attempt 2
+
+- Revalidate shared plan revision 7 and every current remediation fingerprint against the current source; all earlier reports and operator measurements are context rather than approval.
+- Authorized writes are limited to this memory, `tests/uat/`, `.agents/uat-tester/tmp/`, and `runs/event-436697-batch-7b4c276304a7e351ea41/test-authoring-3/`; prior run folders, app source, shared artifacts, other role homes, Git, provider, deployment, and lifecycle state remain read-only.
+- Use only the packaged verified SimplyVibeClient and controller GuestBridge with synthetic intercepted host/API fixtures. Never use a real tenant token or permit tenant network traffic.
+- Discover all test extensions and run the complete site, UAT MJS, QC JS+MJS, and controller-host-harness suites. Preserve exact commands, counts, failures, limitations, and task/fingerprint traceability in the current run evidence.
+- Regression focus includes terminal 401/403 generations, fresh bridge re-entry and three-snapshot recovery, stale last-good retention, Navigate single-flight and old-generation suppression, handled disposal/reset races, legacy Context denial, sanitized diagnostics, silent bridge disconnect verification, and refresh-burst coalescing across both controls/retries with lock release.
+- Frozen handled action IDs in exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+- Result: approve for deterministic test authoring. UAT 23/23, site 61/61, complete QC JS+MJS 33/33, and controller harness 2/2 passed on Node.js v20.20.2. The packaged SDK matches the supplied fixture byte-for-byte. Exact-preview browser refresh-control/retry reproduction and real tenant permission configuration remain unclaimed final-review gates.
+
 ## Active run — test authoring cycle 3, process attempt 1 (fresh role validation)
 
 - Revalidate shared plan revision 7 and every current remediation fingerprint against the current patched source; earlier local and preview results are context only.
@@ -59,6 +69,16 @@
 - Final review must record the numeric evidence introduced in plan revision 2: three-call start spread, 0/1/1,000/10,000-row mapper measurements and decoded bytes, 10-refresh newest-generation behavior, 20-activation command count, snapshot DOM cardinality, and phone/desktop render timings.
 - Trust-boundary acceptance requires negative proof that non-parent, HTTP, unapproved API, direct, timeout, fallback, malformed, and mismatched-response contexts cause zero authenticated requests and privileged commands.
 # Current assignment
+
+- Batch `event-436697-batch-7b4c276304a7e351ea41`; stage `preview-review`, cycle 3, process attempt 1.
+- Exact authorized preview `https://42ad1c5f.app-milgam-dashboard.pages.dev`; exact head `b138df3040ab4468220a29f595d0caa62920f679`.
+- Execute every shared task (`T-201`–`T-205`) and all six cycle-3 lifecycle fingerprints through the packaged verified SDK and controller-owned GuestBridge at the corrected synthetic Milgam origin, with all host/API traffic locally fulfilled and real tenant traffic blocked.
+- Authorized writes are only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`; site, tests, shared artifacts, prior runs, Git/provider/deployment/lifecycle state are read-only.
+- Frozen handled action IDs in exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+- Result: `approve_with_findings`. All UAT-201–UAT-210 workflows passed on the supplied preview in Chromium 140 across RTL/LTR desktop/phone. All six remediation fingerprints were not reproduced: 401 remained terminal until fresh re-entry, fresh generation issued exactly three calls, 500/401 retained last-good content, permit navigation stayed single-flight, and no disposed/reset rejection escaped. UAT 23/23 and harness 2/2 passed; deployed reviewed module/SDK hashes matched local bytes.
+- Remaining low-severity limitation: fixture-supplied permissions cannot prove the real tenant's deployed permission configuration; no tenant token or traffic was authorized.
+
+# Prior assignment
 
 - Batch: `event-436697-batch-64aedcef61f479aaf509`
 - Stage: `test-authoring-2`

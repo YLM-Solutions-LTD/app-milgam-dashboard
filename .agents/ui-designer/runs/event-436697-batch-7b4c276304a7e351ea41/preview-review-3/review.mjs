@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const { chromium } = playwright;
-const preview = 'https://5ab11833.app-milgam-dashboard.pages.dev';
-const expectedCommit = 'c9686ba1ad6d4f7b0896ba32c29ad38dcf607022';
+const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev';
+const expectedCommit = 'b138df3040ab4468220a29f595d0caa62920f679';
 const fixtureOrigin = 'https://milgam.ylm.co.il';
 const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const out = '/workspace/src/apps/milgam-dashboard/.agents/ui-designer/runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/evidence';

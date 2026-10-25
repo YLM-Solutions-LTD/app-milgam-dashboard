@@ -1,10 +1,10 @@
 {
-  "preview": "https://5ab11833.app-milgam-dashboard.pages.dev",
-  "head": "c9686ba1ad6d4f7b0896ba32c29ad38dcf607022",
+  "preview": "https://42ad1c5f.app-milgam-dashboard.pages.dev",
+  "head": "b138df3040ab4468220a29f595d0caa62920f679",
   "host": "https://milgam.ylm.co.il/controller-host-fixture/",
   "browser": "140.0.7339.16",
   "headers": {
-    "date": "Sun, 25 Oct 2026 22:44:01 GMT",
+    "date": "Sun, 25 Oct 2026 22:58:24 GMT",
     "content-type": "text/html; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -15,11 +15,11 @@
     "referrer-policy": "no-referrer",
     "x-content-type-options": "nosniff",
     "x-robots-tag": "noindex",
-    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vCc8bX9qY%2FKG7ZdUx0nOQ%2F5vnOLNCClFpqMcLUQJOSFI%2FJcBx1UaTmKibmjIg1qnhqSL0vEl9kyhBe3XzyQP1kbqWPfJQUwz%2Fs4uxpMdS1BydrlY3qwNX861gOJefm3j%2FOIO8Q3bWzOBmKY1K%2BmwnSa5Xqxuw3eza1k%3D\"}]}",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=OdCo0Ug%2BtPoQEIRGniLvR3K97VN6vE3EsX5lkDC416K5rfa1d%2FoN05QT6BD%2FCozNkdHhPFd33hny8C1QaZBclnMOQcl6xN55vmrvEXP%2Fzvutdmubn3LgdvA7dNS%2FAxujpHxOWOGxWJKEPWZUclCDXwhJO9NKeeszPPU%3D\"}]}",
     "etag": "W/\"9691891ee4c2a3a6f1277c76e17f9666\"",
     "content-encoding": "br",
     "server": "cloudflare",
-    "cf-ray": "a504be52288a8e45-TLV",
+    "cf-ray": "a504d36a1f1c3d7c-TLV",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "scenarios": [
@@ -30,7 +30,7 @@
         "height": 900
       },
       "dir": "rtl",
-      "renderMs": 345.845748,
+      "renderMs": 469.307574,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -65,7 +65,7 @@
         "height": 900
       },
       "dir": "ltr",
-      "renderMs": 438.32890399999997,
+      "renderMs": 342.401376,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -94,13 +94,48 @@
       "pageErrors": []
     },
     {
+      "name": "tablet-rtl",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "dir": "rtl",
+      "renderMs": 312.7484780000002,
+      "currentCalls": 3,
+      "exactBodies": true,
+      "dateChangeCurrentCalls": 0,
+      "snapshotStable": true,
+      "geometry": {
+        "dir": "rtl",
+        "docScrollWidth": 752,
+        "docClientWidth": 752,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "allInlineStyles": 0,
+        "visibleSvgs": 1,
+        "focusableNames": [
+          "דלגו לתוכן הראשי",
+          "רענון תמונת מצב",
+          "בתוקף: 7; פתיחת לוח האישורים",
+          "חסרים: 2; פתיחת לוח האישורים",
+          "באיחור: 1; פתיחת לוח האישורים",
+          "2026",
+          "ספטמבר\nאוקטובר",
+          "רענון נתונים"
+        ],
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
       "name": "mobile-rtl",
       "viewport": {
         "width": 390,
         "height": 844
       },
       "dir": "rtl",
-      "renderMs": 292.03299600000014,
+      "renderMs": 332.72021700000005,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -135,7 +170,7 @@
         "height": 844
       },
       "dir": "ltr",
-      "renderMs": 308.5364950000003,
+      "renderMs": 323.520477,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -144,6 +179,41 @@
         "dir": "ltr",
         "docScrollWidth": 374,
         "docClientWidth": 374,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "allInlineStyles": 0,
+        "visibleSvgs": 1,
+        "focusableNames": [
+          "דלגו לתוכן הראשי",
+          "רענון תמונת מצב",
+          "בתוקף: 7; פתיחת לוח האישורים",
+          "חסרים: 2; פתיחת לוח האישורים",
+          "באיחור: 1; פתיחת לוח האישורים",
+          "2026",
+          "ספטמבר\nאוקטובר",
+          "רענון נתונים"
+        ],
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "narrow-rtl",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "dir": "rtl",
+      "renderMs": 331.8797860000004,
+      "currentCalls": 3,
+      "exactBodies": true,
+      "dateChangeCurrentCalls": 0,
+      "snapshotStable": true,
+      "geometry": {
+        "dir": "rtl",
+        "docScrollWidth": 320,
+        "docClientWidth": 304,
         "snapshotNodes": 41,
         "inlineStyles": 0,
         "allInlineStyles": 0,
@@ -349,6 +419,42 @@
       "pageErrors": []
     },
     {
+      "name": "refresh-500",
+      "retained": true,
+      "staleText": "הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב",
+      "console": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "terminal-401",
+      "failureCalls": 3,
+      "repeatCalls": 0,
+      "reentryCalls": 3,
+      "retained": true,
+      "beforeHadData": true,
+      "generation": 2,
+      "console": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
       "name": "revocation-reentry",
       "revoked": {
         "harness": {
@@ -356,41 +462,13 @@
           "generation": 1,
           "effects": []
         },
-        "newCalls": 3,
+        "newCalls": 0,
         "retained": true,
         "hash": ""
       },
       "freshGeneration": 2,
       "freshCalls": 3,
       "console": [],
-      "pageErrors": []
-    },
-    {
-      "name": "401-terminal-overlap-reentry",
-      "failureCalls": 3,
-      "repeatedOldCalls": 0,
-      "freshCalls": 3,
-      "retainedAfter401": true,
-      "beforeStillPresent": true,
-      "harness": {
-        "authorized": true,
-        "generation": 3,
-        "effects": []
-      },
-      "console": [
-        {
-          "type": "error",
-          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        },
-        {
-          "type": "error",
-          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        },
-        {
-          "type": "error",
-          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        }
-      ],
       "pageErrors": []
     },
     {
@@ -401,19 +479,19 @@
   "executableRequests": [
     "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
     "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/app.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/constants.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/api-client.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-machine.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/data-mappers.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/host-context.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/current-snapshot.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/host-services.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/host-bootstrap.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/date-range.js",
-    "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-data.js"
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/app.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://42ad1c5f.app-milgam-dashboard.pages.dev/date-range.js"
   ],
   "blockedRequests": []
 }

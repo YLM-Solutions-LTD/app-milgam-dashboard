@@ -43,3 +43,9 @@
 - Preserve the verified SDK bytes, true snapshot flag, strict CSP/trusted origins, Hebrew RTL, charts, report contracts, and browser-only host-token design.
 - Cycle-3 focus: terminally taint rejected generations, recover only on fresh bridge re-entry, retain stale last-good snapshots, keep permit navigation single-flight until settlement, and consume all detached reconnect/disposal rejections.
 - The corrected controller fixture origin is `https://milgam.ylm.co.il/controller-host-fixture/`; all fixture traffic must be fulfilled locally and exact-preview/tenant verification remains controller-owned.
+# Implementation cycle 3, process attempt 1
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`
+- Scope: implement the controller-approved remediation plan under `site/` only and record secret-free evidence in the implementer home.
+- Required validation inventory: site `npm test`; every QC `.js` and `.mjs`; every UAT `.mjs`; controller-host-harness tests.
+- Release boundary: local implementation readiness only. Exact-preview and deployed-host verification remain controller-owned later-stage checks.

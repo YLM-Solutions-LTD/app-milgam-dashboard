@@ -5,8 +5,8 @@
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
 - Run: `preview-review-3`
 - Process attempt: 1 (fresh review of the controller-supplied artifact; current-run artifacts may be replaced, older run directories remain immutable).
-- Exact head: `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`
-- Exact preview: `https://5ab11833.app-milgam-dashboard.pages.dev`
+- Exact head: `b138df3040ab4468220a29f595d0caa62920f679`
+- Exact preview: `https://42ad1c5f.app-milgam-dashboard.pages.dev`
 - Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using the controller-owned GuestBridge harness and synthetic local API fixtures only.
 - Authorized writes: this reviewer home only.
 - Required handled actions, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
@@ -21,11 +21,9 @@
 
 ## Preview review 3 result
 
-- Verdict: approve; no reproducible client-side security defect remained across T-201 through T-205.
-- The exact preview terminally denied an HTTP-401-tainted session, retained last-good stale facts, automatically loaded exactly three current reports only after distinct fixture re-entry, held Navigate to one effect under a 20-activation burst, and survived the overlapping re-entry/disposal race without page error or unhandled rejection.
-- Direct forged context generated zero API traffic; synthetic 500/401 body markers and raw API address were absent from diagnostics; CSP and executable traffic remained strict/self-only.
-- The unused legacy message-context helper remains in the module but is not installed or reachable from the production bootstrap; direct runtime testing found no authorization path. Treat removal as defense-in-depth, not a demonstrated vulnerability.
-- Fixture decisions do not prove tenant permissions or controller release status. Full result: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/report.md`.
+- Verdict: approve; no concrete client-side security defect reproduced across T-201 through T-205 at exact head `b138df3040ab4468220a29f595d0caa62920f679` and preview `42ad1c5f`.
+- Terminal 401 denial, stale retention, distinct-session recovery, command single-flight, overlapping re-entry/disposal handling, forged-context denial, diagnostic redaction, strict CSP, and self-only execution all passed through the real SDK/GuestBridge with local fixtures.
+- Exact deployed/local bytes matched for host-bootstrap.js, host-context.js, and app.js. Synthetic decisions do not prove tenant permissions or controller release state.
 
 ## Preview review 2 assignment
 

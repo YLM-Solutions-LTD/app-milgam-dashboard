@@ -2,7 +2,7 @@ const { chromium } = require('/usr/local/lib/node_modules/@playwright/test/node_
 const fs = require('fs');
 const path = require('path');
 
-const preview = 'https://5ab11833.app-milgam-dashboard.pages.dev/';
+const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev/';
 const hostBase = 'https://milgam.ylm.co.il/controller-host-fixture/';
 const fixtureDir = '/workspace/.simplyvibe/input/controller-host-harness';
 const files = { 'index.html': 'index.html', 'host-fixture.js': 'host-fixture.js', 'vendor/guest-bridge.js': 'vendor/guest-bridge.js', 'vendor/simplyvibe-client.js': 'vendor/simplyvibe-client.js' };
@@ -83,6 +83,16 @@ const output = process.argv[2];
   const reentryCalls = calls.slice(beforeReentry);
   const afterReentry = await snapshot();
 
+  const beforeSilentRevoke = calls.length;
+  await page.evaluate(() => globalThis.controllerHarness.revoke());
+  await frame.locator('#snapshot-refresh').click({ force: true }).catch(() => {});
+  await page.waitForTimeout(500);
+  const silentRevokeCalls = calls.slice(beforeSilentRevoke);
+  const beforeSilentRecovery = calls.length;
+  await page.evaluate(() => globalThis.controllerHarness.reenter());
+  for (let i = 0; i < 100 && calls.length < beforeSilentRecovery + 3; i++) await page.waitForTimeout(25);
+  const silentRecoveryCalls = calls.slice(beforeSilentRecovery);
+
   const effectsBefore = (await page.evaluate(() => globalThis.controllerHarness.state())).effects.length;
   await page.evaluate(() => globalThis.controllerHarness.holdCommand());
   await frame.evaluate(() => { const controls = [...document.querySelectorAll('[data-permit]')]; for (let i = 0; i < 20; i++) controls[i % controls.length].click(); });
@@ -99,7 +109,7 @@ const output = process.argv[2];
   });
   for (let i = 0; i < 120; i++) {
     const state = await page.evaluate(() => globalThis.controllerHarness.state());
-    if (state.generation === 4 && calls.slice(beforeOverlap).filter(call => call.auth?.endsWith('generation-4') && call.name.startsWith('MilgamDashboardCurrent')).length >= 3) break;
+    if (state.generation === 5 && calls.slice(beforeOverlap).filter(call => call.auth?.endsWith('generation-5') && call.name.startsWith('MilgamDashboardCurrent')).length >= 3) break;
     await page.waitForTimeout(25);
   }
   await page.waitForTimeout(250);
@@ -108,10 +118,10 @@ const output = process.argv[2];
 
   const markerLeak = consoleMessages.filter(entry => /PERF_PRIVATE_(500|401)_MARKER/.test(entry.text));
   fs.writeFileSync(output, JSON.stringify({
-    preview, commit: 'c9686ba1ad6d4f7b0896ba32c29ad38dcf607022', browserVersion: await browser.version(),
+    preview, commit: 'b138df3040ab4468220a29f595d0caa62920f679', browserVersion: await browser.version(),
     baseline, calls500, after500, retained500: after500.html === baseline.html,
     calls401, after401, retained401: after401.html === baseline.html,
-    deniedRefreshCalls, reentryCalls, afterReentry,
+    deniedRefreshCalls, reentryCalls, afterReentry, silentRevokeCalls, silentRecoveryCalls,
     permitBurst: { effectsBefore, heldEffects: held.effects.length, releasedEffects: released.effects.length, addedEffects: released.effects.length - effectsBefore },
     overlapReentryCalls, overlapState,
     pageErrors, markerLeak, consoleWarningsAndErrors: consoleMessages.filter(entry => ['warning', 'error'].includes(entry.type))

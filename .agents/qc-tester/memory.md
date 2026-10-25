@@ -93,3 +93,17 @@
 - Writes are confined to this role memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`; source, tests, shared plan, and other role homes are read-only.
 - Re-run the complete site, QC (`*.test.js` and `*.test.mjs`), UAT, and harness inventories, then test every cycle-3 fingerprint and T-201–T-205 exact-preview criterion including lifecycle races, responsive RTL/LTR, accessibility, CSP, diagnostics, request/DOM/timing budgets, and console/network failures.
 - Preview-review cycle 3 result: `reject`. Full local inventory passed (site 61/61, QC 30/30 JS+MJS, UAT 21/21, harness 2/2), and all six incoming remediation fingerprints closed in fresh exact-preview evidence. New high-confidence finding `qc-revoke-refresh-race-issues-old-generation-requests-v1`: revoke/release/immediate refresh issued three generation-1 current requests while the harness remained unauthorized and before re-entry. Exact preview otherwise passed responsive RTL/LTR, CSP, chart, diagnostics, 401 taint, stale retention, overlapping re-entry, single-flight, and zero pageerror checks.
+
+## 2026-10-25 — preview-review cycle 3, process attempt 1, exact replacement head
+
+- Exact target: head `b138df3040ab4468220a29f595d0caa62920f679`, preview `https://42ad1c5f.app-milgam-dashboard.pages.dev`; corrected locally intercepted host fixture and actual packaged SDK/GuestBridge only.
+- Result: `approve_with_findings`, outcome `ready`. Exact preview closes all six remediation-cycle-3 fingerprints plus `qc-revoke-refresh-race-issues-old-generation-requests-v1` and `perf-preview-revoked-bridge-refresh-emits-old-generation-requests-v1`. Revoke/forced-refresh emitted zero old-generation requests; 401 repeat refresh emitted zero; distinct re-entry automatically emitted exactly three; stale data, permit single-flight, diagnostics redaction, CSP charts, responsive RTL/LTR, focus, and zero-pageerror checks passed.
+- Fresh suites: site 61/61, QC 33/33 including JS+MJS, final standalone UAT 23/23, harness 2/2. Preserve the initial concurrent-run UAT-201 timing failure (22/23) as low-severity `qc-uat-call-spread-contention-flake-v1`; unchanged standalone and exact-preview behavior passed.
+- Frozen handled actions remain exactly `[536946,536949,537034,537037,537040,547704,547710,547713,569787,569843]`; tenant permissions, deployment, and release remain controller-owned.
+
+## 2026-10-25 — test-authoring cycle 3, process attempt 2
+
+- Reopened only the mutable `test-authoring-3/` run for report-contract remediation; all prior run folders remain immutable.
+- Scope is deterministic QC authoring/execution against plan revision 7 and every current remediation fingerprint, including refresh single-flight/burst coverage, with writes limited to `tests/qc/`, this memory, and the current QC run folder.
+- Required fresh inventory: site tests, QC `*.test.js` and `*.test.mjs`, UAT `*.test.mjs`, and controller-host-harness tests using the packaged real SDK/GuestBridge with fully local synthetic host/API traffic.
+- Result: ready / `approve_with_findings`. Added shared refresh-entry single-flight/settlement/release coverage. Fresh totals: site 61/61, QC 34/34, UAT 23/23, harness 2/2. Local browser fixture passed two viewports with exactly three burst requests, concurrency three, zero revoked requests, three fresh-re-entry requests, and zero page errors.

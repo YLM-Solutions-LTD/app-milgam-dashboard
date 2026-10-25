@@ -3,14 +3,14 @@
 ## Active run
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`; stage: preview review cycle 3, process attempt 1.
-- Exact candidate: commit `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`, preview `https://5ab11833.app-milgam-dashboard.pages.dev`.
+- Exact candidate: commit `b138df3040ab4468220a29f595d0caa62920f679`, preview `https://42ad1c5f.app-milgam-dashboard.pages.dev`.
 - Scope: read-only UI, interaction, accessibility, RTL/LTR, responsive, and state review for `T-201` through `T-205`, including all six cycle-3 remediation fingerprints.
 - Method: corrected controller fixture origin with verified SDK/GuestBridge and entirely local synthetic host/API fulfillment; abort all real tenant traffic.
 - Writes are confined to this memory file and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`.
-- Outcome: `approve` for UI review of all `T-201`–`T-205`; all six cycle-3 fingerprints are closed by exact-preview/browser evidence and no new stable UI finding was reproduced.
-- Exact preview retained full last-good facts after 500/401, denied unchanged-session retry with 0 calls, recovered on generation 2 with 3 current calls, produced one Navigate for 20 activations, and survived overlapping generation-3 re-entry with 0 page errors.
+- Outcome: `approve` for UI review of all `T-201`–`T-205`; fresh exact-preview evidence closes all six cycle-3 fingerprints and the archived disposed-client race, with no new stable UI finding.
+- Exact preview retained last-good facts after 500/401, denied unchanged-session retry with 0 calls, recovered on generation 2 with exactly 3 current calls, produced one Navigate for 20 activations, and survived overlapping generation-3 re-entry with 0 page errors.
 - Responsive evidence: 1440×900 RTL, 390×844 RTL, and 1440×900 LTR each had 0 horizontal overflow, 41 snapshot descendants, visible charts, and visible keyboard focus.
-- Fresh ImageGen evidence: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/evidence/imagegen-stale-reference.png`, SHA-256 `bfc53fb77af5bff61ff60ba90e57eaac49c73bd3777019dbc9736e11c331df4a`.
+- Fresh ImageGen evidence: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/evidence/imagegen-stale-reference.png`, SHA-256 `9708baa830b7b36c58e7e088742764d0a210f78c4cf71bc538fc33afe966aead`.
 - Canonical evidence: adjacent `report.md`, `evidence/review.md`, and `evidence/playwright-results.json`. Real tenant permissions, publication, and controller completion remain unclaimed.
 
 ## Current batch

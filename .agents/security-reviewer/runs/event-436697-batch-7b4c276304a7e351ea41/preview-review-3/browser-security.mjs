@@ -2,7 +2,7 @@ import { chromium } from '/workspace/src/apps/milgam-dashboard/.agents/uat-teste
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const preview = 'https://5ab11833.app-milgam-dashboard.pages.dev';
+const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev';
 const hostBase = 'https://milgam.ylm.co.il/controller-host-fixture/';
 const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const browser = await chromium.launch({ executablePath: '/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell', headless: true });

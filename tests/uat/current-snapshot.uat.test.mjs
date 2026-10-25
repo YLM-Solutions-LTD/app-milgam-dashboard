@@ -65,7 +65,7 @@ function response(value, status = 200) {
   return new Response(JSON.stringify(value), { status });
 }
 
-function makeSyntheticClientCapture(overrides = {}) {
+function makeSyntheticClientCapture(overrides = {}, responseGate = null) {
   const calls = [];
   const context = acceptedContext();
   assert.ok(context, "synthetic postMessage context must be accepted");
@@ -73,6 +73,7 @@ function makeSyntheticClientCapture(overrides = {}) {
   const client = createApiClient(context, { fetchImpl: async (url, options) => {
     calls.push({ url, options, at: performance.now() });
     const fixtureKey = Object.keys(fixtures).find((key) => url.includes(key));
+    if (responseGate) await responseGate;
     return response(fixtures[fixtureKey]);
   }});
   return { client, calls };
@@ -84,10 +85,18 @@ test("UAT traceability covers every recovered structure task T-201 through T-205
 });
 
 test("UAT-201 authenticated entry loads one coherent three-report snapshot", async () => {
-  const { client, calls } = makeSyntheticClientCapture();
-  const snapshot = await loadCurrentSnapshot(client);
+  let releaseResponses;
+  const responseGate = new Promise(resolve => { releaseResponses = resolve; });
+  const { client, calls } = makeSyntheticClientCapture({}, responseGate);
+  const loading = loadCurrentSnapshot(client);
+  try {
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(calls.length, 3, "all three reports must start before any response is released");
+  } finally {
+    releaseResponses();
+  }
+  const snapshot = await loading;
   assert.equal(calls.length, 3);
-  assert.ok(Math.max(...calls.map((call) => call.at)) - Math.min(...calls.map((call) => call.at)) < 50);
   assert.deepEqual(calls.map((call) => new URL(call.url).pathname).sort(), [
     "/api/Entity/MilgamDashboardCurrentEquipment/Search",
     "/api/Entity/MilgamDashboardCurrentEvents/Search",

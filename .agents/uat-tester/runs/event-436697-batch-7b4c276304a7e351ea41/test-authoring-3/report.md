@@ -4,9 +4,9 @@
   "appName": "milgam-dashboard",
   "stage": "test-authoring",
   "cycle": 3,
-  "attempt": 1,
+  "attempt": 2,
   "outcome": "ready",
-  "summary": "Deterministic UAT passes 23/23 with synthetic local fixtures and the actual packaged controller SDK/GuestBridge; site passes 61/61 and controller harness passes 2/2. Every cycle-3 fingerprint has behavioral evidence, including terminal 401 taint, stale retention, fresh/overlapping re-entry, shared live verification, silent-disconnect denial, exact Navigate, and no unhandled disposal rejection. Exact-preview browser and real tenant permission checks remain later-stage limitations.",
+  "summary": "Approve for deterministic test authoring: UAT passes 23/23 with synthetic local fixtures and the actual packaged controller SDK/GuestBridge; site passes 61/61, complete QC JS+MJS passes 33/33, and controller harness passes 2/2. Revision-7 lifecycle findings have behavioral evidence. Exact-preview refresh-control burst reproduction and real tenant permission checks remain later-stage limitations and are not claimed.",
   "handledActionIds": [536946, 536949, 537034, 537037, 537040, 547704, 547710, 547713, 569787, 569843],
   "roles": [{
     "role": "uat-tester",
@@ -21,6 +21,7 @@
     "testResults": {
       "uat": {"passed": 23, "failed": 0, "skipped": 0},
       "regression": {"passed": 61, "failed": 0, "skipped": 0},
+      "qcCrossCheck": {"passed": 33, "failed": 0, "skipped": 0},
       "controllerFixture": {"passed": 2, "failed": 0, "skipped": 0},
       "runtime": "Node.js v20.20.2",
       "browser": "not executed in test-authoring"
@@ -41,7 +42,7 @@
   ],
   "limitations": [
     "The faithful controller-owned protocol fixture proves local SDK/GuestBridge behavior, not a real tenant permission configuration.",
-    "No exact deployed preview was authorized for test-authoring, so deployed browser, CSP/network, DOM/render, 20-activation burst, and deployed automatic re-entry observations were not executed or claimed."
+    "No exact deployed preview was authorized for test-authoring, so delivered browser/CSP/network/DOM/render checks, 20-activation burst, and full interaction with both refresh controls and retry paths were not independently executed or claimed by this role."
   ],
   "findings": []
 }

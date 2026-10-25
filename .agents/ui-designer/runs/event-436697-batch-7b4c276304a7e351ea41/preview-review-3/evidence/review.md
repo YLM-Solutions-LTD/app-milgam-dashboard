@@ -1,38 +1,39 @@
 # UI evidence — exact preview cycle 3
 
-## Candidate and method
+## Outcome
 
-- Controller-supplied exact PR head: `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`.
-- Preview: `https://5ab11833.app-milgam-dashboard.pages.dev`.
-- Chromium 140, actual packaged SimplyVibeClient (`ee67f5ae…14bf1`, identical to the controller vendor file) and actual GuestBridge.
-- Host fixture served only at intercepted `https://milgam.ylm.co.il/controller-host-fixture/`; every API response was synthetic, no tenant token was inspected, and no unexpected request was observed.
+Approve for the UI designer role across `T-201`–`T-205`. No stable UI, responsive, accessibility, interaction, or state-communication defect was reproduced on the exact preview.
+
+## Exact artifact and method
+
+- Controller-supplied head: `b138df3040ab4468220a29f595d0caa62920f679`.
+- Preview: `https://42ad1c5f.app-milgam-dashboard.pages.dev`.
+- Chromium: `140.0.7339.16`.
+- Corrected local fixture origin with actual GuestBridge and packaged SDK; every API response was synthetic and locally fulfilled. No real tenant token/request was used.
+- CSP kept `script-src 'self'` and `style-src 'self'`; 0 runtime inline styles and 0 relevant CSP/page errors were observed.
 
 ## Task evidence
 
-- `T-201`: the enabled preview issued exactly the three Current* calls on initial verified connection, each as `POST {}`. `site/constants.js:21` remains `true`. Current facts remained independent of the analytical reports.
-- `T-202`: at 1440×900 RTL, 390×844 RTL, and 1440×900 LTR the charts remained visible (`chartCount: 3` in the targeted selector), rendered with zero inline style attributes and zero horizontal overflow. The preview returned enforcing `style-src 'self'`; executable URLs were limited to the intercepted fixture and same-origin preview assets.
-- `T-203`: ready UI exposed reconciled 128/14 = 50/6 + 78/8 event facts, separate permit accessible names, 10,000 equipment total, and explicit classification-unavailable copy. Focus was a visible 3px outline. Source evidence: `site/app.js:76-115,152-162,274-299`, `site/current-snapshot.js:76-108`, `site/host-bootstrap.js:28-104`.
-- `T-204`: exact-preview screenshots cover all required viewport/direction combinations plus stale and recovered states. Snapshot region remained 41 descendants and never overflowed. No page error was observed in desktop, mobile, LTR, or double-reentry race runs.
-- `T-205`: real fixture lifecycle evidence shows stale last-good UI, terminal denial of the unchanged session, automatic fresh-generation recovery, exact Navigate, and zero old command effect in the revoke/re-enter race.
+- `T-201`: initial view issued all three exact current routes with `{}` and rendered events, three separate permit controls, and equipment total. Period analytics coexisted without clearing snapshot data.
+- `T-202`: charts remained visible in desktop/mobile RTL and desktop LTR. All required views had 0 horizontal overflow; snapshot had 41 descendant nodes. Permit and refresh controls showed a 3 px visible keyboard outline.
+- `T-203`: populated snapshot text length remained 276 after both 500 and 401. The stale message explicitly states that the last valid update remains shown. The distinctive synthetic body marker never appeared in console output. The three permit controls have distinct accessible names.
+- `T-204`: 20 rapid activations while the real bridge command was held produced exactly one `Navigate` effect with `#/Permits/Dashboard`. The desktop, phone, and LTR captures show coherent hierarchy and intact charts.
+- `T-205`: unchanged-session refresh after 401 added 0 requests. Fresh re-entry used generation 2 and automatically issued exactly three current-report calls, with supported analytical recovery. A held command followed by revoke/release and two overlapping re-entry calls reached generation 3 with 0 navigation effects and 0 page errors.
 
-## Cycle-3 fingerprint closure
+## Current fingerprint disposition
 
-1. `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1` and `uat-authorization-expiry-old-generation-refresh-allowed-v1`: after generation-1 HTTP 401, a repeated refresh emitted **0** API calls. Source denial is at `site/host-bootstrap.js:28-43,77-85`.
-2. `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`: fixture re-entry emitted 3 current calls and 5 supported analytical calls using generation 2, automatically restored ready content, and showed the updated status. Source restart/preservation is at `site/app.js:76-101`.
-3. `uat-snapshot-refresh-failure-last-good-cleared-v1`: after both 500 and 401, the full prior snapshot text remained unchanged and status read `הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב`. Source retention is at `site/current-snapshot.js:76-108`.
-4. `uat-permit-command-singleflight-race-v1`: while the first bridge command was held, 20 activations left all permit controls disabled and `aria-busy=true`; release produced exactly one generation-2 `Navigate` to `#/Permits/Dashboard`. Source guard is at `site/app.js:274-299`.
-5. `qc-sdk-reentry-client-disposed-unhandled-v1`: with a command held, revoke/release plus immediate and microtask re-entry reached generation 3, made exactly one new current triplet, restored the snapshot, produced no old Navigate effect, and recorded 0 page errors/unhandled-disposal messages. Source handled transition is at `site/host-bootstrap.js:45-69`.
-6. Legacy context/diagnostics requirement: production boot used the same-origin SDK and real bridge. The distinctive synthetic body markers `PRIVATE-BODY-MARKER` and `internal address hidden` were absent from captured console output; source binds private SDK instances at `site/host-context.js:78-105` and emits bounded response metadata at `site/api-client.js:100-131,152-163`.
+- `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1`: not reproduced; unchanged-session retry added 0 calls.
+- `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`: not reproduced; fresh generation 2 automatically issued three current calls.
+- `uat-snapshot-refresh-failure-last-good-cleared-v1`: not reproduced; all populated facts remained visible after 500 and 401 with stale copy.
+- `uat-authorization-expiry-old-generation-refresh-allowed-v1`: not reproduced; old-generation retry added 0 calls.
+- `uat-permit-command-singleflight-race-v1`: not reproduced; 20 activations produced one effect.
+- `qc-sdk-reentry-client-disposed-unhandled-v1`: not reproduced; overlapping re-entry race produced 0 page errors and no unhandled disposed/session-reset message.
 
-## Visual reference comparison
+## ImageGen comparison
 
-Fresh ImageGen evidence `imagegen-stale-reference.png` establishes the desired principle: preserved facts, a calm but unmistakable stale notice, and a focused retry action. The exact preview uses a more compact in-section status rather than a banner, but preserves the same information hierarchy and accessible recovery affordance. This is a non-blocking implementation difference, not a defect.
+Fresh reference: `imagegen-stale-reference.png`, SHA-256 `9708baa830b7b36c58e7e088742764d0a210f78c4cf71bc538fc33afe966aead`. It supports a persistent stale banner, retained metrics, discrete permit actions, visible retry focus, and continued chart visibility. The preview satisfies those behavioral principles; stylistic differences are non-blocking.
 
-## Artifacts
+## Limitations
 
-- `playwright-results.json`: browser calls, states, accessibility/UI metrics, headers, errors, and race evidence.
-- `preview-desktop-rtl.png`, `preview-mobile-rtl.png`, `preview-desktop-ltr.png`.
-- `preview-stale-500-rtl.png`, `preview-reentry-recovered-rtl.png`.
-- `imagegen-stale-reference.png` (SHA-256 `bfc53fb77af5bff61ff60ba90e57eaac49c73bd3777019dbc9736e11c331df4a`).
-
-Real tenant permissions and controller publication/release status were not contacted or inferred.
+- Commit-to-preview binding is controller-supplied; provider and Git APIs were intentionally not called.
+- The faithful harness validates client behavior with synthetic permissions, not real tenant permission configuration or controller release completion.

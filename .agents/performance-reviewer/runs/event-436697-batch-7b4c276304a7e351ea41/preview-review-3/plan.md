@@ -1,6 +1,7 @@
-# Performance review plan — preview-review cycle 3
+# Performance preview-review plan
 
-1. Read the frozen request, remediation fingerprints, shared revision/task board, harness contract, accepted reports, and exact-head source.
-2. Build a read-only Playwright measurement using the verified controller GuestBridge/SDK, synthetic Milgam parent origin, and local API route fixtures.
-3. Exercise all shared tasks and current lifecycle findings, capturing request/concurrency/bytes, generation/re-entry, stale refresh, command single-flight, responsive DOM/render, and error/unhandled-rejection evidence.
-4. Record reproducible evidence and emit the role-structured verdict without modifying application or test sources.
+- Review exact supplied head `b138df3040ab4468220a29f595d0caa62920f679` at `https://42ad1c5f.app-milgam-dashboard.pages.dev` through the corrected controller fixture and real packaged SDK/GuestBridge.
+- Fulfill all host/API traffic locally; never request a tenant token.
+- Measure both required viewports, request count/concurrency/body/bytes, 10,000-row mapping, DOM/render limits, refresh and permit bursts, CSP/executable inventory, and lifecycle recovery.
+- Reproduce every cycle-3 fingerprint plus silent disconnect, fresh/overlapping re-entry, stale retention, and detached rejection behavior.
+
