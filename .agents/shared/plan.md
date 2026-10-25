@@ -3,7 +3,7 @@
 ## Scope and source
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Plan revision: 5
+- Plan revision: 6
 - Frozen actions, in order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`
 - `includeDescription` is false; the event description is context only.
 - Preserve the browser-only Hebrew-first dashboard, authenticated host context, permissions, analytical date behavior, charts, and all accepted current-snapshot contracts.
@@ -12,7 +12,8 @@
 ## Target structure
 
 ```text
-Authenticated host capability (source + HTTPS origin + approved API origin + private brand)
+Packaged verified SimplyVibeClient (exact trusted parent origin; private instance)
+└─ Authenticated host capability (SDK handshake + source/origin + approved API origin + private brand)
 ├─ Current snapshot lifecycle (independent of analytical dates)
 │  ├─ events: overall / headquarters / branches
 │  ├─ permits: valid / missing / overdue → exact permit-board command
@@ -21,7 +22,14 @@ Authenticated host capability (source + HTTPS origin + approved API origin + pri
 └─ Revocation boundary: abort, deny, retain stale, require fresh generation
 ```
 
-The recovery changes only the flag/configuration boundary, CSP-safe chart presentation, regression evidence, and release acceptance evidence. Existing snapshot loading, empty, error, retry, stale, RTL/LTR, accessibility, and analytical states remain mandatory.
+Cycle-2 remediation additionally replaces the invented `globalThis.SimplyVibeHostAdapter` runtime dependency with the supplied verified SDK, binds the resulting private client/session lifecycle to application authorization, and removes response-body data from browser diagnostics. Existing snapshot loading, empty, error, retry, stale, RTL/LTR, accessibility, analytical, flag, and CSP-safe chart states remain mandatory.
+
+## Verified guest transport and corrected fixture
+
+- Package the controller-supplied, hash-recorded `SimplyVibeClient` as a same-origin static dependency and instantiate it in the guest with the exact trusted parent origin. Do not inject, synthesize, or expose a public adapter global.
+- Bootstrap application context from `await client.ready()` and bind `ready()`, `executeCommand()`, `ToDisplayDate()` (where supported by the established host context/date boundary), disposal, session replacement, and authorization generations to the private client instance. The legacy JSON context may be tolerated only as protocol compatibility input; it must not remain independently authoritative after SDK disconnect/session reset.
+- A guest SDK session reset, disposal, timeout, rejected command, replacement handshake, or API 401/403 revokes the matching application capability, aborts its requests, invalidates pending commands, and prevents old-generation effects. Fresh re-entry must construct/bind a fresh verified SDK generation.
+- The controller correction is authoritative: exercise the fixture at `https://milgam.ylm.co.il/controller-host-fixture/`, fulfill all host/API traffic locally, and make no real tenant request. The earlier `https://ylm.ylm.co.il` example and its frame-ancestor failure are not app defects. Preserve the existing trusted origins and CSP; do not add the mistaken origin.
 
 ## Existing browser contracts
 
@@ -99,10 +107,12 @@ Exact-preview review must use the same artifact intended for release and prove: 
 
 Authorization lifecycle release acceptance requires an approved real SimplyLog host or controller-owned faithful harness. Revoke/expire authorization during requests and a command; prove abort and zero old-generation effects, stale retention, denial of subsequent authenticated work, fresh verified re-entry, recovery under a new generation, and command-response generation binding. Synthetic unapproved messaging cannot close this gate. If no approved environment exists, report the gate blocked/skipped honestly and do not claim release approval.
 
+Browser diagnostics must be metadata-only. For HTTP, invalid JSON/envelopes, mapper, and service failures, log bounded fields such as dataset, status, error kind, and byte/count information; never log or retain raw/parsed API response bodies, snippets, personal/internal fields, tokens, or full serialized error objects. User-visible failures remain generic and actionable, while in-memory validation may inspect a response only for the immediate adapter decision.
+
 ## Implementation sequence
 
 1. `T-201` sets and protects the authorized release flag.
 2. `T-202` replaces CSP-blocked runtime chart styling while preserving strict headers and visuals.
-3. `T-203` reruns supported snapshot, equipment, host-boundary, state, accessibility, and analytical regressions.
-4. `T-204` collects exact-preview functional, responsive, CSP, and performance evidence.
-5. `T-205` validates the approved-host authorization lifecycle and defines the controller-owned release/revert handoff.
+3. `T-203` packages and binds the verified guest SDK, removes response-body diagnostics, and reruns snapshot, equipment, host-boundary, state, accessibility, and analytical regressions.
+4. `T-204` collects exact-preview functional, responsive, CSP, SDK-command, diagnostics, and performance evidence in the corrected local-only controller fixture.
+5. `T-205` validates authorization revocation/re-entry through that faithful harness and defines the controller-owned release/revert handoff.

@@ -1,0 +1,275 @@
+TAP version 13
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT traceability covers every recovered structure task T-201 through T-205
+ok 1 - UAT traceability covers every recovered structure task T-201 through T-205
+  ---
+  duration_ms: 1.568359
+  ...
+# Subtest: UAT-201 authenticated entry loads one coherent three-report snapshot
+ok 2 - UAT-201 authenticated entry loads one coherent three-report snapshot
+  ---
+  duration_ms: 21.929737
+  ...
+# Subtest: UAT-204 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+ok 3 - UAT-204 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+  ---
+  duration_ms: 0.591022
+  ...
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'http://localhost:5500',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'http://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'http://localhost:5721'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'http://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'https://unapproved.example'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'https://unapproved.example',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Failed to parse host message payload
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT-202 analytical period requests remain distinct from current snapshot requests
+ok 4 - UAT-202 analytical period requests remain distinct from current snapshot requests
+  ---
+  duration_ms: 7.173374
+  ...
+# Subtest: UAT-205 superseded slow responses cannot replace generation ten
+ok 5 - UAT-205 superseded slow responses cannot replace generation ten
+  ---
+  duration_ms: 0.982837
+  ...
+# Subtest: UAT-205 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+ok 6 - UAT-205 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+  ---
+  duration_ms: 3.683041
+  ...
+# Subtest: UAT-208 trust boundary supports revocation, late-result denial, and fresh synthetic re-entry
+ok 7 - UAT-208 trust boundary supports revocation, late-result denial, and fresh synthetic re-entry
+  ---
+  duration_ms: 2.504796
+  ...
+# Subtest: UAT-205 failed refresh retains the complete last-good snapshot
+ok 8 - UAT-205 failed refresh retains the complete last-good snapshot
+  ---
+  duration_ms: 0.396116
+  ...
+# Subtest: UAT-206 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+ok 9 - UAT-206 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+  ---
+  duration_ms: 4.053555
+  ...
+# Subtest: UAT-209 host navigation failure path preserves data and clears busy state by contract
+ok 10 - UAT-209 host navigation failure path preserves data and clears busy state by contract
+  ---
+  duration_ms: 1.148944
+  ...
+# UAT_PERFORMANCE [{"rows":0,"decodedBytes":27,"durationMs":0.006,"unique":0},{"rows":1,"decodedBytes":127,"durationMs":0.009,"unique":1},{"rows":1000,"decodedBytes":103422,"durationMs":2.937,"unique":1000},{"rows":10000,"decodedBytes":1043924,"durationMs":29.08,"unique":10000}]
+# Subtest: UAT-207 responsive bidi and accessible snapshot shell contracts are present
+ok 11 - UAT-207 responsive bidi and accessible snapshot shell contracts are present
+  ---
+  duration_ms: 1.56726
+  ...
+# Subtest: UAT-204 strict contracts and representative volumes remain within mapper budget
+ok 12 - UAT-204 strict contracts and representative volumes remain within mapper budget
+  ---
+  duration_ms: 72.846482
+  ...
+# Subtest: UAT-203 and UAT-210 delivery is enabled, CSP-safe, locally pinned, and synthetic
+ok 13 - UAT-203 and UAT-210 delivery is enabled, CSP-safe, locally pinned, and synthetic
+  ---
+  duration_ms: 3.863648
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-206 packaged verified SDK reaches the real GuestBridge Navigate path
+ok 14 - UAT-206 packaged verified SDK reaches the real GuestBridge Navigate path
+  ---
+  duration_ms: 11.187327
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208/UAT-209 bridge revocation denies old commands and requires fresh SDK generation
+ok 15 - UAT-208/UAT-209 bridge revocation denies old commands and requires fresh SDK generation
+  ---
+  duration_ms: 25.294466
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByMonth',
+#   endpoint: '/api/Entity/MilgamDashboardByMonth/Search',
+#   url: 'https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search',
+#   range: { fromDate: '2026-01-01T00:00:00', toDate: '2026-01-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByMonth',
+#   status: 500,
+#   ok: false,
+#   bodyBytes: 80
+# }
+# Subtest: UAT-205 synthetic API error bodies stay out of logs and serialized errors
+ok 16 - UAT-205 synthetic API error bodies stay out of logs and serialized errors
+  ---
+  duration_ms: 22.317853
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 179.700463

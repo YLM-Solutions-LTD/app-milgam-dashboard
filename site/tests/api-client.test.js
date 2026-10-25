@@ -127,8 +127,9 @@ test("Items is required, empty Items is valid, and incomplete pages are rejected
 });
 
 for (const status of [400, 401, 403, 500]) {
-  test(`HTTP ${status} preserves status and response body without request secrets`, async () => {
-    const responseBody = { message: `status-${status}`, echoedToken: TOKEN };
+  test(`HTTP ${status} preserves bounded metadata without retaining response fields`, async () => {
+    const marker = `personal-internal-marker-${status}`;
+    const responseBody = { message: marker, echoedToken: TOKEN };
     const client = createApiClient(bindContext(), {
       fetchImpl: async () => jsonResponse(responseBody, status)
     });
@@ -138,8 +139,9 @@ for (const status of [400, 401, 403, 500]) {
       (error) => {
         assert.ok(error instanceof DashboardRequestError);
         assert.equal(error.status, status);
-        assert.equal(error.body.message, `status-${status}`);
-        assert.equal(error.body.echoedToken, "[REDACTED]");
+        assert.equal(Object.hasOwn(error, "body"), false);
+        assert.ok(error.bodyBytes > 0);
+        assert.ok(!JSON.stringify(error).includes(marker));
         assert.ok(!JSON.stringify(error).includes(TOKEN));
         assert.ok(!error.message.includes(TOKEN));
         assert.ok(!Object.hasOwn(error, "headers"));
@@ -155,7 +157,8 @@ test("invalid JSON and invalid envelope are dataset-specific invalid-response er
   });
   await assert.rejects(
     invalidJsonClient.requestItems("division", buildMonthRange(2026, 8)),
-    (error) => error.kind === "invalid-response" && error.dataset === DATASETS.division && error.body === "not-json"
+    (error) => error.kind === "invalid-response" && error.dataset === DATASETS.division
+      && error.bodyBytes === "not-json".length && !Object.hasOwn(error, "body")
   );
 
   const invalidDataClient = createApiClient(bindContext(), {

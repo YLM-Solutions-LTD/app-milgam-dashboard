@@ -26,6 +26,18 @@ test("static response policy confines executable code and the reviewed dependenc
   assert.match(dependency, /XState/);
 });
 
+test("verified same-origin SimplyVibe SDK is packaged without a public injected adapter", async () => {
+  const [html, app, services, sdk] = await Promise.all([
+    readFile(htmlUrl, "utf8"), readFile(appUrl, "utf8"),
+    readFile(new URL("../host-services.js", import.meta.url), "utf8"),
+    readFile(new URL("../assets/simplyvibe-client.js", import.meta.url), "utf8")
+  ]);
+  assert.match(html, /\.\/assets\/simplyvibe-client\.js/);
+  assert.match(app, /createHostBootstrap/);
+  assert.doesNotMatch(`${app}\n${services}`, /SimplyVibeHostAdapter/);
+  assert.match(sdk, /function SimplyVibeClient/);
+});
+
 test("permit cleanup captures the control before awaits and guards focus", async () => {
   const source = await readFile(appUrl, "utf8");
   assert.match(source, /const activatingElement = event\.currentTarget/);

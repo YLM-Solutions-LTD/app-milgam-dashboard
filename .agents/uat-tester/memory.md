@@ -114,7 +114,21 @@
 
 ## Current assignment — recovered batch preview review cycle 1
 
-- Exact authorized preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`; exact head: `ea974089c5cfa402a44b99606514721807b49dd8`.
+- Exact authorized preview: `https://02ea3f16.app-milgam-dashboard.pages.dev`; exact head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`.
 - Execute `UAT-201` through `UAT-210` for `T-201` through `T-205` using Playwright, synthetic SimplyLog parent messaging, and intercepted non-secret API fixtures only.
-- Own only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/`; app source, shared artifacts, prior runs, tests, Git/provider/deployment/controller state remain read-only.
-- Synthetic host behavior can support exact-preview diagnostics but cannot pass `UAT-208` or `UAT-209`; those remain blocked unless an approved real SimplyLog host or controller-owned faithful harness is supplied.
+- Use the supplied controller-owned faithful host harness with its actual GuestBridge/SimplyVibeClient transport for host-dependent acceptance; do not inject or fake the guest adapter, readiness, or command lifecycle.
+- Own only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/`; app source, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+
+## Recovered batch preview-review cycle 1 result
+
+- Verdict: reject. Stable high-severity/high-confidence finding `uat:guest-sdk-permit-navigation:missing:v1`: under the controller-owned actual GuestBridge fixture, 20 permit activations produce zero `Navigate` effects, so UAT-206/UAT-209 and the T-205 release gate fail.
+- Exact preview snapshot/CSP evidence otherwise passed: exactly three `{}` current requests, 10,000 equipment rows, analytical independence, last-good stale retention, 41 snapshot descendants, no RTL overflow, zero inline styles, strict CSP, and no relevant page/CSP error.
+- Supporting local suites passed 13/13 UAT and 56/56 site assertions; 10,000-row mapping was 25.94 ms. Hosted LTR and full API revoke/re-entry remain unproved and are not claimed.
+
+## Recovered batch test-authoring cycle 2
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`; stage `test-authoring-2`; tasks `T-201` through `T-205`; frozen action IDs remain `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843` in that order.
+- Added deterministic UAT using the packaged, hash-identical SimplyVibeClient and controller-supplied GuestBridge at the corrected synthetic parent origin `https://milgam.ylm.co.il`; no injected adapter/readiness and no tenant/network traffic.
+- Verdict: approve for deterministic test authoring. UAT passed 16/16, app regression passed 59/59, and controller protocol fixture passed 2/2 on Node.js v20.20.2.
+- Closed the cycle-1 UAT fingerprint `uat:guest-sdk-permit-navigation:missing:v1` locally: exact Navigate reaches GuestBridge, old pending commands have zero effects after session rotation, and fresh generation 2 succeeds. Synthetic error-body markers remain absent from logs and serialized errors.
+- Exact deployed-preview browser behavior, viewports/CSP network evidence, and real tenant permission configuration remain final-review gates and are not claimed here.

@@ -76,6 +76,21 @@ function validateHostContextShape(context, hostOrigin) {
   }
 }
 
+export function contextFromSdk(context, hostOrigin, client, ClientConstructor = globalThis.SimplyVibeClient) {
+  if (typeof ClientConstructor !== "function" || !(client instanceof ClientConstructor)) {
+    console.warn(LOG_PREFIX, "Rejected SDK context: unverified client instance");
+    return null;
+  }
+  if (!isAllowedOrigin(hostOrigin) || !validateHostContextShape(context, hostOrigin)) {
+    console.warn(LOG_PREFIX, "Rejected SDK context: invalid runtime context", summarizeContext(context));
+    return null;
+  }
+  const boundContext = immutableContextCopy(context, hostOrigin);
+  boundContexts.set(boundContext, { active: true, generation: ++nextGeneration, client });
+  console.info(LOG_PREFIX, "Accepted SDK context", summarizeContext(context));
+  return boundContext;
+}
+
 export function isBoundHostContext(context) {
   return Boolean(context && typeof context === "object" && boundContexts.get(context)?.active === true);
 }

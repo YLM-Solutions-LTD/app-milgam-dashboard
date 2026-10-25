@@ -1,4 +1,4 @@
-import { createApiClient, sanitizeValue } from "./api-client.js";
+import { createApiClient } from "./api-client.js";
 import { loadDashboard, loadPeriods } from "./dashboard-data.js";
 import { selectLatestPeriod } from "./data-mappers.js";
 
@@ -309,14 +309,13 @@ function currentErrorGuard(predicate) {
   return (context, event) => event.requestId === context.requestId && predicate(event.error);
 }
 
-function sanitizeError(error, accessToken) {
-  const secrets = [accessToken].filter(Boolean);
+function sanitizeError(error) {
   return {
     name: typeof error?.name === "string" ? error.name : "Error",
     kind: typeof error?.kind === "string" ? error.kind : "unknown",
     dataset: typeof error?.dataset === "string" ? error.dataset : "unknown",
     status: Number.isInteger(error?.status) ? error.status : null,
-    body: sanitizeValue(error?.body ?? null, secrets),
-    detail: sanitizeValue(error?.detail ?? null, secrets)
+    bodyBytes: Number.isSafeInteger(error?.bodyBytes) ? error.bodyBytes : null,
+    itemCount: Number.isSafeInteger(error?.itemCount) ? error.itemCount : null
   };
 }

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "batchKey": "event-436697-batch-7b4c276304a7e351ea41",
   "appName": "milgam-dashboard",
-  "planRevision": 5,
-  "summary": "Recover the preserved browser-only Milgam dashboard release by keeping current snapshots enabled through the authorized release, making charts compatible with the enforced CSP, rerunning all snapshot and regression checks, and requiring exact-preview plus approved-host lifecycle evidence before controller release.",
+  "planRevision": 6,
+  "summary": "Recover the preserved browser-only Milgam dashboard release by packaging and binding the verified guest SDK, revoking legacy authorization with its session, keeping diagnostics body-free, preserving enabled snapshots and CSP-safe charts, and proving the corrected local-only controller fixture lifecycle before release.",
   "source": {
     "includeDescription": false,
     "actionIds": [536946, 536949, 537034, 537037, 537040, 547704, 547710, 547713, 569787, 569843]
@@ -12,7 +12,8 @@
     "Prior application changes are preserved, but prior preview rejection and blocked-batch recovery grant no release approval.",
     "The three supplied current-report Search routes and existing host ready, executeCommand, and ToDisplayDate boundaries remain the only supported browser contracts.",
     "Deployment is controller-owned and outside application implementation; exact-preview and production evidence may be collected only by later authorized stages.",
-    "An approved real SimplyLog host or controller-owned faithful harness is required to close authorization lifecycle acceptance; absence of that environment is a release blocker, not permission to bypass host validation."
+    "The supplied controller-owned GuestBridge harness is approved for protocol acceptance only when served at the corrected https://milgam.ylm.co.il/controller-host-fixture/ origin with all host/API traffic fulfilled locally and all real tenant traffic blocked.",
+    "The earlier https://ylm.ylm.co.il fixture example and resulting frame-ancestor rejection were a controller configuration error, not an application defect; existing trusted origins and CSP must not be widened."
   ],
   "tasks": [
     {
@@ -66,20 +67,26 @@
     },
     {
       "id": "T-203",
-      "title": "Protect snapshot, host, and analytical regressions",
-      "component": "Adapters, capability lifecycle, state orchestration, UI states, and deterministic suites",
-      "objective": "Rerun and extend deterministic coverage without weakening assertions so recovered changes preserve the accepted API, security, state, accessibility, and performance contracts.",
+      "title": "Bind the verified guest SDK and protect regressions",
+      "component": "Guest SDK bootstrap, adapters, capability lifecycle, diagnostics, state orchestration, and deterministic suites",
+      "objective": "Package the supplied verified guest SDK, make its private session the authority for commands and authorization lifetime, remove API response bodies from diagnostics, and rerun deterministic coverage without weakening accepted contracts.",
       "dependsOn": ["T-201", "T-202"],
       "requirements": [
         "Validate event scope cardinality/reconciliation, separate permit metrics, raw report-date delegation, and explicit loading, empty, initial-error, retry, refresh-error, and stale states without fabricated zeros.",
         "Deduplicate identical equipment facts by EquipmentId before unique population reconciliation; reject conflicting duplicates, malformed rows, and incomplete populations, and keep classification unavailable.",
         "Accept authenticated contexts only through verified parent source, approved HTTPS parent/API origins, immutable values, and a private non-forgeable capability brand; public markers or booleans are insufficient.",
+        "Package the controller-supplied hash-recorded SimplyVibeClient as a same-origin dependency, instantiate it with the exact trusted parent origin, and bind host services to that private instance; remove reliance on globalThis.SimplyVibeHostAdapter or any test-injected adapter.",
+        "Treat SDK session reset, disposal, timeout, replacement, or disconnect as revocation of the matching application capability: abort its requests, invalidate pending commands, deny new authenticated effects, and require a fresh verified SDK generation for re-entry.",
         "Bind requests, date responses, and commands to capability/request generations; revoke/abort on replacement or 401/403, retain last-good stale data, ignore late results, and require fresh verified re-entry.",
+        "Limit browser diagnostics to bounded metadata such as dataset, status, kind, byte count, and item count; never log or retain raw/parsed API bodies, snippets, personal/internal fields, credentials, or full serialized request errors.",
         "Preserve exact permit Navigate payload, single-flight activation, safe focus restoration, keyboard access, RTL/LTR semantics, current charts, permissions, and analytical date behavior.",
         "Use synthetic non-secret fixtures and keep all tests local and deterministic; do not weaken existing assertions."
       ],
       "acceptanceCriteria": [
         "All focused UAT, QC, and existing regression suites pass with the live snapshot flag true.",
+        "The production guest loads the verified same-origin client, performs the real Ready handshake, and sends the exact Navigate command through GuestBridge without an injected adapter or public host-service global.",
+        "Revoking the faithful harness session makes the legacy context unusable: a refresh sends zero old-token requests, pending work has zero late effects, and fresh re-entry is the only recovery path.",
+        "Synthetic HTTP/invalid-response bodies containing distinctive personal/internal markers are absent from console output and error serialization while safe metadata remains observable.",
         "Tests fail for a forged host-shaped object, altered snapshot request body, conflicting equipment duplicate, stale-generation commit, fabricated zero, parameterized permit URL, unsafe focus cleanup, or affected inline chart style.",
         "A 10,000-row equipment fixture maps/deduplicates within 100 ms after warm-up on the recorded runtime and produces no equipment fact-list DOM growth.",
         "A 10-refresh burst commits only generation 10, and 20 rapid permit activations yield one pending command chain."
@@ -88,6 +95,8 @@
         "Run focused API/adapter/state/host/UI tests and the full existing regression suite; record commands, runtime, totals, failures, and skips.",
         "Exercise zero, one, 1,000, 10,000, duplicate-heavy, nullable, conflicting, and malformed equipment fixtures and record decoded bytes and mapping durations.",
         "Run the negative trust matrix plus revoke/re-entry simulations, reverse-order stale responses, refresh bursts, permit bursts, removed/rerendered focus targets, and analytical period changes.",
+        "Run SDK bootstrap/integrity tests against the supplied verified client and GuestBridge: no injected adapter, exact origin, Ready correlation, session rotation/disposal, command single-flight, and generation-bound results.",
+        "Return synthetic HTTP and malformed bodies with unique sensitive markers, capture console/error output, and assert none of the markers or body snippets are exposed.",
         "Inspect fixtures and output for credentials, raw event text, signed URLs, or weakened assertions."
       ]
     },
@@ -95,23 +104,27 @@
       "id": "T-204",
       "title": "Verify the exact enabled preview",
       "component": "Exact-preview browser acceptance, responsive behavior, CSP, and performance evidence",
-      "objective": "Demonstrate that the exact artifact intended for release enables current snapshots and meets visual, interaction, network, and performance requirements in an enforcing browser environment.",
+      "objective": "Demonstrate in the corrected controller-owned fixture that the exact artifact packages the real guest command path, enables current snapshots, keeps diagnostics body-free, and meets visual, interaction, network, and performance requirements.",
       "dependsOn": ["T-203"],
       "requirements": [
-        "Use the exact release-candidate preview with the live snapshot flag true and valid non-secret fixtures or an approved host.",
+        "Serve the controller fixture only at https://milgam.ylm.co.il/controller-host-fixture/, fulfill host/API traffic locally with non-secret fixtures, block real tenant traffic, and load the exact release-candidate preview with the live snapshot flag true.",
+        "Do not add https://ylm.ylm.co.il to frame-ancestors or trusted origins; the earlier failing origin was a corrected controller-fixture mistake.",
         "Exercise all three current routes, permit navigation, independent period changes, loading/error/stale/retry states, and existing analytical workflows.",
         "Verify 390×844 and 1440×900 in RTL and LTR, keyboard flow, focus visibility, announcements, chart visibility, horizontal overflow, and console/page errors.",
         "Measure three-request concurrency, decoded bytes, 10,000-row mapping/rendering, snapshot DOM count, 10-refresh behavior, and 20-activation command behavior.",
         "Capture CSP response headers and executable network URLs; no third-party executable or relevant CSP violation is allowed."
+        ,"Inject distinctive personal/internal markers into synthetic error bodies and capture the browser console; no body field, snippet, credential, or full error object may be emitted."
       ],
       "acceptanceCriteria": [
         "The preview shows current event, permit, and equipment-total data rather than a disabled state and issues exactly three current requests per load/refresh.",
+        "SimplyVibeClient is packaged and initialized from same-origin assets, both permit controls produce exactly Navigate with {Url: '#/Permits/Dashboard'} through GuestBridge, and 20 rapid activations produce one pending command chain.",
+        "API failure console output contains safe metadata only and none of the synthetic response-body markers.",
         "All affected charts are visible at both viewports with zero relevant CSP console errors, no uncaught exception, and no third-party executable request.",
         "The ready snapshot contains at most 80 DOM elements and renders within 50 ms at both viewports; 10,000 rows map within 100 ms on the recorded runtime.",
         "Snapshot state remains independent of analytical dates; refresh and permit bursts obey generation and single-flight limits."
       ],
       "validationScenarios": [
-        "Run enabled snapshot happy path, initial failure/retry, stale refresh failure, analytical period change, and exact permit navigation in the preview.",
+        "Run enabled snapshot happy path, initial failure/retry, stale refresh failure, analytical period change, and exact permit navigation through the real packaged SDK in the preview.",
         "Record screenshots and accessibility/keyboard observations at both viewports in RTL and LTR, including all affected charts.",
         "Record browser/runtime versions, response headers, console/page errors, executable requests, route/request counts, bytes, timings, nodes, refresh winner, and command count."
       ]
@@ -120,10 +133,11 @@
       "id": "T-205",
       "title": "Prove authorization lifecycle and hand off release",
       "component": "Approved host lifecycle acceptance and controller-owned release evidence",
-      "objective": "Close the remaining authorization lifecycle gate with an approved real host or faithful controller-owned harness and provide truthful evidence for controller release and any later local-only flag revert.",
+      "objective": "Close the authorization lifecycle gate with the supplied faithful controller harness at its corrected local-only origin and provide truthful evidence for controller release and any later local-only flag revert.",
       "dependsOn": ["T-204"],
       "requirements": [
-        "Use an approved real SimplyLog test host or controller-owned faithful harness; synthetic unapproved parent messaging cannot satisfy this gate.",
+        "Use the supplied controller-owned GuestBridge harness at https://milgam.ylm.co.il/controller-host-fixture/ with locally fulfilled traffic only; synthetic injected adapters and unapproved parent messaging cannot satisfy this gate.",
+        "Preserve the existing trusted-origin and frame-ancestor policy; do not authorize the mistaken https://ylm.ylm.co.il origin and do not contact a real tenant.",
         "Revoke or expire authorization during snapshot/analytical requests and during a permit command; verify abort/denial, stale retention, and zero old-generation effects.",
         "Provide fresh verified authorization and prove a new capability generation recovers data and accepts only correctly bound command responses.",
         "Keep the live-call flag true through the single controller-owned production deployment; application work must not deploy or invoke lifecycle/provider APIs.",
@@ -133,6 +147,7 @@
         "Old-generation late API and command responses cause zero UI, network, navigation, or state effects after revocation.",
         "Last-good values remain visible as stale while new authenticated work is denied until fresh verified re-entry.",
         "Fresh authorization creates a new generation, restores current and analytical data, and rejects mismatched command responses.",
+        "Harness disconnect/session rotation revokes the legacy JSON context so post-revocation refresh and command attempts produce zero old-token requests or bridge effects.",
         "Release evidence clearly separates local tests, exact-preview results, approved-host lifecycle results, controller deployment status, and any skipped check; no unsupported approval claim is made."
       ],
       "validationScenarios": [

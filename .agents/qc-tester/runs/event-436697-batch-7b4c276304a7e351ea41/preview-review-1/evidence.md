@@ -1,28 +1,29 @@
-# Preview review 1 evidence
+# QC evidence — preview review 1, process attempt 1
 
-- Exact preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`
-- Controller-supplied head: `ea974089c5cfa402a44b99606514721807b49dd8`
-- Browser/runtime: Chromium `140.0.7339.16`; Node.js `v20.20.2`
-- Inputs: synthetic parent `postMessage`, bearer placeholder, and intercepted API fixtures only; no tenant credential, live SimplyLog request, provider call, or lifecycle mutation.
+- Exact preview: `https://02ea3f16.app-milgam-dashboard.pages.dev`
+- Expected head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`
+- Browser: Chromium `140.0.7339.16`, 1440×900
+- Controller fixture: `https://ylm.ylm.co.il/controller-host-fixture/`, served solely from the supplied read-only fixture directory with the unmodified GuestBridge. API traffic was locally blocked; no real tenant request or token was used.
 
-## Exact-preview results
+## Results by shared task
 
-- Four successful visual passes at 390×844 and 1440×900 in RTL and LTR showed no horizontal overflow or measured clipping. Snapshot DOM count was 41 in every pass (limit 80).
-- Current snapshots were enabled. Each successful load issued the three exact current POST routes concurrently (maximum measured concurrency 3), with body `{}` and the synthetic authorization header. Period selection caused zero current-route calls.
-- Initial three-route 500 failure exposed retry without numeric placeholders; retry recovered. A failed refresh retained the prior 12-event snapshot and displayed stale/retry state.
-- All three permit buttons had distinct accessible names. Keyboard Enter emitted exactly `Navigate`, `{Url: "#/Permits/Dashboard"}`, then restored focus. Twenty rapid activations while pending emitted one command and recovered after rejection without a page error.
-- Donut segments, swatches, stacked segments, and bars rendered with CSP-safe classes/SVG attributes. The affected DOM contained zero inline style attributes; every donut segment had a visible computed stroke, every swatch a non-transparent color, and every nonzero bar a nonzero width.
-- Delivered headers preserve `default-src 'self'`, `script-src 'self'`, `style-src 'self'`, `base-uri 'none'`, and `object-src 'none'`. No CSP violation or third-party executable request occurred. Console errors were limited to the deliberately injected 500 responses; abort warnings occurred when fixture contexts were closed or analytical requests superseded.
-- The 10,000-row equipment fixture displayed `10,000 פריטי ציוד`, retained 41 snapshot nodes, and created no equipment fact list. Its end-to-ready browser interval was 212.05 ms (includes fixture serialization, transfer, parsing, mapping, state work, and concurrent analytical rendering; it is not asserted as the isolated 50 ms render measurement).
+| Task | Result | Evidence |
+|---|---|---|
+| T-201 | Blocked in exact-preview host path | The document request occurred, but CSP refused the iframe before guest initialization. Therefore zero authenticated snapshot requests occurred through the required SDK path. Delivered `constants.js` exposes the flag as true; local tests pass. |
+| T-202 | Blocked in controller-host path | The app never rendered inside the fixture, so controller-host RTL/LTR charts and accessible interactions could not be accepted. The strict delivered CSP is captured in `headers.txt`. |
+| T-203 | Local regression pass only | Site 56/56, QC 25/25, UAT 13/13, controller fixture self-tests 2/2. These do not override the deployed integration failure. |
+| T-204 | Fail | Exact preview is not frameable by the supplied trusted fixture origin. Console records the enforced `frame-ancestors` refusal; frame URL becomes `chrome-error://chromewebdata/`. |
+| T-205 | Fail | Actual SDK initialization, ready, Navigate, held-command revocation, API 401 expiry, stale retention, and fresh-session recovery cannot begin because CSP blocks the guest document. Harness remains generation 1 with zero effects. |
 
-## Deterministic regression
+## Reproduction
 
-- QC: 25/25 passed. The 10,000-row mapper had five warm runs of 23.557–29.498 ms for 2,083,924 decoded bytes; the ten-refresh controller fixture committed generation 10 only.
-- Site: 56/56 passed.
-- UAT: 13/13 passed. Its 10,000-row mapper measured 26.605 ms for 1,043,924 decoded bytes.
+1. Intercept only `https://ylm.ylm.co.il/controller-host-fixture/**` and fulfill from the supplied fixture files.
+2. Navigate to `index.html?preview=https%3A%2F%2F02ea3f16.app-milgam-dashboard.pages.dev`.
+3. Wait three seconds and inspect frames, console, and `controllerHarness.state()`.
+4. Observe the preview request followed by an enforced `frame-ancestors` refusal, a `chrome-error://chromewebdata/` child frame, zero host effects, and postMessage target-origin warnings.
 
-Screenshots and structured browser data are under `evidence/`. The deployed `app.js`, `app.css`, `constants.js`, and `current-snapshot.js` bytes match the reviewed local release-candidate files by SHA-256; controller supplied the exact head identity.
+Expected: preview loads, its packaged SDK initializes, and the unmodified bridge completes readiness so lifecycle cases can run.
 
-## Remaining release gate
+Actual: CSP allows `mnt.ylm.co.il`, `simplylog.ylm.co.il`, `milgam.ylm.co.il`, and localhost origins, but not the controller-supplied `https://ylm.ylm.co.il` fixture origin.
 
-T-205 cannot be closed in this QC environment. The shared plan requires an approved real SimplyLog host or controller-owned faithful harness for authorization expiry/revocation during requests and commands, zero post-revocation effects, fresh authorized re-entry, and command-response generation binding. Synthetic messaging is explicitly insufficient. No approved host/harness was supplied, so this is reported as a blocking limitation rather than fabricated evidence.
+Artifacts: `evidence/browser-results.json`, `evidence/controller-harness-desktop.png`, `evidence/headers.txt`, and the four TAP files. No real-host or tenant-permission claim is made; no guest SDK session was fabricated.

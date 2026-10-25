@@ -1,0 +1,888 @@
+{
+  "preview": "https://02ea3f16.app-milgam-dashboard.pages.dev",
+  "expectedCommit": "3b3f8d4373ff90c2073fb4e884e1fe622a8595a0",
+  "browserVersion": "140.0.7339.16",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-ray": "a502176759032187-TLV",
+    "connection": "keep-alive",
+    "content-encoding": "br",
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 15:00:32 GMT",
+    "etag": "W/\"a12356b072c3eae1bc6353a7660cbc13\"",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "referrer-policy": "no-referrer",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KeyyJM0kkuNBv6Orj0kNINEC1MhKXSWPEVSGAo9V1WoUx1HCD%2BkGfXWMYulEVYKgDNhzP2xxgFJj98q8wGZJKpEY5HlM4FrOyhLWXvVK22Z98POZtlR6QmS9fLhocUtpkn%2FEnm10BBhnHZkT1JH3PazZWduSBn2KDwQ%3D\"}]}",
+    "server": "cloudflare",
+    "transfer-encoding": "chunked",
+    "x-content-type-options": "nosniff",
+    "x-robots-tag": "noindex"
+  },
+  "desktopRtl": {
+    "dir": "rtl",
+    "lang": "he",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nשנה\n2026\nחודש\nאוקטובר\nתווית תקופה: 10/26\nרענון נתונים\nעדכון אחרון: 25.10.2026, 15:00\nחלוקה לפי חטיבות\n128\nסניפים\n78 · 60.9%\nמטה\n50 · 39.1%\nבניין מטה מול סניפים\nמטה\n39.1%\nסניפים\n60.9%\nמטה: 50 · 39.1%\nסניפים: 78 · 60.9%\nתמהיל קריאות מטה\nאחזקה\n50\nתמהיל קריאות סניפים\nניקיון\n78\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n44\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n70\nממוצע זמן סגירה\n4.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t4.0",
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "snapshotElements": 41,
+    "scrollWidth": 1424,
+    "clientWidth": 1424,
+    "inlineStyles": [],
+    "permitLabels": [
+      "בתוקף: 92; פתיחת לוח האישורים",
+      "חסרים: 7; פתיחת לוח האישורים",
+      "באיחור: 4; פתיחת לוח האישורים"
+    ],
+    "activePermit": "missing",
+    "statusRegions": [
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "מחובר ל-SimplyLog"
+      },
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "לא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים."
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": ""
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": "חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        128\n      \n      \n    \n      \n      סניפים\n      78 · 60.9%\n    \n  \n    \n      \n      מטה\n      50 · 39.1%\n    \n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      39.1%\n    \n  \n    \n      סניפים\n      60.9%\n    \n  \n    \n    \n      מטה: 50 · 39.1%\n  \n    \n      סניפים: 78 · 60.9%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      אחזקה\n      \n      50\n    \n  \n      תמהיל קריאות סניפים\n    \n      ניקיון\n      \n      78\n    \n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          44\n        \n        \n          ממוצע זמן סגירה\n          2.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          אחזקה2.0\n        \n      \n    \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          70\n        \n        \n          ממוצע זמן סגירה\n          4.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          ניקיון4.0"
+      }
+    ],
+    "chartRects": [
+      {
+        "cls": "donut-layout",
+        "w": 510,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "donut",
+        "w": 196,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 196,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgb(36, 87, 214)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgb(25, 143, 130)"
+      },
+      {
+        "cls": "donut-total",
+        "w": 101.9375,
+        "h": 101.9375,
+        "background": "none",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 211.65625,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 329.28125,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 329.28125,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(36, 87, 214), rgb(63, 129, 232))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 26.6875,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 211.65625,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 329.28125,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 329.28125,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(19, 121, 111), rgb(44, 169, 154))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 26.6875,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "harness": {
+      "authorized": true,
+      "generation": 1,
+      "effects": []
+    },
+    "hash": "",
+    "calls": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEvents"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentPermits"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEquipment"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByMonth"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByDivision"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardSummary"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByCategory"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardClosureByCategory"
+      }
+    ],
+    "consoleMessages": [
+      "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+      "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedPeriod: null, hasRuntime: false, requestStage: null}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.app] State machine started",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Parsing JSON message payload",
+      "info: [milgam-dashboard.host-context] Accepted host message {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.host-context] Host context accepted",
+      "info: [milgam-dashboard.app] Host context callback invoked {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.app] Locale applied {lang: he, dir: rtl}",
+      "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+      "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedPeriod: null, hasRuntime: true, requestStage: periods}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Unwrapping nested payload {wrapper: payload}",
+      "warning: [milgam-dashboard.host-context] Invalid host context {reason: missing ApiAddress or access token}",
+      "warning: [milgam-dashboard.host-context] Rejected host message: invalid runtime context {ApiAddress: null, tokenType: null, hasAccessToken: false, LanguageCode: null, CultureInfo: null}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 84}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+      "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+      "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+      "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 107}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 361}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 228}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 376}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+      "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+    ],
+    "pageErrors": [],
+    "executable": [
+      "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+      "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js"
+    ]
+  },
+  "mobileRtl": {
+    "dir": "rtl",
+    "lang": "he",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nשנה\n2026\nחודש\nאוקטובר\nתווית תקופה: 10/26\nרענון נתונים\nעדכון אחרון: 25.10.2026, 15:00\nחלוקה לפי חטיבות\n128\nסניפים\n78 · 60.9%\nמטה\n50 · 39.1%\nבניין מטה מול סניפים\nמטה\n39.1%\nסניפים\n60.9%\nמטה: 50 · 39.1%\nסניפים: 78 · 60.9%\nתמהיל קריאות מטה\nאחזקה\n50\nתמהיל קריאות סניפים\nניקיון\n78\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n44\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n70\nממוצע זמן סגירה\n4.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t4.0",
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "snapshotElements": 41,
+    "scrollWidth": 374,
+    "clientWidth": 374,
+    "inlineStyles": [],
+    "permitLabels": [
+      "בתוקף: 92; פתיחת לוח האישורים",
+      "חסרים: 7; פתיחת לוח האישורים",
+      "באיחור: 4; פתיחת לוח האישורים"
+    ],
+    "activePermit": "missing",
+    "statusRegions": [
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "מחובר ל-SimplyLog"
+      },
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "לא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים."
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": ""
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": "חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        128\n      \n      \n    \n      \n      סניפים\n      78 · 60.9%\n    \n  \n    \n      \n      מטה\n      50 · 39.1%\n    \n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      39.1%\n    \n  \n    \n      סניפים\n      60.9%\n    \n  \n    \n    \n      מטה: 50 · 39.1%\n  \n    \n      סניפים: 78 · 60.9%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      אחזקה\n      \n      50\n    \n  \n      תמהיל קריאות סניפים\n    \n      ניקיון\n      \n      78\n    \n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          44\n        \n        \n          ממוצע זמן סגירה\n          2.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          אחזקה2.0\n        \n      \n    \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          70\n        \n        \n          ממוצע זמן סגירה\n          4.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          ניקיון4.0"
+      }
+    ],
+    "chartRects": [
+      {
+        "cls": "donut-layout",
+        "w": 244,
+        "h": 278.390625,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "donut",
+        "w": 210,
+        "h": 210,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 210,
+        "h": 210,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 159.15501403808594,
+        "h": 159.155029296875,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 159.15501403808594,
+        "h": 159.155029296875,
+        "background": "none",
+        "backgroundColor": "rgb(36, 87, 214)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 159.15501403808594,
+        "h": 159.155029296875,
+        "background": "none",
+        "backgroundColor": "rgb(25, 143, 130)"
+      },
+      {
+        "cls": "donut-total",
+        "w": 109.21875,
+        "h": 109.21875,
+        "background": "none",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 324,
+        "h": 69.375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 324,
+        "h": 69.375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 312.8125,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 324,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 324,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(36, 87, 214), rgb(63, 129, 232))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 312.8125,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 324,
+        "h": 69.375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 324,
+        "h": 69.375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 312.8125,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 324,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 324,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(19, 121, 111), rgb(44, 169, 154))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 312.8125,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "harness": {
+      "authorized": true,
+      "generation": 1,
+      "effects": []
+    },
+    "hash": "",
+    "calls": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEvents"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentPermits"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEquipment"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByMonth"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByDivision"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardSummary"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByCategory"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardClosureByCategory"
+      }
+    ],
+    "consoleMessages": [
+      "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+      "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedPeriod: null, hasRuntime: false, requestStage: null}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.app] State machine started",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Parsing JSON message payload",
+      "info: [milgam-dashboard.host-context] Accepted host message {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.host-context] Host context accepted",
+      "info: [milgam-dashboard.app] Host context callback invoked {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.app] Locale applied {lang: he, dir: rtl}",
+      "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+      "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedPeriod: null, hasRuntime: true, requestStage: periods}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Unwrapping nested payload {wrapper: payload}",
+      "warning: [milgam-dashboard.host-context] Invalid host context {reason: missing ApiAddress or access token}",
+      "warning: [milgam-dashboard.host-context] Rejected host message: invalid runtime context {ApiAddress: null, tokenType: null, hasAccessToken: false, LanguageCode: null, CultureInfo: null}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 84}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+      "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+      "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+      "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 107}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 361}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 228}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 376}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+      "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+    ],
+    "pageErrors": [],
+    "executable": [
+      "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+      "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js"
+    ]
+  },
+  "desktopLtr": {
+    "dir": "ltr",
+    "lang": "en",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nשנה\n2026\nחודש\nאוקטובר\nתווית תקופה: 10/26\nרענון נתונים\nעדכון אחרון: 25.10.2026, 15:00\nחלוקה לפי חטיבות\n128\nסניפים\n78 · 60.9%\nמטה\n50 · 39.1%\nבניין מטה מול סניפים\nמטה\n39.1%\nסניפים\n60.9%\nמטה: 50 · 39.1%\nסניפים: 78 · 60.9%\nתמהיל קריאות מטה\nאחזקה\n50\nתמהיל קריאות סניפים\nניקיון\n78\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n44\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n70\nממוצע זמן סגירה\n4.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t4.0",
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.\nאירועים בכל התקופות\nכלל האתרים\n128 סה״כ · 14 פתוחים\nמטה\n50 סה״כ · 6 פתוחים\nסניפים\n78 סה״כ · 8 פתוחים\nאישורים\nבתוקף\n92\nפתיחת לוח האישורים\nחסרים\n7\nפתיחת לוח האישורים\nבאיחור\n4\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "snapshotElements": 41,
+    "scrollWidth": 1424,
+    "clientWidth": 1424,
+    "inlineStyles": [],
+    "permitLabels": [
+      "בתוקף: 92; פתיחת לוח האישורים",
+      "חסרים: 7; פתיחת לוח האישורים",
+      "באיחור: 4; פתיחת לוח האישורים"
+    ],
+    "activePermit": "missing",
+    "statusRegions": [
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "מחובר ל-SimplyLog"
+      },
+      {
+        "role": "status",
+        "live": "polite",
+        "text": "לא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים."
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": ""
+      },
+      {
+        "role": null,
+        "live": "polite",
+        "text": "חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        128\n      \n      \n    \n      \n      סניפים\n      78 · 60.9%\n    \n  \n    \n      \n      מטה\n      50 · 39.1%\n    \n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      39.1%\n    \n  \n    \n      סניפים\n      60.9%\n    \n  \n    \n    \n      מטה: 50 · 39.1%\n  \n    \n      סניפים: 78 · 60.9%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      אחזקה\n      \n      50\n    \n  \n      תמהיל קריאות סניפים\n    \n      ניקיון\n      \n      78\n    \n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          44\n        \n        \n          ממוצע זמן סגירה\n          2.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          אחזקה2.0\n        \n      \n    \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          70\n        \n        \n          ממוצע זמן סגירה\n          4.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          ניקיון4.0"
+      }
+    ],
+    "chartRects": [
+      {
+        "cls": "donut-layout",
+        "w": 510,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "donut",
+        "w": 196,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 196,
+        "h": 196,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgb(36, 87, 214)"
+      },
+      {
+        "cls": "[object SVGAnimatedString]",
+        "w": 148.544677734375,
+        "h": 148.544677734375,
+        "background": "none",
+        "backgroundColor": "rgb(25, 143, 130)"
+      },
+      {
+        "cls": "donut-total",
+        "w": 101.9375,
+        "h": 101.9375,
+        "background": "none",
+        "backgroundColor": "rgb(255, 255, 255)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 211.65625,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 329.28125,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 329.28125,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(36, 87, 214), rgb(63, 129, 232))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 26.6875,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-list",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-row",
+        "w": 590,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-label",
+        "w": 211.65625,
+        "h": 19,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-track",
+        "w": 329.28125,
+        "h": 10,
+        "background": "none",
+        "backgroundColor": "rgb(231, 235, 243)"
+      },
+      {
+        "cls": "bar-fill magnitude-20",
+        "w": 329.28125,
+        "h": 10,
+        "background": "linear-gradient(90deg, rgb(19, 121, 111), rgb(44, 169, 154))",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "cls": "bar-count",
+        "w": 26.6875,
+        "h": 18,
+        "background": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "harness": {
+      "authorized": true,
+      "generation": 1,
+      "effects": []
+    },
+    "hash": "",
+    "calls": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEvents"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentPermits"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "body": "{}",
+        "key": "MilgamDashboardCurrentEquipment"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByMonth"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByDivision"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardSummary"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardByCategory"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+        "key": "MilgamDashboardClosureByCategory"
+      }
+    ],
+    "consoleMessages": [
+      "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+      "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedPeriod: null, hasRuntime: false, requestStage: null}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.app] State machine started",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Parsing JSON message payload",
+      "info: [milgam-dashboard.host-context] Accepted host message {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.host-context] Host context accepted",
+      "info: [milgam-dashboard.app] Host context callback invoked {ApiAddress: https://api.ylm.co.il, tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null}",
+      "info: [milgam-dashboard.app] Locale applied {lang: he, dir: rtl}",
+      "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+      "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedPeriod: null, hasRuntime: true, requestStage: periods}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+      "info: [milgam-dashboard.host-context] Message event received {origin: https://milgam.ylm.co.il}",
+      "info: [milgam-dashboard.host-context] Unwrapping nested payload {wrapper: payload}",
+      "warning: [milgam-dashboard.host-context] Invalid host context {reason: missing ApiAddress or access token}",
+      "warning: [milgam-dashboard.host-context] Rejected host message: invalid runtime context {ApiAddress: null, tokenType: null, hasAccessToken: false, LanguageCode: null, CultureInfo: null}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 84}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+      "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+      "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+      "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, url: https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 107}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 361}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 228}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 376}",
+      "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+      "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+      "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+      "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedPeriod: Object, hasRuntime: true, requestStage: dashboard}",
+      "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+    ],
+    "pageErrors": [],
+    "executable": [
+      "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+      "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js"
+    ]
+  }
+}

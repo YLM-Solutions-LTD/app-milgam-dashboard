@@ -1,48 +1,55 @@
 const { chromium } = require('/usr/local/lib/node_modules/@playwright/test/node_modules/playwright');
 const fs = require('node:fs');
+const path = require('node:path');
 const assert = require('node:assert/strict');
-
-const PREVIEW = 'https://275c4e6f.app-milgam-dashboard.pages.dev';
-const OUT = __dirname + '/evidence';
-const TOKEN = 'synthetic-qc-token';
-const result = { preview: PREVIEW, expectedHead: 'ea974089c5cfa402a44b99606514721807b49dd8', scenarios: [], requests: [], console: [], pageErrors: [], executableRequests: [] };
-
-const analytical = {
-  MilgamDashboardByMonth:{Items:[{Year:2026,Month:9,Label:'9/26',EventCount:5}],TotalCount:1},
-  MilgamDashboardByDivision:{Items:[{DivisionName:'חטיבה א',EventCount:3},{DivisionName:'חטיבה ב',EventCount:2}],TotalCount:2},
-  MilgamDashboardSummary:{Items:[{ScopeKey:'headquarters',ScopeLabel:'מטה',ScopeOrder:1,EventCount:3,ClosedCount:2,EligibleDurationCount:1,InvalidDurationCount:1,AverageCloseDays:2},{ScopeKey:'branches',ScopeLabel:'סניפים',ScopeOrder:2,EventCount:2,ClosedCount:1,EligibleDurationCount:1,InvalidDurationCount:0,AverageCloseDays:4}],TotalCount:2},
-  MilgamDashboardByCategory:{Items:[{ScopeKey:'headquarters',ScopeLabel:'מטה',ScopeOrder:1,CategoryName:'אחזקה',EventCount:3},{ScopeKey:'branches',ScopeLabel:'סניפים',ScopeOrder:2,CategoryName:'ניקיון',EventCount:2}],TotalCount:2},
-  MilgamDashboardClosureByCategory:{Items:[{ScopeKey:'headquarters',ScopeLabel:'מטה',ScopeOrder:1,CategoryName:'אחזקה',ClosedCount:2,EligibleDurationCount:1,InvalidDurationCount:1,AverageCloseDays:2},{ScopeKey:'branches',ScopeLabel:'סניפים',ScopeOrder:2,CategoryName:'ניקיון',ClosedCount:1,EligibleDurationCount:1,InvalidDurationCount:0,AverageCloseDays:4}],TotalCount:2}
-};
-function equipment(n=1){return {Items:Array.from({length:n},(_,i)=>({EquipmentId:i+1,LocationEntityId:1,LocationEntityType:1,LocationPath:'1,1',EquipmentTypeId:3,IsActive:true,TreatmentDaysInterval:null,NextTreatmentDate:null,LastTreatmentEventId:null,LastTreatmentDate:null,LastTreatmentSeverityId:null,LastTreatmentStatus:null,TreatmentCategoryId:null,ValidTreatmentSeverityId:null,AsOf:'2026-10-25T12:00:00'})),TotalCount:n};}
-function fixtures(n=1){return {...analytical,
-  MilgamDashboardCurrentEvents:{Items:[{ScopeKey:'overall',TotalCount:12,OpenCount:5,AsOf:'2026-10-25T12:00:00'},{ScopeKey:'headquarters',TotalCount:4,OpenCount:2,AsOf:'2026-10-25T12:00:00'},{ScopeKey:'branches',TotalCount:8,OpenCount:3,AsOf:'2026-10-25T12:00:00'}],TotalCount:3},
-  MilgamDashboardCurrentPermits:{Items:[{ValidCount:7,MissingCount:2,OverdueCount:1,AsOf:'2026-10-25T12:00:00',ValueDate:'2026-10-25'}],TotalCount:1},
-  MilgamDashboardCurrentEquipment:equipment(n)};}
-function key(url){return Object.keys(fixtures()).find(k=>url.includes(`/api/Entity/${k}/Search`));}
-
-async function harness(browser,{dir='rtl',viewport={width:390,height:844},equipmentCount=1,failCurrent=0,delayCurrent=30,delayNav=false}={}){
-  const context=await browser.newContext({viewport,ignoreHTTPSErrors:true}); const page=await context.newPage();
-  const state={failCurrent,delayCurrent,settled:[],inflight:0,maxInflight:0,navPending:delayNav};
-  page.on('console',m=>{if(['error','warning'].includes(m.type()))result.console.push({type:m.type(),text:m.text()});});
-  page.on('pageerror',e=>result.pageErrors.push(String(e)));
-  page.on('request',r=>{if(['script','worker'].includes(r.resourceType()))result.executableRequests.push(r.url());});
-  await page.addInitScript(({delayNav})=>{globalThis.__qcHostCalls=[];globalThis.SimplyVibeHostAdapter={ready:async()=>{globalThis.__qcHostCalls.push({method:'ready'});},executeCommand:async(name,parameter)=>{globalThis.__qcHostCalls.push({method:'executeCommand',name,parameter});if(delayNav)return new Promise((resolve,reject)=>{globalThis.__qcResolveNav=resolve;globalThis.__qcRejectNav=reject;});},ToDisplayDate:value=>{globalThis.__qcHostCalls.push({method:'ToDisplayDate',value});return `DISPLAY(${value})`;}};},{delayNav});
-  await page.route('https://localhost:5500/**',r=>r.fulfill({status:200,contentType:'text/html',body:`<!doctype html><iframe id="app" src="${PREVIEW}" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>`}));
-  await page.route('https://localhost:5721/**',async r=>{const req=r.request(),k=key(req.url()),isCurrent=k?.includes('Current');const started=performance.now();if(isCurrent){state.inflight++;state.maxInflight=Math.max(state.maxInflight,state.inflight);}result.requests.push({key:k,method:req.method(),body:req.postData(),authorization:req.headers().authorization||null,started});if(isCurrent&&state.delayCurrent)await new Promise(x=>setTimeout(x,state.delayCurrent));if(isCurrent)state.inflight--;if(isCurrent&&state.failCurrent-->0)return r.fulfill({status:500,contentType:'application/json',body:'{"error":"synthetic"}',headers:{'access-control-allow-origin':PREVIEW}});const f=fixtures(equipmentCount)[k];return r.fulfill({status:f?200:404,contentType:'application/json',body:JSON.stringify(f||{}),headers:{'access-control-allow-origin':PREVIEW,'access-control-allow-headers':'authorization,content-type'}});});
-  await page.goto('https://localhost:5500/harness');const frame=page.frames().find(f=>f.url().startsWith(PREVIEW));assert(frame);
-  await frame.waitForLoadState('domcontentloaded');await page.locator('#app').evaluate((el,p)=>el.contentWindow.postMessage(p.payload,p.target),{target:PREVIEW,payload:{ApiAddress:'https://localhost:5721',Token:{access_token:TOKEN,token_type:'Bearer'},LanguageCode:dir==='rtl'?'he':'en',LanguageDirection:dir,ApplicationName:'QC'}});
-  return {context,page,frame,state};
-}
-async function ready(frame){await frame.locator('#snapshot-content .snapshot-grid').waitFor({timeout:20000});await frame.locator('#dashboard .dashboard-grid').first().waitFor({timeout:20000});}
-async function audit(frame){return frame.evaluate(()=>{const all=[...document.querySelectorAll('body *')],overflow=all.filter(e=>{const r=e.getBoundingClientRect();return r.left < -1||r.right>innerWidth+1;}).map(e=>({tag:e.tagName,cls:String(e.className),left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right})).slice(0,10);return {dir:document.documentElement.dir,lang:document.documentElement.lang,innerWidth,scrollWidth:document.documentElement.scrollWidth,overflow,snapshotNodes:document.querySelector('#snapshot-region').querySelectorAll('*').length,inlineStyles:all.filter(e=>e.hasAttribute('style')).map(e=>({tag:e.tagName,cls:String(e.className)})),donut:[...document.querySelectorAll('.donut-segment')].map(e=>({dash:e.getAttribute('stroke-dasharray'),stroke:getComputedStyle(e).stroke})),bars:[...document.querySelectorAll('.bar-fill')].map(e=>({width:e.getBoundingClientRect().width,class:e.className})),swatches:[...document.querySelectorAll('.swatch')].map(e=>getComputedStyle(e).backgroundColor),focused:document.activeElement?.outerHTML?.slice(0,160)};});}
-
-(async()=>{fs.mkdirSync(OUT,{recursive:true});const browser=await chromium.launch({headless:true,executablePath:'/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell'});result.chromium=await browser.version();
-try{
-  for(const spec of [{name:'mobile-rtl',dir:'rtl',viewport:{width:390,height:844}},{name:'mobile-ltr',dir:'ltr',viewport:{width:390,height:844}},{name:'desktop-rtl',dir:'rtl',viewport:{width:1440,height:900}},{name:'desktop-ltr',dir:'ltr',viewport:{width:1440,height:900}}]){const h=await harness(browser,spec);await ready(h.frame);const a=await audit(h.frame);assert.equal(a.dir,spec.dir);assert.equal(a.scrollWidth,a.innerWidth);assert.equal(a.overflow.length,0);assert(a.snapshotNodes<=80);assert.equal(a.inlineStyles.length,0);assert(a.donut.length>0&&a.donut.every(x=>x.stroke!=='none'));assert(a.bars.length>0&&a.bars.every(x=>x.width>0));assert(a.swatches.every(x=>x!=='rgba(0, 0, 0, 0)'));const names=await h.frame.locator('[data-permit]').evaluateAll(es=>es.map(e=>e.getAttribute('aria-label')));assert.equal(new Set(names).size,3);await h.frame.locator('[data-permit="valid"]').focus();await h.frame.locator('[data-permit="valid"]').press('Enter');await h.frame.waitForTimeout(50);const calls=await h.frame.evaluate(()=>globalThis.__qcHostCalls);assert.deepEqual(calls.filter(x=>x.method==='executeCommand').at(-1),{method:'executeCommand',name:'Navigate',parameter:{Url:'#/Permits/Dashboard'}});assert(await h.frame.locator('[data-permit="valid"]').evaluate(e=>document.activeElement===e));await h.page.screenshot({path:`${OUT}/${spec.name}.png`,fullPage:true});result.scenarios.push({...spec,audit:a,maxCurrentConcurrency:h.state.maxInflight,permitNames:names});await h.context.close();}
-  const before=result.requests.length,h=await harness(browser,{failCurrent:3});await h.frame.locator('[data-snapshot-retry]').waitFor({timeout:15000});assert.equal((await h.frame.locator('#snapshot-content').innerText()).trim(),'');await h.frame.locator('[data-snapshot-retry]').click();await ready(h.frame);const reqs=result.requests.slice(before).filter(x=>x.key?.includes('Current'));assert.equal(reqs.length,6);assert(reqs.every(x=>x.body==='{}'));result.scenarios.push({name:'initial-failure-retry',currentRequests:reqs.length,recovered:true});await h.context.close();
-  const p=await harness(browser,{});await ready(p.frame);const count0=result.requests.filter(x=>x.key?.includes('Current')).length;await p.frame.locator('#year-select').selectOption('2026');await p.frame.waitForTimeout(100);assert.equal(result.requests.filter(x=>x.key?.includes('Current')).length,count0);p.state.failCurrent=3;await p.frame.locator('#snapshot-refresh').click();await p.frame.locator('[data-snapshot-retry]').waitFor();assert((await p.frame.locator('#snapshot-content').innerText()).includes('12'));result.scenarios.push({name:'period-independent-stale-refresh',periodCurrentDelta:0,lastGoodRetained:true});await p.context.close();
-  const n=await harness(browser,{delayNav:true});await ready(n.frame);await n.frame.locator('[data-permit]').first().evaluate(b=>{for(let i=0;i<20;i++)b.click();});await n.frame.waitForTimeout(50);let calls=await n.frame.evaluate(()=>globalThis.__qcHostCalls);assert.equal(calls.filter(x=>x.method==='executeCommand').length,1);await n.frame.evaluate(()=>globalThis.__qcRejectNav(new Error('synthetic')));await n.frame.waitForTimeout(50);assert(await n.frame.locator('[data-permit]').evaluateAll(es=>es.every(e=>!e.disabled)));result.scenarios.push({name:'permit-burst',activations:20,commands:1,recovered:true});await n.context.close();
-  const perf=await harness(browser,{equipmentCount:10000,delayCurrent:0,viewport:{width:1440,height:900}});const t0=performance.now();await ready(perf.frame);const elapsed=performance.now()-t0;const pa=await audit(perf.frame);assert(pa.snapshotNodes<=80);assert(!(await perf.frame.locator('#snapshot-content').innerText()).includes('10000\n'));result.scenarios.push({name:'equipment-10000-browser',readyWaitMs:elapsed,snapshotNodes:pa.snapshotNodes,totalShown:(await perf.frame.locator('.equipment-total').innerText()).trim()});await perf.context.close();
-  const current=result.requests.filter(x=>x.key?.includes('Current'));assert(current.every(x=>x.method==='POST'&&x.body==='{}'&&x.authorization===`Bearer ${TOKEN}`));assert.equal(result.pageErrors.length,0);const csp=result.console.filter(x=>/content security policy|refused to apply inline style/i.test(x.text));assert.equal(csp.length,0);assert(result.executableRequests.every(u=>new URL(u).origin===new URL(PREVIEW).origin));
-}finally{await browser.close();}fs.writeFileSync(`${OUT}/browser-results.json`,JSON.stringify(result,null,2));console.log(JSON.stringify({ok:true,chromium:result.chromium,scenarios:result.scenarios.length,requests:result.requests.length,console:result.console.length,pageErrors:result.pageErrors.length},null,2));})().catch(e=>{result.failure={message:e.message,stack:e.stack};fs.mkdirSync(OUT,{recursive:true});fs.writeFileSync(`${OUT}/browser-results.json`,JSON.stringify(result,null,2));console.error(e);process.exitCode=1;});
+const PREVIEW = 'https://02ea3f16.app-milgam-dashboard.pages.dev';
+const HEAD = '3b3f8d4373ff90c2073fb4e884e1fe622a8595a0';
+const HOST = 'https://ylm.ylm.co.il/controller-host-fixture/';
+const FIXTURE = '/workspace/.simplyvibe/input/controller-host-harness';
+const OUT = path.join(__dirname, 'evidence');
+const result = { preview: PREVIEW, expectedHead: HEAD, host: HOST, console: [], pageErrors: [], requests: [], frames: [], finding: null };
+const mime = p => p.endsWith('.html') ? 'text/html' : p.endsWith('.js') ? 'text/javascript' : 'application/octet-stream';
+(async () => {
+  fs.mkdirSync(OUT, { recursive: true });
+  const browser = await chromium.launch({ headless: true, executablePath: '/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell' });
+  result.chromium = await browser.version();
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+  page.on('console', m => result.console.push({ type: m.type(), text: m.text() }));
+  page.on('pageerror', e => result.pageErrors.push(String(e)));
+  page.on('request', r => result.requests.push({ url: r.url(), type: r.resourceType(), method: r.method() }));
+  await page.route('https://ylm.ylm.co.il/controller-host-fixture/**', route => {
+    const pathname = new URL(route.request().url()).pathname;
+    const rel = pathname.slice('/controller-host-fixture/'.length) || 'index.html';
+    const full = path.resolve(FIXTURE, rel);
+    assert(full.startsWith(FIXTURE + path.sep));
+    route.fulfill({ status: 200, contentType: mime(full), body: fs.readFileSync(full) });
+  });
+  await page.route('https://api.ylm.co.il/**', route => route.abort('blockedbyclient'));
+  await page.goto(HOST + 'index.html?preview=' + encodeURIComponent(PREVIEW), { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(3000);
+  result.frames = page.frames().map(f => f.url());
+  result.hostState = await page.evaluate(() => window.controllerHarness?.state());
+  result.guestLoaded = result.frames.some(u => u.startsWith(PREVIEW));
+  result.cspFrameErrors = result.console.filter(x => /content security policy|frame-ancestors|refused to frame/i.test(x.text));
+  await page.screenshot({ path: path.join(OUT, 'controller-harness-desktop.png'), fullPage: true });
+  if (!result.guestLoaded) {
+    result.finding = { fingerprint: 'qc-controller-harness-frame-ancestor-missing-v1', actual: 'The exact preview is refused inside the controller fixture before SDK initialization.', expected: 'The preview loads in the supplied trusted controller fixture and completes the real SDK handshake.' };
+  } else {
+    const guest = page.frames().find(f => f.url().startsWith(PREVIEW));
+    result.connectionText = await guest.locator('#connection-status').innerText().catch(() => '');
+    result.snapshotText = await guest.locator('#snapshot-region').innerText().catch(() => '');
+    result.finding = { fingerprint: 'qc-real-sdk-bootstrap-missing-v1', actual: 'The guest loads but does not complete the real SDK handshake or render authenticated snapshot data.', expected: 'The deployed guest packages/instantiates the verified SDK and becomes ready through its protocol.' };
+  }
+  await context.close();
+  await browser.close();
+  fs.writeFileSync(path.join(OUT, 'browser-results.json'), JSON.stringify(result, null, 2));
+  console.log(JSON.stringify({ ok: false, chromium: result.chromium, guestLoaded: result.guestLoaded, finding: result.finding.fingerprint }, null, 2));
+  process.exitCode = 1;
+})().catch(e => {
+  result.failure = { message: e.message, stack: e.stack };
+  fs.mkdirSync(OUT, { recursive: true });
+  fs.writeFileSync(path.join(OUT, 'browser-results.json'), JSON.stringify(result, null, 2));
+  console.error(e);
+  process.exitCode = 1;
+});

@@ -1,0 +1,104 @@
+{
+  "preview": "https://02ea3f16.app-milgam-dashboard.pages.dev",
+  "head": "3b3f8d4373ff90c2073fb4e884e1fe622a8595a0",
+  "browser": "140.0.7339.16",
+  "harness": "controller-host-harness",
+  "headers": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+  },
+  "executableRequests": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js"
+  ],
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "currentCalls": 3,
+      "startSpreadMs": 4.888695999999982,
+      "exactBodies": true,
+      "snapshotStable": true,
+      "currentCallsOnMonth": 0,
+      "renderMs": 525.1154999999999,
+      "decodedBytes": 914331,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "domCount": 41,
+        "inlineStyles": 0,
+        "svgCount": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "currentCalls": 3,
+      "startSpreadMs": 4.401012000000037,
+      "exactBodies": true,
+      "snapshotStable": true,
+      "currentCallsOnMonth": 0,
+      "renderMs": 521.959783,
+      "decodedBytes": 914331,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "domCount": 41,
+        "inlineStyles": 0,
+        "svgCount": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "permit-burst",
+      "harness": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "errors": []
+    },
+    {
+      "name": "stale-refresh",
+      "retained": true,
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "console:Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "console:Failed to load resource: the server responded with a status of 403 (Forbidden)"
+      ]
+    },
+    {
+      "name": "command-revoke",
+      "harness": {
+        "authorized": false,
+        "generation": 1,
+        "effects": []
+      },
+      "hash": "",
+      "errors": []
+    },
+    {
+      "name": "direct-timeout",
+      "apiRequests": 0
+    }
+  ]
+}

@@ -9,13 +9,14 @@ function sanitizeEndpoint(endpoint) {
 }
 
 export class DashboardRequestError extends Error {
-  constructor({ kind, dataset, status = null, body = null, detail = null }) {
+  constructor({ kind, dataset, status = null, bodyBytes = null, itemCount = null, detail = null }) {
     super(buildSafeMessage(kind, dataset, status));
     this.name = "DashboardRequestError";
     this.kind = kind;
     this.dataset = dataset;
     this.status = status;
-    this.body = body;
+    this.bodyBytes = bodyBytes;
+    this.itemCount = itemCount;
     this.detail = detail;
   }
 
@@ -25,7 +26,8 @@ export class DashboardRequestError extends Error {
       kind: this.kind,
       dataset: this.dataset,
       status: this.status,
-      body: this.body,
+      bodyBytes: this.bodyBytes,
+      itemCount: this.itemCount,
       detail: this.detail,
       message: this.message
     };
@@ -89,12 +91,8 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
         console.warn(LOG_PREFIX, "Request aborted", { dataset });
         throw new DashboardRequestError({ kind: "aborted", dataset });
       }
-      console.error(LOG_PREFIX, "Network error", { dataset, detail: sanitizeValue(error?.message || "Network request failed", secrets) });
-      throw new DashboardRequestError({
-        kind: "network",
-        dataset,
-        detail: sanitizeValue(error?.message || "Network request failed", secrets)
-      });
+      console.error(LOG_PREFIX, "Network error", { dataset, kind: "network" });
+      throw new DashboardRequestError({ kind: "network", dataset });
     }
 
     observeAuthorization(response);
@@ -107,10 +105,6 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
 
     const sanitizedRawBody = sanitizeValue(rawBody, secrets);
     const parsed = tryParseJson(rawBody);
-    const sanitizedBody = parsed.ok
-      ? sanitizeValue(parsed.value, secrets)
-      : sanitizedRawBody;
-
     console.info(LOG_PREFIX, "Response received", {
       dataset,
       status: response.status,
@@ -119,26 +113,22 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
     });
 
     if (!response.ok) {
-      console.error(LOG_PREFIX, "HTTP error", {
-        dataset,
-        status: response.status,
-        body: sanitizeValue(sanitizedBody, secrets)
-      });
+      console.error(LOG_PREFIX, "HTTP error", { dataset, status: response.status, bodyBytes: rawBody.length });
       throw new DashboardRequestError({
         kind: "http",
         dataset,
         status: response.status,
-        body: sanitizedBody
+        bodyBytes: rawBody.length
       });
     }
 
     if (!parsed.ok) {
-      console.error(LOG_PREFIX, "Invalid JSON response", { dataset, bodySnippet: String(sanitizedRawBody).slice(0, 180) });
+      console.error(LOG_PREFIX, "Invalid JSON response", { dataset, status: response.status, bodyBytes: rawBody.length });
       throw new DashboardRequestError({
         kind: "invalid-response",
         dataset,
         status: response.status,
-        body: sanitizedRawBody,
+        bodyBytes: rawBody.length,
         detail: "Response was not valid JSON"
       });
     }
@@ -163,14 +153,13 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
       });
     } catch (error) {
       if (signal?.aborted || error?.name === "AbortError") throw new DashboardRequestError({ kind: "aborted", dataset });
-      throw new DashboardRequestError({ kind: "network", dataset, detail: sanitizeValue(error?.message, secrets) });
+      throw new DashboardRequestError({ kind: "network", dataset });
     }
     observeAuthorization(response);
     const rawBody = await response.text().catch(() => "");
     const parsed = tryParseJson(rawBody);
-    const safeBody = parsed.ok ? sanitizeValue(parsed.value, secrets) : sanitizeValue(rawBody, secrets);
-    if (!response.ok) throw new DashboardRequestError({ kind: "http", dataset, status: response.status, body: safeBody });
-    if (!parsed.ok) throw new DashboardRequestError({ kind: "invalid-response", dataset, status: response.status, body: safeBody });
+    if (!response.ok) throw new DashboardRequestError({ kind: "http", dataset, status: response.status, bodyBytes: rawBody.length });
+    if (!parsed.ok) throw new DashboardRequestError({ kind: "invalid-response", dataset, status: response.status, bodyBytes: rawBody.length });
     const envelope = validateCompleteEnvelope(parsed.value, { dataset, status: response.status, secrets });
     const expectedRows = datasetKey === "currentEvents" ? 3 : datasetKey === "currentPermits" ? 1 : null;
     if (expectedRows !== null && (envelope.Items.length !== expectedRows || envelope.TotalCount !== expectedRows)) {

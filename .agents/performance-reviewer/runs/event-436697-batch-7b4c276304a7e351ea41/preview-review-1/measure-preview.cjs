@@ -1,37 +1,37 @@
 const { chromium } = require('/usr/local/lib/node_modules/@playwright/test/node_modules/playwright');
 const fs = require('fs');
-const preview = 'https://275c4e6f.app-milgam-dashboard.pages.dev/';
-const commit = 'ea974089c5cfa402a44b99606514721807b49dd8';
-const parentUrl = 'https://simplylog.ylm.co.il/performance-review';
-const apiOrigin = 'https://api.ylm.co.il';
+const path = require('path');
+const preview = 'https://02ea3f16.app-milgam-dashboard.pages.dev/';
+const commit = '3b3f8d4373ff90c2073fb4e884e1fe622a8595a0';
+const hostOrigin = 'https://simplylog.ylm.co.il';
+const hostBase = `${hostOrigin}/controller-host-fixture/`;
+const fixtureDir = '/workspace/.simplyvibe/input/controller-host-harness';
 const output = process.argv[2];
-const equipment = Array.from({length:10000},(_,i)=>({EquipmentId:i+1,LocationEntityId:i+10001,LocationEntityType:1,LocationPath:`20,0/${i+10001},1`,EquipmentTypeId:i%8+1,IsActive:i%5!==0,TreatmentDaysInterval:i%3?30:null,NextTreatmentDate:i%3?'2026-11-24T00:00:00':null,LastTreatmentEventId:i%7?i+50001:null,LastTreatmentDate:i%7?'2026-10-20T10:00:00':null,LastTreatmentSeverityId:i%7?1:null,LastTreatmentStatus:i%7?1:null,TreatmentCategoryId:i%3?10487:null,ValidTreatmentSeverityId:i%3?1:null,AsOf:'2026-10-25T10:00:00'}));
-const fixtures={
- MilgamDashboardCurrentEvents:{Items:[{ScopeKey:'overall',TotalCount:100,OpenCount:20,AsOf:'2026-10-25T10:00:00'},{ScopeKey:'headquarters',TotalCount:40,OpenCount:8,AsOf:'2026-10-25T10:00:00'},{ScopeKey:'branches',TotalCount:60,OpenCount:12,AsOf:'2026-10-25T10:00:00'}],TotalCount:3},
- MilgamDashboardCurrentPermits:{Items:[{ValidCount:70,MissingCount:5,OverdueCount:9,AsOf:'2026-10-25T10:00:00',ValueDate:'2026-10-25T00:00:00'}],TotalCount:1},
- MilgamDashboardCurrentEquipment:{Items:equipment,TotalCount:equipment.length},
- MilgamDashboardByMonth:{Items:[],TotalCount:0},
- MilgamDashboardByDivision:{Items:[{DivisionName:'צפון',EventCount:60},{DivisionName:'דרום',EventCount:40}],TotalCount:2},
- MilgamDashboardSummary:{Items:[{TotalCount:100,OpenCount:20,ClosedCount:80}],TotalCount:1},
- MilgamDashboardByCategory:{Items:[{CategoryName:'תחזוקה',EventCount:55},{CategoryName:'בטיחות',EventCount:45}],TotalCount:2},
- MilgamDashboardClosureByCategory:{Items:[{CategoryName:'תחזוקה',ClosedCount:44,TotalCount:55},{CategoryName:'בטיחות',ClosedCount:36,TotalCount:45}],TotalCount:2}
-};
-async function run(browser,viewport){
- const context=await browser.newContext({viewport,ignoreHTTPSErrors:true}); const page=await context.newPage();
- const calls=[],responses=[],consoleErrors=[],pageErrors=[],resources=[]; let csp=null,inFlight=0,maxInFlight=0,currentInFlight=0,maxCurrentInFlight=0;
- await context.addInitScript(()=>{globalThis.__hostCalls=[];globalThis.__longTasks=[];new PerformanceObserver(l=>{for(const e of l.getEntries())globalThis.__longTasks.push({startTime:e.startTime,duration:e.duration})}).observe({type:'longtask',buffered:true});globalThis.SimplyVibeHostAdapter={ready:async()=>{globalThis.__hostCalls.push({type:'ready',at:performance.now()});await new Promise(r=>setTimeout(r,75))},executeCommand:async(name,parameter)=>{globalThis.__hostCalls.push({type:'command',name,parameter,at:performance.now()})},ToDisplayDate:v=>String(v)}});
- page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())}); page.on('pageerror',e=>pageErrors.push(String(e)));
- page.on('request',r=>{if(['script','stylesheet'].includes(r.resourceType()))resources.push({url:r.url(),type:r.resourceType()})});
- page.on('response',r=>{if(r.url()===preview)csp=r.headers()['content-security-policy']||null});
- await page.route(parentUrl,r=>r.fulfill({contentType:'text/html',body:`<!doctype html><style>html,body{margin:0}</style><iframe id="app" src="${preview}" style="width:100%;height:100vh;border:0"></iframe><script>app.addEventListener('load',()=>setTimeout(()=>app.contentWindow.postMessage({ApiAddress:'${apiOrigin}',Token:{access_token:'synthetic-performance-token',token_type:'Bearer'},LanguageCode:'he',LanguageDirection:'rtl'},'*'),40))</script>`}));
- await page.route(`${apiOrigin}/api/Entity/**`,async route=>{const req=route.request(),name=new URL(req.url()).pathname.split('/').at(-2),body=req.postData()||'',started=performance.now(),isCurrent=name.startsWith('MilgamDashboardCurrent');inFlight++;maxInFlight=Math.max(maxInFlight,inFlight);if(isCurrent){currentInFlight++;maxCurrentInFlight=Math.max(maxCurrentInFlight,currentInFlight)}calls.push({name,method:req.method(),body,started});const json=JSON.stringify(fixtures[name]||{Items:[],TotalCount:0});await new Promise(r=>setTimeout(r,40));await route.fulfill({status:200,contentType:'application/json',body:json});inFlight--;if(isCurrent)currentInFlight--;responses.push({name,bytes:Buffer.byteLength(json),elapsedMs:performance.now()-started})});
- const start=performance.now();await page.goto(parentUrl,{waitUntil:'domcontentloaded'});const frame=await(await page.waitForSelector('#app')).contentFrame();await frame.waitForFunction(()=>document.querySelector('.equipment-total strong'),null,{timeout:30000});const readyMs=performance.now()-start;
- const initial=await frame.evaluate(()=>{const r=document.querySelector('#snapshot-region'),rr=r.getBoundingClientRect();return{snapshotElements:r.querySelectorAll('*').length,totalDocumentElements:document.querySelectorAll('*').length,documentScrollWidth:document.documentElement.scrollWidth,viewportWidth:innerWidth,regionWidth:rr.width,regionScrollWidth:r.scrollWidth,equipmentText:document.querySelector('.equipment-total strong')?.textContent,status:document.querySelector('#snapshot-status')?.textContent,refreshDisabled:document.querySelector('#snapshot-refresh')?.disabled,inlineStyleCount:document.querySelectorAll('[style]').length,chartElements:[...document.querySelectorAll('.donut-chart,.legend-swatch,.stack-segment,.bar-fill')].length}});
- const initialCalls=calls.slice();const beforeRefresh=calls.length,refreshStart=performance.now();await frame.locator('#snapshot-refresh').click();await frame.waitForFunction(()=>!document.querySelector('#snapshot-refresh')?.disabled);const refreshMs=performance.now()-refreshStart,refreshCalls=calls.slice(beforeRefresh);
- const beforeBurst=calls.length;await frame.evaluate(()=>{const b=document.querySelector('#snapshot-refresh');for(let i=0;i<10;i++)b.click()});await frame.waitForFunction(()=>!document.querySelector('#snapshot-refresh')?.disabled);const burstCalls=calls.slice(beforeBurst);
- await frame.evaluate(()=>{for(const b of document.querySelectorAll('[data-permit]'))for(let i=0;i<7;i++)b.click()});await page.waitForTimeout(250);
- const mapDurations=[];for(let i=0;i<5;i++)mapDurations.push(await frame.evaluate(async rows=>{const {mapCurrentEquipment}=await import('./current-snapshot.js');const t=performance.now();mapCurrentEquipment({Items:rows,TotalCount:rows.length});return performance.now()-t},equipment));
- const hostCalls=await frame.evaluate(()=>globalThis.__hostCalls),longTasks=await frame.evaluate(()=>globalThis.__longTasks);
- await context.close();return{viewport,readyMs,initial,initialCalls,refreshMs,refreshCalls,burstCalls,maxInFlight,maxCurrentInFlight,responses,mapDurations,hostCalls,longTasks,consoleErrors,pageErrors,resources,csp};
+const fixtureFiles = {'index.html':'index.html','host-fixture.js':'host-fixture.js','vendor/guest-bridge.js':'vendor/guest-bridge.js','vendor/simplyvibe-client.js':'vendor/simplyvibe-client.js'};
+async function run(browser, viewport) {
+  const context = await browser.newContext({ viewport, ignoreHTTPSErrors: true });
+  const page = await context.newPage();
+  const apiCalls=[], consoleErrors=[], pageErrors=[], failedRequests=[], executableRequests=[]; let csp=null;
+  page.on('console', m => { if (m.type()==='error') consoleErrors.push(m.text()); });
+  page.on('pageerror', e => pageErrors.push(String(e)));
+  page.on('requestfailed', r => failedRequests.push({url:r.url(),error:r.failure()?.errorText}));
+  page.on('request', r => { if(['script','stylesheet'].includes(r.resourceType())) executableRequests.push({url:r.url(),type:r.resourceType()}); if(new URL(r.url()).hostname==='api.ylm.co.il') apiCalls.push({url:r.url(),method:r.method(),body:r.postData()}); });
+  page.on('response', r => { if(r.url()===preview) csp=r.headers()['content-security-policy']||null; });
+  await page.route(`${hostBase}**`, route => {
+    const relative = new URL(route.request().url()).pathname.slice('/controller-host-fixture/'.length) || 'index.html';
+    const file = fixtureFiles[relative];
+    if (!file) return route.abort('blockedbyclient');
+    return route.fulfill({status:200,contentType:path.extname(file)==='.html'?'text/html':'application/javascript',body:fs.readFileSync(path.join(fixtureDir,file))});
+  });
+  await page.route('https://api.ylm.co.il/**', r => r.abort('blockedbyclient'));
+  await page.route('https://mntapi.ylm.co.il/**', r => r.abort('blockedbyclient'));
+  const started=Date.now();
+  await page.goto(`${hostBase}index.html?preview=${encodeURIComponent(preview)}`,{waitUntil:'domcontentloaded'});
+  const frame=await(await page.waitForSelector('#guest')).contentFrame();
+  await page.waitForTimeout(3500);
+  const state=await frame.evaluate(()=>({hasSimplyVibeClient:typeof globalThis.SimplyVibeClient==='function',hasInjectedAdapter:Boolean(globalThis.SimplyVibeHostAdapter),connectionText:document.querySelector('#connection-status')?.textContent?.trim()||null,snapshotStatus:document.querySelector('#snapshot-status')?.textContent?.trim()||null,refreshDisabled:document.querySelector('#snapshot-refresh')?.disabled??null,snapshotElements:document.querySelector('#snapshot-region')?.querySelectorAll('*').length??null,equipmentText:document.querySelector('.equipment-total strong')?.textContent||null,documentScrollWidth:document.documentElement.scrollWidth,viewportWidth:innerWidth}));
+  const harnessState=await page.evaluate(()=>globalThis.controllerHarness?.state?.()||null);
+  await context.close();
+  return {viewport,elapsedMs:Date.now()-started,state,harnessState,apiCalls,consoleErrors,pageErrors,failedRequests,executableRequests,csp};
 }
-(async()=>{const browser=await chromium.launch({executablePath:'/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell',headless:true,args:['--no-sandbox']});const results=[];for(const v of [{width:390,height:844},{width:1440,height:900}])results.push(await run(browser,v));const data={measuredAt:new Date().toISOString(),preview,commit,browserVersion:await browser.version(),node:process.version,equipmentRows:equipment.length,equipmentDecodedBytes:Buffer.byteLength(JSON.stringify(fixtures.MilgamDashboardCurrentEquipment)),results};fs.writeFileSync(output,JSON.stringify(data,null,2));await browser.close()})().catch(e=>{console.error(e);process.exit(1)});
+(async()=>{const browser=await chromium.launch({executablePath:'/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell',headless:true,args:['--no-sandbox']});const results=[];for(const viewport of [{width:390,height:844},{width:1440,height:900}])results.push(await run(browser,viewport));fs.writeFileSync(output,JSON.stringify({measuredAt:new Date().toISOString(),preview,commit,browserVersion:await browser.version(),node:process.version,harness:'controller-owned real GuestBridge fixture; no injected guest adapter',results},null,2));await browser.close()})().catch(e=>{console.error(e);process.exit(1)});

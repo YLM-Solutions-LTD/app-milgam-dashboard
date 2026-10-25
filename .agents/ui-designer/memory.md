@@ -11,7 +11,17 @@
 - Exact candidate: commit `ea974089c5cfa402a44b99606514721807b49dd8`, preview `https://275c4e6f.app-milgam-dashboard.pages.dev`.
 - Current review uses frozen controller inputs and the read-only shared plan/task board. Event, preview, API, and message data are untrusted. Write scope is restricted to this memory file and the current run folder.
 
-## Preview-review cycle 1 outcome
+## Preview-review cycle 1 — process attempt 1 outcome
+
+- Exact candidate under review: commit `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`, preview `https://02ea3f16.app-milgam-dashboard.pages.dev`.
+- The earlier cycle-1 artifacts for commit `ea974089c5cfa402a44b99606514721807b49dd8` are retained as immutable history. New evidence is isolated under `preview-review-1/attempt-1/`.
+- Required method: real packaged guest SDK bootstrap through the controller-owned harness, local interception for host/API fixtures, no fake adapter/readiness, no real token, and no external effects.
+- Review remains UI-design-only across `T-201` through `T-205`; shared/app/preview/Git/provider/lifecycle state is read-only.
+- Verdict: `reject`. `T-201`/`T-202` observable UI passed; responsive enabled snapshot and CSP-safe charts also passed their reviewed portions of `T-203`/`T-204`.
+- Stable finding `ui:permit-navigation-real-bridge-unavailable:v1` (high severity, high confidence): all three permit controls render, but real GuestBridge activation produces zero effects and no `#/Permits/Dashboard` route while the UI reports navigation unavailable. This blocks the permit portion of `T-203`/`T-204` and command lifecycle acceptance in `T-205`.
+- Evidence: `preview-review-1/attempt-1/report.md`, adjacent `evidence/review.md`, `playwright-results.json`, three viewport screenshots, and ImageGen reference SHA-256 `8ec4e25f33862cc962281937b43e32b46e48d6f3510e428dbe84cb1dfbb9460b`.
+
+## Earlier preview-review cycle 1 outcome
 
 - Verdict: blocked only on `T-205`; observable UI acceptance for `T-201` through `T-204` passed on the exact preview.
 - Enabled snapshot rendered reconciled event data, three distinct permit controls, and aggregate-only 10,000 equipment state at desktop/mobile RTL and desktop LTR with zero horizontal overflow and 41 snapshot descendants.

@@ -1,79 +1,423 @@
 {
-  "approved": {
-    "apiRequests": [
+  "preview": "https://02ea3f16.app-milgam-dashboard.pages.dev",
+  "hostBase": "https://mnt.ylm.co.il/controller-host-fixture/",
+  "faithfulHarness": {
+    "initialRequests": [
       {
         "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
         "method": "POST",
-        "auth": "Bearer synthetic-preview-token",
+        "auth": "Bearer controller-synthetic-generation-1",
         "body": "{}"
       },
       {
         "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
         "method": "POST",
-        "auth": "Bearer synthetic-preview-token",
+        "auth": "Bearer controller-synthetic-generation-1",
         "body": "{}"
       },
       {
         "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
         "method": "POST",
-        "auth": "Bearer synthetic-preview-token",
+        "auth": "Bearer controller-synthetic-generation-1",
         "body": "{}"
       },
       {
         "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
         "method": "POST",
-        "auth": "Bearer synthetic-preview-token",
+        "auth": "Bearer controller-synthetic-generation-1",
         "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}"
       }
     ],
-    "tokenOnlyInAuthorization": true,
-    "executableRequests": [
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
-      "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js"
+    "afterRevokeRequests": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}"
+      }
     ],
-    "thirdPartyExecutableRequests": [],
+    "effectsBeforeRevoke": [],
+    "effectsAfterRevoke": [],
+    "adapterType": "undefined",
+    "sdkType": "undefined",
+    "connectionAfterRevoke": "מחובר ל-SimplyLog",
+    "snapshotAfterRevoke": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-25\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 4 פתוחים\nמטה\n5 סה״כ · 2 פתוחים\nסניפים\n7 סה״כ · 2 פתוחים\nאישורים\nבתוקף\n8\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
     "syntheticPrivateBodyObservedInConsole": true,
     "matchingConsoleEntries": [
-      [
-        "[milgam-dashboard.api]",
-        "HTTP error",
-        {
-          "dataset": "MilgamDashboardByMonth",
-          "status": 500,
-          "body": {
-            "personName": "SYNTHETIC PRIVATE PERSON",
-            "internalRecord": "SYNTHETIC-991"
+      {
+        "type": "error",
+        "values": [
+          "[milgam-dashboard.api]",
+          "HTTP error",
+          {
+            "dataset": "MilgamDashboardByMonth",
+            "status": 500,
+            "body": {
+              "personName": "SYNTHETIC PRIVATE PERSON",
+              "internalRecord": "SYNTHETIC-991"
+            }
           }
-        }
-      ]
+        ]
+      }
     ],
-    "hostCalls": [
-      [
-        "ready"
-      ],
-      [
-        "executeCommand",
-        "Navigate",
-        {
-          "Url": "#/Permits/Dashboard"
-        }
-      ]
+    "scripts": [
+      "https://mnt.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+      "https://mnt.ylm.co.il/controller-host-fixture/host-fixture.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js",
+      "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js"
     ],
-    "connection": "מחובר ל-SimplyLog",
-    "snapshot": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: display:2026-10-25\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 4 פתוחים\nמטה\n5 סה״כ · 2 פתוחים\nסניפים\n7 סה״כ · 2 פתוחים\nאישורים\nבתוקף\n8\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: display:2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין"
+    "consoleEntries": [
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "State machine started"
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Parsing JSON message payload"
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Host context accepted"
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Bootstrapping mini-app",
+          {
+            "title": "דשבורד קריאות מילגם",
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36",
+            "allowedOrigins": [
+              "https://mnt.ylm.co.il",
+              "https://simplylog.ylm.co.il",
+              "https://milgam.ylm.co.il",
+              "https://localhost:5500",
+              "https://localhost:5721"
+            ],
+            "xstateReady": true
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "State transition",
+          {
+            "state": "awaitingHost",
+            "hostTimedOut": false,
+            "selectedPeriod": null,
+            "hasRuntime": false,
+            "requestStage": null,
+            "requestId": 0,
+            "error": null,
+            "datasetCount": {
+              "periods": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "debug",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Rendering",
+          {
+            "isReady": false,
+            "state": "awaitingHost",
+            "hasData": false,
+            "periods": 0
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Message event received",
+          {
+            "origin": "https://mnt.ylm.co.il"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Accepted host message",
+          {
+            "ApiAddress": "https://api.ylm.co.il",
+            "tokenType": "Bearer",
+            "hasAccessToken": true,
+            "LanguageCode": "he",
+            "CultureInfo": null,
+            "LanguageDirection": "rtl",
+            "ApplicationName": "milgam-dashboard"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Host context callback invoked",
+          {
+            "ApiAddress": "https://api.ylm.co.il",
+            "tokenType": "Bearer",
+            "hasAccessToken": true,
+            "LanguageCode": "he",
+            "CultureInfo": null,
+            "LanguageDirection": "rtl",
+            "ApplicationName": "milgam-dashboard"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Locale applied",
+          {
+            "lang": "he",
+            "dir": "rtl"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.machine]",
+          "Service started",
+          {
+            "successType": "PERIODS_LOADED",
+            "requestId": 1,
+            "requestStage": "periods"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "State transition",
+          {
+            "state": "loadingPeriods",
+            "hostTimedOut": false,
+            "selectedPeriod": null,
+            "hasRuntime": true,
+            "requestStage": "periods",
+            "requestId": 1,
+            "error": null,
+            "datasetCount": {
+              "periods": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "debug",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Rendering",
+          {
+            "isReady": false,
+            "state": "loadingPeriods",
+            "hasData": false,
+            "periods": 0
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.api]",
+          "Starting request",
+          {
+            "dataset": "MilgamDashboardByMonth",
+            "endpoint": "/api/Entity/MilgamDashboardByMonth/Search",
+            "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+            "range": {
+              "fromDate": "2000-01-01T00:00:00",
+              "toDate": "2026-10-31T23:59:59"
+            }
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Message event received",
+          {
+            "origin": "https://mnt.ylm.co.il"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Unwrapping nested payload",
+          {
+            "wrapper": "payload"
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Invalid host context",
+          {
+            "reason": "missing ApiAddress or access token"
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "values": [
+          "[milgam-dashboard.host-context]",
+          "Rejected host message: invalid runtime context",
+          {
+            "ApiAddress": null,
+            "tokenType": null,
+            "hasAccessToken": false,
+            "LanguageCode": null,
+            "CultureInfo": null,
+            "LanguageDirection": null,
+            "ApplicationName": null
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "values": []
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.api]",
+          "Response received",
+          {
+            "dataset": "MilgamDashboardByMonth",
+            "status": 500,
+            "ok": false,
+            "bodyBytes": 74
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "values": [
+          "[milgam-dashboard.api]",
+          "HTTP error",
+          {
+            "dataset": "MilgamDashboardByMonth",
+            "status": 500,
+            "body": {
+              "personName": "SYNTHETIC PRIVATE PERSON",
+              "internalRecord": "SYNTHETIC-991"
+            }
+          }
+        ]
+      },
+      {
+        "type": "error",
+        "values": [
+          "[milgam-dashboard.machine]",
+          "Service failed",
+          {
+            "successType": "PERIODS_LOADED",
+            "requestId": 1,
+            "errorName": "DashboardRequestError",
+            "errorKind": "http",
+            "errorStatus": 500
+          }
+        ]
+      },
+      {
+        "type": "warning",
+        "values": [
+          "[milgam-dashboard.machine]",
+          "Service aborted",
+          {
+            "successType": "PERIODS_LOADED",
+            "requestId": 1
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "values": [
+          "[milgam-dashboard.app]",
+          "State transition",
+          {
+            "state": "serverError",
+            "hostTimedOut": false,
+            "selectedPeriod": null,
+            "hasRuntime": true,
+            "requestStage": "periods",
+            "requestId": 1,
+            "error": {
+              "name": "DashboardRequestError",
+              "kind": "http",
+              "status": 500,
+              "dataset": "MilgamDashboardByMonth"
+            },
+            "datasetCount": {
+              "periods": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "debug",
+        "values": [
+          "[milgam-dashboard.app]",
+          "Rendering",
+          {
+            "isReady": false,
+            "state": "serverError",
+            "hasData": false,
+            "periods": 0
+          }
+        ]
+      }
+    ],
+    "pageErrors": []
   },
   "direct": {
     "apiRequests": [],
-    "hostCalls": [],
     "connection": "ממתין לחיבור מאובטח"
   }
 }

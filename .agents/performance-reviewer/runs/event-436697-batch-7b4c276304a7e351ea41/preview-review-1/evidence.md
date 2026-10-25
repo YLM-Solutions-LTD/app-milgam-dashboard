@@ -1,25 +1,21 @@
 # Preview-review cycle 1 performance evidence
 
-- Exact controller preview: `https://275c4e6f.app-milgam-dashboard.pages.dev/`
-- Controller-supplied head: `ea974089c5cfa402a44b99606514721807b49dd8`
-- Measured: `2026-10-25T14:46:52.912Z`
+- Exact preview: `https://02ea3f16.app-milgam-dashboard.pages.dev/`
+- Exact controller-supplied head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`
+- Measured: `2026-10-25T15:00:22.115Z`
 - Runtime: Chromium `140.0.7339.16`, Node `v20.20.2`
-- Harness: allowed synthetic parent at `https://simplylog.ylm.co.il`; all API routes intercepted with non-secret fixtures. No real tenant token or tenant request was used.
+- Harness: controller-owned `GuestBridge` and host fixture, served locally by Playwright under the preview CSP-allowed `https://simplylog.ylm.co.il` parent origin. No guest adapter, readiness method, command method, tenant token, or external API response was injected. API traffic was intercepted locally.
 
-## Measurements
+## Observations
 
-At both `390x844` and `1440x900`, the enabled snapshot issued exactly one POST with body `{}` to each of the three current-report routes. Starts were concurrent and peak current-report concurrency was three. A normal refresh issued exactly the same three calls. Ten synchronous refresh activations while pending issued only one three-request generation. Twenty-one rapid permit activations produced one `ready`/`Navigate` command chain with the exact `#/Permits/Dashboard` payload.
+At both 390x844 and 1440x900, the exact preview loaded with the controller-owned bridge and received an authenticated synthetic context. It immediately started exactly three current-report POSTs, each with body `{}`, plus one analytical-period POST. The three current requests demonstrate the intended fixed request fan-out in `T-201`/`T-204`; source also uses `Promise.all` and aborts the preceding generation.
 
-The representative equipment envelope contained 10,000 rows and 4,070,434 decoded JSON bytes. Five in-browser invocations of the exact deployed `mapCurrentEquipment` implementation took `14.1, 12.0, 10.4, 10.2, 10.9 ms` on mobile and `16.0, 12.6, 12.0, 10.3, 10.6 ms` on desktop; every warmed sample was below the 100 ms budget. The snapshot rendered 41 descendant elements at both viewports, below the 80-element budget, and equipment growth did not create a fact list. There was no horizontal overflow, no >=50 ms browser long task, no console/page error, and no inline style attribute.
+The deployed guest did not expose or instantiate `SimplyVibeClient` and did not expose an injected `SimplyVibeHostAdapter`. `site/index.html` loads only XState and `app.js`; `site/host-services.js` nevertheless defaults to `globalThis.SimplyVibeHostAdapter`. Therefore `createHostServices` returns its unavailable adapter. The controller harness recorded zero effects. The permit `ready()`/`Navigate` path, 20-activation single-flight measurement, command-response generation binding, and the `T-205` revoke/re-entry command lifecycle cannot execute through the actual guest SDK.
 
-The complete synthetic page-to-ready observations were 425 ms (mobile) and 395 ms (desktop), including iframe bootstrap, fixture transport delay, transfer and JSON parsing; these are not presented as isolated render durations. The absence of a >=50 ms main-thread task, 10-16 ms exact mapper timings, and constant 41-element snapshot DOM support the browser-work budget without overstating network-inclusive timing.
+This invalidates the previous draft evidence, which injected a fake global adapter and thereby measured one synthetic command chain. Under the required harness, no such guest command chain exists. The same missing bootstrap prevents honest completion of every command-related acceptance item in `T-203` through `T-205` and leaves the core permit drill-down unusable.
 
-The response CSP retained self-only scripts and styles, `object-src 'none'`, and `base-uri 'none'`. All observed scripts and styles came from the exact preview origin; no third-party executable request occurred.
+The fixture README specifies `https://ylm.ylm.co.il` for its host origin, while the exact preview CSP omits that origin from `frame-ancestors`; a strict run there was blocked before guest startup. To isolate the guest behavior, the unchanged controller fixture was served under already-approved `https://simplylog.ylm.co.il`. This does not prove tenant permissions and no such claim is made.
 
-The approved-host authorization expiry/re-entry scenario in `T-205` was not attempted: the controller required synthetic fixtures and forbade a tenant token, while the shared plan states synthetic messaging cannot close that authorization gate. This preview review therefore makes no approved-host lifecycle or release claim.
+Because the exact required host path has a release-blocking command bootstrap defect, this cycle does not recycle the prior injected-adapter 10,000-row mapper/render, refresh-burst, or command-burst pass. Source inspection supports bounded current fan-out, linear equipment mapping, constant equipment presentation, and abort/stale-generation suppression, but those are not substituted for a complete exact-preview acceptance run.
 
-Raw repeatable evidence:
-
-- `browser-measurements.json`
-- `measure-preview.cjs`
-
+Raw repeatable evidence: `browser-measurements.json`, `measure-preview.cjs`.

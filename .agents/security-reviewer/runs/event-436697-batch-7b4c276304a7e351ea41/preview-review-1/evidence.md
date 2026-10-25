@@ -1,28 +1,26 @@
 # Exact-preview security evidence
 
-Exact preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`  
-Controller-supplied head: `ea974089c5cfa402a44b99606514721807b49dd8`
+Exact preview: `https://02ea3f16.app-milgam-dashboard.pages.dev`  
+Controller-supplied head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`
 
-## Trust-boundary exercise
+## Faithful host-protocol exercise
 
-- An iframe under synthetic approved parent `https://mnt.ylm.co.il` accepted a non-secret synthetic capability and issued the three exact current-report `POST {}` requests plus the existing analytical request only to `https://api.ylm.co.il`.
-- The synthetic bearer appeared only in the `Authorization` header. Permit activation produced `ready()` followed by `executeCommand("Navigate", { Url: "#/Permits/Dashboard" })`.
-- Direct top-level access followed by a forged same-page `postMessage` produced zero API requests and zero host calls.
-- All executable requests were same-origin. The preview CSP is `default-src 'self'; script-src 'self'; style-src 'self'; ...; base-uri 'none'; object-src 'none'; form-action 'none'`; frame ancestors and API connections are allowlisted.
-- Deployed XState SHA-256 `06f5c308e93a6542c15c13c6bc16ac6841e995538ee48682a13909e298650024` matches the reviewed local asset.
+- Served the controller-owned, unmodified GuestBridge fixture under approved synthetic parent origin `https://mnt.ylm.co.il` and intercepted every API call locally. No real tenant, credential, provider, or lifecycle API was contacted.
+- The preview accepted the fixture's legacy context message and issued three exact current-report `POST {}` calls plus the analytical request to the approved API origin with synthetic generation-1 bearer data.
+- The guest loaded neither `SimplyVibeClient` nor a `SimplyVibeHostAdapter` (`typeof` both was `undefined`). Clicking a permit metric produced no GuestBridge command and no host navigation effect.
+- After `controllerHarness.revoke()` disconnected the real GuestBridge session, the preview still displayed “connected,” retained active generation-1 authorization, and a user refresh issued all three current-report calls again with `Bearer controller-synthetic-generation-1`. This demonstrates authenticated effects after host-session revocation.
+- Direct top-level access plus a forged same-page message issued zero API requests and remained waiting for a secure connection.
 
-## Reproduced response-body disclosure
+## Diagnostic response-body disclosure
 
-The synthetic analytical route returned HTTP 500 with body `{ "personName": "SYNTHETIC PRIVATE PERSON", "internalRecord": "SYNTHETIC-991" }`. The exact preview emitted the complete object to the browser console:
+- The exact preview's analytical route was locally fulfilled with HTTP 500 and synthetic body `{personName:"SYNTHETIC PRIVATE PERSON", internalRecord:"SYNTHETIC-991"}`.
+- Browser console capture contains that complete object in `[milgam-dashboard.api] HTTP error`. Deployed `api-client.js` matches source SHA-256 `9a03d6a3ba3053f4455c6e8d9cc1019ff764a075163d5d6875329046e6c4b2ad`.
+- Token sanitization does not remove unrelated personal/internal fields. Impact remains limited to diagnostic exposure in an already-authorized browser, so severity remains low.
 
-```text
-[milgam-dashboard.api] HTTP error {
-  dataset: "MilgamDashboardByMonth",
-  status: 500,
-  body: { personName: "SYNTHETIC PRIVATE PERSON", internalRecord: "SYNTHETIC-991" }
-}
-```
+## Other controls and limits
 
-Source path: `site/api-client.js`, `requestItems()`, HTTP-error branch, where the parsed response body is passed to `console.error`. Token string sanitization does not remove unrelated personal or internal API fields. This exposes server-returned data through the browser diagnostic surface to local observers and extensions with console/debug access. Impact is constrained to error responses and a client already authorized to receive the response, so severity is low.
+- Response CSP remains strict and self-only for guest scripts/styles; guest executable requests were same-origin. The reviewed XState digest is `06f5c308e93a6542c15c13c6bc16ac6841e995538ee48682a13909e298650024`.
+- Approved tenant permission configuration was not tested and is not inferred from fixture permission decisions.
+- Because the guest SDK is absent, command hold/release, old-command-response rejection, fresh SDK session rotation, and successful Navigate could not be completed; this is part of the failed lifecycle/bridge implementation, not evidence of success.
 
-Artifacts: `browser-security.mjs`, `browser-results.json`, `headers.txt`, `xstate-headers.txt`, `xstate.js`, `digests.txt`, and `index.html` in this run directory.
+Artifacts: `browser-security.mjs`, `browser-results.json`, `headers.txt`, `index.html`, deployed reviewed modules, and `digests.txt` in this run directory.

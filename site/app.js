@@ -2,9 +2,10 @@ import { ALLOWED_HOST_ORIGINS, CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, DATASETS } f
 import { createApiClient } from "./api-client.js";
 import { createDashboardMachine } from "./dashboard-machine.js";
 import { yearsFromPeriods } from "./data-mappers.js";
-import { applyRuntimeLocale, installHostContextListener, onHostContextRevoked, summarizeContext } from "./host-context.js";
+import { applyRuntimeLocale, onHostContextRevoked, summarizeContext } from "./host-context.js";
 import { createSnapshotController } from "./current-snapshot.js";
 import { createHostServices } from "./host-services.js";
+import { createHostBootstrap } from "./host-bootstrap.js";
 
 const LOG_PREFIX = "[milgam-dashboard.app]";
 
@@ -72,13 +73,11 @@ function traceState(state) {
   }
 }
 
-const removeHostListener = installHostContextListener(
-  window,
-  (context) => {
+function acceptHostContext(context, client) {
     activeContext = context;
     console.info(LOG_PREFIX, "Host context callback invoked", summarizeContext(context));
     applyRuntimeLocale(context, document);
-    hostServices = createHostServices(context);
+    hostServices = createHostServices(context, client);
     snapshotController?.dispose();
     snapshotController = null;
     if (CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED) {
@@ -97,9 +96,12 @@ const removeHostListener = installHostContextListener(
     clearTimeout(hostTimeout);
     if (service) service.send({ type: "HOST_CONTEXT_RECEIVED", context });
     else pendingContext = context;
-  },
-  ALLOWED_HOST_ORIGINS
-);
+}
+
+const hostBootstrap = createHostBootstrap({
+  windowObject: window,
+  onContext: acceptHostContext
+});
 
 const removeRevocationListener = onHostContextRevoked((context) => {
   if (context !== activeContext) return;
@@ -117,6 +119,9 @@ service = window.XState.interpret(machine).onTransition((state) => {
 });
 service.start();
 console.info(LOG_PREFIX, "State machine started");
+void hostBootstrap.connect().catch((error) => {
+  console.warn(LOG_PREFIX, "Verified host handshake failed", { code: error?.code || "HOST_UNAVAILABLE" });
+});
 
 if (pendingContext) service.send({ type: "HOST_CONTEXT_RECEIVED", context: pendingContext });
 hostTimeout = window.setTimeout(() => {
@@ -134,13 +139,21 @@ window.addEventListener("message", (event) => {
 window.addEventListener("pagehide", () => {
   console.info(LOG_PREFIX, "Page hiding; cleaning up");
   clearTimeout(hostTimeout);
-  removeHostListener();
+  hostBootstrap.dispose();
   removeRevocationListener();
   snapshotController?.dispose();
   service.stop();
 }, { once: true });
 
-snapshotRefreshElement.addEventListener("click", () => snapshotController?.refresh());
+snapshotRefreshElement.addEventListener("click", () => { void refreshAuthorization(); });
+
+async function refreshAuthorization() {
+  try {
+    await hostBootstrap.reconnect();
+  } catch (error) {
+    console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
+  }
+}
 
 function render(state) {
   console.debug(LOG_PREFIX, "Rendering", {
@@ -209,8 +222,7 @@ function renderControls(state) {
     service.send({ type: "MONTH_CHANGED", month: Number(event.target.value) });
   });
   controlsElement.querySelector("#refresh-button")?.addEventListener("click", () => {
-    service.send("REFRESH");
-    snapshotController?.refresh();
+    void refreshAuthorization();
   });
 }
 
@@ -255,12 +267,13 @@ function renderSnapshotContent(data) {
 async function navigateToPermits(event) {
   if (permitNavigationPending) return;
   const activatingElement = event.currentTarget;
-  const services = hostServices;
-  if (!services) return;
   permitNavigationPending = true;
   const buttons = [...snapshotContentElement.querySelectorAll("[data-permit]")];
   buttons.forEach((button) => { button.disabled = true; button.setAttribute("aria-busy", "true"); });
   try {
+    await hostBootstrap.reconnect();
+    const services = hostServices;
+    if (!services) throw Object.assign(new Error("Host service unavailable"), { code: "HOST_UNAVAILABLE" });
     await services.ready();
     await services.executeCommand("Navigate", { Url: "#/Permits/Dashboard" });
   } catch {

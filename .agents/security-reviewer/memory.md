@@ -4,11 +4,28 @@
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
 - Run: `preview-review-1`
-- Exact head: `ea974089c5cfa402a44b99606514721807b49dd8`
-- Exact preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`
-- Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using only synthetic host/API fixtures.
+- Process attempt: 1 (fresh review of the controller-supplied artifact; current-run artifacts may be replaced, older run directories remain immutable).
+- Exact head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`
+- Exact preview: `https://02ea3f16.app-milgam-dashboard.pages.dev`
+- Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using the controller-owned GuestBridge harness and synthetic local API fixtures only.
 - Authorized writes: this reviewer home only.
 - Required handled actions, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+
+## Current review focus
+
+- Recheck the prior low-severity diagnostic-body disclosure against the new exact preview and preserve its stable fingerprint only if it remains reproducible.
+- Exercise actual GuestBridge/SimplyVibeClient readiness and command/session rotation; do not inject `SimplyVibeHostAdapter`, fake `ready()`, or fake `executeCommand()`.
+- Verify direct/rejected contexts produce zero authenticated effects, bearer use is API-origin confined, CSP/executable origins remain strict, and authorization loss prevents old-generation API and command effects.
+- Approved tenant permissions and a real tenant token remain outside scope and must not be claimed.
+
+## Current exact-preview review result
+
+- Verdict: reject; one medium/high authorization-lifecycle finding and one low/high diagnostic-disclosure finding.
+- New stable finding `simplyvibe:auth-lifecycle:legacy-context-survives-host-disconnect:v1`: the guest lacks `SimplyVibeClient`, accepts only the legacy context, and retains generation-1 authorization after the faithful GuestBridge session disconnects. A post-revocation refresh sent three authenticated current-report requests with the old synthetic bearer; permit activation produced no bridge command.
+- Existing stable finding `simplyvibe:diagnostics:api-error-body-console-disclosure:v1` remains open: a synthetic analytical HTTP 500 body containing personal/internal markers was emitted in full to the exact preview's console.
+- Direct forged context remained denied; exercised API-origin confinement, strict CSP, and same-origin guest script execution held.
+- Tenant permission configuration was not tested. Missing guest SDK prevented successful Navigate, held-command response binding, and fresh SDK session rotation, so no authorization-lifecycle approval is claimed.
+- Full structured result: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/report.md`.
 
 ## Durable constraints
 

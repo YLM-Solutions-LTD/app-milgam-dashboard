@@ -1,6 +1,6 @@
 import { isBoundHostContext } from "./host-context.js";
 
-export function createHostServices(context, hostAdapter = globalThis.SimplyVibeHostAdapter) {
+export function createHostServices(context, hostAdapter) {
   if (!isBoundHostContext(context)) return unavailable();
   if (!hostAdapter || typeof hostAdapter.ready !== "function" || typeof hostAdapter.executeCommand !== "function") return unavailable();
   const requireActive = () => {

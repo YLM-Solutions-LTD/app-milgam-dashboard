@@ -1,84 +1,61 @@
 import { chromium } from '/workspace/src/apps/milgam-dashboard/.agents/uat-tester/tmp/playwright/node_modules/playwright-core/index.mjs';
-
-const preview = 'https://275c4e6f.app-milgam-dashboard.pages.dev';
-const token = 'synthetic-preview-token';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const preview = 'https://02ea3f16.app-milgam-dashboard.pages.dev';
+const hostBase = 'https://mnt.ylm.co.il/controller-host-fixture/';
+const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const browser = await chromium.launch({ executablePath: '/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell', headless: true });
-const results = {};
-
-async function makeContext() {
-  const context = await browser.newContext();
-  await context.addInitScript(() => {
-    globalThis.__hostCalls = [];
-    globalThis.SimplyVibeHostAdapter = {
-      ready: async () => globalThis.__hostCalls.push(['ready']),
-      executeCommand: async (name, payload) => globalThis.__hostCalls.push(['executeCommand', name, payload]),
-      ToDisplayDate: value => `display:${value}`
-    };
-  });
-  return context;
-}
-
-function responseFor(url) {
-  if (url.includes('MilgamDashboardCurrentEvents')) return { Items: [
-    { ScopeKey: 'overall', TotalCount: 12, OpenCount: 4, AsOf: '2026-10-25' },
-    { ScopeKey: 'headquarters', TotalCount: 5, OpenCount: 2, AsOf: '2026-10-25' },
-    { ScopeKey: 'branches', TotalCount: 7, OpenCount: 2, AsOf: '2026-10-25' }
-  ], TotalCount: 3 };
-  if (url.includes('MilgamDashboardCurrentPermits')) return { Items: [{ ValidCount: 8, MissingCount: 2, OverdueCount: 1, AsOf: '2026-10-25', ValueDate: '2026-10-25' }], TotalCount: 1 };
-  if (url.includes('MilgamDashboardCurrentEquipment')) return { Items: [{ EquipmentId: 'eq-1' }, { EquipmentId: 'eq-2' }], TotalCount: 2 };
+const results = { preview, hostBase };
+function apiBody(url) {
+  if (url.includes('CurrentEvents')) return { Items: [{ ScopeKey: 'overall', TotalCount: 12, OpenCount: 4, AsOf: '2026-10-25' }, { ScopeKey: 'headquarters', TotalCount: 5, OpenCount: 2, AsOf: '2026-10-25' }, { ScopeKey: 'branches', TotalCount: 7, OpenCount: 2, AsOf: '2026-10-25' }], TotalCount: 3 };
+  if (url.includes('CurrentPermits')) return { Items: [{ ValidCount: 8, MissingCount: 2, OverdueCount: 1, AsOf: '2026-10-25', ValueDate: '2026-10-25' }], TotalCount: 1 };
+  if (url.includes('CurrentEquipment')) return { Items: [{ EquipmentId: 'eq-1' }, { EquipmentId: 'eq-2' }], TotalCount: 2 };
+  if (url.includes('ByMonth')) return { Items: [{ Year: 2026, Month: 10, Count: 1 }], TotalCount: 1 };
   return { Items: [], TotalCount: 0 };
 }
-
-async function approved() {
-  const context = await makeContext();
-  const apiRequests = [];
-  const executableRequests = [];
-  const consoleValues = [];
+async function faithfulHarness() {
+  const context = await browser.newContext();
+  const apiRequests = [], scripts = [], consoleEntries = [], pageErrors = [];
+  await context.route(`${hostBase}**`, async route => {
+    const url = new URL(route.request().url());
+    const relative = url.pathname.slice('/controller-host-fixture/'.length) || 'index.html';
+    const target = path.join(fixtureRoot, relative);
+    const body = await fs.readFile(target);
+    const contentType = relative.endsWith('.js') ? 'text/javascript' : relative.endsWith('.json') ? 'application/json' : 'text/html';
+    await route.fulfill({ status: 200, contentType, body });
+  });
   await context.route('https://api.ylm.co.il/**', async route => {
     const req = route.request();
-    apiRequests.push({ url: req.url(), method: req.method(), auth: req.headers().authorization ?? null, body: req.postData() });
+    apiRequests.push({ url: req.url(), method: req.method(), auth: req.headers().authorization || null, body: req.postData() });
     const analyticalFailure = req.url().includes('MilgamDashboardByMonth');
-    await route.fulfill({ status: analyticalFailure ? 500 : 200, contentType: 'application/json', body: JSON.stringify(analyticalFailure ? { personName: 'SYNTHETIC PRIVATE PERSON', internalRecord: 'SYNTHETIC-991' } : responseFor(req.url())) });
+    await route.fulfill({ status: analyticalFailure ? 500 : 200, contentType: 'application/json', body: JSON.stringify(analyticalFailure ? { personName: 'SYNTHETIC PRIVATE PERSON', internalRecord: 'SYNTHETIC-991' } : apiBody(req.url())) });
   });
-  await context.route('https://mnt.ylm.co.il/harness', route => route.fulfill({ contentType: 'text/html', body: `<iframe id="app" src="${preview}"></iframe>` }));
   const page = await context.newPage();
-  page.on('request', req => { if (req.resourceType() === 'script') executableRequests.push(req.url()); });
-  page.on('console', async msg => consoleValues.push(await Promise.all(msg.args().map(arg => arg.jsonValue().catch(() => '<unavailable>')))));
-  await page.goto('https://mnt.ylm.co.il/harness');
+  page.on('request', req => { if (req.resourceType() === 'script') scripts.push(req.url()); });
+  page.on('console', async msg => consoleEntries.push({ type: msg.type(), values: await Promise.all(msg.args().map(a => a.jsonValue().catch(() => '<unavailable>'))) }));
+  page.on('pageerror', error => pageErrors.push(String(error)));
+  await page.goto(`${hostBase}index.html?preview=${encodeURIComponent(preview)}`);
   const frame = page.frames().find(item => item.url().startsWith(preview));
   await frame.waitForLoadState('domcontentloaded');
-  await page.evaluate(({ preview, token }) => document.querySelector('#app').contentWindow.postMessage({ ApiAddress: 'https://api.ylm.co.il', Token: { token_type: 'Bearer', access_token: token }, LanguageCode: 'he' }, preview), { preview, token });
-  await frame.waitForTimeout(900);
-  const permit = frame.locator('[data-permit]').first();
-  if (await permit.count()) await permit.click();
-  await frame.waitForTimeout(100);
-  results.approved = {
-    apiRequests,
-    tokenOnlyInAuthorization: apiRequests.every(req => req.auth === `Bearer ${token}` && !req.url.includes(token) && !String(req.body).includes(token)),
-    executableRequests,
-    thirdPartyExecutableRequests: executableRequests.filter(url => new URL(url).origin !== new URL(preview).origin),
-    syntheticPrivateBodyObservedInConsole: JSON.stringify(consoleValues).includes('SYNTHETIC PRIVATE PERSON'),
-    matchingConsoleEntries: consoleValues.filter(entry => JSON.stringify(entry).includes('SYNTHETIC PRIVATE PERSON')),
-    hostCalls: await frame.evaluate(() => globalThis.__hostCalls),
-    connection: await frame.locator('#connection-status').innerText(),
-    snapshot: await frame.locator('#snapshot-region').innerText()
-  };
+  await frame.locator('#snapshot-content .snapshot-grid').waitFor({ timeout: 8000 });
+  const initialCount = apiRequests.length;
+  const adapterType = await frame.evaluate(() => typeof globalThis.SimplyVibeHostAdapter);
+  const sdkType = await frame.evaluate(() => typeof globalThis.SimplyVibeClient);
+  await frame.locator('[data-permit]').first().click();
+  await frame.waitForTimeout(150);
+  const effectsBeforeRevoke = await page.evaluate(() => controllerHarness.effects.slice());
+  await page.evaluate(() => controllerHarness.revoke());
+  await frame.locator('#snapshot-refresh').click();
+  await frame.waitForTimeout(350);
+  results.faithfulHarness = { initialRequests: apiRequests.slice(0, initialCount), afterRevokeRequests: apiRequests.slice(initialCount), effectsBeforeRevoke, effectsAfterRevoke: await page.evaluate(() => controllerHarness.effects.slice()), adapterType, sdkType, connectionAfterRevoke: await frame.locator('#connection-status').innerText(), snapshotAfterRevoke: await frame.locator('#snapshot-region').innerText(), syntheticPrivateBodyObservedInConsole: JSON.stringify(consoleEntries).includes('SYNTHETIC PRIVATE PERSON'), matchingConsoleEntries: consoleEntries.filter(entry => JSON.stringify(entry).includes('SYNTHETIC PRIVATE PERSON')), scripts, consoleEntries, pageErrors };
   await context.close();
 }
-
 async function direct() {
-  const context = await makeContext();
-  const apiRequests = [];
+  const context = await browser.newContext(); const apiRequests = [];
   await context.route('https://api.ylm.co.il/**', route => { apiRequests.push(route.request().url()); return route.abort(); });
-  const page = await context.newPage();
-  await page.goto(preview);
-  await page.evaluate(token => window.postMessage({ ApiAddress: 'https://api.ylm.co.il', Token: { access_token: token } }, location.origin), 'synthetic-forged-token');
-  await page.waitForTimeout(500);
-  results.direct = { apiRequests, hostCalls: await page.evaluate(() => globalThis.__hostCalls), connection: await page.locator('#connection-status').innerText() };
-  await context.close();
+  const page = await context.newPage(); await page.goto(preview);
+  await page.evaluate(() => window.postMessage({ ApiAddress: 'https://api.ylm.co.il', Token: { access_token: 'synthetic-forged-token' } }, location.origin));
+  await page.waitForTimeout(400);
+  results.direct = { apiRequests, connection: await page.locator('#connection-status').innerText() }; await context.close();
 }
-
-await approved();
-await direct();
-console.log(JSON.stringify(results, null, 2));
-await browser.close();
+await faithfulHarness(); await direct(); console.log(JSON.stringify(results, null, 2)); await browser.close();
