@@ -1,0 +1,903 @@
+TAP version 13
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByMonth',
+#   endpoint: '/api/Entity/MilgamDashboardByMonth/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByMonth/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByMonth',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardByMonth', itemCount: 0 }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByDivision',
+#   endpoint: '/api/Entity/MilgamDashboardByDivision/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByDivision/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByDivision',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardByDivision', itemCount: 0 }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardSummary',
+#   endpoint: '/api/Entity/MilgamDashboardSummary/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardSummary/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardSummary', itemCount: 0 }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByCategory',
+#   endpoint: '/api/Entity/MilgamDashboardByCategory/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByCategory/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByCategory',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardByCategory', itemCount: 0 }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardClosureByCategory',
+#   endpoint: '/api/Entity/MilgamDashboardClosureByCategory/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardClosureByCategory/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardClosureByCategory',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardClosureByCategory', itemCount: 0 }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByMonth',
+#   endpoint: '/api/Entity/MilgamDashboardByMonth/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByMonth/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByMonth',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 27
+# }
+# [milgam-dashboard.api] Request successful { dataset: 'MilgamDashboardByMonth', itemCount: 0 }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardSummary',
+#   endpoint: '/api/Entity/MilgamDashboardSummary/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardSummary/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 400,
+#   ok: false,
+#   bodyBytes: 51
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] HTTP error {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 400,
+#   body: { message: 'status-400', echoedToken: '[REDACTED]' }
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardSummary',
+#   endpoint: '/api/Entity/MilgamDashboardSummary/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardSummary/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 401,
+#   ok: false,
+#   bodyBytes: 51
+# }
+# [milgam-dashboard.api] HTTP error {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 401,
+#   body: { message: 'status-401', echoedToken: '[REDACTED]' }
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardSummary',
+#   endpoint: '/api/Entity/MilgamDashboardSummary/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardSummary/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 403,
+#   ok: false,
+#   bodyBytes: 51
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardSummary',
+#   endpoint: '/api/Entity/MilgamDashboardSummary/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardSummary/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] HTTP error {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 403,
+#   body: { message: 'status-403', echoedToken: '[REDACTED]' }
+# }
+# [milgam-dashboard.api] HTTP error {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 500,
+#   body: { message: 'status-500', echoedToken: '[REDACTED]' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardSummary',
+#   status: 500,
+#   ok: false,
+#   bodyBytes: 51
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByDivision',
+#   endpoint: '/api/Entity/MilgamDashboardByDivision/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByDivision/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByDivision',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 8
+# }
+# [milgam-dashboard.api] Invalid JSON response { dataset: 'MilgamDashboardByDivision', bodySnippet: 'not-json' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByCategory',
+#   endpoint: '/api/Entity/MilgamDashboardByCategory/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardByCategory/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByCategory',
+#   status: 200,
+#   ok: true,
+#   bodyBytes: 13
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721///',
+#   tokenType: 'TokenScheme',
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardClosureByCategory',
+#   endpoint: '/api/Entity/MilgamDashboardClosureByCategory/Search',
+#   url: 'https://localhost:5721/api/Entity/MilgamDashboardClosureByCategory/Search',
+#   range: { fromDate: '2026-08-01T00:00:00', toDate: '2026-08-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Network error {
+#   dataset: 'MilgamDashboardClosureByCategory',
+#   detail: 'socket failed for [REDACTED]'
+# }
+# Subtest: date helpers construct exact selected-month and discovery ranges, including leap years
+ok 1 - date helpers construct exact selected-month and discovery ranges, including leap years
+  ---
+  duration_ms: 19.903669
+  ...
+# Subtest: search body has the exact contract keys and selected-month dates
+ok 2 - search body has the exact contract keys and selected-month dates
+  ---
+  duration_ms: 0.233309
+  ...
+# Subtest: client calls every exact endpoint with host base URL, headers, and JSON body
+ok 3 - client calls every exact endpoint with host base URL, headers, and JSON body
+  ---
+  duration_ms: 26.580029
+  ...
+# Subtest: client defaults token type to Bearer
+ok 4 - client defaults token type to Bearer
+  ---
+  duration_ms: 0.935436
+  ...
+# Subtest: unbound host-shaped objects are rejected before fetch
+ok 5 - unbound host-shaped objects are rejected before fetch
+  ---
+  duration_ms: 0.412116
+  ...
+# Subtest: revoked clients issue no request and late responses cannot commit
+ok 6 - revoked clients issue no request and late responses cannot commit
+  ---
+  duration_ms: 1.096942
+  ...
+# Subtest: Items is required, empty Items is valid, and incomplete pages are rejected
+ok 7 - Items is required, empty Items is valid, and incomplete pages are rejected
+  ---
+  duration_ms: 0.306512
+  ...
+# Subtest: HTTP 400 preserves status and response body without request secrets
+ok 8 - HTTP 400 preserves status and response body without request secrets
+  ---
+  duration_ms: 0.995839
+  ...
+# Subtest: HTTP 401 preserves status and response body without request secrets
+ok 9 - HTTP 401 preserves status and response body without request secrets
+  ---
+  duration_ms: 1.04084
+  ...
+# Subtest: HTTP 403 preserves status and response body without request secrets
+ok 10 - HTTP 403 preserves status and response body without request secrets
+  ---
+  duration_ms: 0.957037
+  ...
+# Subtest: HTTP 500 preserves status and response body without request secrets
+ok 11 - HTTP 500 preserves status and response body without request secrets
+  ---
+  duration_ms: 0.758929
+  ...
+# Subtest: invalid JSON and invalid envelope are dataset-specific invalid-response errors
+ok 12 - invalid JSON and invalid envelope are dataset-specific invalid-response errors
+  ---
+  duration_ms: 1.414155
+  ...
+# Subtest: network failures are handled without leaking token data
+ok 13 - network failures are handled without leaking token data
+  ---
+  duration_ms: 0.564622
+  ...
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: snapshot transport issues exactly three concurrent empty-body searches
+ok 14 - snapshot transport issues exactly three concurrent empty-body searches
+  ---
+  duration_ms: 37.169538
+  ...
+# Subtest: strict adapters reconcile events, preserve separate permits, and reject conflicts
+ok 15 - strict adapters reconcile events, preserve separate permits, and reject conflicts
+  ---
+  duration_ms: 1.437855
+  ...
+# Subtest: 10,000 equipment facts map within budget and add no inferred classification
+ok 16 - 10,000 equipment facts map within budget and add no inferred classification
+  ---
+  duration_ms: 100.122573
+  ...
+# Subtest: snapshot controller ignores superseded work and retains last good data on refresh failure
+ok 17 - snapshot controller ignores superseded work and retains last good data on refresh failure
+  ---
+  duration_ms: 0.704727
+  ...
+# Subtest: delivered source keeps current snapshot live calls false by default
+ok 18 - delivered source keeps current snapshot live calls false by default
+  ---
+  duration_ms: 0.102404
+  ...
+# Subtest: period discovery uses the long discovery range and latest available month
+ok 19 - period discovery uses the long discovery range and latest available month
+  ---
+  duration_ms: 2.194285
+  ...
+# Subtest: four selected-month datasets start in parallel with the exact same range and signal
+ok 20 - four selected-month datasets start in parallel with the exact same range and signal
+  ---
+  duration_ms: 1.088142
+  ...
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'http',
+#   errorStatus: 400
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'http',
+#   errorStatus: 401
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'http',
+#   errorStatus: 403
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'http',
+#   errorStatus: 500
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'network',
+#   errorStatus: null
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service failed {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   errorName: undefined,
+#   errorKind: 'invalid-response',
+#   errorStatus: 200
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# Subtest: XState lifecycle waits for host, exposes recoverable timeout, then reaches ready
+ok 21 - XState lifecycle waits for host, exposes recoverable timeout, then reaches ready
+  ---
+  duration_ms: 15.962518
+  ...
+# Subtest: valid empty period result and empty dashboard result transition to empty
+    # Subtest: no periods
+    ok 1 - no periods
+      ---
+      duration_ms: 1.704765
+      ...
+    # Subtest: selected month has no events
+    ok 2 - selected month has no events
+      ---
+      duration_ms: 2.946014
+      ...
+    1..2
+ok 22 - valid empty period result and empty dashboard result transition to empty
+  ---
+  duration_ms: 5.027495
+  ...
+# Subtest: XState transitions a http/400 failure to badRequest
+ok 23 - XState transitions a http/400 failure to badRequest
+  ---
+  duration_ms: 2.522097
+  ...
+# Subtest: XState transitions a http/401 failure to unauthorized
+ok 24 - XState transitions a http/401 failure to unauthorized
+  ---
+  duration_ms: 2.073881
+  ...
+# Subtest: XState transitions a http/403 failure to forbidden
+ok 25 - XState transitions a http/403 failure to forbidden
+  ---
+  duration_ms: 1.956476
+  ...
+# Subtest: XState transitions a http/500 failure to serverError
+ok 26 - XState transitions a http/500 failure to serverError
+  ---
+  duration_ms: 2.884811
+  ...
+# Subtest: XState transitions a network/none failure to networkError
+ok 27 - XState transitions a network/none failure to networkError
+  ---
+  duration_ms: 2.808008
+  ...
+# Subtest: XState transitions a invalid-response/200 failure to invalidResponse
+ok 28 - XState transitions a invalid-response/200 failure to invalidResponse
+  ---
+  duration_ms: 2.179185
+  ...
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 3,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 3 }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 3 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'PERIODS_LOADED',
+#   requestId: 1,
+#   requestStage: 'periods'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service aborted { successType: 'PERIODS_LOADED', requestId: 1 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 2,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 2 }
+# [milgam-dashboard.machine] Service started {
+#   successType: 'DASHBOARD_LOADED',
+#   requestId: 3,
+#   requestStage: 'dashboard'
+# }
+# [milgam-dashboard.machine] Service completed { successType: 'DASHBOARD_LOADED', requestId: 3 }
+# [milgam-dashboard.machine] Service aborted { successType: 'DASHBOARD_LOADED', requestId: 3 }
+# Subtest: changing month aborts the superseded request and stale completion cannot replace current data
+ok 29 - changing month aborts the superseded request and stale completion cannot replace current data
+  ---
+  duration_ms: 49.405411
+  ...
+# Subtest: period selection transitions choose the latest available month in a changed year
+ok 30 - period selection transitions choose the latest available month in a changed year
+  ---
+  duration_ms: 2.682404
+  ...
+# [milgam-dashboard.mappers] Invalid MilgamDashboardSummary data: Summary must contain exactly two scope rows
+# [milgam-dashboard.mappers] Invalid MilgamDashboardByDivision data: Row 0 field EventCount must be numeric
+# [milgam-dashboard.mappers] Invalid MilgamDashboardByCategory data: Row 0 contains an invalid ScopeKey
+# [milgam-dashboard.mappers] Invalid reconciliation data: Division total does not equal summary total
+# [milgam-dashboard.mappers] Invalid reconciliation data: Category total does not equal headquarters summary total
+# [milgam-dashboard.mappers] Invalid reconciliation data: headquarters weighted closure average does not match summary
+# Subtest: MilgamDashboardByMonth maps exact fields and chooses latest available period
+ok 31 - MilgamDashboardByMonth maps exact fields and chooses latest available period
+  ---
+  duration_ms: 2.589501
+  ...
+# Subtest: MilgamDashboardByDivision maps exact fields and sorts counts descending
+ok 32 - MilgamDashboardByDivision maps exact fields and sorts counts descending
+  ---
+  duration_ms: 11.066328
+  ...
+# Subtest: MilgamDashboardSummary maps visible metrics and retains duration validation counts
+ok 33 - MilgamDashboardSummary maps visible metrics and retains duration validation counts
+  ---
+  duration_ms: 0.395415
+  ...
+# Subtest: MilgamDashboardByCategory filters exact ScopeKey values into both category charts
+ok 34 - MilgamDashboardByCategory filters exact ScopeKey values into both category charts
+  ---
+  duration_ms: 0.280811
+  ...
+# Subtest: MilgamDashboardClosureByCategory filters scopes and retains all reconciliation counts
+ok 35 - MilgamDashboardClosureByCategory filters scopes and retains all reconciliation counts
+  ---
+  duration_ms: 0.26481
+  ...
+# Subtest: dashboard mapping reconciles division, summary, category, and weighted closure totals
+ok 36 - dashboard mapping reconciles division, summary, category, and weighted closure totals
+  ---
+  duration_ms: 0.426617
+  ...
+# Subtest: valid empty selected-month datasets map to an empty dashboard without fabricating data
+ok 37 - valid empty selected-month datasets map to an empty dashboard without fabricating data
+  ---
+  duration_ms: 0.350814
+  ...
+# Subtest: missing scopes, invalid fields, and reconciliation mismatches are rejected dataset-specifically
+ok 38 - missing scopes, invalid fields, and reconciliation mismatches are rejected dataset-specifically
+  ---
+  duration_ms: 2.301989
+  ...
+# Subtest: null closure averages are retained and never coerced to zero
+ok 39 - null closure averages are retained and never coerced to zero
+  ---
+  duration_ms: 0.280311
+  ...
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'https://not-allowed.example',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'https://not-allowed.example',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://not-allowed.example' }
+# [milgam-dashboard.host-context] Failed to parse host message payload
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://bad.example' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'https://bad.example',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://bad.example' }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context { reason: 'missing ApiAddress or access token' }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: null,
+#   tokenType: null,
+#   hasAccessToken: false,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: host context accepts object and JSON string payloads from a fixed allowed origin
+ok 40 - host context accepts object and JSON string payloads from a fixed allowed origin
+  ---
+  duration_ms: 15.340793
+  ...
+# Subtest: host context requires a usable API address and access token
+ok 41 - host context requires a usable API address and access token
+  ---
+  duration_ms: 0.440217
+  ...
+# Subtest: accepted context is an immutable capability and nested input mutation cannot change it
+ok 42 - accepted context is an immutable capability and nested input mutation cannot change it
+  ---
+  duration_ms: 0.51822
+  ...
+# Subtest: listener ignores invalid messages, revokes replacements, and accepts fresh re-entry
+ok 43 - listener ignores invalid messages, revokes replacements, and accepts fresh re-entry
+  ---
+  duration_ms: 2.241787
+  ...
+# Subtest: revocation is idempotent and makes the private capability unusable
+ok 44 - revocation is idempotent and makes the private capability unusable
+  ---
+  duration_ms: 0.355114
+  ...
+# Subtest: runtime direction honors explicit RTL/LTR and otherwise infers language
+ok 45 - runtime direction honors explicit RTL/LTR and otherwise infers language
+  ---
+  duration_ms: 0.753629
+  ...
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: null,
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: host services reject commands after capability revocation
+ok 46 - host services reject commands after capability revocation
+  ---
+  duration_ms: 4.90899
+  ...
+# Subtest: late command completion is rejected when its generation is revoked
+ok 47 - late command completion is rejected when its generation is revoked
+  ---
+  duration_ms: 0.631324
+  ...
+# Subtest: static app pins same-origin XState 4.38.3 and exposes Hebrew-first accessible shell
+ok 48 - static app pins same-origin XState 4.38.3 and exposes Hebrew-first accessible shell
+  ---
+  duration_ms: 5.599716
+  ...
+# Subtest: static response policy confines executable code and the reviewed dependency is shipped
+ok 49 - static response policy confines executable code and the reviewed dependency is shipped
+  ---
+  duration_ms: 1.513058
+  ...
+# Subtest: permit cleanup captures the control before awaits and guards focus
+ok 50 - permit cleanup captures the control before awaits and guards focus
+  ---
+  duration_ms: 2.06218
+  ...
+# Subtest: renderer contains all eight dashboard components and null-average em dash
+ok 51 - renderer contains all eight dashboard components and null-average em dash
+  ---
+  duration_ms: 1.256249
+  ...
+# Subtest: styles use the required background, responsive layouts, logical properties, focus, and reduced motion
+ok 52 - styles use the required background, responsive layouts, logical properties, focus, and reduced motion
+  ---
+  duration_ms: 1.256949
+  ...
+# Subtest: production source contains no forbidden endpoint or data fallback
+ok 53 - production source contains no forbidden endpoint or data fallback
+  ---
+  duration_ms: 1.276849
+  ...
+1..53
+# tests 55
+# suites 0
+# pass 55
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 209.480603

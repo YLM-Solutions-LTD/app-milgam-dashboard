@@ -2,13 +2,9 @@ name: Deploy Cloudflare Pages
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+    types: [opened, synchronize, reopened]
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,28 +15,28 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Validate public site
+        run: test -f site/index.html
       - name: Deploy PR preview to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          command: >-
-            pages deploy . --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --branch=pr-${{ github.event.pull_request.number }}
+          command: pages deploy site --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --branch=pr-${{ github.event.pull_request.number }} --commit-hash=${{ github.event.pull_request.head.sha }}
 
   deploy-production:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      - name: Validate public site
+        run: test -f site/index.html
       - name: Deploy production to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          command: >-
-            pages deploy . --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --branch=main
+          command: pages deploy site --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} --branch=main --commit-hash=${{ github.sha }}

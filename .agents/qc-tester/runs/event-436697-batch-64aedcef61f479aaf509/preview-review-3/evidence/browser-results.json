@@ -1,0 +1,88 @@
+{
+  "preview": "https://c9756759.app-milgam-dashboard.pages.dev",
+  "chromium": "140.0.7339.16",
+  "scenarios": [],
+  "requests": [
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token"
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-01-01T00:00:00\",\"ToDate\":\"2026-01-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token"
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-01-01T00:00:00\",\"ToDate\":\"2026-01-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token"
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-01-01T00:00:00\",\"ToDate\":\"2026-01-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token"
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-01-01T00:00:00\",\"ToDate\":\"2026-01-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token"
+    }
+  ],
+  "console": [
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-nUtOoezECfEDYBqXVKY3zx/KMwtON3ia6eSl0ttuyGE='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-UF1MYt9G0jcuShctkTY8mB5g+a83JgpLRJgOCis1Fuc='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-/pVWMOA+ceQb9+jIwYI8XV4fhmd2WYiXnN8VdUF3Rxs='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-vJsdMJe1yxI4frlHPXrC1Ogl6qpfnfhde7d9Y2lclOA='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-EvlLPLQiRUQtZMzF5QaHgAmuJ2q8BaBRTf4UqY1vJpg='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-w0drmLNS9qLrkYLxvRLFy6U8Q9cCOihUP4734ZRFdrk='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-7DgpEWMjdW4/7zHhaIfINfSutiaSUHTdmerXPgiy4wI='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-Og6CIOxnnH8IIripioZikr+YCVlcSMNfkNBAy/H8gms='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    },
+    {
+      "type": "error",
+      "text": "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self'\". Either the 'unsafe-inline' keyword, a hash ('sha256-Og6CIOxnnH8IIripioZikr+YCVlcSMNfkNBAy/H8gms='), or a nonce ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present.\n"
+    }
+  ],
+  "pageErrors": [],
+  "failure": {
+    "message": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#snapshot-content .snapshot-grid') to be visible\u001b[22m\n",
+    "stack": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#snapshot-content .snapshot-grid') to be visible\u001b[22m\n\n    at waitReady (<anonymous>:70:59)\n    at eval (<anonymous>:97:70)"
+  }
+}
