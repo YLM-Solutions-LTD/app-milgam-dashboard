@@ -1,20 +1,19 @@
-# Test evidence — recovered attempt 1
+# UAT evidence — test authoring cycle 3, attempt 1
 
-Runtime: Node.js v20.20.2. Inventory discovered `tests/uat/current-snapshot.uat.test.mjs`, `tests/uat/verified-host-bridge.uat.test.mjs`, `tests/qc/snapshot-qc.test.js`, `tests/qc/sdk-bridge-qc.test.mjs`, and `tests/qc/operator-reentry-race.test.mjs`. All traffic was synthetic/local; no real tenant token or request was used.
+Runtime: Node.js v20.20.2. No browser or deployed preview was used. All authorization, API, and host effects were synthetic and locally fulfilled.
 
-## Commands and results
+Inventory:
 
-- `cd /workspace/src/apps/milgam-dashboard/site && npm test` — 61 passed, 0 failed, 0 skipped; TAP duration 317.492 ms.
-- `cd /workspace/src/apps/milgam-dashboard && node --test tests/qc/*.test.js tests/qc/*.test.mjs` — 30 passed, 0 failed, 0 skipped; TAP duration 490.335 ms. This includes `operator-reentry-race.test.mjs`; no extension was omitted.
-- `cd /workspace/src/apps/milgam-dashboard && node --test tests/uat/*.test.mjs` — 21 passed, 0 failed, 0 skipped; TAP duration 190.315 ms.
-- `cd /workspace && node --test .simplyvibe/input/controller-host-harness/*.test.mjs` — 2 passed, 0 failed, 0 skipped; TAP duration 78.095 ms.
+- `tests/uat/current-snapshot.uat.test.mjs`
+- `tests/uat/verified-host-bridge.uat.test.mjs`
 
-The UAT equipment measurements were 0 rows/0.007 ms/27 bytes, 1 row/0.011 ms/127 bytes, 1,000 rows/2.872 ms/103,422 bytes, and 10,000 rows/26.375 ms/1,043,924 bytes after warm-up. The 10,000-row acceptance budget of 100 ms passed.
+Exact commands and results:
 
-The packaged SDK test compares the guest SDK byte-for-byte with the controller copy, initializes it at the corrected Milgam origin, completes Ready through the real supplied GuestBridge, verifies exact Navigate, rotates the session, rejects the old pending command with zero effects, and accepts fresh generations. The added overlap case calls `reenter()` and a microtask `reenter()`, observes generation 3, automatically starts exactly events/permits/equipment for that newest context, and captures zero unhandled rejections. API fixtures are intercepted and synthetic.
+- `cd /workspace/src/apps/milgam-dashboard && find tests/uat -type f -print | sort` — 2 `.test.mjs` files discovered; neither was omitted.
+- `cd /workspace/src/apps/milgam-dashboard && node --test tests/uat/*.test.mjs` — 23 passed, 0 failed, 0 skipped. Includes 20-way shared verification, silent disconnect denial, 401 terminal taint, 500/401 stale retention, exact Navigate, overlapping re-entry to generation 3, and zero unhandled disposal rejection.
+- `cd /workspace/src/apps/milgam-dashboard/site && npm test` — 61 passed, 0 failed, 0 skipped.
+- `cd /workspace/.simplyvibe/input/controller-host-harness && node --test host-fixture.test.mjs` — 2 passed, 0 failed, 0 skipped.
 
-Behavioral evidence also proves: HTTP 500/401 refresh keeps the identical committed data and timestamp stale; post-401 requests on the rejected generation remain zero; legacy unbound context cannot create API/host authority; held old commands have zero effects and fresh Navigate succeeds; diagnostics omit distinctive response-body markers and API addresses; permit guard ordering remains synchronous and settlement-bound. Source contract checks are supplementary, not the sole lifecycle evidence.
+The packaged and supplied SimplyVibeClient files are byte-identical (SHA-256 `ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1`). The 10,000-row UAT mapper sample completed in 25.028 ms (1,043,924 decoded bytes), below the 100 ms contract.
 
-## Limitations
-
-No exact preview was authorized for this stage. Therefore deployed bytes and headers, browser viewports, runtime CSP/network behavior, DOM/render budgets, and app-level 20-activation behavior were not executed or claimed. The faithful harness proves protocol behavior but not real tenant permissions. The controller owns final review and release.
+Limitations: this stage does not authorize an exact deployed preview, a real tenant token, or tenant permission checks. The faithful fixture validates protocol/lifecycle behavior but does not prove deployed tenant permission configuration. Browser viewport, deployed CSP/network, DOM/render budgets, and exact-preview 20-activation behavior remain final-review work.

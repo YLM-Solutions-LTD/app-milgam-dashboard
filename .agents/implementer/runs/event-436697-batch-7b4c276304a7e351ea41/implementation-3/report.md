@@ -6,34 +6,61 @@
   "cycle": 3,
   "processAttempt": 1,
   "outcome": "ready",
-  "summary": "Implemented shared plan revision 7 lifecycle remediation in browser-only site source. HTTP 401/403 now terminally taints the unchanged SDK session; only distinct bridge re-entry creates a new application generation and automatically loads the three snapshot reports. Ordinary refresh retains last-good stale data, permit navigation remains single-flight through settlement, and detached session-reset/disposal rejections are caught. Production startup remains SDK-only; diagnostics exclude raw API address and response bodies. The true live-call flag, verified SDK bytes, strict CSP/trusted origins, RTL/charts, and report contracts are preserved. Site 61/61, QC 29/29 including JS+MJS, UAT 18/18, and controller harness 2/2 passed locally. This is ready for independent testing, not production approval.",
+  "summary": "The recovered revision-7 implementation, including the operator overlap and silent-disconnect corrections, is ready for independent testing. Rejected or disconnected sessions stay denied until distinct bridge re-entry, fresh re-entry automatically creates a new application generation, last-good snapshots remain stale, permit navigation stays single-flight through settlement, and detached SDK rejections are handled. The true flag, verified SDK, strict CSP/origins, RTL charts, contracts, and metadata-only diagnostics are preserved. Local results: site 61/61, QC JS+MJS 33/33, UAT 21/21, harness 2/2. This is not production approval.",
   "handledActionIds": [536946, 536949, 537034, 537037, 537040, 547704, 547710, 547713, 569787, 569843],
+  "includeDescription": false,
   "roles": [{
     "role": "implementer",
     "verdict": "approve",
     "taskIds": ["T-201", "T-202", "T-203", "T-204", "T-205"],
     "evidence": [
-      "site/host-bootstrap.js:25-97 — terminal authorization-generation denial, distinct-session automatic recovery, and caught detached reconnects.",
-      "site/app.js:76-115,152-160,274-299 and site/current-snapshot.js:76-108 — automatic three-report re-entry, stale last-good retention, ordinary refresh, and permit single-flight lifecycle.",
-      "site/host-context.js:8-18,51-90 and site/api-client.js:59-199 — private SDK binding plus bounded diagnostics without raw API address or response-body retention.",
-      "site/tests/host-bootstrap.test.js and site/tests/current-snapshot.test.js — behavioral terminal-taint/re-entry and stale-generation tests.",
+      "site/host-bootstrap.js — terminal denial, shared verification, fresh-session recovery, overlap ordering, and handled detached rejections.",
+      "site/app.js and site/current-snapshot.js — automatic re-entry loading, stale retention, authorization-before-effect, and permit single-flight.",
+      "site/api-client.js and site/host-context.js — 401/403 revocation, SDK-only production binding, and metadata-only diagnostics.",
+      "tests/qc/operator-reentry-race.test.mjs and tests/qc/sdk-bridge-qc.test.mjs — real SDK/GuestBridge lifecycle evidence.",
       ".agents/implementer/runs/event-436697-batch-7b4c276304a7e351ea41/implementation-3/evidence.md"
-    ]
+    ],
+    "testResults": {
+      "site": {"passed": 61, "failed": 0, "skipped": 0},
+      "qc": {"passed": 33, "failed": 0, "skipped": 0},
+      "uat": {"passed": 21, "failed": 0, "skipped": 0},
+      "controllerFixture": {"passed": 2, "failed": 0, "skipped": 0},
+      "runtime": "Node.js v20.20.2"
+    }
   }],
+  "resolvedFindings": [
+    "simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1",
+    "perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1",
+    "uat-snapshot-refresh-failure-last-good-cleared-v1",
+    "uat-authorization-expiry-old-generation-refresh-allowed-v1",
+    "uat-permit-command-singleflight-race-v1",
+    "qc-sdk-reentry-client-disposed-unhandled-v1",
+    "unchanged-sdk-session-capability-remint-v1",
+    "permit-single-flight-cleared-by-revocation-v1",
+    "legacy-context-remains-independent-authority-v1",
+    "host-context-diagnostics-expose-runtime-address-v1",
+    "operator-overlapping-reentry-newest-generation-recovery-v1",
+    "qc-revoke-refresh-race-issues-old-generation-requests-v1",
+    "perf-preview-revoked-bridge-refresh-emits-old-generation-requests-v1"
+  ],
   "findings": [
     {
       "fingerprint": "deferred-exact-preview-lifecycle-verification-v1",
+      "role": "implementer",
+      "title": "Exact deployed-preview verification remains a controller gate",
       "severity": "info",
       "confidence": "high",
       "taskIds": ["T-204", "T-205"],
-      "summary": "Exact deployed-preview browser lifecycle, pageerror/unhandledrejection, responsive/accessibility, header, request-count, timing, and node evidence remains for later controller stages; it was not claimed here."
+      "evidence": "Local source, deterministic, and faithful SDK/GuestBridge checks pass; exact deployed browser headers, network, screenshots, console, timings, and DOM measurements were not inspected or claimed."
     },
     {
       "fingerprint": "deferred-tenant-host-permission-verification-v1",
+      "role": "implementer",
+      "title": "Tenant permissions and production host verification remain controller-owned",
       "severity": "info",
       "confidence": "high",
       "taskIds": ["T-205"],
-      "summary": "Real tenant authorization and host permission configuration were not contacted or verified; the faithful corrected fixture used only local synthetic traffic."
+      "evidence": "The corrected fixture used only synthetic local permission decisions. No real tenant request, token, deployment, or release action was used or claimed."
     }
   ]
 }

@@ -149,14 +149,23 @@ window.addEventListener("pagehide", () => {
 
 snapshotRefreshElement.addEventListener("click", () => { void refreshAuthorization(); });
 
-async function refreshAuthorization() {
+async function refreshAuthorization({ analytics = true } = {}) {
   try {
-    if (!activeContext || !hostServices) {
-      await hostBootstrap.reconnect();
-      return;
-    }
-    service.send("RETRY");
+    const previousContext = activeContext;
+    const verified = await hostBootstrap.verify();
+    if (verified.context !== previousContext) return; // Fresh re-entry already loads its data.
+    if (analytics) service.send("RETRY");
     await snapshotController?.refresh();
+  } catch (error) {
+    console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
+  }
+}
+
+async function dispatchAuthorized(event) {
+  try {
+    const previousContext = activeContext;
+    const verified = await hostBootstrap.verify();
+    if (verified.context === previousContext) service.send(event);
   } catch (error) {
     console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
   }
@@ -223,10 +232,10 @@ function renderControls(state) {
   `;
 
   controlsElement.querySelector("#year-select")?.addEventListener("change", (event) => {
-    service.send({ type: "YEAR_CHANGED", year: Number(event.target.value) });
+    void dispatchAuthorized({ type: "YEAR_CHANGED", year: Number(event.target.value) });
   });
   controlsElement.querySelector("#month-select")?.addEventListener("change", (event) => {
-    service.send({ type: "MONTH_CHANGED", month: Number(event.target.value) });
+    void dispatchAuthorized({ type: "MONTH_CHANGED", month: Number(event.target.value) });
   });
   controlsElement.querySelector("#refresh-button")?.addEventListener("click", () => {
     void refreshAuthorization();
@@ -248,7 +257,7 @@ function renderSnapshot(state) {
   if (state.status === "error") {
     snapshotStatusElement.innerHTML = 'לא ניתן לטעון את תמונת המצב. <button class="link-button" data-snapshot-retry type="button">נסו שוב</button>';
     snapshotContentElement.replaceChildren();
-    snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => snapshotController?.refresh());
+    snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => { void refreshAuthorization({ analytics: false }); });
     return;
   }
   if (!state.data) return;
@@ -257,7 +266,7 @@ function renderSnapshot(state) {
     ? 'הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. <button class="link-button" data-snapshot-retry type="button">נסו שוב</button>'
     : `עודכן: ${escapeHtml(hostServices?.toDisplayDate(state.data.events.asOf) || String(state.data.events.asOf))}`;
   snapshotContentElement.innerHTML = renderSnapshotContent(state.data);
-  snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => snapshotController?.refresh());
+  snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => { void refreshAuthorization({ analytics: false }); });
   snapshotContentElement.querySelectorAll("[data-permit]").forEach((button) => button.addEventListener("click", navigateToPermits));
 }
 
@@ -278,8 +287,7 @@ async function navigateToPermits(event) {
   const buttons = [...snapshotContentElement.querySelectorAll("[data-permit]")];
   buttons.forEach((button) => { button.disabled = true; button.setAttribute("aria-busy", "true"); });
   try {
-    // Idempotent while the verified generation is active; rejects rather than reminting a tainted session.
-    await hostBootstrap.reconnect();
+    await hostBootstrap.verify();
     const services = hostServices;
     if (!services) throw Object.assign(new Error("Host service unavailable"), { code: "HOST_UNAVAILABLE" });
     await services.ready();
@@ -355,7 +363,7 @@ function stateCard({ icon, title, text, action = null }) {
 }
 
 function bindStateActions() {
-  stateElement.querySelector('[data-action="retry"]')?.addEventListener("click", () => service.send("RETRY"));
+  stateElement.querySelector('[data-action="retry"]')?.addEventListener("click", () => { void dispatchAuthorized("RETRY"); });
 }
 
 function errorCopy(state) {

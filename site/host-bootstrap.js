@@ -22,6 +22,8 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
   let sessionSource = null;
   let disposed = false;
   let reconnecting = null;
+  let verifying = null;
+  let verificationClient = null;
   let deniedSessionSource = null;
   let removeContextRevocationListener = null;
 
@@ -32,6 +34,8 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
     if (revokedContext) revokeHostContext(revokedContext, reason);
     const revokedClient = client;
     client = null;
+    verificationClient?.dispose();
+    verificationClient = null;
     revokedClient?.dispose();
     onRevoked?.(reason);
   };
@@ -88,7 +92,7 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
       const nextClient = new windowObject.SimplyVibeClient({ hostOrigin, timeoutMs });
       client = nextClient;
       // Register before ready so live host events cannot race bootstrap.
-      nextClient.on("SimplyVibe.AuthorizationRevoked", () => revoke("host-event"));
+      nextClient.on("SimplyVibe.AuthorizationRevoked", () => revoke("host-event", { denySession: true }));
       try {
         const rawContext = await nextClient.ready();
         if (client !== nextClient || disposed) throw Object.assign(new Error("Host generation replaced"), { code: "SESSION_RESET" });
@@ -105,9 +109,40 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
     return reconnecting;
   }
 
+  async function verify() {
+    const connected = await connect();
+    if (verifying) return verifying;
+    const expectedContext = connected.context;
+    const expectedSource = sessionSource;
+    verifying = (async () => {
+      const probe = new windowObject.SimplyVibeClient({ hostOrigin, timeoutMs });
+      verificationClient = probe;
+      try {
+        // ready() on the active SDK is cached. A disposable SDK performs a
+        // fresh supported handshake without replacing the app's data/context.
+        const fresh = await probe.ready();
+        if (disposed || context !== expectedContext || sessionSource !== expectedSource) {
+          throw Object.assign(new Error("Host generation replaced"), { code: "SESSION_RESET" });
+        }
+        if (fresh.ApiAddress !== expectedContext.ApiAddress || fresh.Token?.access_token !== expectedContext.Token?.access_token) {
+          throw Object.assign(new Error("Host authorization changed"), { code: "HOST_REVOKED" });
+        }
+        return connected;
+      } catch (error) {
+        if (context === expectedContext) revoke("host-verification-failed", { denySession: true });
+        throw error;
+      } finally {
+        probe.dispose();
+        if (verificationClient === probe) verificationClient = null;
+      }
+    })().finally(() => { verifying = null; });
+    return verifying;
+  }
+
   return {
     connect,
     reconnect: connect,
+    verify,
     dispose() {
       if (disposed) return;
       disposed = true;

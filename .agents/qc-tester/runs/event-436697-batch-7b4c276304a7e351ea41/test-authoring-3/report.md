@@ -6,7 +6,7 @@
   "cycle": 3,
   "processAttempt": 1,
   "outcome": "ready",
-  "summary": "QC approves the cycle-3 test inventory. The authoritative sequential run passed site 61/61, QC 30/30 across both .js and .mjs, UAT 21/21, and controller harness 2/2 with zero skips. The required operator overlap regression now behaviorally proves newest-generation recovery, prior-generation revocation, and zero unhandled disposal/reset rejection using the packaged verified SDK and real GuestBridge fixture. All remediation fingerprints have behavioral or full-suite evidence; no tenant traffic, token, deployment, provider, Git, or lifecycle mutation occurred.",
+  "summary": "QC approves the cycle-3 test inventory. A fresh authoritative sequential run passed site 61/61, QC 33/33 across both .js and .mjs, UAT 21/21, and controller harness 2/2 with zero skips. The real SDK/GuestBridge behavioral inventory covers overlapping re-entry, silent disconnect, one shared verification handshake for a burst, fresh re-entry during old verification, newest-generation recovery, prior-generation revocation, and zero unhandled disposal/reset rejection. All current remediation fingerprints have behavioral or full-suite evidence; no tenant traffic, token, deployment, provider, Git, or lifecycle mutation occurred.",
   "handledActionIds": [536946, 536949, 537034, 537037, 537040, 547704, 547710, 547713, 569787, 569843],
   "includeDescription": false,
   "roles": [{

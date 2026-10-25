@@ -1,5 +1,13 @@
 # UAT tester memory
 
+## Active run — test authoring cycle 3, process attempt 1 (fresh role validation)
+
+- Revalidate shared plan revision 7 and every current remediation fingerprint against the current patched source; earlier local and preview results are context only.
+- Write only this memory, `tests/uat/`, and `runs/event-436697-batch-7b4c276304a7e351ea41/test-authoring-3/`; use the actual packaged SimplyVibeClient/controller GuestBridge and intercepted synthetic traffic only.
+- Discover every UAT extension before running the configured UAT command, plus the full site and controller harness suites. Preserve exact commands and outcomes in this run's evidence.
+- Frozen handled action IDs in required order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+- Result: approve. Complete UAT inventory passed 23/23, site passed 61/61, and controller harness passed 2/2 on Node.js v20.20.2. New behavioral UAT proves 20 concurrent effects share one live verification handshake and silent bridge loss permits zero authenticated effects until distinct re-entry. Exact-preview/browser and real tenant permission checks remain unclaimed.
+
 ## Current assignment — preview review cycle 3, process attempt 1
 
 - Batch `event-436697-batch-7b4c276304a7e351ea41`; exact preview `https://5ab11833.app-milgam-dashboard.pages.dev`; exact PR head `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`.

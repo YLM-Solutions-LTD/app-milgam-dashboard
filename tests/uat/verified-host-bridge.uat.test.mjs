@@ -78,8 +78,52 @@ async function faithfulFixture({ onContext } = {}) {
     onRevoked: (reason) => revoked.push(reason)
   });
   const connected = await bootstrap.connect();
-  return { bootstrap, connected, contexts, revoked, harness: host.controllerHarness, host };
+  return { bootstrap, connected, contexts, revoked, harness: host.controllerHarness, host, guest };
 }
+
+test("UAT-208 healthy verification burst shares one live SDK handshake", async () => {
+  const fixture = await faithfulFixture();
+  try {
+    await tick();
+    let readyRequests = 0;
+    const send = fixture.guest.parent.postMessage;
+    fixture.guest.parent.postMessage = (message, origin) => {
+      if (message.type === "Ready") readyRequests += 1;
+      send(message, origin);
+    };
+    const verified = await Promise.all(Array.from({ length: 20 }, () => fixture.bootstrap.verify()));
+    assert.equal(readyRequests, 1, "concurrent user effects must share one live verification handshake");
+    assert.ok(verified.every(({ context, client }) => context === fixture.connected.context && client === fixture.connected.client));
+    assert.equal(fixture.contexts.length, 1, "verification must not remint application authority");
+  } finally {
+    fixture.bootstrap.dispose();
+    fixture.harness.revoke();
+  }
+});
+
+test("UAT-208 silent bridge loss blocks effects until distinct controller re-entry", async () => {
+  const fixture = await faithfulFixture();
+  let authenticatedEffects = 0;
+  const userRefresh = async () => {
+    await fixture.bootstrap.verify();
+    authenticatedEffects += 3;
+  };
+  try {
+    fixture.harness.revoke();
+    await assert.rejects(userRefresh(), (error) => error.code === "TIMEOUT");
+    await assert.rejects(userRefresh(), (error) => error.code === "HOST_REVOKED");
+    assert.equal(authenticatedEffects, 0, "a silently disconnected generation must perform zero authenticated work");
+
+    fixture.harness.reenter();
+    for (let attempt = 0; attempt < 30 && fixture.contexts.at(-1)?.context.Token.access_token !== "controller-synthetic-generation-2"; attempt += 1) await tick();
+    await userRefresh();
+    assert.equal(fixture.contexts.at(-1)?.context.Token.access_token, "controller-synthetic-generation-2");
+    assert.equal(authenticatedEffects, 3, "only distinct fresh bridge re-entry may resume the three-report workflow");
+  } finally {
+    fixture.bootstrap.dispose();
+    fixture.harness.revoke();
+  }
+});
 
 test("UAT-206 packaged verified SDK reaches the real GuestBridge Navigate path", async () => {
   const fixture = await faithfulFixture();

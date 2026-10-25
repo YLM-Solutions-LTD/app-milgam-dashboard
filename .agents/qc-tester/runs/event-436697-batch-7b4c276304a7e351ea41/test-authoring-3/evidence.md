@@ -12,13 +12,13 @@
 From `/workspace/src/apps/milgam-dashboard`, run exactly:
 
 1. `cd site && npm test` — 61 passed, 0 failed, 0 skipped.
-2. `node --test tests/qc/*.test.js tests/qc/*.test.mjs` — 30 passed, 0 failed, 0 skipped.
+2. `node --test tests/qc/*.test.js tests/qc/*.test.mjs` — 33 passed, 0 failed, 0 skipped.
 3. `node --test tests/uat/*.test.mjs` — 21 passed, 0 failed, 0 skipped.
 4. `node --test /workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs` — 2 passed, 0 failed, 0 skipped.
 
-The four commands were also executed sequentially under `set -e` and completed successfully. The operator race was run six additional times and passed each time after replacing its fixed delay with bounded generation-state polling.
+The four commands were freshly executed sequentially and completed successfully. The 33-case QC inventory includes the operator overlap regression plus real-bridge silent-disconnect, shared verification-burst, and fresh-re-entry-during-old-verification cases.
 
-An earlier non-authoritative parallel smoke run occurred while the UAT role was still editing its inventory and before the QC timing hardening; it reported QC 29/30 and UAT 19/21. Direct diagnostic reruns immediately passed QC 30/30 and UAT 21/21. The QC test's fixed 60 ms delay was replaced by polling for generation 3, preserving the failure condition while removing scheduler sensitivity. No application source was changed.
+Historical recovery runs are not used as current approval evidence. The present sequential run passed QC 33/33 and UAT 21/21. No application source was changed.
 
 ## Current-finding traceability
 
@@ -27,6 +27,7 @@ An earlier non-authoritative parallel smoke run occurred while the UAT role was 
 - `uat-snapshot-refresh-failure-last-good-cleared-v1` (T-203/T-204/T-205): snapshot controller and UAT tests inject both 500 and 401 after populated data and retain identical last-good data/timestamp as stale.
 - `uat-permit-command-singleflight-race-v1` (T-203/T-204/T-205): the full site/UAT/QC inventory verifies synchronous pending acquisition, exact unfiltered Navigate, retained guard through command settlement, zero old-generation effects, and safe focus cleanup. Browser-level 20-activation confirmation remains part of exact-preview review.
 - `qc-sdk-reentry-client-disposed-unhandled-v1` (T-203/T-204/T-205): `tests/qc/operator-reentry-race.test.mjs` uses the real packaged client/GuestBridge, overlaps `reenter()` with `queueMicrotask(reenter())`, confirms generation 3 wins, confirms generation 1 is revoked, and captures zero `unhandledRejection`; `tests/uat/verified-host-bridge.uat.test.mjs` additionally covers reset + pending handshake + held command + disposal.
+- Operator live-host follow-up (T-203/T-205): `tests/qc/operator-reentry-race.test.mjs` also proves a silently disposed bridge permits zero authenticated work, 20 concurrent verifications share one disposable Ready handshake, and a distinct fresh re-entry survives an older pending verification without revoking the new generation.
 - `unchanged-sdk-session-capability-remint-v1`, `permit-single-flight-cleared-by-revocation-v1`, `legacy-context-remains-independent-authority-v1`, and `host-context-diagnostics-expose-runtime-address-v1` from implementation-planning/3 are covered by the same lifecycle tests, the private capability/trust matrix, revocation tests, and metadata-only diagnostics assertions. Synthetic response markers and runtime API addresses are absent from error serialization/log payloads.
 
 ## Shared-task coverage
@@ -39,7 +40,7 @@ An earlier non-authoritative parallel smoke run occurred while the UAT role was 
 
 ## Performance evidence
 
-QC 10,000-row equipment mapping trials in the authoritative run stayed below the 100 ms budget (recorded maximum approximately 30.5 ms; 2,083,924 decoded fixture bytes). UAT's independent 10,000-row measurement was approximately 30.4 ms for 1,043,924 decoded bytes. Snapshot UI remains aggregate-only; source contracts prohibit equipment fact-list growth.
+QC 10,000-row equipment mapping trials in the authoritative run stayed below the 100 ms budget (recorded maximum 33.993 ms; 2,083,924 decoded fixture bytes). UAT's independent 10,000-row measurement was 26.355 ms for 1,043,924 decoded bytes. Snapshot UI remains aggregate-only; source contracts prohibit equipment fact-list growth.
 
 ## Limitations
 

@@ -73,6 +73,69 @@ function controllerFixture() {
   return { guestWindow, hostLocation, harness: hostWindow.controllerHarness };
 }
 
+test("T-203/T-205: healthy concurrent verification shares a fresh handshake without reminting context", async () => {
+  const { guestWindow, harness } = controllerFixture();
+  const accepted = [];
+  const bootstrap = createHostBootstrap({ windowObject: guestWindow, onContext: context => accepted.push(context), timeoutMs: 300 });
+  try {
+    const first = await bootstrap.connect();
+    await tick();
+    let handshakes = 0;
+    const send = guestWindow.parent.postMessage;
+    guestWindow.parent.postMessage = (message, origin) => {
+      if (message.type === "Ready") handshakes += 1;
+      send(message, origin);
+    };
+    const verified = await Promise.all(Array.from({ length: 20 }, () => bootstrap.verify()));
+    assert.equal(handshakes, 1);
+    assert.equal(accepted.length, 1);
+    assert.ok(verified.every(result => result.context === first.context && result.client === first.client));
+    assert.equal(isBoundHostContext(first.context), true);
+  } finally { bootstrap.dispose(); harness.revoke(); }
+});
+
+test("T-203/T-205: silent bridge disposal denies authenticated work until distinct re-entry", async () => {
+  const { guestWindow, harness } = controllerFixture();
+  const accepted = [];
+  const bootstrap = createHostBootstrap({ windowObject: guestWindow, onContext: context => accepted.push(context), timeoutMs: 80 });
+  let authenticatedEffects = 0;
+  const refresh = async () => { await bootstrap.verify(); authenticatedEffects += 3; };
+  try {
+    const first = await bootstrap.connect();
+    harness.revoke();
+    await assert.rejects(refresh(), error => error.code === "TIMEOUT");
+    assert.equal(authenticatedEffects, 0);
+    assert.equal(isBoundHostContext(first.context), false);
+    await assert.rejects(refresh(), error => error.code === "HOST_REVOKED");
+    assert.equal(authenticatedEffects, 0);
+    harness.reenter();
+    for (let attempt = 0; attempt < 30 && accepted.at(-1)?.Token.access_token !== "controller-synthetic-generation-2"; attempt += 1) await tick();
+    await refresh();
+    assert.equal(authenticatedEffects, 3);
+    assert.equal(accepted.at(-1).Token.access_token, "controller-synthetic-generation-2");
+  } finally { bootstrap.dispose(); harness.revoke(); }
+});
+
+test("T-203/T-205: re-entry cancels old verification without revoking the fresh generation", async () => {
+  const { guestWindow, harness } = controllerFixture();
+  const accepted = [];
+  const bootstrap = createHostBootstrap({ windowObject: guestWindow, onContext: context => accepted.push(context), timeoutMs: 300 });
+  try {
+    const first = await bootstrap.connect();
+    harness.revoke();
+    const pending = bootstrap.verify();
+    const rejected = assert.rejects(pending, error => ["DISPOSED", "SESSION_RESET"].includes(error.code));
+    await tick();
+    harness.reenter();
+    await rejected;
+    for (let attempt = 0; attempt < 30 && accepted.at(-1)?.Token.access_token !== "controller-synthetic-generation-2"; attempt += 1) await tick();
+    const fresh = await bootstrap.verify();
+    assert.equal(isBoundHostContext(first.context), false);
+    assert.equal(isBoundHostContext(fresh.context), true);
+    assert.equal(fresh.context.Token.access_token, "controller-synthetic-generation-2");
+  } finally { bootstrap.dispose(); harness.revoke(); }
+});
+
 test("T-203/T-204/T-205: overlapping fresh re-entry recovers newest generation without unhandled disposal", async () => {
   const { guestWindow, harness } = controllerFixture();
   const accepted = [];

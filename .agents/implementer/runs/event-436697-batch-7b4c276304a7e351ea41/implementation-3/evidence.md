@@ -1,30 +1,26 @@
-# Implementation cycle 3 process attempt 1 evidence
+# Implementation cycle 3 attempt 1 evidence
 
-## Source traceability
+Runtime: Node.js v20.20.2. SDK/bridge tests used only local synthetic fixture traffic. No tenant, provider, deployment, Git, database, OData, backend, or lifecycle call was made.
 
-- `T-201`, `T-202`: `site/constants.js:21` keeps `CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED=true`; `site/_headers:2` retains the existing strict CSP/trusted frame ancestors; `site/assets/simplyvibe-client.js` remains byte-identical to the controller SDK at SHA-256 `ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1`.
-- `T-203`, `T-205`, `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1`, `uat-authorization-expiry-old-generation-refresh-allowed-v1`: `site/host-bootstrap.js:25-76` terminally denies an SDK session after HTTP 401/403. Reconnect is idempotent when healthy and rejects the unchanged tainted session; only a distinct verified Ready source clears denial.
-- `T-203`, `T-205`, `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`: `site/host-bootstrap.js:45-64` detects a distinct bridge session, revokes the old capability, and starts one caught reconnect. `site/app.js:76-101` creates the new application/snapshot generation and immediately loads all three reports.
-- `T-203`–`T-205`, `uat-snapshot-refresh-failure-last-good-cleared-v1`: `site/app.js:76-91,152-160` distinguishes ordinary refresh from authority replacement and carries prior last-good data into fresh re-entry. `site/current-snapshot.js:76-108` retains data/time through loading, 500, 401/403, invalidation, and generation replacement.
-- `T-203`–`T-205`, `uat-permit-command-singleflight-race-v1`: `site/app.js:274-299` takes the lock before any await and clears it only in that command chain's `finally`; revocation no longer clears the guard.
-- `T-203`–`T-205`, `qc-sdk-reentry-client-disposed-unhandled-v1`: `site/host-bootstrap.js:55-61,79-97` catches detached session-rotation handshakes and consumes expected `DISPOSED`/`SESSION_RESET`/`HOST_REVOKED` rejection.
-- Production startup uses only `contextFromSdk` via `site/host-bootstrap.js`; `site/app.js` does not install the legacy Context listener. Legacy JSON Context cannot reactivate the app after SDK revocation. `site/host-context.js:8-18,51-75` excludes raw API addresses from diagnostics; `site/api-client.js` retains/logs bounded metadata without response objects/bodies.
+## Complete inventory
 
-## Behavioral evidence
+- `cd site && npm test` — PASS: 61 passed, 0 failed, 0 skipped; all `site/tests/*.test.js`.
+- `node --test tests/qc/*.test.js tests/qc/*.test.mjs` — PASS: 33 passed, 0 failed, 0 skipped; both extensions, including `operator-reentry-race.test.mjs`.
+- `node --test tests/uat/*.test.mjs` — PASS: 21 passed, 0 failed, 0 skipped.
+- `cd /workspace/.simplyvibe/input/controller-host-harness && node --test host-fixture.test.mjs` — PASS: 2 passed, 0 failed, 0 skipped with the unmodified SDK/GuestBridge.
+- Syntax checks passed for `host-bootstrap.js`, `app.js`, `host-context.js`, `api-client.js`, and `current-snapshot.js`.
 
-- `site/tests/host-bootstrap.test.js`: ordinary reconnect is idempotent; HTTP 401 taints the unchanged Ready source; repeated reconnect creates zero clients; distinct Ready source automatically creates exactly one new bound generation.
-- `site/tests/current-snapshot.test.js`: last-good data survives failed refresh and is inherited by a fresh generation while its automatic refresh is pending/failing.
-- `tests/qc/sdk-bridge-qc.test.mjs`: real packaged SDK and GuestBridge exercise Ready, exact Navigate, session rotation, old-command rejection, fresh recovery, and detached-rejection handling.
-- UAT suites cover 500/401 stale retention, terminal denial, exact permit chain, SDK recovery, and response-body-free diagnostics.
+## Task and finding evidence
 
-## Exact commands and results
+- T-201: `site/constants.js:21` keeps the live flag true; `site/current-snapshot.js:8-14` launches exactly three current calls concurrently. Site test 19 and QC test 31 protect the flag.
+- T-202: `site/_headers:2`, `site/app.css`, and `site/app.js` retain strict CSP and class/SVG chart presentation. Site tests 53/58 and QC tests 32/33 passed; no runtime inline-style write or CSP executable relaxation was found.
+- T-203: `site/host-bootstrap.js:25-132` implements terminal denial, disposable verification handshakes, automatic fresh-session recovery, overlap ordering, and handled detached rejections. `site/api-client.js:49-60` revokes on 401/403. `site/app.js:126-163,274-305` verifies before effects. `site/current-snapshot.js:76-108` retains last-good state.
+- T-204/T-205: QC/UAT behaviorally cover shared verification for 20 callers, silent disconnect with zero work, distinct-session recovery, overlapping re-entry, real-bridge Navigate, ten-refresh newest-wins, 10,000-row mapping under 100 ms, stale 500/401 retention, exact three-route re-entry, no old command effect, and zero unhandled reset/disposal rejection.
 
-- `cd site && npm test` — PASS, 61 tests, 0 failed, 0 skipped.
-- `node --test tests/qc/*.test.js tests/qc/*.test.mjs` — PASS, 29 tests, 0 failed, 0 skipped; both extensions selected.
-- `node --test tests/uat/*.test.mjs` — PASS, 18 tests, 0 failed, 0 skipped.
-- `cd /workspace/.simplyvibe/input/controller-host-harness && node --test host-fixture.test.mjs` — PASS, 2 tests, 0 failed, 0 skipped.
-- Syntax checks for all changed JS passed. SDK hashes both equal `ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1`.
+Closed locally: `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1`, `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`, `uat-snapshot-refresh-failure-last-good-cleared-v1`, `uat-authorization-expiry-old-generation-refresh-allowed-v1`, `uat-permit-command-singleflight-race-v1`, `qc-sdk-reentry-client-disposed-unhandled-v1`, `unchanged-sdk-session-capability-remint-v1`, `permit-single-flight-cleared-by-revocation-v1`, `legacy-context-remains-independent-authority-v1`, `host-context-diagnostics-expose-runtime-address-v1`, `operator-overlapping-reentry-newest-generation-recovery-v1`, `qc-revoke-refresh-race-issues-old-generation-requests-v1`, and `perf-preview-revoked-bridge-refresh-emits-old-generation-requests-v1`.
 
-## Deferred controller stages
+Production startup has no legacy listener/source-to-effect path: `app.js` imports no legacy authority function and `host-bootstrap.js` binds only `contextFromSdk` from an actual `SimplyVibeClient`; unbound contexts cannot construct API/host authority. Compatibility parsers remain uninstalled. `summarizeContext` excludes API address and UAT test 21 proves raw body markers do not enter logs/serialized errors.
 
-No tenant, deployed preview, provider, lifecycle API, or external host request was made. Exact deployed-preview checks (browser page errors/unhandled rejections, request/effect counts, screenshots, accessibility, headers, timings, and node budgets) and actual tenant permission verification remain controller-owned `T-204`/`T-205` stages. Local readiness is not deployment or production approval.
+SDK SHA-256 `ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1` matches the controller asset byte-for-byte. XState SHA-256 is `06f5c308e93a6542c15c13c6bc16ac6841e995538ee48682a13909e298650024`.
+
+Exact deployed-preview browser/header/network/screenshot/timing review and real tenant permission/production-host verification remain later controller gates and are not claimed passed.

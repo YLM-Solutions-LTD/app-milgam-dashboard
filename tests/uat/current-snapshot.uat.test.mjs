@@ -278,7 +278,7 @@ test("UAT-206 permit host chain uses exact unfiltered navigation and is structur
   assert.deepEqual(calls, [["ready"], ["Navigate", { Url: "#/Permits/Dashboard" }]]);
   const appSource = await readFile(new URL("../../site/app.js", import.meta.url), "utf8");
   assert.match(appSource, /if \(permitNavigationPending\) return/);
-  assert.match(appSource, /if \(permitNavigationPending\) return;\s*const activatingElement[\s\S]*permitNavigationPending = true;[\s\S]*await hostBootstrap\.reconnect\(\)/);
+  assert.match(appSource, /if \(permitNavigationPending\) return;\s*const activatingElement[\s\S]*permitNavigationPending = true;[\s\S]*await hostBootstrap\.verify\(\)/);
   assert.match(appSource, /aria-busy/);
 });
 

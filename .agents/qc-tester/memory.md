@@ -83,6 +83,7 @@
 - Required inventory includes site tests, QC `*.test.js` and `*.test.mjs`, UAT `*.test.mjs`, and the corrected local controller-host harness suite.
 - Current traceability uses only T-201 through T-205 and frozen handled action order `536946,536949,537034,537037,537040,547704,547710,547713,569787,569843`.
 - Must retain and execute `tests/qc/operator-reentry-race.test.mjs`, use the packaged real SDK/GuestBridge fixture, and never use tenant traffic or tokens.
+- Fresh native QC execution after the operator live-host correction passed site 61/61, QC 33/33 (all `.test.js` and `.test.mjs`), UAT 21/21, and harness 2/2 with zero skips. The expanded QC inventory behaviorally covers silent disconnect, a 20-call shared verification burst, fresh re-entry while old verification is pending, overlapping re-entry, prior-generation revocation, and zero unhandled disposal/reset rejections.
 - Completed ready: site 61/61, QC 30/30 including JS+MJS, UAT 21/21, harness 2/2, no skips. Strengthened the operator overlap regression with bounded generation polling, prior-generation revocation, and unhandled-rejection capture. Exact deployed-preview browser checks remain a later-stage limitation.
 
 ## 2026-10-25 — preview-review cycle 3, process attempt 1
