@@ -340,6 +340,6 @@ test("T-101/T-106: analytical body builder and snapshot transport remain isolate
   assert.doesNotMatch(dateRange, /currentEvents|currentPermits|currentEquipment/);
 });
 
-test("T-107: local current-snapshot live-call flag remains false", () => {
-  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, false);
+test("T-107: authorized release enables current-snapshot live calls", () => {
+  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true);
 });

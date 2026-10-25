@@ -70,4 +70,4 @@ test("snapshot controller ignores superseded work and retains last good data on 
   assert.equal(controller.getState().data.marker, "current");
 });
 
-test("live current snapshot flag remains false locally", () => assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, false));
+test("authorized release enables current snapshot calls", () => assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true));

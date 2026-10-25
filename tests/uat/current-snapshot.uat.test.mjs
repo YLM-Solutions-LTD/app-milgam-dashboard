@@ -249,8 +249,8 @@ test("UAT-011 strict contracts and representative volumes remain within mapper b
   console.log(`UAT_PERFORMANCE ${JSON.stringify(metrics)}`);
 });
 
-test("UAT-012 release boundary keeps current live calls false and fixtures synthetic", async () => {
-  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, false);
+test("UAT-012 authorized release enables current live calls and keeps fixtures synthetic", async () => {
+  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true);
   const testSource = await readFile(new URL(import.meta.url), "utf8");
   assert.doesNotMatch(testSource, /eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\./);
   assert.match(testSource, /syntheticToken/);

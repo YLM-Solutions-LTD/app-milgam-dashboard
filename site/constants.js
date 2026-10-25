@@ -18,7 +18,7 @@ export const ALLOWED_API_ORIGINS_BY_HOST = Object.freeze({
   "https://localhost:5721": Object.freeze(["https://localhost:5721"])
 });
 
-export const CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED = false;
+export const CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED = true;
 
 export const DATASETS = Object.freeze({
   periods: "MilgamDashboardByMonth",
