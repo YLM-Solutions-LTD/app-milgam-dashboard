@@ -111,3 +111,10 @@
 - Verdict: approve. Synthetic deterministic UAT passed 13/13 and app regression passed 56/56 on Node.js v20.20.2.
 - Coverage now traces `UAT-201`–`UAT-210` to `T-201`–`T-205`, asserts the authorized flag is true, and protects CSP-safe chart source contracts alongside snapshot/trust/recovery behavior.
 - Exact-preview browser acceptance and approved real-host authorization lifecycle acceptance were unavailable and remain unclaimed later-stage gates.
+
+## Current assignment — recovered batch preview review cycle 1
+
+- Exact authorized preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`; exact head: `ea974089c5cfa402a44b99606514721807b49dd8`.
+- Execute `UAT-201` through `UAT-210` for `T-201` through `T-205` using Playwright, synthetic SimplyLog parent messaging, and intercepted non-secret API fixtures only.
+- Own only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/`; app source, shared artifacts, prior runs, tests, Git/provider/deployment/controller state remain read-only.
+- Synthetic host behavior can support exact-preview diagnostics but cannot pass `UAT-208` or `UAT-209`; those remain blocked unless an approved real SimplyLog host or controller-owned faithful harness is supplied.

@@ -1,0 +1,934 @@
+{
+  "preview": "https://275c4e6f.app-milgam-dashboard.pages.dev",
+  "expectedHead": "ea974089c5cfa402a44b99606514721807b49dd8",
+  "scenarios": [
+    {
+      "name": "mobile-rtl",
+      "dir": "rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "audit": {
+        "dir": "rtl",
+        "lang": "he",
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "snapshotNodes": 41,
+        "inlineStyles": [],
+        "donut": [
+          {
+            "dash": "60 40",
+            "stroke": "rgb(36, 87, 214)"
+          },
+          {
+            "dash": "40 60",
+            "stroke": "rgb(25, 143, 130)"
+          }
+        ],
+        "bars": [
+          {
+            "width": 340,
+            "class": "bar-fill magnitude-20"
+          },
+          {
+            "width": 340,
+            "class": "bar-fill magnitude-20"
+          }
+        ],
+        "swatches": [
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)",
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)"
+        ],
+        "focused": "<body>\n    <a class=\"skip-link\" href=\"#main-content\">דלגו לתוכן הראשי</a>\n    <header class=\"app-header\">\n      <div class=\"header-inner\">\n        <div class=\"b"
+      },
+      "maxCurrentConcurrency": 3,
+      "permitNames": [
+        "בתוקף: 7; פתיחת לוח האישורים",
+        "חסרים: 2; פתיחת לוח האישורים",
+        "באיחור: 1; פתיחת לוח האישורים"
+      ]
+    },
+    {
+      "name": "mobile-ltr",
+      "dir": "ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "audit": {
+        "dir": "ltr",
+        "lang": "en",
+        "innerWidth": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "snapshotNodes": 41,
+        "inlineStyles": [],
+        "donut": [
+          {
+            "dash": "60 40",
+            "stroke": "rgb(36, 87, 214)"
+          },
+          {
+            "dash": "40 60",
+            "stroke": "rgb(25, 143, 130)"
+          }
+        ],
+        "bars": [
+          {
+            "width": 340,
+            "class": "bar-fill magnitude-20"
+          },
+          {
+            "width": 340,
+            "class": "bar-fill magnitude-20"
+          }
+        ],
+        "swatches": [
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)",
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)"
+        ],
+        "focused": "<body>\n    <a class=\"skip-link\" href=\"#main-content\">דלגו לתוכן הראשי</a>\n    <header class=\"app-header\">\n      <div class=\"header-inner\">\n        <div class=\"b"
+      },
+      "maxCurrentConcurrency": 3,
+      "permitNames": [
+        "בתוקף: 7; פתיחת לוח האישורים",
+        "חסרים: 2; פתיחת לוח האישורים",
+        "באיחור: 1; פתיחת לוח האישורים"
+      ]
+    },
+    {
+      "name": "desktop-rtl",
+      "dir": "rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "audit": {
+        "dir": "rtl",
+        "lang": "he",
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "snapshotNodes": 41,
+        "inlineStyles": [],
+        "donut": [
+          {
+            "dash": "60 40",
+            "stroke": "rgb(36, 87, 214)"
+          },
+          {
+            "dash": "40 60",
+            "stroke": "rgb(25, 143, 130)"
+          }
+        ],
+        "bars": [
+          {
+            "width": 329.28125,
+            "class": "bar-fill magnitude-20"
+          },
+          {
+            "width": 329.28125,
+            "class": "bar-fill magnitude-20"
+          }
+        ],
+        "swatches": [
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)",
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)"
+        ],
+        "focused": "<body>\n    <a class=\"skip-link\" href=\"#main-content\">דלגו לתוכן הראשי</a>\n    <header class=\"app-header\">\n      <div class=\"header-inner\">\n        <div class=\"b"
+      },
+      "maxCurrentConcurrency": 3,
+      "permitNames": [
+        "בתוקף: 7; פתיחת לוח האישורים",
+        "חסרים: 2; פתיחת לוח האישורים",
+        "באיחור: 1; פתיחת לוח האישורים"
+      ]
+    },
+    {
+      "name": "desktop-ltr",
+      "dir": "ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "audit": {
+        "dir": "ltr",
+        "lang": "en",
+        "innerWidth": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "snapshotNodes": 41,
+        "inlineStyles": [],
+        "donut": [
+          {
+            "dash": "60 40",
+            "stroke": "rgb(36, 87, 214)"
+          },
+          {
+            "dash": "40 60",
+            "stroke": "rgb(25, 143, 130)"
+          }
+        ],
+        "bars": [
+          {
+            "width": 329.28125,
+            "class": "bar-fill magnitude-20"
+          },
+          {
+            "width": 329.28125,
+            "class": "bar-fill magnitude-20"
+          }
+        ],
+        "swatches": [
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)",
+          "rgb(36, 87, 214)",
+          "rgb(25, 143, 130)"
+        ],
+        "focused": "<body>\n    <a class=\"skip-link\" href=\"#main-content\">דלגו לתוכן הראשי</a>\n    <header class=\"app-header\">\n      <div class=\"header-inner\">\n        <div class=\"b"
+      },
+      "maxCurrentConcurrency": 3,
+      "permitNames": [
+        "בתוקף: 7; פתיחת לוח האישורים",
+        "חסרים: 2; פתיחת לוח האישורים",
+        "באיחור: 1; פתיחת לוח האישורים"
+      ]
+    },
+    {
+      "name": "initial-failure-retry",
+      "currentRequests": 6,
+      "recovered": true
+    },
+    {
+      "name": "period-independent-stale-refresh",
+      "periodCurrentDelta": 0,
+      "lastGoodRetained": true
+    },
+    {
+      "name": "permit-burst",
+      "activations": 20,
+      "commands": 1,
+      "recovered": true
+    },
+    {
+      "name": "equipment-10000-browser",
+      "readyWaitMs": 212.05144800000016,
+      "snapshotNodes": 41,
+      "totalShown": "10,000 פריטי ציוד"
+    }
+  ],
+  "requests": [
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 548.949835
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 549.295848
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 550.389489
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 550.6764
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 557.988978
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 560.016755
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 560.569876
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 561.919027
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1026.031041
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1026.997478
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1027.252688
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1028.088919
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1036.402035
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1036.986457
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1038.38501
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1038.89423
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1840.221643
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1840.484152
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1841.058574
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1842.195417
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1848.653663
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1850.129419
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1851.199359
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 1851.597174
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2403.784332
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2405.482196
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2405.623401
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2407.575775
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2422.007223
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2424.935534
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2427.056015
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2429.57041
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2874.901512
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2875.090419
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2875.624539
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2876.356567
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2882.76761
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2884.459875
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2885.521715
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 2885.968732
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3017.637029
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3018.156649
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3018.305755
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3355.281444
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3355.950369
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3356.054873
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3357.148515
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3363.971574
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3365.20262
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3366.370765
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3366.801381
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3468.329134
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3469.871393
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3470.931333
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3471.925471
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3594.656129
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3594.776533
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3594.870637
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3892.775643
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3893.624976
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3893.72738
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3895.010028
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3901.182363
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3902.560515
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3903.665457
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 3904.714397
+    },
+    {
+      "key": "MilgamDashboardCurrentEvents",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4298.508542
+    },
+    {
+      "key": "MilgamDashboardCurrentPermits",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4299.610584
+    },
+    {
+      "key": "MilgamDashboardCurrentEquipment",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4300.492718
+    },
+    {
+      "key": "MilgamDashboardByMonth",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4341.722082
+    },
+    {
+      "key": "MilgamDashboardByDivision",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4475.658566
+    },
+    {
+      "key": "MilgamDashboardSummary",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4478.379269
+    },
+    {
+      "key": "MilgamDashboardByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4480.542151
+    },
+    {
+      "key": "MilgamDashboardClosureByCategory",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-qc-token",
+      "started": 4481.444785
+    }
+  ],
+  "console": [
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 3}"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}"
+    }
+  ],
+  "pageErrors": [],
+  "executableRequests": [
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js"
+  ],
+  "chromium": "140.0.7339.16"
+}

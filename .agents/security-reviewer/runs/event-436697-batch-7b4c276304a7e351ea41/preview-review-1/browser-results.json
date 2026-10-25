@@ -1,0 +1,79 @@
+{
+  "approved": {
+    "apiRequests": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "auth": "Bearer synthetic-preview-token",
+        "body": "{}"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "auth": "Bearer synthetic-preview-token",
+        "body": "{}"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "auth": "Bearer synthetic-preview-token",
+        "body": "{}"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "auth": "Bearer synthetic-preview-token",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}"
+      }
+    ],
+    "tokenOnlyInAuthorization": true,
+    "executableRequests": [
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/app.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/constants.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/dashboard-data.js",
+      "https://275c4e6f.app-milgam-dashboard.pages.dev/date-range.js"
+    ],
+    "thirdPartyExecutableRequests": [],
+    "syntheticPrivateBodyObservedInConsole": true,
+    "matchingConsoleEntries": [
+      [
+        "[milgam-dashboard.api]",
+        "HTTP error",
+        {
+          "dataset": "MilgamDashboardByMonth",
+          "status": 500,
+          "body": {
+            "personName": "SYNTHETIC PRIVATE PERSON",
+            "internalRecord": "SYNTHETIC-991"
+          }
+        }
+      ]
+    ],
+    "hostCalls": [
+      [
+        "ready"
+      ],
+      [
+        "executeCommand",
+        "Navigate",
+        {
+          "Url": "#/Permits/Dashboard"
+        }
+      ]
+    ],
+    "connection": "מחובר ל-SimplyLog",
+    "snapshot": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: display:2026-10-25\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 4 פתוחים\nמטה\n5 סה״כ · 2 פתוחים\nסניפים\n7 סה״כ · 2 פתוחים\nאישורים\nבתוקף\n8\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: display:2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין"
+  },
+  "direct": {
+    "apiRequests": [],
+    "hostCalls": [],
+    "connection": "ממתין לחיבור מאובטח"
+  }
+}

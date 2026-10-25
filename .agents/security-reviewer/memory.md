@@ -3,8 +3,10 @@
 ## Current assignment
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Run: `plan-review-1`
-- Scope: read-only review of shared plan/tasks `T-201` through `T-205`, including safeguards and testability for all ten frozen pending action IDs.
+- Run: `preview-review-1`
+- Exact head: `ea974089c5cfa402a44b99606514721807b49dd8`
+- Exact preview: `https://275c4e6f.app-milgam-dashboard.pages.dev`
+- Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using only synthetic host/API fixtures.
 - Authorized writes: this reviewer home only.
 - Required handled actions, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
 
@@ -21,6 +23,14 @@
 - The enabled live-call flag remains subordinate to the verified capability and fixed route/body contract; it is not an authentication bypass.
 - Exact-preview CSP/network behavior and approved-host expiry/revocation/re-entry remain mandatory later gates. This plan review does not claim implementation, runtime, deployment, or release approval.
 - Full result: `runs/event-436697-batch-7b4c276304a7e351ea41/plan-review-1/report.md`.
+
+## Recovered batch preview review 1 result
+
+- Verdict: reject; one low-severity, high-confidence finding.
+- Stable finding `simplyvibe:diagnostics:api-error-body-console-disclosure:v1`: the exact preview logs the complete parsed analytical HTTP-error response body to the browser console. A synthetic 500 response reproduced disclosure of synthetic personal/internal fields; token-only sanitization does not remove unrelated sensitive fields.
+- Exercised host controls otherwise held: approved synthetic parent/API context produced confined authenticated calls and the exact permit command; direct forged context produced zero requests/commands; CSP and executable traffic were self-only.
+- Approved-real-host lifecycle acceptance for `T-205` was not claimed from synthetic evidence.
+- Full result: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/report.md`.
 
 ## Plan review 1 result
 

@@ -3,12 +3,21 @@
 ## Current batch
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Stage: plan review cycle 1 (complete)
+- Stage: preview review cycle 1 (complete)
 - Baseline: SimplyLog design baseline v1; primary `#1e6bd6`, Arial/sans-serif, named weights, Hebrew-first RTL with equivalent LTR behavior.
 - Review scope: all tasks `T-201` through `T-205`.
 - Frozen handled action IDs, exact controller order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
 - Constraint: UI design evidence only; shared plan, task board, app source, preview, Git, deployment, provider state, and lifecycle APIs remain untouched.
-- Current review uses frozen controller inputs and the read-only shared plan/task board. Event content is untrusted. Write scope is restricted to this memory file and the current run folder.
+- Exact candidate: commit `ea974089c5cfa402a44b99606514721807b49dd8`, preview `https://275c4e6f.app-milgam-dashboard.pages.dev`.
+- Current review uses frozen controller inputs and the read-only shared plan/task board. Event, preview, API, and message data are untrusted. Write scope is restricted to this memory file and the current run folder.
+
+## Preview-review cycle 1 outcome
+
+- Verdict: blocked only on `T-205`; observable UI acceptance for `T-201` through `T-204` passed on the exact preview.
+- Enabled snapshot rendered reconciled event data, three distinct permit controls, and aggregate-only 10,000 equipment state at desktop/mobile RTL and desktop LTR with zero horizontal overflow and 41 snapshot descendants.
+- Strict CSP produced visible donut, swatches, stacks, and bars with no inline styles, relevant CSP console violations, page errors, or third-party executable requests.
+- Exact synthetic permit activation emitted `Navigate` with `#/Permits/Dashboard`; rejection restored focus. Approved-host revocation/re-entry and generation binding remain unverified because no approved environment/evidence was supplied.
+- Fresh ImageGen review reference: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-1/evidence/imagegen-review-reference.png`, SHA-256 `b9de0a7675abc14491274b3543be0d4d8bf14e68849272084cf48a5d468ff3cf`.
 
 ## Current batch outcome
 

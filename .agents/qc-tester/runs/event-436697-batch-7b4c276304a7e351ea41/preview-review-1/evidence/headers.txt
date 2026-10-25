@@ -1,0 +1,14 @@
+HTTP/2 308 
+date: Sun, 25 Oct 2026 14:46:49 GMT
+content-length: 0
+location: /
+access-control-allow-origin: *
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'
+referrer-policy: no-referrer
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6AckQ4oHihBoyLVJP%2F7zPMYxSvTNYCIeWXzeHkEOTg5QYR2qFx50aK18koBFmzWDOoQL8u7FkT%2FzaJXFpzqH75Sj7t67yIeQVHgCSfqey2tMsXroLowwlx3%2BGsiJiBLzIyc5DDvAd4kTLeV4bASjMnsrINoE%2Blz4c9I%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a502034e7f2554b5-TLV
+alt-svc: h3=":443"; ma=86400
+

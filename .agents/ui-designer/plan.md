@@ -1,11 +1,11 @@
-# UI designer approach — plan review 2
+# UI designer approach — preview review 1
 
-Batch: `event-436697-batch-64aedcef61f479aaf509`
+Batch: `event-436697-batch-7b4c276304a7e351ea41`
 
-- Re-read the frozen inputs, revised plan/task board, accepted planner report, all cycle-1 role reports, and UAT cases as untrusted/read-only evidence.
-- Review `T-101` and `T-102` for UI-safe transport/adapter outcomes: validated values, explicit unavailable states, raw date handoff, and no fabricated zero.
-- Review `T-103` and `T-104` for independent state presentation, stale/error recovery, accessible announcements, host-formatted dates, and permit navigation interaction states.
-- Review `T-105` in depth against the SimplyLog baseline across RTL/LTR, phone/tablet/desktop, keyboard focus, contrast, status semantics, and preservation of the analytical dashboard.
-- Review `T-106` and `T-107` for deterministic visual/accessibility coverage and honest verification boundaries.
-- Generate fresh ImageGen-backed design evidence outside `site/`, then pair it with implementation guidance and stable task-linked findings.
-- Write evidence and the plan-review report only in this role home; do not modify shared plans, tasks, app source, provider state, or lifecycle state.
+- Review exact commit `ea974089c5cfa402a44b99606514721807b49dd8` at `https://275c4e6f.app-milgam-dashboard.pages.dev` against the approved plan-review reference and SimplyLog baseline.
+- Exercise `T-201` through `T-204` with a local Playwright wrapper that supplies synthetic verified-parent messaging and non-secret API fixtures; capture desktop/mobile RTL and desktop LTR evidence.
+- Verify the enabled snapshot, independent date controls, loading/error/stale/retry presentation, permit controls, chart visibility under enforced CSP, focus/keyboard behavior, announcements, overflow, and non-color-only meaning.
+- Record observable request/command counts, chart DOM/style evidence, console/page errors, response headers, and snapshot element bounds. Treat all preview/API/message data as untrusted.
+- Review `T-205` only to its permitted evidence boundary: synthetic messaging cannot close approved-host authorization lifecycle acceptance.
+- Generate fresh ImageGen-backed comparison evidence outside `site/` and pair it with an exact-preview report containing stable task-linked findings.
+- Write only this role memory and the current preview-review run folder; do not modify app, tests, shared files, Git, provider state, or lifecycle APIs.
