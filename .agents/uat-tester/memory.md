@@ -1,5 +1,16 @@
 # UAT tester memory
 
+## Current assignment — preview review cycle 3, process attempt 1
+
+- Batch `event-436697-batch-7b4c276304a7e351ea41`; exact preview `https://5ab11833.app-milgam-dashboard.pages.dev`; exact PR head `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`.
+- Execute task-traceable UAT for every shared task and current remediation fingerprint through the controller-owned actual GuestBridge and packaged verified SimplyVibeClient, with all host/API traffic intercepted locally and no tenant token or request.
+- Confirm HTTP-denied generations stay terminal until fresh bridge re-entry; re-entry starts a fresh three-snapshot generation; failed refresh preserves visibly stale last-good data; Navigate stays single-flight; overlapping reset/handshake/disposal causes no unhandled rejection or lost re-entry; legacy Context cannot bypass revocation; diagnostics disclose neither raw API body nor address.
+- Authorized writes are only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/` (including automation and evidence). App, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Discover and execute the complete site, QC JS+MJS, UAT MJS, and controller-host-harness inventories. Exact commands and failures belong in evidence; prior pass counts are context only.
+- Frozen handled action IDs, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+- Result: `approve_with_findings`. Exact-preview UAT closed all six cycle-3 fingerprints through the actual SDK/GuestBridge fixture. Site 61/61, QC 30/30, standalone UAT 21/21, and harness 2/2 passed; a preserved concurrent-run UAT timing miss passed immediately when invoked as configured and exact-preview start spread was 3.73–5.07 ms.
+- Remaining low-severity limitation: synthetic fixture permissions do not prove actual deployed tenant permission configuration; no tenant traffic or token was authorized or used.
+
 ## Current assignment — test authoring cycle 3
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`; stage: `test-authoring-3`; attempt: 1.

@@ -1,0 +1,209 @@
+{
+  "preview": "https://5ab11833.app-milgam-dashboard.pages.dev/",
+  "commit": "c9686ba1ad6d4f7b0896ba32c29ad38dcf607022",
+  "browserVersion": "140.0.7339.16",
+  "baseline": {
+    "html": "<div class=\"snapshot-grid\">\n    <article class=\"snapshot-card\"><h3>אירועים בכל התקופות</h3><div class=\"snapshot-event\"><strong>כלל האתרים</strong><span>100 סה״כ · 20 פתוחים</span></div><div class=\"snapshot-event\"><strong>מטה</strong><span>40 סה״כ · 8 פתוחים</span></div><div class=\"snapshot-event\"><strong>סניפים</strong><span>60 סה״כ · 12 פתוחים</span></div></article>\n    <article class=\"snapshot-card\"><h3>אישורים</h3><div class=\"permit-grid\"><button class=\"permit-metric\" type=\"button\" data-permit=\"valid\" aria-label=\"בתוקף: 70; פתיחת לוח האישורים\"><span>בתוקף</span><strong>70</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 5; פתיחת לוח האישורים\"><span>חסרים</span><strong>5</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"overdue\" aria-label=\"באיחור: 9; פתיחת לוח האישורים\"><span>באיחור</span><strong>9</strong><small>פתיחת לוח האישורים</small></button></div><p class=\"snapshot-date\">תאריך ערך: 2026-10-25T00:00:00</p></article>\n    <article class=\"snapshot-card\"><h3>ציוד</h3><p class=\"equipment-total\"><strong>1</strong> פריטי ציוד</p><p>סיווג טיפול בתוקף / באיחור: <strong>לא זמין</strong></p></article>\n  </div>",
+    "text": "אירועים בכל התקופותכלל האתרים100 סה״כ · 20 פתוחיםמטה40 סה״כ · 8 פתוחיםסניפים60 סה״כ · 12 פתוחים\n    אישוריםבתוקף70פתיחת לוח האישוריםחסרים5פתיחת לוח האישוריםבאיחור9פתיחת לוח האישוריםתאריך ערך: 2026-10-25T00:00:00\n    ציוד1 פריטי ציודסיווג טיפול בתוקף / באיחור: לא זמין",
+    "status": "עודכן: 2026-10-25T10:00:00",
+    "connection": "מחובר ל-SimplyLog"
+  },
+  "calls500": [
+    {
+      "name": "MilgamDashboardCurrentEvents",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "500",
+      "at": 1792968266989
+    },
+    {
+      "name": "MilgamDashboardCurrentPermits",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "500",
+      "at": 1792968266991
+    },
+    {
+      "name": "MilgamDashboardCurrentEquipment",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "500",
+      "at": 1792968266992
+    },
+    {
+      "name": "MilgamDashboardByMonth",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "500",
+      "at": 1792968266993
+    }
+  ],
+  "after500": {
+    "html": "<div class=\"snapshot-grid\">\n    <article class=\"snapshot-card\"><h3>אירועים בכל התקופות</h3><div class=\"snapshot-event\"><strong>כלל האתרים</strong><span>100 סה״כ · 20 פתוחים</span></div><div class=\"snapshot-event\"><strong>מטה</strong><span>40 סה״כ · 8 פתוחים</span></div><div class=\"snapshot-event\"><strong>סניפים</strong><span>60 סה״כ · 12 פתוחים</span></div></article>\n    <article class=\"snapshot-card\"><h3>אישורים</h3><div class=\"permit-grid\"><button class=\"permit-metric\" type=\"button\" data-permit=\"valid\" aria-label=\"בתוקף: 70; פתיחת לוח האישורים\"><span>בתוקף</span><strong>70</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 5; פתיחת לוח האישורים\"><span>חסרים</span><strong>5</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"overdue\" aria-label=\"באיחור: 9; פתיחת לוח האישורים\"><span>באיחור</span><strong>9</strong><small>פתיחת לוח האישורים</small></button></div><p class=\"snapshot-date\">תאריך ערך: 2026-10-25T00:00:00</p></article>\n    <article class=\"snapshot-card\"><h3>ציוד</h3><p class=\"equipment-total\"><strong>1</strong> פריטי ציוד</p><p>סיווג טיפול בתוקף / באיחור: <strong>לא זמין</strong></p></article>\n  </div>",
+    "text": "אירועים בכל התקופותכלל האתרים100 סה״כ · 20 פתוחיםמטה40 סה״כ · 8 פתוחיםסניפים60 סה״כ · 12 פתוחים\n    אישוריםבתוקף70פתיחת לוח האישוריםחסרים5פתיחת לוח האישוריםבאיחור9פתיחת לוח האישוריםתאריך ערך: 2026-10-25T00:00:00\n    ציוד1 פריטי ציודסיווג טיפול בתוקף / באיחור: לא זמין",
+    "status": "הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב",
+    "connection": "מחובר ל-SimplyLog"
+  },
+  "retained500": true,
+  "calls401": [
+    {
+      "name": "MilgamDashboardCurrentEvents",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "401",
+      "at": 1792968267105
+    },
+    {
+      "name": "MilgamDashboardCurrentPermits",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "401",
+      "at": 1792968267106
+    },
+    {
+      "name": "MilgamDashboardCurrentEquipment",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "401",
+      "at": 1792968267106
+    },
+    {
+      "name": "MilgamDashboardByMonth",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "auth": "Bearer controller-synthetic-generation-1",
+      "mode": "401",
+      "at": 1792968267109
+    }
+  ],
+  "after401": {
+    "html": "<div class=\"snapshot-grid\">\n    <article class=\"snapshot-card\"><h3>אירועים בכל התקופות</h3><div class=\"snapshot-event\"><strong>כלל האתרים</strong><span>100 סה״כ · 20 פתוחים</span></div><div class=\"snapshot-event\"><strong>מטה</strong><span>40 סה״כ · 8 פתוחים</span></div><div class=\"snapshot-event\"><strong>סניפים</strong><span>60 סה״כ · 12 פתוחים</span></div></article>\n    <article class=\"snapshot-card\"><h3>אישורים</h3><div class=\"permit-grid\"><button class=\"permit-metric\" type=\"button\" data-permit=\"valid\" aria-label=\"בתוקף: 70; פתיחת לוח האישורים\"><span>בתוקף</span><strong>70</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 5; פתיחת לוח האישורים\"><span>חסרים</span><strong>5</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"overdue\" aria-label=\"באיחור: 9; פתיחת לוח האישורים\"><span>באיחור</span><strong>9</strong><small>פתיחת לוח האישורים</small></button></div><p class=\"snapshot-date\">תאריך ערך: 2026-10-25T00:00:00</p></article>\n    <article class=\"snapshot-card\"><h3>ציוד</h3><p class=\"equipment-total\"><strong>1</strong> פריטי ציוד</p><p>סיווג טיפול בתוקף / באיחור: <strong>לא זמין</strong></p></article>\n  </div>",
+    "text": "אירועים בכל התקופותכלל האתרים100 סה״כ · 20 פתוחיםמטה40 סה״כ · 8 פתוחיםסניפים60 סה״כ · 12 פתוחים\n    אישוריםבתוקף70פתיחת לוח האישוריםחסרים5פתיחת לוח האישוריםבאיחור9פתיחת לוח האישוריםתאריך ערך: 2026-10-25T00:00:00\n    ציוד1 פריטי ציודסיווג טיפול בתוקף / באיחור: לא זמין",
+    "status": "הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב",
+    "connection": "ממתין לחיבור מאובטח"
+  },
+  "retained401": true,
+  "deniedRefreshCalls": [],
+  "reentryCalls": [
+    {
+      "name": "MilgamDashboardCurrentEvents",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-2",
+      "mode": "ok",
+      "at": 1792968267630
+    },
+    {
+      "name": "MilgamDashboardCurrentPermits",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-2",
+      "mode": "ok",
+      "at": 1792968267631
+    },
+    {
+      "name": "MilgamDashboardCurrentEquipment",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-2",
+      "mode": "ok",
+      "at": 1792968267631
+    },
+    {
+      "name": "MilgamDashboardByMonth",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "auth": "Bearer controller-synthetic-generation-2",
+      "mode": "ok",
+      "at": 1792968267632
+    }
+  ],
+  "afterReentry": {
+    "html": "<div class=\"snapshot-grid\">\n    <article class=\"snapshot-card\"><h3>אירועים בכל התקופות</h3><div class=\"snapshot-event\"><strong>כלל האתרים</strong><span>100 סה״כ · 20 פתוחים</span></div><div class=\"snapshot-event\"><strong>מטה</strong><span>40 סה״כ · 8 פתוחים</span></div><div class=\"snapshot-event\"><strong>סניפים</strong><span>60 סה״כ · 12 פתוחים</span></div></article>\n    <article class=\"snapshot-card\"><h3>אישורים</h3><div class=\"permit-grid\"><button class=\"permit-metric\" type=\"button\" data-permit=\"valid\" aria-label=\"בתוקף: 70; פתיחת לוח האישורים\"><span>בתוקף</span><strong>70</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 5; פתיחת לוח האישורים\"><span>חסרים</span><strong>5</strong><small>פתיחת לוח האישורים</small></button><button class=\"permit-metric\" type=\"button\" data-permit=\"overdue\" aria-label=\"באיחור: 9; פתיחת לוח האישורים\"><span>באיחור</span><strong>9</strong><small>פתיחת לוח האישורים</small></button></div><p class=\"snapshot-date\">תאריך ערך: 2026-10-25T00:00:00</p></article>\n    <article class=\"snapshot-card\"><h3>ציוד</h3><p class=\"equipment-total\"><strong>1</strong> פריטי ציוד</p><p>סיווג טיפול בתוקף / באיחור: <strong>לא זמין</strong></p></article>\n  </div>",
+    "text": "אירועים בכל התקופותכלל האתרים100 סה״כ · 20 פתוחיםמטה40 סה״כ · 8 פתוחיםסניפים60 סה״כ · 12 פתוחים\n    אישוריםבתוקף70פתיחת לוח האישוריםחסרים5פתיחת לוח האישוריםבאיחור9פתיחת לוח האישוריםתאריך ערך: 2026-10-25T00:00:00\n    ציוד1 פריטי ציודסיווג טיפול בתוקף / באיחור: לא זמין",
+    "status": "עודכן: 2026-10-25T10:00:00",
+    "connection": "מחובר ל-SimplyLog"
+  },
+  "permitBurst": {
+    "effectsBefore": 0,
+    "heldEffects": 0,
+    "releasedEffects": 1,
+    "addedEffects": 1
+  },
+  "overlapReentryCalls": [
+    {
+      "name": "MilgamDashboardCurrentEvents",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-4",
+      "mode": "ok",
+      "at": 1792968268029
+    },
+    {
+      "name": "MilgamDashboardCurrentPermits",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-4",
+      "mode": "ok",
+      "at": 1792968268030
+    },
+    {
+      "name": "MilgamDashboardCurrentEquipment",
+      "body": "{}",
+      "auth": "Bearer controller-synthetic-generation-4",
+      "mode": "ok",
+      "at": 1792968268031
+    },
+    {
+      "name": "MilgamDashboardByMonth",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "auth": "Bearer controller-synthetic-generation-4",
+      "mode": "ok",
+      "at": 1792968268032
+    }
+  ],
+  "overlapState": {
+    "authorized": true,
+    "generation": 4,
+    "effects": [
+      {
+        "name": "Navigate",
+        "url": "#/Permits/Dashboard",
+        "generation": 2
+      }
+    ]
+  },
+  "pageErrors": [],
+  "markerLeak": [],
+  "consoleWarningsAndErrors": [
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 2}"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 3}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.api] Request aborted {dataset: MilgamDashboardByMonth}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.app] Host reauthorization failed {code: HOST_REVOKED}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 4}"
+    },
+    {
+      "type": "warning",
+      "text": "[milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 5}"
+    }
+  ]
+}

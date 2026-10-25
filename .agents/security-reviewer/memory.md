@@ -3,13 +3,29 @@
 ## Current assignment
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Run: `preview-review-2`
+- Run: `preview-review-3`
 - Process attempt: 1 (fresh review of the controller-supplied artifact; current-run artifacts may be replaced, older run directories remain immutable).
-- Exact head: `8f1e577bbcb4670878dec24ff570c1382a18d170`
-- Exact preview: `https://ea51f277.app-milgam-dashboard.pages.dev`
+- Exact head: `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`
+- Exact preview: `https://5ab11833.app-milgam-dashboard.pages.dev`
 - Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using the controller-owned GuestBridge harness and synthetic local API fixtures only.
 - Authorized writes: this reviewer home only.
 - Required handled actions, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+
+## Preview review 3 assignment
+
+- Review all shared revision-7 tasks `T-201` through `T-205` against the exact preview and matching controller-supplied source.
+- Reproduce or close every cycle-3 fingerprint with source and browser evidence: terminal 401/403 taint, automatic distinct-session recovery, last-good stale retention, permit single-flight, disposed-client rejection handling, legacy-context denial, and bounded diagnostics.
+- Use only the unmodified verified SimplyVibeClient/GuestBridge at the corrected intercepted fixture origin. Abort all real tenant/host/API traffic and never inspect a real credential.
+- Preserve strict CSP/origin policy; inspect bearer confinement, direct-access denial, same-origin executable traffic, and zero old-generation effects.
+- Store current plan, evidence, scripts/results, and structured report only under `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`.
+
+## Preview review 3 result
+
+- Verdict: approve; no reproducible client-side security defect remained across T-201 through T-205.
+- The exact preview terminally denied an HTTP-401-tainted session, retained last-good stale facts, automatically loaded exactly three current reports only after distinct fixture re-entry, held Navigate to one effect under a 20-activation burst, and survived the overlapping re-entry/disposal race without page error or unhandled rejection.
+- Direct forged context generated zero API traffic; synthetic 500/401 body markers and raw API address were absent from diagnostics; CSP and executable traffic remained strict/self-only.
+- The unused legacy message-context helper remains in the module but is not installed or reachable from the production bootstrap; direct runtime testing found no authorization path. Treat removal as defense-in-depth, not a demonstrated vulnerability.
+- Fixture decisions do not prove tenant permissions or controller release status. Full result: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/report.md`.
 
 ## Preview review 2 assignment
 

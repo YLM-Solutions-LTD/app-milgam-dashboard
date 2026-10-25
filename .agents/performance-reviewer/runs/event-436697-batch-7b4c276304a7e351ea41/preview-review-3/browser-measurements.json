@@ -1,0 +1,1273 @@
+{
+  "measuredAt": "2026-10-25T22:44:54.599Z",
+  "preview": "https://5ab11833.app-milgam-dashboard.pages.dev/",
+  "commit": "c9686ba1ad6d4f7b0896ba32c29ad38dcf607022",
+  "browserVersion": "140.0.7339.16",
+  "node": "v20.20.2",
+  "harness": "controller-owned real GuestBridge and packaged guest SDK; corrected trusted origin; all API fulfilled locally",
+  "equipmentRows": 10000,
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "navigationToReadyMs": 452,
+      "initial": {
+        "hasSimplyVibeClient": true,
+        "snapshotElements": 41,
+        "contentElements": 34,
+        "documentElements": 84,
+        "documentScrollWidth": 374,
+        "viewportWidth": 374,
+        "equipmentText": "10,000",
+        "status": "עודכן: 2026-10-25T10:00:00"
+      },
+      "mappingSamplesMs": [
+        14.600000001490116,
+        11.099999997764826,
+        11.100000001490116,
+        11.5,
+        11.399999998509884,
+        12
+      ],
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968287724,
+          "isCurrent": true,
+          "finishedAt": 1792968287785,
+          "responseAt": 1792968287786
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968287724,
+          "isCurrent": true,
+          "finishedAt": 1792968287785,
+          "responseAt": 1792968287786
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968287727,
+          "isCurrent": true,
+          "finishedAt": 1792968287845,
+          "responseAt": 1792968287847
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968287729,
+          "isCurrent": false,
+          "finishedAt": 1792968287846,
+          "responseAt": 1792968287855
+        }
+      ],
+      "refreshCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968289375,
+          "isCurrent": true,
+          "finishedAt": 1792968289453,
+          "responseAt": 1792968289454
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968289376,
+          "isCurrent": true,
+          "finishedAt": 1792968289453,
+          "responseAt": 1792968289454
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968289377,
+          "isCurrent": true,
+          "finishedAt": 1792968289493,
+          "responseAt": 1792968289494
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968289377,
+          "isCurrent": false,
+          "finishedAt": 1792968289494,
+          "responseAt": 1792968289503
+        }
+      ],
+      "refreshMs": 181,
+      "postResponseRenderMs": 20,
+      "refreshBurstCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968289533,
+          "isCurrent": true,
+          "finishedAt": 1792968289595,
+          "responseAt": 1792968289612
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968289533,
+          "isCurrent": true,
+          "finishedAt": 1792968289613,
+          "responseAt": 1792968289613
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968289534,
+          "isCurrent": true,
+          "finishedAt": 1792968289651,
+          "responseAt": 1792968289652
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968289534,
+          "isCurrent": false,
+          "finishedAt": 1792968289652,
+          "responseAt": 1792968289660
+        }
+      ],
+      "heldState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "releasedState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "postRevokeCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968290254,
+          "isCurrent": true,
+          "finishedAt": 1792968290316,
+          "responseAt": 1792968290318
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968290256,
+          "isCurrent": true,
+          "finishedAt": 1792968290316,
+          "responseAt": 1792968290318
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968290256,
+          "isCurrent": true,
+          "finishedAt": 1792968290372,
+          "responseAt": 1792968290373
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968290257,
+          "isCurrent": false,
+          "finishedAt": 1792968290373,
+          "responseAt": 1792968290380
+        }
+      ],
+      "reentryCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 281,
+          "startedAt": 1792968290517,
+          "isCurrent": true,
+          "finishedAt": 1792968290579,
+          "responseAt": 1792968290581
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 141,
+          "startedAt": 1792968290518,
+          "isCurrent": true,
+          "finishedAt": 1792968290579,
+          "responseAt": 1792968290596
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 4070459,
+          "startedAt": 1792968290519,
+          "isCurrent": true,
+          "finishedAt": 1792968290634,
+          "responseAt": 1792968290635
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 27,
+          "startedAt": 1792968290519,
+          "isCurrent": false,
+          "finishedAt": 1792968290635,
+          "responseAt": 1792968290643
+        }
+      ],
+      "reentryUi": {
+        "connection": "מחובר ל-SimplyLog",
+        "snapshotStatus": "עודכן: 2026-10-25T10:00:00",
+        "equipmentText": "10,000",
+        "refreshDisabled": false
+      },
+      "effectsBeforeRevokedCommand": 1,
+      "revokedCommandState": {
+        "authorized": false,
+        "generation": 2,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "peakCurrentConcurrency": 3,
+      "decodedCurrentBytesPerGeneration": 4070881,
+      "allCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968287724,
+          "isCurrent": true,
+          "finishedAt": 1792968287785,
+          "responseAt": 1792968287786
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968287724,
+          "isCurrent": true,
+          "finishedAt": 1792968287785,
+          "responseAt": 1792968287786
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968287727,
+          "isCurrent": true,
+          "finishedAt": 1792968287845,
+          "responseAt": 1792968287847
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968287729,
+          "isCurrent": false,
+          "finishedAt": 1792968287846,
+          "responseAt": 1792968287855
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968289375,
+          "isCurrent": true,
+          "finishedAt": 1792968289453,
+          "responseAt": 1792968289454
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968289376,
+          "isCurrent": true,
+          "finishedAt": 1792968289453,
+          "responseAt": 1792968289454
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968289377,
+          "isCurrent": true,
+          "finishedAt": 1792968289493,
+          "responseAt": 1792968289494
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968289377,
+          "isCurrent": false,
+          "finishedAt": 1792968289494,
+          "responseAt": 1792968289503
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968289533,
+          "isCurrent": true,
+          "finishedAt": 1792968289595,
+          "responseAt": 1792968289612
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968289533,
+          "isCurrent": true,
+          "finishedAt": 1792968289613,
+          "responseAt": 1792968289613
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968289534,
+          "isCurrent": true,
+          "finishedAt": 1792968289651,
+          "responseAt": 1792968289652
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968289534,
+          "isCurrent": false,
+          "finishedAt": 1792968289652,
+          "responseAt": 1792968289660
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968290254,
+          "isCurrent": true,
+          "finishedAt": 1792968290316,
+          "responseAt": 1792968290318
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968290256,
+          "isCurrent": true,
+          "finishedAt": 1792968290316,
+          "responseAt": 1792968290318
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968290256,
+          "isCurrent": true,
+          "finishedAt": 1792968290372,
+          "responseAt": 1792968290373
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968290257,
+          "isCurrent": false,
+          "finishedAt": 1792968290373,
+          "responseAt": 1792968290380
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 281,
+          "startedAt": 1792968290517,
+          "isCurrent": true,
+          "finishedAt": 1792968290579,
+          "responseAt": 1792968290581
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 141,
+          "startedAt": 1792968290518,
+          "isCurrent": true,
+          "finishedAt": 1792968290579,
+          "responseAt": 1792968290596
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 4070459,
+          "startedAt": 1792968290519,
+          "isCurrent": true,
+          "finishedAt": 1792968290634,
+          "responseAt": 1792968290635
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 27,
+          "startedAt": 1792968290519,
+          "isCurrent": false,
+          "finishedAt": 1792968290635,
+          "responseAt": 1792968290643
+        }
+      ],
+      "longTasks": [
+        {
+          "startTime": 1690.1000000014901,
+          "duration": 72
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "executableRequests": [
+        {
+          "url": "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+          "type": "script"
+        },
+        {
+          "url": "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "navigationToReadyMs": 427,
+      "initial": {
+        "hasSimplyVibeClient": true,
+        "snapshotElements": 41,
+        "contentElements": 34,
+        "documentElements": 84,
+        "documentScrollWidth": 1424,
+        "viewportWidth": 1424,
+        "equipmentText": "10,000",
+        "status": "עודכן: 2026-10-25T10:00:00"
+      },
+      "mappingSamplesMs": [
+        13.900000002235174,
+        10.699999999254942,
+        11.300000000745058,
+        11.799999997019768,
+        11.400000002235174,
+        12.699999999254942
+      ],
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968291231,
+          "isCurrent": true,
+          "finishedAt": 1792968291293,
+          "responseAt": 1792968291310
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968291231,
+          "isCurrent": true,
+          "finishedAt": 1792968291311,
+          "responseAt": 1792968291311
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968291232,
+          "isCurrent": true,
+          "finishedAt": 1792968291352,
+          "responseAt": 1792968291353
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968291235,
+          "isCurrent": false,
+          "finishedAt": 1792968291353,
+          "responseAt": 1792968291361
+        }
+      ],
+      "refreshCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968292921,
+          "isCurrent": true,
+          "finishedAt": 1792968292982,
+          "responseAt": 1792968292983
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968292921,
+          "isCurrent": true,
+          "finishedAt": 1792968292982,
+          "responseAt": 1792968292999
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968292922,
+          "isCurrent": true,
+          "finishedAt": 1792968293038,
+          "responseAt": 1792968293039
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968292923,
+          "isCurrent": false,
+          "finishedAt": 1792968293039,
+          "responseAt": 1792968293048
+        }
+      ],
+      "refreshMs": 173,
+      "postResponseRenderMs": 18,
+      "refreshBurstCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968293077,
+          "isCurrent": true,
+          "finishedAt": 1792968293154,
+          "responseAt": 1792968293154
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968293077,
+          "isCurrent": true,
+          "finishedAt": 1792968293154,
+          "responseAt": 1792968293154
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968293078,
+          "isCurrent": true,
+          "finishedAt": 1792968293194,
+          "responseAt": 1792968293195
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968293078,
+          "isCurrent": false,
+          "finishedAt": 1792968293195,
+          "responseAt": 1792968293203
+        }
+      ],
+      "heldState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "releasedState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "postRevokeCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968293799,
+          "isCurrent": true,
+          "finishedAt": 1792968293861,
+          "responseAt": 1792968293862
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968293800,
+          "isCurrent": true,
+          "finishedAt": 1792968293880,
+          "responseAt": 1792968293880
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968293801,
+          "isCurrent": true,
+          "finishedAt": 1792968293918,
+          "responseAt": 1792968293919
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968293802,
+          "isCurrent": false,
+          "finishedAt": 1792968293919,
+          "responseAt": 1792968293928
+        }
+      ],
+      "reentryCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 281,
+          "startedAt": 1792968294062,
+          "isCurrent": true,
+          "finishedAt": 1792968294123,
+          "responseAt": 1792968294124
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 141,
+          "startedAt": 1792968294063,
+          "isCurrent": true,
+          "finishedAt": 1792968294123,
+          "responseAt": 1792968294124
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 4070459,
+          "startedAt": 1792968294063,
+          "isCurrent": true,
+          "finishedAt": 1792968294184,
+          "responseAt": 1792968294186
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 27,
+          "startedAt": 1792968294065,
+          "isCurrent": false,
+          "finishedAt": 1792968294185,
+          "responseAt": 1792968294194
+        }
+      ],
+      "reentryUi": {
+        "connection": "מחובר ל-SimplyLog",
+        "snapshotStatus": "עודכן: 2026-10-25T10:00:00",
+        "equipmentText": "10,000",
+        "refreshDisabled": false
+      },
+      "effectsBeforeRevokedCommand": 1,
+      "revokedCommandState": {
+        "authorized": false,
+        "generation": 2,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "peakCurrentConcurrency": 3,
+      "decodedCurrentBytesPerGeneration": 4070881,
+      "allCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968291231,
+          "isCurrent": true,
+          "finishedAt": 1792968291293,
+          "responseAt": 1792968291310
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968291231,
+          "isCurrent": true,
+          "finishedAt": 1792968291311,
+          "responseAt": 1792968291311
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968291232,
+          "isCurrent": true,
+          "finishedAt": 1792968291352,
+          "responseAt": 1792968291353
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968291235,
+          "isCurrent": false,
+          "finishedAt": 1792968291353,
+          "responseAt": 1792968291361
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968292921,
+          "isCurrent": true,
+          "finishedAt": 1792968292982,
+          "responseAt": 1792968292983
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968292921,
+          "isCurrent": true,
+          "finishedAt": 1792968292982,
+          "responseAt": 1792968292999
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968292922,
+          "isCurrent": true,
+          "finishedAt": 1792968293038,
+          "responseAt": 1792968293039
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968292923,
+          "isCurrent": false,
+          "finishedAt": 1792968293039,
+          "responseAt": 1792968293048
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968293077,
+          "isCurrent": true,
+          "finishedAt": 1792968293154,
+          "responseAt": 1792968293154
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968293077,
+          "isCurrent": true,
+          "finishedAt": 1792968293154,
+          "responseAt": 1792968293154
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968293078,
+          "isCurrent": true,
+          "finishedAt": 1792968293194,
+          "responseAt": 1792968293195
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968293078,
+          "isCurrent": false,
+          "finishedAt": 1792968293195,
+          "responseAt": 1792968293203
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 281,
+          "startedAt": 1792968293799,
+          "isCurrent": true,
+          "finishedAt": 1792968293861,
+          "responseAt": 1792968293862
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 141,
+          "startedAt": 1792968293800,
+          "isCurrent": true,
+          "finishedAt": 1792968293880,
+          "responseAt": 1792968293880
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 4070459,
+          "startedAt": 1792968293801,
+          "isCurrent": true,
+          "finishedAt": 1792968293918,
+          "responseAt": 1792968293919
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-1",
+          "bytes": 27,
+          "startedAt": 1792968293802,
+          "isCurrent": false,
+          "finishedAt": 1792968293919,
+          "responseAt": 1792968293928
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 281,
+          "startedAt": 1792968294062,
+          "isCurrent": true,
+          "finishedAt": 1792968294123,
+          "responseAt": 1792968294124
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 141,
+          "startedAt": 1792968294063,
+          "isCurrent": true,
+          "finishedAt": 1792968294123,
+          "responseAt": 1792968294124
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 4070459,
+          "startedAt": 1792968294063,
+          "isCurrent": true,
+          "finishedAt": 1792968294184,
+          "responseAt": 1792968294186
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "auth": "Bearer controller-synthetic-generation-2",
+          "bytes": 27,
+          "startedAt": 1792968294065,
+          "isCurrent": false,
+          "finishedAt": 1792968294185,
+          "responseAt": 1792968294194
+        }
+      ],
+      "longTasks": [
+        {
+          "startTime": 1725.699999999255,
+          "duration": 72
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "executableRequests": [
+        {
+          "url": "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+          "type": "script"
+        },
+        {
+          "url": "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        },
+        {
+          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    }
+  ]
+}

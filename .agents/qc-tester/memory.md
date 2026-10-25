@@ -84,3 +84,11 @@
 - Current traceability uses only T-201 through T-205 and frozen handled action order `536946,536949,537034,537037,537040,547704,547710,547713,569787,569843`.
 - Must retain and execute `tests/qc/operator-reentry-race.test.mjs`, use the packaged real SDK/GuestBridge fixture, and never use tenant traffic or tokens.
 - Completed ready: site 61/61, QC 30/30 including JS+MJS, UAT 21/21, harness 2/2, no skips. Strengthened the operator overlap regression with bounded generation polling, prior-generation revocation, and unhandled-rejection capture. Exact deployed-preview browser checks remain a later-stage limitation.
+
+## 2026-10-25 — preview-review cycle 3, process attempt 1
+
+- Exact target: head `c9686ba1ad6d4f7b0896ba32c29ad38dcf607022`, preview `https://5ab11833.app-milgam-dashboard.pages.dev`.
+- Use the corrected synthetic controller fixture at `https://milgam.ylm.co.il/controller-host-fixture/`, actual packaged SimplyVibeClient/GuestBridge, and locally intercepted API traffic only.
+- Writes are confined to this role memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`; source, tests, shared plan, and other role homes are read-only.
+- Re-run the complete site, QC (`*.test.js` and `*.test.mjs`), UAT, and harness inventories, then test every cycle-3 fingerprint and T-201–T-205 exact-preview criterion including lifecycle races, responsive RTL/LTR, accessibility, CSP, diagnostics, request/DOM/timing budgets, and console/network failures.
+- Preview-review cycle 3 result: `reject`. Full local inventory passed (site 61/61, QC 30/30 JS+MJS, UAT 21/21, harness 2/2), and all six incoming remediation fingerprints closed in fresh exact-preview evidence. New high-confidence finding `qc-revoke-refresh-race-issues-old-generation-requests-v1`: revoke/release/immediate refresh issued three generation-1 current requests while the harness remained unauthorized and before re-entry. Exact preview otherwise passed responsive RTL/LTR, CSP, chart, diagnostics, 401 taint, stale retention, overlapping re-entry, single-flight, and zero pageerror checks.
