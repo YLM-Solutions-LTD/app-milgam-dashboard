@@ -161,8 +161,11 @@ export function createDashboardMachine(XState, dependencies = {}) {
       on: {
         HOST_CONTEXT_RECEIVED: {
           target: "loadingPeriods",
-          cond: "hasNoRuntime",
           actions: "storeRuntime"
+        },
+        HOST_CONTEXT_REVOKED: {
+          target: "awaitingHost",
+          actions: "clearRuntime"
         }
       }
     },
@@ -174,6 +177,13 @@ export function createDashboardMachine(XState, dependencies = {}) {
           client: deps.createClient(event.context),
           hostTimedOut: false
         })),
+        clearRuntime: assign({
+          runtime: () => null,
+          client: () => null,
+          error: () => null,
+          requestStage: () => null,
+          hostTimedOut: () => false
+        }),
         clearError: assign({ error: () => null, emptyReason: () => null }),
         startPeriodsRequest: assign((context) => ({
           requestId: context.requestId + 1,

@@ -1,0 +1,241 @@
+{
+  "desktopRtl": {
+    "dir": "rtl",
+    "lang": "he",
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "snapshotElements": 41,
+    "permitLabels": [
+      "בתוקף: 132; פתיחת לוח האישורים",
+      "חסרים: 27; פתיחת לוח האישורים",
+      "באיחור: 18; פתיחת לוח האישורים"
+    ],
+    "text": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: מוצג:2026-09-23T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n1,248 סה״כ · 186 פתוחים\nמטה\n320 סה״כ · 42 פתוחים\nסניפים\n928 סה״כ · 144 פתוחים\nאישורים\nבתוקף\n132\nפתיחת לוח האישורים\nחסרים\n27\nפתיחת לוח האישורים\nבאיחור\n18\nפתיחת לוח האישורים\n\nתאריך ערך: מוצג:2026-09-23\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "analyticsPanels": 6,
+    "focusTag": "<button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 27; פתיחת לוח האישורים\"><span>חסרים</span><strong>27</strong><small>פתיחת לוח האישורים</small></button>",
+    "commands": [
+      {
+        "name": "Navigate",
+        "parameter": {
+          "Url": "#/Permits/Dashboard"
+        }
+      }
+    ]
+  },
+  "mobileRtl": {
+    "dir": "rtl",
+    "lang": "he",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "snapshotElements": 41,
+    "permitLabels": [
+      "בתוקף: 132; פתיחת לוח האישורים",
+      "חסרים: 27; פתיחת לוח האישורים",
+      "באיחור: 18; פתיחת לוח האישורים"
+    ],
+    "text": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: מוצג:2026-09-23T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n1,248 סה״כ · 186 פתוחים\nמטה\n320 סה״כ · 42 פתוחים\nסניפים\n928 סה״כ · 144 פתוחים\nאישורים\nבתוקף\n132\nפתיחת לוח האישורים\nחסרים\n27\nפתיחת לוח האישורים\nבאיחור\n18\nפתיחת לוח האישורים\n\nתאריך ערך: מוצג:2026-09-23\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "analyticsPanels": 6,
+    "focusTag": "<button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 27; פתיחת לוח האישורים\"><span>חסרים</span><strong>27</strong><small>פתיחת לוח האישורים</small></button>",
+    "commands": [
+      {
+        "name": "Navigate",
+        "parameter": {
+          "Url": "#/Permits/Dashboard"
+        }
+      }
+    ]
+  },
+  "desktopLtr": {
+    "dir": "ltr",
+    "lang": "en",
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "snapshotElements": 41,
+    "permitLabels": [
+      "בתוקף: 132; פתיחת לוח האישורים",
+      "חסרים: 27; פתיחת לוח האישורים",
+      "באיחור: 18; פתיחת לוח האישורים"
+    ],
+    "text": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: מוצג:2026-09-23T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n1,248 סה״כ · 186 פתוחים\nמטה\n320 סה״כ · 42 פתוחים\nסניפים\n928 סה״כ · 144 פתוחים\nאישורים\nבתוקף\n132\nפתיחת לוח האישורים\nחסרים\n27\nפתיחת לוח האישורים\nבאיחור\n18\nפתיחת לוח האישורים\n\nתאריך ערך: מוצג:2026-09-23\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "analyticsPanels": 6,
+    "focusTag": "<button class=\"permit-metric\" type=\"button\" data-permit=\"missing\" aria-label=\"חסרים: 27; פתיחת לוח האישורים\"><span>חסרים</span><strong>27</strong><small>פתיחת לוח האישורים</small></button>",
+    "commands": [
+      {
+        "name": "Navigate",
+        "parameter": {
+          "Url": "#/Permits/Dashboard"
+        }
+      }
+    ]
+  },
+  "calls": [
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-mobile-rtl",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+      "method": "POST",
+      "body": "{}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    },
+    {
+      "name": "preview-desktop-ltr",
+      "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+      "method": "POST",
+      "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-09-01T00:00:00\",\"ToDate\":\"2026-09-30T23:59:59\"}",
+      "authorization": "Bearer synthetic-preview-token"
+    }
+  ]
+}

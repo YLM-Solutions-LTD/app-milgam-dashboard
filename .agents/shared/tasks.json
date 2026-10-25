@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "batchKey": "event-436697-batch-64aedcef61f479aaf509",
   "appName": "milgam-dashboard",
-  "planRevision": 3,
-  "summary": "Add an authenticated current-state snapshot for event totals/open counts, permit status counts with board navigation, and equipment total/facts while preserving the existing date-driven Hebrew RTL dashboard. Snapshot requests are independent, stale-safe, strictly validated, and never fabricate zeros or unsupported equipment validity classifications.",
+  "planRevision": 4,
+  "summary": "Harden the authenticated current-state snapshot by eliminating runtime third-party execution in the token realm, defining revocable authorization behavior and real-host verification, and making rejected permit navigation restore focus without an uncaught exception, while preserving all validated snapshot and analytical behavior.",
   "source": {
     "includeDescription": false,
     "actionIds": [536946, 536949, 537034, 537037, 537040]
@@ -14,16 +14,19 @@
     "Equipment validity and overdue classification is intentionally unavailable until additional business rules are supplied; this does not block equipment total/facts or the other snapshot metrics.",
     "Live authenticated verification may be unavailable locally and must not be represented as completed when skipped.",
     "Approved SimplyLog parent and API origins are explicit configuration; production trust is HTTPS-only, while any localhost exception is isolated to test/development with synthetic credentials and data.",
-    "Performance timing ceilings are deterministic local regression budgets, not claims about live SimplyLog network latency."
+    "Performance timing ceilings are deterministic local regression budgets, not claims about live SimplyLog network latency.",
+    "An approved real SimplyLog test host or controller-owned faithful host harness is an external release-verification prerequisite; synthetic postMessage fixtures alone cannot close the authorization-lifecycle finding."
   ],
   "tasks": [
     {
       "id": "T-101",
-      "title": "Extend authenticated transport for current snapshot searches",
-      "component": "API client and dataset constants",
-      "objective": "Add the three existing current-report searches to the browser client with exact endpoint, authentication, empty-body, envelope, cancellation, and redaction behavior while leaving all monthly analytical requests unchanged.",
+      "title": "Secure executable loading and authenticated snapshot transport",
+      "component": "Document dependency boundary, CSP, API client, and dataset constants",
+      "objective": "Ensure only reviewed same-origin executable code runs in the bearer-token realm, then provide the three existing current-report searches with exact endpoint, authentication, empty-body, envelope, cancellation, and redaction behavior while leaving monthly analytical requests unchanged.",
       "dependsOn": [],
       "requirements": [
+        "Replace the runtime jsDelivr XState script with the pinned xstate@4.38.3 browser artifact served from site/ or an equivalently reviewed local bundle; remove every runtime CDN import and remote executable fallback, and record the shipped artifact SHA-256.",
+        "Provide static-host response headers whose Content-Security-Policy includes default-src 'self', script-src 'self', object-src 'none', base-uri 'none', and only the minimum approved connect-src and embedding policy; do not allow unsafe-inline, unsafe-eval, wildcard script sources, or meta-only enforcement.",
         "Define currentEvents, currentPermits, and currentEquipment dataset keys for the exact documented POST routes.",
         "Provide a current-search operation that sends JSON {} exactly once per dataset, using host ApiAddress, Authorization, Content-Type application/json, and AbortSignal.",
         "Return both Items and normalized TotalCount for current reports; reject missing, non-array, negative, fractional, or nonnumeric TotalCount and incomplete/malformed envelopes, but leave dataset-specific cardinality checks to the adapters so equipment can deduplicate before population reconciliation.",
@@ -36,12 +39,14 @@
         "The caller receives Items and TotalCount distinctly, so domain totals cannot be confused with envelope row counts.",
         "Abort, HTTP/permission, network, invalid JSON, and malformed envelope failures remain typed errors and never resolve as empty arrays or zero metrics.",
         "Existing monthly endpoint tests still observe their current date-range bodies without regression."
-        ,"Rejected/unbound contexts and unapproved API origins cause zero snapshot or analytical authenticated requests."
+        ,"Rejected/unbound contexts and unapproved API origins cause zero snapshot or analytical authenticated requests.",
+        "The exact served document has an enforcing CSP response header, requests no third-party executable, and loads the pinned state-machine dependency from same-origin bytes matching the recorded digest."
       ],
       "validationScenarios": [
         "Capture fetch calls and assert method, URL, auth headers, body {}, and signal for all three current datasets.",
         "Return 401, 403, missing procedure/server error, invalid JSON, missing Items, and invalid TotalCount; assert safe typed failures with no token leakage.",
-        "Run existing analytical API tests and confirm date bodies remain unchanged."
+        "Run existing analytical API tests and confirm date bodies remain unchanged.",
+        "Inspect the exact preview response headers and browser request trace: assert CSP is present, script-src is self-only, the local dependency digest matches reviewed bytes, and no CDN or third-party script request occurs."
       ]
     },
     {
@@ -88,21 +93,24 @@
         "Maintain snapshot-specific status, sanitized error, refreshedAt, and optional lastGoodData; first-load failure shows no numbers, refresh failure retains prior data marked stale.",
         "Year/month selection must not clear, reload, or mutate snapshot state. An explicit/global refresh may start both lifecycles while preserving separate IDs and status.",
         "Expose a snapshot retry that does not force analytical data to reload."
-        ,"A 10-refresh burst aborts superseded work, commits only generation 10, retains at most one lastGoodData snapshot, and does not create a retry/request storm."
+        ,"A 10-refresh burst aborts superseded work, commits only generation 10, retains at most one lastGoodData snapshot, and does not create a retry/request storm.",
+        "Key snapshot and analytical work to the accepted host-capability generation. On host invalidation/replacement or authenticated 401/403, revoke that generation, abort its in-flight requests, retain last-good values as stale, deny new authenticated work, and ignore all late completions until a fresh approved context is accepted."
       ],
       "acceptanceCriteria": [
         "The analytical dashboard can be ready while the snapshot is loading or failed, and the snapshot can be ready while analytical data changes period.",
         "Changing year/month produces no current-report request and leaves snapshot data/timestamp intact.",
         "Late success or failure from an aborted/superseded snapshot cannot overwrite the newest snapshot state.",
         "A failed refresh retains last good snapshot values with stale/error treatment; an initial failure shows no zeros."
-        ,"Period changes issue zero snapshot requests; one load/refresh issues exactly three with no pagination or automatic retry."
+        ,"Period changes issue zero snapshot requests; one load/refresh issues exactly three with no pagination or automatic retry.",
+        "After authorization loss, no old-generation request can commit and no new authenticated request starts; fresh authorized re-entry creates a new generation and recovers without reusing the expired token."
       ],
       "validationScenarios": [
         "Drive host acceptance and assert snapshot and period loading begin without cross-clearing state.",
         "Resolve two overlapping snapshot requests in reverse order and assert only the newest commits.",
         "Change analytical periods during snapshot loading and assert independence and no extra current calls.",
         "Test initial failure, retry success, and refresh failure with retained stale data."
-        ,"Run a 10-refresh burst and assert only the newest generation commits, at most three newest-generation requests are active, and only one last-good snapshot is retained."
+        ,"Run a 10-refresh burst and assert only the newest generation commits, at most three newest-generation requests are active, and only one last-good snapshot is retained.",
+        "With a faithful host lifecycle fixture, revoke authorization during in-flight work, assert abort plus retained stale data and zero post-revocation authenticated calls, then supply fresh authorization and assert recovery from a new context generation."
       ]
     },
     {
@@ -119,20 +127,22 @@
         "Pass AsOf and ValueDate unchanged to ToDisplayDate; do not append Z or introduce local timezone interpretation.",
         "All valid, missing, and overdue permit indicators call ready then executeCommand Navigate with exactly { Url: '#/Permits/Dashboard' } and no filter parameters.",
         "Prevent duplicate activation while navigation is pending; restore interaction afterward and surface a non-destructive accessible failure if readiness or navigation rejects.",
+        "Capture the activating element before the first await; asynchronous cleanup must use that stable reference rather than event.currentTarget, and may restore focus only if the element remains connected and focusable.",
+        "Revoking or replacing the host capability while navigation is pending invalidates the command generation; reject any late response, clear the busy lock safely, retain snapshot data as stale, and issue no further privileged command until fresh approved bootstrap.",
         "Twenty rapid activations while navigation is pending must produce exactly one ready/Navigate chain and unlock after either resolution or rejection.",
         "Do not navigate from event or equipment metrics unless a separate contract is supplied."
       ],
       "acceptanceCriteria": [
         "Date display delegates each report value to the host adapter unchanged.",
         "Each permit metric invokes the same exact unfiltered board URL after host readiness and no URL/query data is derived from the count.",
-        "Navigation failure leaves snapshot data visible and produces user-facing feedback without leaking internal response details.",
+        "Navigation failure leaves snapshot data visible, produces user-facing feedback without leaking internal response details, restores focus when the captured control is still eligible, and emits no uncaught exception when it is absent or rerendered.",
         "Existing authenticated-host and permission behavior remains intact."
         ,"A same-origin non-parent sender, production HTTP origin, HTTP ApiAddress, unapproved HTTPS ApiAddress, direct access, mismatched command response, and an unbound plain object carrying an approved __trustedHostOrigin are rejected before any authenticated fetch or privileged command."
       ],
       "validationScenarios": [
         "Spy on ToDisplayDate and assert exact raw report date arguments without a Z suffix.",
         "Activate each permit metric by click and keyboard and assert call order and exact Navigate payload.",
-        "Delay and reject host readiness/executeCommand; assert busy-lock, recovery, and accessible error feedback."
+        "Delay and reject host readiness/executeCommand; assert busy-lock, safe focus restoration, accessible error feedback, and zero pageerror or unhandledrejection events; repeat after removing or rerendering the activating control before settlement."
         ,"Exercise the negative trust-boundary matrix, including an approved-origin plain object with no valid binding brand and contexts mutated after creation, and assert zero authenticated requests/commands; then issue 20 rapid permit activations and assert one in-flight command chain."
       ]
     },
@@ -148,13 +158,14 @@
         "Show valid, missing, and overdue permits as three separately named native interactive controls; never present their sum as invalid.",
         "Show total equipment and a textual valid/overdue classification unavailable state; do not render plausible placeholder numbers.",
         "Provide snapshot-local loading, first-load error/retry, refresh-stale warning, and navigation-error presentation; use polite announcements without replacing the entire analytical dashboard.",
+        "After rejected permit navigation, keep sanitized accessible feedback visible and preserve focus on the captured permit control when it still exists; if rerender removed it, leave focus at a safe existing target without throwing.",
         "Use logical layout properties, visible focus, sufficient contrast, locale-aware number formatting, and stacked small-screen layout. Preserve runtime RTL/LTR and existing chart/date-range behavior."
         ,"Render equipment only as aggregate total plus unavailable classification: input growth must add zero equipment fact/list nodes, and the entire ready snapshot must contain at most 80 DOM elements."
       ],
       "acceptanceCriteria": [
         "A user can distinguish current snapshot values from selected-month analytics, and changing the period does not visually clear the snapshot.",
         "Zero is rendered only when supplied as a validated count; loading, errors, and unavailable classification use text/skeleton/status rather than 0.",
-        "All permit controls are keyboard reachable, have distinct accessible names, and retain visible focus; meaning is not conveyed by color alone.",
+        "All permit controls are keyboard reachable, have distinct accessible names, and retain visible focus; meaning is not conveyed by color alone, and rejected navigation never causes an uncaught focus-restoration error.",
         "At narrow widths panels stack without horizontal clipping; at RTL and LTR directions reading order, spacing, and focus order remain coherent.",
         "Existing analytical charts and controls remain present and functional."
         ,"On the recorded browser/runtime, one ready-state render completes within 50 ms at 390×844 and 1440×900 for the representative 10,000-row normalized fixture."
@@ -179,21 +190,24 @@
         "Cover mapper edge cases and event/equipment reconciliation, including nullable facts, inactive equipment, identical duplicate IDs accepted before envelope population reconciliation, conflicting duplicates rejected, unique-count mismatch rejected, and unavailable classification.",
         "Cover independent state transitions, abort/stale suppression, retry, retained last-good data, and no fabricated zeros.",
         "Cover exact host date/navigation calls, keyboard semantics, RTL/LTR markup/classes, and existing monthly dashboard regression.",
-        "Cover parent-window source binding, non-forgeable bound-context recognition, approved HTTPS parent/API origins, command-response binding, production HTTP rejection, unapproved API rejection, and zero authenticated fetch/command behavior for an unbound approved-origin-shaped object and in direct, timeout, fallback, malformed, mutated, and rejected-context modes.",
+        "Cover parent-window source binding, non-forgeable bound-context recognition, approved HTTPS parent/API origins, command-response and capability-generation binding, production HTTP rejection, unapproved API rejection, authorization revocation/re-entry, and zero authenticated fetch/command behavior for an unbound approved-origin-shaped object and in direct, timeout, fallback, malformed, mutated, expired, and rejected-context modes.",
+        "Cover the executable boundary: no remote script, import, or fallback; pinned local dependency digest; enforcing CSP response-header directives; and exact-preview network tracing that finds no third-party executable request.",
+        "Cover permit rejection cleanup in a browser by asserting sanitized feedback, unlocked controls, focus restored only to a still-connected captured element, and zero pageerror or unhandledrejection events when the element survives, is removed, or is rerendered.",
         "Cover numeric performance budgets with 0/1/1,000/10,000-row and duplicate-heavy equipment fixtures, a 10-refresh burst, 20 rapid permit activations, fixed DOM count, render timings, request concurrency, and decoded-byte recording.",
         "Keep tests local and deterministic; live credentials or provider availability must not be required."
       ],
       "acceptanceCriteria": [
         "All existing and new local tests pass with no secrets, network dependency, or live SimplyLog requirement.",
         "Tests fail if a snapshot body gains a filter/date, if permit navigation gains parameters, if stale data overwrites current state, if equipment classification is inferred, if identical equipment duplicates are rejected before deduplication, or if an unbound host-shaped object is accepted.",
-        "Tests distinguish validated zero from loading/error/unavailable and protect existing analytical date/chart behavior."
+        "Tests distinguish validated zero from loading/error/unavailable and protect existing analytical date/chart behavior.",
+        "Tests fail if a third-party executable is referenced or CSP permits it, if expired-context work commits or commands execute, or if rejected permit navigation throws during cleanup."
         ,"Recorded results identify CI/runtime and browser versions, fixture sizes, mapping/render durations, decoded bytes, DOM count, peak current-generation request count, and navigation command count; all stated numeric ceilings pass."
       ],
       "validationScenarios": [
         "Run the project test command and report pass/fail counts.",
         "Inspect fixture and test output for credentials, raw event text, or signed URLs.",
         "Run targeted API, mapper, machine, host, and UI contract tests plus the full regression suite."
-        ,"Run and record the trust-boundary negative matrix and representative-volume performance suite, including actual measurements rather than pass/fail alone."
+        ,"Run and record the trust-boundary negative matrix, authorization revoke/re-entry fixture, dependency/CSP inspection, permit-rejection browser cases, and representative-volume performance suite, including actual measurements rather than pass/fail alone."
       ]
     },
     {
@@ -208,17 +222,21 @@
         "Run all available local checks during implementation and record exact results; report authenticated live checks as skipped when host/runtime access is unavailable.",
         "Record environment identity and performance evidence: runtime/CI version, browser/version, fixture row counts, decoded response bytes, mapping/render duration, DOM element count, request concurrency, refresh generation result, and navigation command count.",
         "If verification cannot run, restore the local flag to false and do not request or trigger another deployment solely for the revert.",
-        "Do not claim procedure availability, production verification, or deployment completion from contract documentation alone."
+        "Do not claim procedure availability, production verification, or deployment completion from contract documentation alone.",
+        "For controller-run exact-preview evidence, record response headers, executable request URLs, local dependency digest, and confirmation that no third-party script executes in the token realm.",
+        "For release acceptance, use an approved real SimplyLog test host or controller-owned faithful host harness to prove authenticated bootstrap, authorization expiry or revocation, zero post-revocation authenticated requests and commands with retained stale data, fresh authorized re-entry, recovery, and command-response generation binding. Synthetic parent messaging alone must be labeled insufficient; if no approved environment is supplied, report this UAT as blocked or skipped and do not claim approval."
       ],
       "acceptanceCriteria": [
         "The delivered local source leaves the flag false unless the controller explicitly manages a temporary verification revision.",
         "Verification evidence separates local automated checks from authenticated live checks and labels every skipped check honestly.",
-        "No Git, deployment, provider, SimplyLog lifecycle, SQL, or issue-tracker action is included in the implementation task."
+        "No Git, deployment, provider, SimplyLog lifecycle, SQL, or issue-tracker action is included in the implementation task.",
+        "Controller evidence closes the dependency finding only when the exact preview enforces CSP and makes no third-party executable request, and closes the lifecycle finding only when the approved real host or harness completes expiry and fresh re-entry without unauthorized requests or commands."
       ],
       "validationScenarios": [
         "Inspect the final local configuration and assert the live-call flag is false by default.",
         "Review the verification record for exact commands/results and an explicit skipped-live-check reason when applicable.",
-        "Confirm no deployment artifact, SQL change, SearchAllEvents change, or lifecycle API call was introduced."
+        "Confirm no deployment artifact, SQL change, SearchAllEvents change, or lifecycle API call was introduced.",
+        "Run the exact preview through the approved host or harness, capture bootstrap to load to revoke or expire to stale and denied to fresh re-entry to recovery and navigation observations, and distinguish controller-run evidence from local synthetic checks."
       ]
     }
   ]

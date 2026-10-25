@@ -1,0 +1,190 @@
+TAP version 13
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT traceability covers every structure task T-101 through T-107
+ok 1 - UAT traceability covers every structure task T-101 through T-107
+  ---
+  duration_ms: 1.466953
+  ...
+# Subtest: UAT-001 authenticated entry loads one coherent three-report snapshot
+ok 2 - UAT-001 authenticated entry loads one coherent three-report snapshot
+  ---
+  duration_ms: 21.249172
+  ...
+# Subtest: UAT-002 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+ok 3 - UAT-002 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+  ---
+  duration_ms: 0.54122
+  ...
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'http://localhost:5500',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'http://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'http://localhost:5721'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'http://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'https://unapproved.example'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'https://unapproved.example',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Failed to parse host message payload
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT-003 analytical period requests remain distinct from current snapshot requests
+ok 4 - UAT-003 analytical period requests remain distinct from current snapshot requests
+  ---
+  duration_ms: 7.538074
+  ...
+# Subtest: UAT-004 superseded slow responses cannot replace generation ten
+ok 5 - UAT-004 superseded slow responses cannot replace generation ten
+  ---
+  duration_ms: 1.045038
+  ...
+# Subtest: UAT-005 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+ok 6 - UAT-005 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+  ---
+  duration_ms: 3.409024
+  ...
+# Subtest: UAT-006 trust-boundary matrix rejects unbound source/origin/API combinations before fetch
+ok 7 - UAT-006 trust-boundary matrix rejects unbound source/origin/API combinations before fetch
+  ---
+  duration_ms: 1.339249
+  ...
+# Subtest: UAT-007 failed refresh retains the complete last-good snapshot
+ok 8 - UAT-007 failed refresh retains the complete last-good snapshot
+  ---
+  duration_ms: 0.487918
+  ...
+# Subtest: UAT-008 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+ok 9 - UAT-008 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+  ---
+  duration_ms: 3.885641
+  ...
+# Subtest: UAT-009 host navigation failure path preserves data and clears busy state by contract
+ok 10 - UAT-009 host navigation failure path preserves data and clears busy state by contract
+  ---
+  duration_ms: 1.195544
+  ...
+# UAT_PERFORMANCE [{"rows":0,"decodedBytes":27,"durationMs":0.006,"unique":0},{"rows":1,"decodedBytes":127,"durationMs":0.013,"unique":1},{"rows":1000,"decodedBytes":103422,"durationMs":2.801,"unique":1000},{"rows":10000,"decodedBytes":1043924,"durationMs":27.189,"unique":10000}]
+# Subtest: UAT-010 responsive bidi and accessible snapshot shell contracts are present
+ok 11 - UAT-010 responsive bidi and accessible snapshot shell contracts are present
+  ---
+  duration_ms: 1.521756
+  ...
+# Subtest: UAT-011 strict contracts and representative volumes remain within mapper budget
+ok 12 - UAT-011 strict contracts and representative volumes remain within mapper budget
+  ---
+  duration_ms: 69.292617
+  ...
+# Subtest: UAT-012 authorized release enables current live calls and keeps fixtures synthetic
+ok 13 - UAT-012 authorized release enables current live calls and keeps fixtures synthetic
+  ---
+  duration_ms: 1.839867
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 176.261503

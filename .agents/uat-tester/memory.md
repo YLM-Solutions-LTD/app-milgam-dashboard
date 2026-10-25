@@ -45,3 +45,31 @@
 - Synthetic UAT: 13/13 passed; app regression: 49/49 passed on Node.js v20.20.2.
 - Closed regression fingerprint `uat:equipment-identical-dedup:envelope-cardinality:v1`; public-marker forgery and accepted-context immutability are also directly covered.
 - Exact-preview browser, viewport/render, and approved live-host integration remain unexecuted because no authorized preview or host harness was supplied.
+
+## Current assignment — preview review cycle 2
+
+- Exact authorized preview: `https://1de11912.app-milgam-dashboard.pages.dev`.
+- Exact PR head: `d9ef28ddc6be1d9b6b9fb2f066bcde19c53c193b`.
+- Execute UAT-001 through UAT-012 with Playwright, synthetic SimplyLog parent messaging, and intercepted API fixtures only; never request or use a real tenant token.
+- Standalone synthetic-host results are diagnostic. Real SimplyLog host integration must be reported blocked unless an approved real host/harness is available.
+- Write cycle-2 preview evidence only under `.agents/uat-tester/runs/event-436697-batch-64aedcef61f479aaf509/preview-review-2/`; all prior runs are immutable.
+
+## Preview review cycle 2 result
+
+- Verdict: reject because required real-host authorization lifecycle evidence is blocked; stable fingerprint `uat:real-host-authorization-lifecycle:unverified:v1`.
+- Exact-preview synthetic workflows passed in Chromium 140 at 390×844 and 1440×900, RTL/LTR, with 41 snapshot descendants, no horizontal overflow, exact three-call `{}` transport, stable month independence, raw dates, exact permit navigation, and successful first-error retry.
+- Direct timeout produced zero API calls. Supporting local suites passed 13/13 UAT and 49/49 site assertions.
+- Core deployed artifact hashes matched the reviewed local files. No real tenant token, production write, deploy, provider action, lifecycle call, or Git action occurred.
+
+## Current assignment — test authoring cycle 3
+
+- Batch: `event-436697-batch-64aedcef61f479aaf509`; frozen handled action IDs, in exact order: `536946`, `536949`, `537034`, `537037`, `537040`.
+- Re-run deterministic UAT for `T-101` through `T-107` after implementation cycle 3 using synthetic `postMessage` context and API fixtures only; never use a real tenant token or make external writes.
+- Own only `tests/uat/`, this memory, and `.agents/uat-tester/runs/event-436697-batch-64aedcef61f479aaf509/test-authoring-3/`; shared inputs, app source, preview, other role homes, Git, and controller state remain read-only.
+- Preserve stable acceptance and finding fingerprints where applicable. Synthetic context is diagnostic and cannot prove real-host integration.
+
+## Test-authoring cycle 3 result
+
+- Verdict: approve for deterministic test authoring. Synthetic UAT passed 13/13 and app regression passed 55/55 on Node.js v20.20.2.
+- Cycle-3 coverage adds authorization revocation/late-result denial/fresh generation re-entry, guarded permit cleanup, and flag-false/local-XState/CSP source contracts while retaining `UAT-001` through `UAT-012` and `T-101` through `T-107` traceability.
+- No exact preview/browser or approved real-host harness was supplied. Runtime CSP/network/deployed-byte checks, DOM focus variants, and real authorization expiry/re-entry remain unexecuted and are not claimed.

@@ -3,8 +3,8 @@
 ## Current assignment
 
 - Batch: `event-436697-batch-64aedcef61f479aaf509`
-- Run: `plan-review-2`
-- Scope: read-only plan validation for tasks `T-101` through `T-107`, with emphasis on iframe trust, host message validation, bearer-token confinement, safe rendering, URL handling, storage, and direct/fallback behavior.
+- Run: `preview-review-2`
+- Scope: read-only final review of exact PR head `d9ef28ddc6be1d9b6b9fb2f066bcde19c53c193b` and preview `https://1de11912.app-milgam-dashboard.pages.dev` for every shared task, with emphasis on iframe trust, host message validation, bearer-token confinement, safe rendering, URL handling, storage, and direct/fallback behavior.
 - Authorized writes: this reviewer home only.
 - Required handled actions: `536946`, `536949`, `537034`, `537037`, `537040`.
 
@@ -33,3 +33,16 @@
 - `T-102` preserves strict typed validation and does not infer unsupported classifications; `T-105` limits interaction to native fixed-purpose controls and truthful states; `T-107` retains a false-by-default local flag and controller-owned deployment boundary.
 - Implementation/preview review must verify these safeguards in source and the exact host context; this plan approval is not evidence of implementation or live verification.
 - Full structured result: `runs/event-436697-batch-64aedcef61f479aaf509/plan-review-2/report.md`.
+
+## Preview review 2 assignment
+
+- Review the controller-supplied exact preview and matching source read-only, using synthetic SimplyLog postMessage context and API route fixtures only; never request a real tenant token.
+- Cover all shared structure task IDs and compare implementation behavior with the accepted plan safeguards and relevant immutable prior-run evidence.
+- Store the task-by-task review, evidence, and schema-valid controller result only under `runs/event-436697-batch-64aedcef61f479aaf509/preview-review-2/`.
+
+## Preview review 2 result
+
+- Verdict: reject; one medium-severity, high-confidence finding.
+- Stable finding `simplyvibe:dependency-integrity:cdn-script-token-realm:v1`: the exact preview executes XState from jsDelivr without Subresource Integrity and sends no Content-Security-Policy. The dependency executes before host-context acceptance in the same realm that later receives and uses the bearer token.
+- The earlier fingerprint `simplyvibe:host-boundary:parent-source-https-api-confinement:v1` is closed for exercised paths: approved synthetic parent/API fixtures produced exact requests and navigation, while direct forged context produced zero requests and commands.
+- All shared tasks `T-101` through `T-107` were covered. Full result: `runs/event-436697-batch-64aedcef61f479aaf509/preview-review-2/report.md`.

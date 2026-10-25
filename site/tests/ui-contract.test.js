@@ -5,14 +5,32 @@ import { readFile } from "node:fs/promises";
 const appUrl = new URL("../app.js", import.meta.url);
 const cssUrl = new URL("../app.css", import.meta.url);
 const htmlUrl = new URL("../index.html", import.meta.url);
+const headersUrl = new URL("../_headers", import.meta.url);
+const dependencyUrl = new URL("../assets/xstate-4.38.3.js", import.meta.url);
 
-test("static app pins XState 4.38.3 and exposes Hebrew-first accessible shell", async () => {
+test("static app pins same-origin XState 4.38.3 and exposes Hebrew-first accessible shell", async () => {
   const html = await readFile(htmlUrl, "utf8");
   assert.match(html, /lang="he" dir="rtl"/);
-  assert.match(html, /xstate@4\.38\.3\/dist\/xstate\.js/);
+  assert.match(html, /\.\/assets\/xstate-4\.38\.3\.js/);
+  assert.doesNotMatch(html, /https?:\/\//);
   assert.doesNotMatch(html, /xstate\.web\.js/);
   assert.match(html, /דשבורד קריאות מילגם/);
   assert.match(html, /aria-live="polite"/);
+});
+
+test("static response policy confines executable code and the reviewed dependency is shipped", async () => {
+  const [headers, dependency] = await Promise.all([readFile(headersUrl, "utf8"), readFile(dependencyUrl, "utf8")]);
+  assert.match(headers, /Content-Security-Policy: default-src 'self'; script-src 'self'/);
+  assert.match(headers, /object-src 'none'/);
+  assert.match(headers, /script-src 'self'; style-src/);
+  assert.match(dependency, /XState/);
+});
+
+test("permit cleanup captures the control before awaits and guards focus", async () => {
+  const source = await readFile(appUrl, "utf8");
+  assert.match(source, /const activatingElement = event\.currentTarget/);
+  assert.doesNotMatch(source, /event\.currentTarget\.focus/);
+  assert.match(source, /activatingElement\?\.isConnected/);
 });
 
 test("renderer contains all eight dashboard components and null-average em dash", async () => {

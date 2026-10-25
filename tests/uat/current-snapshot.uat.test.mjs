@@ -12,7 +12,13 @@ import {
   mapCurrentEvents,
   mapCurrentPermits
 } from "../../site/current-snapshot.js";
-import { contextFromMessage, resolveRuntimeLocale } from "../../site/host-context.js";
+import {
+  contextFromMessage,
+  hostContextGeneration,
+  installHostContextListener,
+  revokeHostContext,
+  resolveRuntimeLocale
+} from "../../site/host-context.js";
 import { createHostServices } from "../../site/host-services.js";
 
 const parentWindow = Object.freeze({ kind: "synthetic-parent" });
@@ -152,7 +158,7 @@ test("UAT-005 malformed, permission, and invalid JSON failures stay explicit wit
   }
 });
 
-test("UAT-006 trust-boundary matrix rejects unbound source/origin/API combinations before fetch", () => {
+test("UAT-006 trust boundary supports revocation, late-result denial, and fresh authorized re-entry", async () => {
   let fetchCount = 0;
   let commandCount = 0;
   const invalid = [
@@ -177,6 +183,30 @@ test("UAT-006 trust-boundary matrix rejects unbound source/origin/API combinatio
   });
   assert.equal(unavailableServices.available, false);
   assert.deepEqual({ fetchCount, commandCount }, { fetchCount: 0, commandCount: 0 });
+
+  let releaseFetch;
+  const lateClient = createApiClient(bound, { fetchImpl: () => new Promise((resolve) => { releaseFetch = resolve; }) });
+  const lateRequest = lateClient.requestCurrent("currentEquipment");
+  assert.equal(revokeHostContext(bound, "synthetic-expiry"), true);
+  releaseFetch(response({ Items: [], TotalCount: 0 }));
+  await assert.rejects(lateRequest, (error) => error.kind === "authorization-revoked");
+  await assert.rejects(lateClient.requestCurrent("currentEquipment"), (error) => error.kind === "authorization-revoked");
+
+  const listeners = new Map();
+  const fakeWindow = {
+    parent: parentWindow,
+    addEventListener: (type, listener) => listeners.set(type, listener),
+    removeEventListener: (type) => listeners.delete(type)
+  };
+  const generations = [];
+  const dispose = installHostContextListener(fakeWindow, (context) => generations.push({ context, generation: hostContextGeneration(context) }), [hostOrigin]);
+  listeners.get("message")({ source: parentWindow, origin: hostOrigin, data: contextPayload });
+  listeners.get("message")({ source: parentWindow, origin: hostOrigin, data: { ...contextPayload, Token: { ...contextPayload.Token, access_token: "fresh-synthetic-token" } } });
+  assert.equal(generations.length, 2);
+  assert.ok(generations[1].generation > generations[0].generation);
+  assert.throws(() => createApiClient(generations[0].context), /Valid SimplyLog host context/);
+  assert.doesNotThrow(() => createApiClient(generations[1].context, { fetchImpl: async () => response({ Items: [], TotalCount: 0 }) }));
+  dispose();
 });
 
 test("UAT-007 failed refresh retains the complete last-good snapshot", async () => {
@@ -215,6 +245,9 @@ test("UAT-009 host navigation failure path preserves data and clears busy state 
   assert.match(appSource, /finally \{/);
   assert.match(appSource, /permitNavigationPending = false/);
   assert.match(appSource, /removeAttribute\("aria-busy"\)/);
+  assert.match(appSource, /const activatingElement = event\.currentTarget/);
+  assert.match(appSource, /activatingElement\?\.isConnected/);
+  assert.doesNotMatch(appSource, /event\.currentTarget\.focus\(\)/);
 });
 
 test("UAT-010 responsive bidi and accessible snapshot shell contracts are present", async () => {
@@ -249,10 +282,21 @@ test("UAT-011 strict contracts and representative volumes remain within mapper b
   console.log(`UAT_PERFORMANCE ${JSON.stringify(metrics)}`);
 });
 
-test("UAT-012 authorized release enables current live calls and keeps fixtures synthetic", async () => {
-  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true);
+test("UAT-012 delivery is flag-safe, same-origin dependency pinned, and fixtures remain synthetic", async () => {
+  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, false);
   const testSource = await readFile(new URL(import.meta.url), "utf8");
+  const [html, headers, dependency] = await Promise.all([
+    readFile(new URL("../../site/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../site/_headers", import.meta.url), "utf8"),
+    readFile(new URL("../../site/assets/xstate-4.38.3.js", import.meta.url))
+  ]);
   assert.doesNotMatch(testSource, /eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\./);
   assert.match(testSource, /syntheticToken/);
   assert.deepEqual(Object.keys(contextPayload).sort(), ["ApiAddress", "LanguageCode", "LanguageDirection", "Token"]);
+  assert.match(html, /src="\.\/assets\/xstate-4\.38\.3\.js"/);
+  assert.doesNotMatch(html, /<script[^>]+https?:\/\//i);
+  assert.match(headers, /Content-Security-Policy:/);
+  assert.match(headers, /script-src 'self'/);
+  assert.doesNotMatch(headers, /unsafe-inline|unsafe-eval|script-src[^\n]*\*/);
+  assert.equal(dependency.byteLength > 0, true);
 });

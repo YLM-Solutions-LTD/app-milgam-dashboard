@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { createApiClient, DashboardRequestError, validateItemsEnvelope } from "../api-client.js";
 import { CURRENT_DATASET_KEYS, DATASETS, ENDPOINTS } from "../constants.js";
 import { buildMonthRange, buildPeriodDiscoveryRange, buildSearchBody, daysInMonth } from "../date-range.js";
-import { contextFromMessage } from "../host-context.js";
+import { contextFromMessage, revokeHostContext } from "../host-context.js";
 
 const TOKEN = "secret-token-that-must-not-leak";
 const rawContext = {
@@ -99,6 +99,23 @@ test("unbound host-shaped objects are rejected before fetch", () => {
   assert.equal(calls, 0);
 });
 
+test("revoked clients issue no request and late responses cannot commit", async () => {
+  let calls = 0;
+  const revokedContext = bindContext();
+  const client = createApiClient(revokedContext, { fetchImpl: async () => { calls += 1; return jsonResponse({ Items: [], TotalCount: 0 }); } });
+  revokeHostContext(revokedContext);
+  await assert.rejects(client.requestCurrent("currentEquipment"), (error) => error.kind === "authorization-revoked");
+  assert.equal(calls, 0);
+
+  let release;
+  const activeContext = bindContext();
+  const lateClient = createApiClient(activeContext, { fetchImpl: () => new Promise((resolve) => { release = resolve; }) });
+  const pending = lateClient.requestCurrent("currentEquipment");
+  revokeHostContext(activeContext);
+  release(jsonResponse({ Items: [], TotalCount: 0 }));
+  await assert.rejects(pending, (error) => error.kind === "authorization-revoked");
+});
+
 test("Items is required, empty Items is valid, and incomplete pages are rejected", () => {
   const empty = [];
   assert.equal(validateItemsEnvelope({ Items: empty, TotalCount: 0 }), empty);
@@ -112,7 +129,7 @@ test("Items is required, empty Items is valid, and incomplete pages are rejected
 for (const status of [400, 401, 403, 500]) {
   test(`HTTP ${status} preserves status and response body without request secrets`, async () => {
     const responseBody = { message: `status-${status}`, echoedToken: TOKEN };
-    const client = createApiClient(context, {
+    const client = createApiClient(bindContext(), {
       fetchImpl: async () => jsonResponse(responseBody, status)
     });
 
@@ -133,7 +150,7 @@ for (const status of [400, 401, 403, 500]) {
 }
 
 test("invalid JSON and invalid envelope are dataset-specific invalid-response errors", async () => {
-  const invalidJsonClient = createApiClient(context, {
+  const invalidJsonClient = createApiClient(bindContext(), {
     fetchImpl: async () => new Response("not-json", { status: 200 })
   });
   await assert.rejects(
@@ -141,7 +158,7 @@ test("invalid JSON and invalid envelope are dataset-specific invalid-response er
     (error) => error.kind === "invalid-response" && error.dataset === DATASETS.division && error.body === "not-json"
   );
 
-  const invalidDataClient = createApiClient(context, {
+  const invalidDataClient = createApiClient(bindContext(), {
     fetchImpl: async () => jsonResponse({ Result: [] })
   });
   await assert.rejects(
@@ -151,7 +168,7 @@ test("invalid JSON and invalid envelope are dataset-specific invalid-response er
 });
 
 test("network failures are handled without leaking token data", async () => {
-  const client = createApiClient(context, {
+  const client = createApiClient(bindContext(), {
     fetchImpl: async () => { throw new Error(`socket failed for ${TOKEN}`); }
   });
 

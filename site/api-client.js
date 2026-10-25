@@ -1,6 +1,6 @@
 import { CURRENT_DATASET_KEYS, DATASETS, ENDPOINTS } from "./constants.js";
 import { buildSearchBody } from "./date-range.js";
-import { isBoundHostContext } from "./host-context.js";
+import { isBoundHostContext, revokeHostContext } from "./host-context.js";
 
 const LOG_PREFIX = "[milgam-dashboard.api]";
 
@@ -46,7 +46,20 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
     : "Bearer";
   const secrets = [accessToken, `${tokenType} ${accessToken}`];
 
+  function requireActiveContext() {
+    if (!isBoundHostContext(context)) throw new DashboardRequestError({ kind: "authorization-revoked", dataset: "hostContext" });
+  }
+
+  function observeAuthorization(response) {
+    if (response.status === 401 || response.status === 403) {
+      revokeHostContext(context, `http-${response.status}`);
+      return;
+    }
+    requireActiveContext();
+  }
+
   async function requestItems(datasetKey, range, { signal } = {}) {
+    requireActiveContext();
     if (CURRENT_DATASET_KEYS.includes(datasetKey)) throw new TypeError("Use requestCurrent for current snapshot datasets");
     const endpoint = ENDPOINTS[datasetKey];
     const dataset = DATASETS[datasetKey] || String(datasetKey || "unknown");
@@ -84,6 +97,7 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
       });
     }
 
+    observeAuthorization(response);
     let rawBody = "";
     try {
       rawBody = await response.text();
@@ -135,6 +149,7 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
   }
 
   async function requestCurrent(datasetKey, { signal } = {}) {
+    requireActiveContext();
     if (!CURRENT_DATASET_KEYS.includes(datasetKey)) throw new TypeError(`Unknown current dataset: ${datasetKey}`);
     const endpoint = ENDPOINTS[datasetKey];
     const dataset = DATASETS[datasetKey];
@@ -150,6 +165,7 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
       if (signal?.aborted || error?.name === "AbortError") throw new DashboardRequestError({ kind: "aborted", dataset });
       throw new DashboardRequestError({ kind: "network", dataset, detail: sanitizeValue(error?.message, secrets) });
     }
+    observeAuthorization(response);
     const rawBody = await response.text().catch(() => "");
     const parsed = tryParseJson(rawBody);
     const safeBody = parsed.ok ? sanitizeValue(parsed.value, secrets) : sanitizeValue(rawBody, secrets);

@@ -5,7 +5,7 @@ import { performance } from "node:perf_hooks";
 
 import { createApiClient } from "../../site/api-client.js";
 import { createSnapshotController, loadCurrentSnapshot, mapCurrentEquipment, mapCurrentEvents, mapCurrentPermits } from "../../site/current-snapshot.js";
-import { contextFromMessage, installHostContextListener, resolveRuntimeLocale, validateHostContext } from "../../site/host-context.js";
+import { contextFromMessage, hostContextGeneration, installHostContextListener, isBoundHostContext, onHostContextRevoked, resolveRuntimeLocale, revokeHostContext, validateHostContext } from "../../site/host-context.js";
 import { createHostServices } from "../../site/host-services.js";
 import { CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED } from "../../site/constants.js";
 
@@ -119,6 +119,48 @@ test("T-101/T-103: late valid host message recovers once after rejected and malf
   assert.equal(validateHostContext(received[0]), true);
   dispose();
   assert.equal(listeners.has("message"), false);
+});
+
+test("T-101/T-103/T-104: replacement authorization revokes the old generation and admits fresh re-entry", () => {
+  const listeners = new Map();
+  const fakeWindow = { parent: parentWindow, addEventListener: (type, fn) => listeners.set(type, fn), removeEventListener: (type) => listeners.delete(type) };
+  const received = [];
+  const revoked = [];
+  const unsubscribe = onHostContextRevoked((context, metadata) => revoked.push({ context, metadata }));
+  const dispose = installHostContextListener(fakeWindow, (context) => received.push(context), [HOST]);
+  listeners.get("message")({ source: parentWindow, origin: HOST, data: rawContext });
+  listeners.get("message")({ source: parentWindow, origin: HOST, data: { ...rawContext, Token: { access_token: `${TOKEN}-fresh` } } });
+  assert.equal(received.length, 2);
+  assert.ok(hostContextGeneration(received[1]) > hostContextGeneration(received[0]));
+  assert.equal(isBoundHostContext(received[0]), false);
+  assert.equal(isBoundHostContext(received[1]), true);
+  assert.equal(revoked.length, 1);
+  assert.equal(revoked[0].context, received[0]);
+  assert.equal(revoked[0].metadata.reason, "replaced");
+  dispose();
+  unsubscribe();
+  assert.equal(isBoundHostContext(received[1]), false);
+});
+
+test("T-101/T-103/T-104: revocation denies late API and host-command completion", async () => {
+  const apiContext = acceptedContext();
+  let resolveFetch;
+  const client = createApiClient(apiContext, { fetchImpl: () => new Promise((resolve) => { resolveFetch = resolve; }) });
+  const pendingRequest = client.requestCurrent("currentPermits");
+  revokeHostContext(apiContext, "qc-expiry");
+  resolveFetch(response(permits));
+  await assert.rejects(pendingRequest, (error) => error.kind === "authorization-revoked");
+
+  const commandContext = acceptedContext();
+  let resolveReady;
+  const services = createHostServices(commandContext, {
+    ready: () => new Promise((resolve) => { resolveReady = resolve; }),
+    executeCommand: async () => { throw new Error("must not execute after revocation"); }
+  });
+  const pendingReady = services.ready();
+  revokeHostContext(commandContext, "qc-expiry");
+  resolveReady();
+  await assert.rejects(pendingReady, (error) => error.code === "HOST_REVOKED");
 });
 
 test("T-102: identical equipment rows deduplicate to the complete population while conflicts reject", () => {
@@ -251,26 +293,25 @@ test("T-105/T-106: static UI contract exposes one polite non-atomic status, sema
 });
 
 test("T-101/T-103/T-106: HTTP, offline, timeout-like abort, malformed, and valid-zero responses stay distinguishable", async () => {
-  const context = acceptedContext();
   for (const status of [400, 401, 403, 500]) {
-    const client = createApiClient(context, { fetchImpl: async () => response({ message: `status-${status}`, access_token: TOKEN }, status) });
+    const client = createApiClient(acceptedContext(), { fetchImpl: async () => response({ message: `status-${status}`, access_token: TOKEN }, status) });
     await assert.rejects(
       client.requestCurrent("currentEvents"),
       (error) => error.kind === "http" && error.status === status && !JSON.stringify(error).includes(TOKEN)
     );
   }
-  const offline = createApiClient(context, { fetchImpl: async () => { throw new Error(`offline ${TOKEN}`); } });
+  const offline = createApiClient(acceptedContext(), { fetchImpl: async () => { throw new Error(`offline ${TOKEN}`); } });
   await assert.rejects(offline.requestCurrent("currentEvents"), (error) => error.kind === "network" && !JSON.stringify(error).includes(TOKEN));
-  const malformed = createApiClient(context, { fetchImpl: async () => ({ ok: true, status: 200, text: async () => "not-json" }) });
+  const malformed = createApiClient(acceptedContext(), { fetchImpl: async () => ({ ok: true, status: 200, text: async () => "not-json" }) });
   await assert.rejects(malformed.requestCurrent("currentEvents"), (error) => error.kind === "invalid-response");
   const abortController = new AbortController();
   abortController.abort();
-  const aborted = createApiClient(context, { fetchImpl: async (_url, { signal }) => {
+  const aborted = createApiClient(acceptedContext(), { fetchImpl: async (_url, { signal }) => {
     assert.equal(signal.aborted, true);
     throw Object.assign(new Error("timed out"), { name: "AbortError" });
   }});
   await assert.rejects(aborted.requestCurrent("currentEvents", { signal: abortController.signal }), (error) => error.kind === "aborted");
-  const zeroPermits = createApiClient(context, { fetchImpl: async () => response({ Items: [{ ValidCount: 0, MissingCount: 0, OverdueCount: 0, AsOf: "raw", ValueDate: "raw" }], TotalCount: 1 }) });
+  const zeroPermits = createApiClient(acceptedContext(), { fetchImpl: async () => response({ Items: [{ ValidCount: 0, MissingCount: 0, OverdueCount: 0, AsOf: "raw", ValueDate: "raw" }], TotalCount: 1 }) });
   const envelope = await zeroPermits.requestCurrent("currentPermits");
   assert.equal(envelope.Items[0].ValidCount, 0);
 });
@@ -297,12 +338,29 @@ test("T-104/T-105/T-106: permit navigation is exact, pending-locked, recoverable
   const app = await readFile(new URL("../../site/app.js", import.meta.url), "utf8");
   assert.match(app, /if \(permitNavigationPending\) return/);
   assert.match(app, /button\.disabled = true; button\.setAttribute\("aria-busy", "true"\)/);
-  assert.match(app, /await hostServices\.ready\(\);\s*await hostServices\.executeCommand\("Navigate", \{ Url: "#\/Permits\/Dashboard" \}\)/s);
+  assert.match(app, /const services = hostServices/);
+  assert.match(app, /await services\.ready\(\);\s*await services\.executeCommand\("Navigate", \{ Url: "#\/Permits\/Dashboard" \}\)/s);
   assert.doesNotMatch(app, /#\/Permits\/Dashboard\?/);
   assert.match(app, /הנתונים נשארו זמינים/);
   assert.match(app, /permitNavigationPending = false/);
   assert.match(app, /removeAttribute\("aria-busy"\)/);
-  assert.match(app, /event\.currentTarget\.focus\(\)/);
+  assert.match(app, /const activatingElement = event\.currentTarget/);
+  assert.match(app, /activatingElement\?\.isConnected && !activatingElement\.disabled && typeof activatingElement\.focus === "function"/);
+  assert.match(app, /activatingElement\.focus\(\)/);
+  assert.doesNotMatch(app, /event\.currentTarget\.focus\(\)/);
+});
+
+test("T-101/T-106/T-107: executable dependency is same-origin and static headers enforce a token-realm CSP", async () => {
+  const [html, headers, asset] = await Promise.all([
+    readFile(new URL("../../site/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../site/_headers", import.meta.url), "utf8"),
+    readFile(new URL("../../site/assets/xstate-4.38.3.js", import.meta.url), "utf8")
+  ]);
+  assert.match(html, /<script src="\.\/assets\/xstate-4\.38\.3\.js"><\/script>/);
+  assert.doesNotMatch(html, /<script[^>]+src="https?:\/\//i);
+  assert.match(headers, /Content-Security-Policy: default-src 'self'; script-src 'self';/);
+  assert.match(headers, /connect-src 'self' https:\/\/api\.ylm\.co\.il https:\/\/mntapi\.ylm\.co\.il https:\/\/localhost:5721;/);
+  assert.ok(asset.length > 50_000, "reviewed same-origin XState asset must be present and non-placeholder");
 });
 
 test("T-105/T-106: source-level responsive, zoom, bidi, accessibility and bounded aggregate UI contracts", async () => {
@@ -340,6 +398,6 @@ test("T-101/T-106: analytical body builder and snapshot transport remain isolate
   assert.doesNotMatch(dateRange, /currentEvents|currentPermits|currentEquipment/);
 });
 
-test("T-107: authorized release enables current-snapshot live calls", () => {
-  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true);
+test("T-107: delivered source restores current-snapshot live calls to disabled", () => {
+  assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, false);
 });

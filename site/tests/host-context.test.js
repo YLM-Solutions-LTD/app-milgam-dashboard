@@ -4,9 +4,11 @@ import assert from "node:assert/strict";
 import {
   applyRuntimeLocale,
   contextFromMessage,
+  hostContextGeneration,
   installHostContextListener,
   isAllowedOrigin,
   parseMessagePayload,
+  revokeHostContext,
   resolveRuntimeLocale,
   validateHostContext
 } from "../host-context.js";
@@ -51,7 +53,7 @@ test("accepted context is an immutable capability and nested input mutation cann
   assert.ok(Object.isFrozen(accepted.Configuration[0].Value));
 });
 
-test("listener ignores invalid messages, accepts only the first valid context, and remains recoverable", () => {
+test("listener ignores invalid messages, revokes replacements, and accepts fresh re-entry", () => {
   const listeners = new Map();
   const fakeWindow = {
     parent: {},
@@ -65,10 +67,26 @@ test("listener ignores invalid messages, accepts only the first valid context, a
   listeners.get("message")({ source: fakeWindow.parent, origin: allowed[0], data: { ApiAddress: "", Token: {} } });
   assert.equal(received.length, 0);
   listeners.get("message")({ source: fakeWindow.parent, origin: allowed[0], data: validContext });
+  const first = received[0];
   listeners.get("message")({ source: fakeWindow.parent, origin: allowed[0], data: validContext });
   assert.equal(received.length, 1);
+  assert.equal(validateHostContext(first), true);
+  listeners.get("message")({ source: fakeWindow.parent, origin: allowed[0], data: { ...validContext, Token: { access_token: "fresh-runtime" } } });
+  assert.equal(received.length, 2);
+  assert.equal(validateHostContext(first), false);
+  assert.equal(validateHostContext(received[1]), true);
+  assert.ok(hostContextGeneration(received[1]) > hostContextGeneration(first));
   dispose();
+  assert.equal(validateHostContext(received[1]), false);
   assert.equal(listeners.has("message"), false);
+});
+
+test("revocation is idempotent and makes the private capability unusable", () => {
+  const parent = {};
+  const accepted = contextFromMessage({ source: parent, origin: allowed[0], data: validContext }, allowed, parent);
+  assert.equal(revokeHostContext(accepted, "test"), true);
+  assert.equal(revokeHostContext(accepted, "test-again"), false);
+  assert.equal(validateHostContext(accepted), false);
 });
 
 test("runtime direction honors explicit RTL/LTR and otherwise infers language", () => {

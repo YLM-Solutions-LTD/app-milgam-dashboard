@@ -1,7 +1,9 @@
 import { ALLOWED_API_ORIGINS_BY_HOST, ALLOWED_HOST_ORIGINS, RTL_LANGUAGES } from "./constants.js";
 
 const LOG_PREFIX = "[milgam-dashboard.host-context]";
-const boundContexts = new WeakSet();
+const boundContexts = new WeakMap();
+const revocationSubscribers = new Set();
+let nextGeneration = 0;
 
 export function summarizeContext(context = null) {
   if (!context || typeof context !== "object") return null;
@@ -75,7 +77,25 @@ function validateHostContextShape(context, hostOrigin) {
 }
 
 export function isBoundHostContext(context) {
-  return Boolean(context && typeof context === "object" && context.__hostContextBound === true && boundContexts.has(context));
+  return Boolean(context && typeof context === "object" && boundContexts.get(context)?.active === true);
+}
+
+export function hostContextGeneration(context) {
+  return boundContexts.get(context)?.generation ?? null;
+}
+
+export function revokeHostContext(context, reason = "revoked") {
+  const capability = boundContexts.get(context);
+  if (!capability?.active) return false;
+  capability.active = false;
+  for (const subscriber of revocationSubscribers) subscriber(context, { generation: capability.generation, reason });
+  return true;
+}
+
+export function onHostContextRevoked(subscriber) {
+  if (typeof subscriber !== "function") throw new TypeError("A revocation subscriber is required");
+  revocationSubscribers.add(subscriber);
+  return () => revocationSubscribers.delete(subscriber);
 }
 
 export function validateHostContext(context) {
@@ -100,7 +120,7 @@ export function contextFromMessage(event, allowedOrigins = ALLOWED_HOST_ORIGINS,
       return null;
     }
     const boundContext = immutableContextCopy(context, event.origin);
-    boundContexts.add(boundContext);
+    boundContexts.set(boundContext, { active: true, generation: ++nextGeneration });
     console.info(LOG_PREFIX, "Accepted host message", summarizeContext(context));
     return boundContext;
   } catch {
@@ -133,19 +153,33 @@ function deepFreeze(value) {
 }
 
 export function installHostContextListener(windowObject, onContext, allowedOrigins = ALLOWED_HOST_ORIGINS) {
-  let accepted = false;
+  let acceptedContext = null;
   const handler = (event) => {
     console.info(LOG_PREFIX, "Message event received", { origin: event?.origin });
-    if (accepted) return;
     const context = contextFromMessage(event, allowedOrigins, windowObject.parent);
     if (!context) return;
-    console.info(LOG_PREFIX, "Host context fixed and accepted");
-    accepted = true;
+    if (acceptedContext && sameAuthorization(acceptedContext, context)) {
+      revokeHostContext(context, "duplicate");
+      return;
+    }
+    if (acceptedContext) revokeHostContext(acceptedContext, "replaced");
+    acceptedContext = context;
+    console.info(LOG_PREFIX, "Host context accepted");
     onContext(context);
   };
 
   windowObject.addEventListener("message", handler);
-  return () => windowObject.removeEventListener("message", handler);
+  return () => {
+    windowObject.removeEventListener("message", handler);
+    if (acceptedContext) revokeHostContext(acceptedContext, "disposed");
+  };
+}
+
+function sameAuthorization(left, right) {
+  return left.__trustedHostOrigin === right.__trustedHostOrigin
+    && left.ApiAddress === right.ApiAddress
+    && left.Token?.token_type === right.Token?.token_type
+    && left.Token?.access_token === right.Token?.access_token;
 }
 
 export function resolveRuntimeLocale(context = {}) {

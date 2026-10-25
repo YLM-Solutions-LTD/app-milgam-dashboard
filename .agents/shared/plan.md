@@ -3,7 +3,7 @@
 ## Scope and source
 
 - Batch: `event-436697-batch-64aedcef61f479aaf509`
-- Plan revision: 3
+- Plan revision: 4
 - Frozen actions, in order: `536946`, `536949`, `537034`, `537037`, `537040`
 - Event description is excluded (`includeDescription: false`). The event record is context only.
 - This revision preserves the existing authenticated, browser-only dashboard, Hebrew-first RTL presentation, charts, and analytical month selection. It adds an independent current-state snapshot for events, permits, and equipment.
@@ -64,6 +64,16 @@ Bind command/date-service responses to the same parent window and accepted origi
 
 The client must continue to redact credentials and must never persist or render a token. HTTP, network, permission, absent-procedure, malformed-JSON, malformed-envelope, and semantic-validation failures are explicit failures—not zero values.
 
+### Executable dependency integrity
+
+No third-party executable may run in the document realm that later receives the host bearer token. Replace the runtime jsDelivr XState script with the already pinned `xstate@4.38.3` browser artifact served from the app's own `site/` origin (or an equivalently reviewed local bundle); do not fetch, import, or fall back to any CDN at runtime. Record the dependency version and SHA-256 of the shipped artifact so deployed bytes can be compared with reviewed source.
+
+Ship a static-host-compatible `Content-Security-Policy` response header with at least `default-src 'self'`, `script-src 'self'`, `object-src 'none'`, and `base-uri 'none'`, plus only the minimum `connect-src` and embedding policy required by approved SimplyLog environments. Do not add `unsafe-inline`, `unsafe-eval`, wildcard script sources, or a remote fallback. A meta-only policy is not sufficient evidence when the hosting platform supports response headers. The exact preview must show the CSP response header, only same-origin executable requests, and no executable request to a third-party origin.
+
+### Authorization lifecycle
+
+Treat an accepted host context as a revocable capability, not a permanent global. When the approved host lifecycle invalidates/replaces it, or an authenticated request reports authorization loss, atomically invalidate the old capability, abort its in-flight analytical and snapshot requests, reject pending/new privileged commands, retain last-good UI data as stale, and render sanitized reauthorization state. A late response associated with the invalidated context generation cannot commit. Fresh approved bootstrap creates a new immutable capability generation and may recover data and exact command behavior; old-generation command/date responses remain rejected by source, origin, correlation, and generation checks.
+
 ### Current-event adapter
 
 Require exactly one row for each `ScopeKey`: `overall`, `headquarters`, `branches`. Each row requires non-negative integer `TotalCount` and `OpenCount`, plus a parseable/present `AsOf`; `OpenCount <= TotalCount`. Envelope `TotalCount` is the row count and must reconcile with `Items.length`, not the event population.
@@ -88,6 +98,8 @@ await host.executeCommand("Navigate", { Url: "#/Permits/Dashboard" })
 ```
 
 Use the exact URL for all three indicators and add no query/filter parameters. Disable or busy-lock repeated activation while the command is pending, restore it on completion/failure, and expose navigation failure non-destructively without discarding loaded snapshot data.
+
+Capture the activating control as a stable local element reference before awaiting `ready()` or `executeCommand()`. In `finally`, clear the pending lock and restore focus only when that captured element is still connected and focusable; never read `event.currentTarget` after an asynchronous boundary. Rejection, removal, or rerender must complete without an uncaught exception, and accessible feedback must remain available.
 
 ### Equipment facts adapter
 
@@ -153,12 +165,14 @@ Unit coverage must exercise exact endpoints/body/headers, envelope semantics, ev
 
 Local tests must not require a live SimplyLog instance. A live verification, if controller infrastructure makes it available, checks authenticated responses and the permit navigation command but must be reported as skipped when unavailable. No task depends on inventing equipment validity rules.
 
+Release acceptance additionally requires the controller to supply an approved real SimplyLog test host or controller-owned faithful host harness for the authorization lifecycle. In that environment: establish authenticated bootstrap, load the current snapshot, expire/revoke the authorized session, prove zero post-revocation authenticated requests or privileged commands while last-good data remains stale, then re-enter with fresh authorization and prove recovery plus command-response binding. Synthetic parent messaging remains useful local coverage but cannot close the real-host finding. If this environment is unavailable, record the UAT cases as blocked/skipped with the exact reason and do not claim release approval.
+
 ## Implementation sequence
 
-1. `T-101` extends the existing transport without changing analytical request bodies.
+1. `T-101` removes runtime third-party execution and extends the existing transport without changing analytical request bodies.
 2. `T-102` defines strict current-snapshot adapters and reconciliation.
 3. `T-103` adds an independent, stale-safe snapshot lifecycle.
 4. `T-104` introduces host date/navigation boundaries.
 5. `T-105` renders the accessible responsive snapshot region.
 6. `T-106` adds contract, state, UI, and regression tests.
-7. `T-107` documents verification/flag handling and runs available checks during implementation without making deployment part of the code task.
+7. `T-107` documents verification/flag handling and records controller-run exact-preview plus approved-host lifecycle evidence without making deployment part of the code task.

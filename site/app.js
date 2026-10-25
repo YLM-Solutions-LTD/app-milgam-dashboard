@@ -2,7 +2,7 @@ import { ALLOWED_HOST_ORIGINS, CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, DATASETS } f
 import { createApiClient } from "./api-client.js";
 import { createDashboardMachine } from "./dashboard-machine.js";
 import { yearsFromPeriods } from "./data-mappers.js";
-import { applyRuntimeLocale, installHostContextListener, summarizeContext } from "./host-context.js";
+import { applyRuntimeLocale, installHostContextListener, onHostContextRevoked, summarizeContext } from "./host-context.js";
 import { createSnapshotController } from "./current-snapshot.js";
 import { createHostServices } from "./host-services.js";
 
@@ -38,6 +38,7 @@ let lastStateValue = null;
 let snapshotController = null;
 let hostServices = null;
 let permitNavigationPending = false;
+let activeContext = null;
 
 console.info(LOG_PREFIX, "Bootstrapping mini-app", {
   title: document.title,
@@ -73,11 +74,13 @@ function traceState(state) {
 const removeHostListener = installHostContextListener(
   window,
   (context) => {
+    activeContext = context;
     console.info(LOG_PREFIX, "Host context callback invoked", summarizeContext(context));
     applyRuntimeLocale(context, document);
     hostServices = createHostServices(context);
+    snapshotController?.dispose();
+    snapshotController = null;
     if (CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED) {
-      snapshotController?.dispose();
       snapshotController = createSnapshotController({
         client: createApiClient(context),
         onChange: renderSnapshot
@@ -96,6 +99,15 @@ const removeHostListener = installHostContextListener(
   },
   ALLOWED_HOST_ORIGINS
 );
+
+const removeRevocationListener = onHostContextRevoked((context) => {
+  if (context !== activeContext) return;
+  activeContext = null;
+  hostServices = null;
+  snapshotController?.invalidate();
+  permitNavigationPending = false;
+  if (service) service.send("HOST_CONTEXT_REVOKED");
+});
 
 const machine = createDashboardMachine(window.XState);
 service = window.XState.interpret(machine).onTransition((state) => {
@@ -122,6 +134,7 @@ window.addEventListener("pagehide", () => {
   console.info(LOG_PREFIX, "Page hiding; cleaning up");
   clearTimeout(hostTimeout);
   removeHostListener();
+  removeRevocationListener();
   snapshotController?.dispose();
   service.stop();
 }, { once: true });
@@ -240,18 +253,27 @@ function renderSnapshotContent(data) {
 
 async function navigateToPermits(event) {
   if (permitNavigationPending) return;
+  const activatingElement = event.currentTarget;
+  const services = hostServices;
+  if (!services) return;
   permitNavigationPending = true;
   const buttons = [...snapshotContentElement.querySelectorAll("[data-permit]")];
   buttons.forEach((button) => { button.disabled = true; button.setAttribute("aria-busy", "true"); });
   try {
-    await hostServices.ready();
-    await hostServices.executeCommand("Navigate", { Url: "#/Permits/Dashboard" });
+    await services.ready();
+    await services.executeCommand("Navigate", { Url: "#/Permits/Dashboard" });
   } catch {
     snapshotStatusElement.textContent = "לא ניתן לפתוח כעת את לוח האישורים. הנתונים נשארו זמינים.";
   } finally {
     permitNavigationPending = false;
-    buttons.forEach((button) => { button.disabled = false; button.removeAttribute("aria-busy"); });
-    event.currentTarget.focus();
+    buttons.forEach((button) => {
+      if (!button.isConnected) return;
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+    });
+    if (activatingElement?.isConnected && !activatingElement.disabled && typeof activatingElement.focus === "function") {
+      activatingElement.focus();
+    }
   }
 }
 

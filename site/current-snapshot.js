@@ -94,7 +94,12 @@ export function createSnapshotController({ client, load = loadCurrentSnapshot, n
     }
     return state;
   }
-  return { refresh, getState: () => state, dispose: () => { generation += 1; controller?.abort(); } };
+  function invalidate() {
+    generation += 1;
+    controller?.abort();
+    emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: { kind: "authorization-revoked", status: null, dataset: "hostContext" } });
+  }
+  return { refresh, invalidate, getState: () => state, dispose: () => { generation += 1; controller?.abort(); } };
 }
 
 function requireEnvelope(value, dataset, length = null) {
