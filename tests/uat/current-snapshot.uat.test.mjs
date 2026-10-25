@@ -222,6 +222,50 @@ test("UAT-205 failed refresh retains the complete last-good snapshot", async () 
   assert.deepEqual(controller.getState().error, { kind: "network", status: null, dataset: "currentSnapshot" });
 });
 
+test("UAT-205/UAT-208 HTTP 500 and 401 refreshes retain last-good data and timestamp", async () => {
+  for (const status of [500, 401]) {
+    let run = 0;
+    const committedAt = new Date("2026-10-25T12:00:00Z");
+    const controller = createSnapshotController({ client: {}, now: () => committedAt, load: async () => {
+      run += 1;
+      if (run === 1) return { marker: `last-good-${status}` };
+      throw { kind: "http", status, dataset: "MilgamDashboardCurrentEvents", marker: "DO_NOT_COMMIT" };
+    }});
+    await controller.refresh();
+    const committed = controller.getState();
+    await controller.refresh();
+    const stale = controller.getState();
+    assert.equal(stale.status, "stale");
+    assert.equal(stale.data, committed.data);
+    assert.equal(stale.lastGoodData, committed.lastGoodData);
+    assert.equal(stale.refreshedAt, committedAt);
+    assert.deepEqual(stale.error, { kind: "http", status, dataset: "MilgamDashboardCurrentEvents" });
+    assert.doesNotMatch(JSON.stringify(stale), /DO_NOT_COMMIT/);
+  }
+});
+
+test("UAT-208 a 401 terminally denies the rejected synthetic generation", async () => {
+  const bound = acceptedContext();
+  let calls = 0;
+  const client = createApiClient(bound, { fetchImpl: async () => {
+    calls += 1;
+    return response({ marker: "synthetic-denial" }, 401);
+  }});
+  await assert.rejects(client.requestCurrent("currentEvents"), (error) => error.kind === "http" && error.status === 401);
+  await assert.rejects(client.requestCurrent("currentPermits"), (error) => error.kind === "authorization-revoked");
+  await assert.rejects(client.requestCurrent("currentEquipment"), (error) => error.kind === "authorization-revoked");
+  assert.equal(calls, 1, "rejected generation must emit zero post-401 requests");
+
+  const fresh = acceptedContext({ ...contextPayload, Token: { ...contextPayload.Token, access_token: "fresh-synthetic-token" } });
+  let freshCalls = 0;
+  const freshClient = createApiClient(fresh, { fetchImpl: async () => {
+    freshCalls += 1;
+    return response(equipmentEnvelope);
+  }});
+  await freshClient.requestCurrent("currentEquipment");
+  assert.equal(freshCalls, 1, "a distinct freshly bound context may resume authenticated work");
+});
+
 test("UAT-206 permit host chain uses exact unfiltered navigation and is structurally busy-locked", async () => {
   const calls = [];
   const services = createHostServices(acceptedContext(), {
@@ -234,6 +278,7 @@ test("UAT-206 permit host chain uses exact unfiltered navigation and is structur
   assert.deepEqual(calls, [["ready"], ["Navigate", { Url: "#/Permits/Dashboard" }]]);
   const appSource = await readFile(new URL("../../site/app.js", import.meta.url), "utf8");
   assert.match(appSource, /if \(permitNavigationPending\) return/);
+  assert.match(appSource, /if \(permitNavigationPending\) return;\s*const activatingElement[\s\S]*permitNavigationPending = true;[\s\S]*await hostBootstrap\.reconnect\(\)/);
   assert.match(appSource, /aria-busy/);
 });
 

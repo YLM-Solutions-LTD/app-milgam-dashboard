@@ -3,13 +3,29 @@
 ## Current assignment
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Run: `preview-review-1`
+- Run: `preview-review-2`
 - Process attempt: 1 (fresh review of the controller-supplied artifact; current-run artifacts may be replaced, older run directories remain immutable).
-- Exact head: `3b3f8d4373ff90c2073fb4e884e1fe622a8595a0`
-- Exact preview: `https://02ea3f16.app-milgam-dashboard.pages.dev`
+- Exact head: `8f1e577bbcb4670878dec24ff570c1382a18d170`
+- Exact preview: `https://ea51f277.app-milgam-dashboard.pages.dev`
 - Scope: read-only exact-preview and matching-source security review of shared tasks `T-201` through `T-205` using the controller-owned GuestBridge harness and synthetic local API fixtures only.
 - Authorized writes: this reviewer home only.
 - Required handled actions, exact order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+
+## Preview review 2 assignment
+
+- Recheck the two stable cycle-1 findings against the remediated exact preview: SDK/bridge authorization lifecycle and diagnostic response-body logging.
+- Use only the corrected trusted fixture origin `https://milgam.ylm.co.il/controller-host-fixture/`; locally fulfill fixture/API traffic, abort tenant traffic, and do not widen origin or CSP policy.
+- Exercise the actual packaged guest SDK and bridge, including readiness, exact Navigate command, revocation, held-command response rejection, re-entry/session rotation, API 401 expiry, direct-context denial, bearer confinement, CSP, and executable network trust.
+- Store the task-traceable approach, evidence, browser artifacts, and structured result only in `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-2/`.
+
+## Preview review 2 result
+
+- Verdict: reject; one medium-severity, high-confidence authorization-lifecycle finding.
+- New stable finding `simplyvibe:auth-lifecycle:401-refresh-reuses-rejected-generation:v1`: after an API 401 revoked generation 2, snapshot refresh reconnected to the unchanged bridge session and resent three current plus one analytical authenticated request with the same rejected generation-2 bearer, without controller re-entry.
+- Closed `simplyvibe:auth-lifecycle:legacy-context-survives-host-disconnect:v1`: the exact preview packages the verified SDK; exact Navigate works; held command release after disconnect has zero effect; post-disconnect refresh has zero API effects; controller re-entry rotates to generation 2.
+- Closed `simplyvibe:diagnostics:api-error-body-console-disclosure:v1`: synthetic private fields in HTTP 500 and 401 bodies did not appear in captured console output; diagnostics were metadata-only on exercised paths.
+- Direct forged context denial, API-origin confinement, strict CSP, corrected fixture framing, and same-origin guest execution held. Tenant permissions were not tested or inferred.
+- Full structured result: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-2/report.md`.
 
 ## Current review focus
 

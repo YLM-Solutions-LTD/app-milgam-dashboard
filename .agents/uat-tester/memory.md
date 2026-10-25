@@ -1,5 +1,15 @@
 # UAT tester memory
 
+## Current assignment — test authoring cycle 3
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`; stage: `test-authoring-3`; attempt: 1.
+- Execute deterministic local UAT for `T-201` through `T-205` using the controller-owned GuestBridge/packaged SDK and intercepted synthetic API fixtures only.
+- Regression focus: transactional last-good retention on 500/401, terminal denial of an HTTP-rejected generation, automatic fresh verified re-entry, exact Navigate lifecycle, synchronous single-flight, and zero uncaught disposal effects.
+- Authorized writes are only `tests/uat/`, this memory, the current run folder, and `.agents/uat-tester/tmp/`. App/shared/prior-run/other-role sources remain read-only.
+- The corrected harness origin is `https://milgam.ylm.co.il/controller-host-fixture/`; no real tenant request, token, deployment, Git, provider, or lifecycle API is authorized.
+- Result: approved for deterministic test authoring. UAT 18/18, app regression 59/59, and controller fixture 2/2 passed on Node.js v20.20.2.
+- Local regression coverage closes the three prior UAT fingerprints for test-authoring purposes. Exact-preview browser reproduction is still required before controller release approval.
+
 ## Current assignment
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
@@ -132,3 +142,28 @@
 - Verdict: approve for deterministic test authoring. UAT passed 16/16, app regression passed 59/59, and controller protocol fixture passed 2/2 on Node.js v20.20.2.
 - Closed the cycle-1 UAT fingerprint `uat:guest-sdk-permit-navigation:missing:v1` locally: exact Navigate reaches GuestBridge, old pending commands have zero effects after session rotation, and fresh generation 2 succeeds. Synthetic error-body markers remain absent from logs and serialized errors.
 - Exact deployed-preview browser behavior, viewports/CSP network evidence, and real tenant permission configuration remain final-review gates and are not claimed here.
+
+## Recovered batch preview review cycle 2
+
+- Exact authorized preview: `https://ea51f277.app-milgam-dashboard.pages.dev`; exact head: `8f1e577bbcb4670878dec24ff570c1382a18d170`.
+- Execute stable `UAT-201` through `UAT-210` for tasks `T-201` through `T-205` through the controller-owned actual GuestBridge/packaged SimplyVibeClient transport at corrected origin `https://milgam.ylm.co.il/controller-host-fixture/`.
+- Fulfill host and API traffic locally, abort all tenant traffic, use no tenant token, and do not inject an adapter, readiness, or guest command implementation.
+- Verify exact Navigate, single-flight behavior, expiry/revocation/old-generation suppression/fresh re-entry, stale/retry, analytical-date independence, and RTL/LTR at desktop and phone viewports.
+- Authorized writes are confined to this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-2/`; app, tests, shared artifacts, prior runs, Git/provider/deployment/controller state remain read-only.
+
+## Recovered batch preview review cycle 2 result
+
+- Verdict: reject. Tasks covered: T-201–T-205; T-201/T-202 passed their preview workflows, while T-203/T-204/T-205 failed release acceptance.
+- The prior `uat:guest-sdk-permit-navigation:missing:v1` defect is closed: actual GuestBridge receives exact Navigate, held generation-1 commands have zero post-rotation effects, and fresh generation 2 succeeds.
+- New stable findings: `uat:snapshot-refresh-failure:last-good-cleared:v1` (high), `uat:authorization-expiry:old-generation-refresh-allowed:v1` (high), and `uat:permit-command-singleflight:race:v1` (medium).
+- Four RTL/LTR desktop/phone runs passed exact three-route transport, analytical independence, CSP/chart, geometry, and direct-entry denial checks. No tenant traffic, token, source/shared/Git/provider/deployment/lifecycle write occurred.
+# Current assignment
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`
+- Stage: `test-authoring`, cycle 3, attempt 1
+- Scope: deterministic end-to-end acceptance coverage for every shared task and current remediation fingerprint, using only synthetic controller fixtures and the packaged verified SDK/bridge.
+- Authorized writes: this memory, the current UAT run folder, and `tests/uat/` only.
+- Required inventory command: `find tests/uat -type f -print | sort`; run all discovered `.test.mjs` files with `node --test tests/uat/*.test.mjs` and the controller host harness suite.
+- Never use a tenant token, production endpoint, deployment, Git mutation, or external lifecycle API.
+- Process attempt 1 resumed on 2026-10-25 after controller recovery. Revalidate the patched operator re-entry race source and preserve all extensions in the complete UAT/QC/site/harness inventory; earlier cycle-3 counts are context, not approval for this attempt.
+- Recovered attempt result: ready/approve. UAT 21/21, site 61/61, complete QC JS+MJS 30/30, and controller harness 2/2 passed on Node.js v20.20.2. Added behavioral UAT for overlapping bridge re-entry: newest generation 3 automatically starts exactly three snapshot routes with zero unhandled rejection. Exact-preview browser and real tenant permission acceptance remain unclaimed later-stage gates.

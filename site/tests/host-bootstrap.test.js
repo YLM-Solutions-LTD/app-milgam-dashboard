@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHostBootstrap } from "../host-bootstrap.js";
-import { validateHostContext } from "../host-context.js";
+import { revokeHostContext, validateHostContext } from "../host-context.js";
 
 function fixture() {
   const listeners = new Map();
@@ -27,17 +27,35 @@ function fixture() {
   return { bootstrap, contexts, listeners, parent, windowObject, VerifiedClient };
 }
 
-test("verified SDK bootstrap binds exact browser parent origin and rotates capability on reconnect", async () => {
+test("verified SDK bootstrap binds exact browser parent origin and keeps ordinary reconnect idempotent", async () => {
   const { bootstrap, contexts, VerifiedClient } = fixture();
   const first = await bootstrap.connect();
   assert.equal(VerifiedClient.instances[0].options.hostOrigin, "https://localhost:5500");
   assert.equal(validateHostContext(first.context), true);
   const second = await bootstrap.reconnect();
-  assert.equal(validateHostContext(first.context), false);
+  assert.equal(second.context, first.context);
+  assert.equal(VerifiedClient.instances.length, 1);
+  assert.equal(validateHostContext(first.context), true);
   assert.equal(validateHostContext(second.context), true);
-  assert.equal(contexts.length, 2);
+  assert.equal(contexts.length, 1);
   bootstrap.dispose();
   assert.equal(validateHostContext(second.context), false);
+});
+
+test("HTTP authorization rejection taints the unchanged session until a distinct Ready source re-enters", async () => {
+  const { bootstrap, listeners, parent, VerifiedClient, contexts } = fixture();
+  const receive = listeners.get("message");
+  receive({ source: parent, origin: "https://localhost:5500", data: { protocol: "SimplyVibe", version: 1, type: "Ready", source: "host", payload: { source: "generation-1" } } });
+  const first = await bootstrap.connect();
+  revokeHostContext(first.context, "http-401");
+  await assert.rejects(bootstrap.reconnect(), (error) => error.code === "HOST_REVOKED");
+  assert.equal(VerifiedClient.instances.length, 1, "unchanged session must not mint a replacement client");
+  receive({ source: parent, origin: "https://localhost:5500", data: { protocol: "SimplyVibe", version: 1, type: "Ready", source: "host", payload: { source: "generation-2" } } });
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(VerifiedClient.instances.length, 2);
+  assert.equal(contexts.length, 2, "fresh session automatically creates one application generation");
+  assert.equal(validateHostContext(contexts[1]), true);
+  bootstrap.dispose();
 });
 
 test("host session-source replacement revokes the active SDK generation", async () => {

@@ -3,7 +3,7 @@
 ## Scope and source
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Plan revision: 6
+- Plan revision: 7
 - Frozen actions, in order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`
 - `includeDescription` is false; the event description is context only.
 - Preserve the browser-only Hebrew-first dashboard, authenticated host context, permissions, analytical date behavior, charts, and all accepted current-snapshot contracts.
@@ -22,13 +22,13 @@ Packaged verified SimplyVibeClient (exact trusted parent origin; private instanc
 └─ Revocation boundary: abort, deny, retain stale, require fresh generation
 ```
 
-Cycle-2 remediation additionally replaces the invented `globalThis.SimplyVibeHostAdapter` runtime dependency with the supplied verified SDK, binds the resulting private client/session lifecycle to application authorization, and removes response-body data from browser diagnostics. Existing snapshot loading, empty, error, retry, stale, RTL/LTR, accessibility, analytical, flag, and CSP-safe chart states remain mandatory.
+Cycle-3 remediation closes the remaining lifecycle races in that verified SDK integration: an HTTP authorization rejection permanently taints the matching credential/session generation until controller re-entry, fresh bridge re-entry starts new snapshot work, refresh failures retain last-good content, permit navigation remains single-flight through settlement, and expected disposed-client rejections are consumed without an uncaught page error. Existing snapshot loading, empty, error, retry, stale, RTL/LTR, accessibility, analytical, flag, diagnostics, and CSP-safe chart states remain mandatory.
 
 ## Verified guest transport and corrected fixture
 
 - Package the controller-supplied, hash-recorded `SimplyVibeClient` as a same-origin static dependency and instantiate it in the guest with the exact trusted parent origin. Do not inject, synthesize, or expose a public adapter global.
 - Bootstrap application context from `await client.ready()` and bind `ready()`, `executeCommand()`, `ToDisplayDate()` (where supported by the established host context/date boundary), disposal, session replacement, and authorization generations to the private client instance. The legacy JSON context may be tolerated only as protocol compatibility input; it must not remain independently authoritative after SDK disconnect/session reset.
-- A guest SDK session reset, disposal, timeout, rejected command, replacement handshake, or API 401/403 revokes the matching application capability, aborts its requests, invalidates pending commands, and prevents old-generation effects. Fresh re-entry must construct/bind a fresh verified SDK generation.
+- A guest SDK session reset, disposal, timeout, rejected command, replacement handshake, or API 401/403 revokes and taints the matching application capability, aborts its requests, invalidates pending commands, and prevents old-generation effects. Reconnect/refresh against the unchanged SDK session or credential generation must remain denied; only a controller-created fresh bridge session/re-entry may construct and bind a new verified application generation.
 - The controller correction is authoritative: exercise the fixture at `https://milgam.ylm.co.il/controller-host-fixture/`, fulfill all host/API traffic locally, and make no real tenant request. The earlier `https://ylm.ylm.co.il` example and its frame-ancestor failure are not app defects. Preserve the existing trusted origins and CSP; do not add the mistaken origin.
 
 ## Existing browser contracts
@@ -57,15 +57,15 @@ No filter parameters are invented. A pending command is single-flight, generatio
 Only a capability created by verified `event.source === window.parent`, an approved HTTPS parent origin, an approved corresponding HTTPS `ApiAddress`, and a module-private/non-forgeable binding may authorize requests or commands. Public flags such as `__trustedHostOrigin` or caller-supplied booleans are insufficient. Direct access, fallback, timeout, mutation, mismatched response source/origin, and unapproved origins result in zero authenticated effects.
 
 ```text
-accept verified host → generation += 1 → enable analytical/snapshot work
+accept verified host with fresh bridge/session identity → generation += 1 → enable analytical/snapshot work
 refresh snapshot → requestId += 1 → abort prior → fetch three reports concurrently
 late result with stale requestId or generation → ignore
-authorization loss/replacement → revoke generation → abort requests/commands
-                               → retain last-good data as stale → deny new work
-fresh verified host → new generation → explicit reload may recover
+HTTP 401/403 or authorization loss → revoke + taint generation → abort requests/commands
+                                     → retain last-good data as stale → deny refresh/reconnect
+fresh controller bridge re-entry → new SDK/application generation → auto-restart snapshot work
 ```
 
-Snapshot loading/error/timestamp/last-good state remains separate from analytical month/year state. Period changes produce zero snapshot requests. Initial failure shows no numeric placeholders; refresh failure retains prior values marked stale with retry. A snapshot-ready UI may coexist with analytical loading/error and vice versa.
+Snapshot loading/error/timestamp/last-good state remains separate from analytical month/year state. A refresh is transactional: loading/error bookkeeping must not clear committed content. Period changes produce zero snapshot requests. Initial failure shows no numeric placeholders; refresh failure, including 401/403, retains prior values visibly marked stale. Retry is actionable for ordinary transport/server failures, but authorization failures keep authenticated retry disabled until a genuinely fresh controller re-entry. A snapshot-ready UI may coexist with analytical loading/error and vice versa.
 
 ## Authorized flag behavior
 
@@ -97,6 +97,7 @@ RTL/LTR dashboard
 - Exactly three snapshot calls start concurrently per load/refresh, none on period changes, no automatic retries, and at most three current-generation requests remain in flight.
 - Map/deduplicate 10,000 equipment rows within 100 ms after warm-up on the recorded runtime. A ready snapshot renders within 50 ms at both recorded viewports and contains at most 80 snapshot DOM elements; equipment growth adds no fact-list nodes.
 - A 10-refresh burst commits only generation 10. Twenty rapid permit activations while pending produce one command chain.
+- Acquire the permit-navigation single-flight guard synchronously before any awaited `ready()`/command step and release it only when that one chain settles; disposal/revocation consumes expected rejected promises and cannot open a second chain or emit an uncaught page error.
 - Record runtime/browser versions, fixture sizes, decoded bytes, mapping/render timings, node count, request concurrency, and command count.
 
 ## Validation and release gates
@@ -113,6 +114,6 @@ Browser diagnostics must be metadata-only. For HTTP, invalid JSON/envelopes, map
 
 1. `T-201` sets and protects the authorized release flag.
 2. `T-202` replaces CSP-blocked runtime chart styling while preserving strict headers and visuals.
-3. `T-203` packages and binds the verified guest SDK, removes response-body diagnostics, and reruns snapshot, equipment, host-boundary, state, accessibility, and analytical regressions.
-4. `T-204` collects exact-preview functional, responsive, CSP, SDK-command, diagnostics, and performance evidence in the corrected local-only controller fixture.
-5. `T-205` validates authorization revocation/re-entry through that faithful harness and defines the controller-owned release/revert handoff.
+3. `T-203` implements the explicit active/tainted/awaiting-fresh-session lifecycle, transactional last-good state, synchronous command single-flight, safe disposal handling, and all prior SDK/diagnostics regressions.
+4. `T-204` collects exact-preview functional, responsive, CSP, SDK-command, diagnostics, and performance evidence, including 401 denial and automatic fresh-reentry recovery, in the corrected local-only controller fixture.
+5. `T-205` validates authorization revocation/taint/re-entry and generation-bound requests/commands through that faithful harness and defines the controller-owned release/revert handoff.

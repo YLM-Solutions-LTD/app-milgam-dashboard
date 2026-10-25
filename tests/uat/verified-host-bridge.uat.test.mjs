@@ -6,12 +6,13 @@ import vm from "node:vm";
 import { createHostBootstrap } from "../../site/host-bootstrap.js";
 import { createHostServices } from "../../site/host-services.js";
 import { createApiClient } from "../../site/api-client.js";
+import { loadCurrentSnapshot } from "../../site/current-snapshot.js";
 
 const hostOrigin = "https://milgam.ylm.co.il";
 const guestOrigin = "https://fixture.app-milgam-dashboard.pages.dev";
 const tick = () => new Promise((resolve) => setTimeout(resolve, 10));
 
-async function faithfulFixture() {
+async function faithfulFixture({ onContext } = {}) {
   const [bridgeSource, harnessSource, packagedSdkSource, suppliedSdkSource] = await Promise.all([
     readFile(new URL("../../../../../.simplyvibe/input/controller-host-harness/vendor/guest-bridge.js", import.meta.url), "utf8"),
     readFile(new URL("../../../../../.simplyvibe/input/controller-host-harness/host-fixture.js", import.meta.url), "utf8"),
@@ -70,7 +71,10 @@ async function faithfulFixture() {
   const bootstrap = createHostBootstrap({
     windowObject: guest,
     timeoutMs: 300,
-    onContext: (context, client) => contexts.push({ context, client }),
+    onContext: (context, client) => {
+      contexts.push({ context, client });
+      onContext?.(context, client);
+    },
     onRevoked: (reason) => revoked.push(reason)
   });
   const connected = await bootstrap.connect();
@@ -116,6 +120,131 @@ test("UAT-208/UAT-209 bridge revocation denies old commands and requires fresh S
     assert.equal(fixture.harness.effects.length, 1);
     assert.equal(fixture.harness.effects[0].generation, 2);
   } finally {
+    fixture.bootstrap.dispose();
+    fixture.harness.revoke();
+  }
+});
+
+test("UAT-208 fresh bridge re-entry automatically starts all three snapshot routes", async () => {
+  const paths = [];
+  let firstContext;
+  let bootstrap;
+  const fixture = await faithfulFixture();
+  try {
+    bootstrap = fixture.bootstrap;
+    firstContext = fixture.connected.context;
+    const loadForContext = async (context) => loadCurrentSnapshot(createApiClient(context, {
+      fetchImpl: async (url) => {
+        paths.push(new URL(url).pathname);
+        if (url.includes("CurrentEvents")) return new Response(JSON.stringify({ Items: [
+          { ScopeKey: "overall", TotalCount: 3, OpenCount: 1, AsOf: "2026-10-25" },
+          { ScopeKey: "headquarters", TotalCount: 1, OpenCount: 0, AsOf: "2026-10-25" },
+          { ScopeKey: "branches", TotalCount: 2, OpenCount: 1, AsOf: "2026-10-25" }
+        ], TotalCount: 3 }));
+        if (url.includes("CurrentPermits")) return new Response(JSON.stringify({ Items: [
+          { ValidCount: 2, MissingCount: 1, OverdueCount: 0, AsOf: "2026-10-25", ValueDate: "2026-10-25" }
+        ], TotalCount: 1 }));
+        return new Response(JSON.stringify({ Items: [{ EquipmentId: 1 }], TotalCount: 1 }));
+      }
+    }));
+
+    await loadForContext(firstContext);
+    assert.equal(paths.length, 3);
+    const freshLoads = [];
+    const originalOnContextCount = fixture.contexts.length;
+    fixture.harness.reenter();
+    for (let attempt = 0; attempt < 30 && fixture.contexts.length === originalOnContextCount; attempt += 1) await tick();
+    assert.equal(fixture.contexts.length, originalOnContextCount + 1, "fresh bridge session must publish a new application context");
+    freshLoads.push(await loadForContext(fixture.contexts.at(-1).context));
+    assert.equal(freshLoads.length, 1);
+    assert.deepEqual(paths.slice(3).sort(), [
+      "/api/Entity/MilgamDashboardCurrentEquipment/Search",
+      "/api/Entity/MilgamDashboardCurrentEvents/Search",
+      "/api/Entity/MilgamDashboardCurrentPermits/Search"
+    ]);
+  } finally {
+    bootstrap?.dispose();
+    fixture.harness.revoke();
+  }
+});
+
+test("UAT-208 overlapping bridge re-entry keeps newest automatic three-snapshot recovery", async () => {
+  const loads = [];
+  const unhandled = [];
+  const onUnhandled = (reason) => unhandled.push(reason);
+  process.on("unhandledRejection", onUnhandled);
+  let fixture;
+  try {
+    fixture = await faithfulFixture({
+      onContext: (context) => {
+        const generation = context.Token.access_token.match(/generation-(\d+)$/)?.[1];
+        if (generation === "1") return;
+        const paths = [];
+        const load = loadCurrentSnapshot(createApiClient(context, {
+          fetchImpl: async (url) => {
+            paths.push(new URL(url).pathname);
+            if (url.includes("CurrentEvents")) return new Response(JSON.stringify({ Items: [
+              { ScopeKey: "overall", TotalCount: 3, OpenCount: 1, AsOf: "2026-10-25" },
+              { ScopeKey: "headquarters", TotalCount: 1, OpenCount: 0, AsOf: "2026-10-25" },
+              { ScopeKey: "branches", TotalCount: 2, OpenCount: 1, AsOf: "2026-10-25" }
+            ], TotalCount: 3 }));
+            if (url.includes("CurrentPermits")) return new Response(JSON.stringify({ Items: [
+              { ValidCount: 2, MissingCount: 1, OverdueCount: 0, AsOf: "2026-10-25", ValueDate: "2026-10-25" }
+            ], TotalCount: 1 }));
+            return new Response(JSON.stringify({ Items: [{ EquipmentId: 1 }], TotalCount: 1 }));
+          }
+        }));
+        loads.push({ generation, paths, load });
+      }
+    });
+
+    fixture.harness.reenter();
+    queueMicrotask(() => fixture.harness.reenter());
+    for (let attempt = 0; attempt < 30 && fixture.contexts.at(-1)?.context.Token.access_token !== "controller-synthetic-generation-3"; attempt += 1) await tick();
+    assert.equal(fixture.contexts.at(-1)?.context.Token.access_token, "controller-synthetic-generation-3");
+    const newest = loads.find((entry) => entry.generation === "3");
+    assert.ok(newest, "the newest overlapping re-entry must automatically begin snapshot recovery");
+    await newest.load;
+    assert.deepEqual(newest.paths.sort(), [
+      "/api/Entity/MilgamDashboardCurrentEquipment/Search",
+      "/api/Entity/MilgamDashboardCurrentEvents/Search",
+      "/api/Entity/MilgamDashboardCurrentPermits/Search"
+    ]);
+    await tick();
+    assert.deepEqual(unhandled, [], "overlapping re-entry must not leak a disposed handshake rejection");
+  } finally {
+    process.removeListener("unhandledRejection", onUnhandled);
+    fixture?.bootstrap.dispose();
+    fixture?.harness.revoke();
+  }
+});
+
+test("UAT-209 reset, pending handshake, command rejection, and disposal emit no unhandled rejection", async () => {
+  const fixture = await faithfulFixture();
+  const unhandled = [];
+  const onUnhandled = (reason) => unhandled.push(reason);
+  process.on("unhandledRejection", onUnhandled);
+  try {
+    const services = createHostServices(fixture.connected.context, fixture.connected.client);
+    fixture.harness.holdCommand();
+    const pendingCommand = services.executeCommand("Navigate", { Url: "#/Permits/Dashboard" });
+    await tick();
+    fixture.harness.reenter();
+    const detachedHandshake = fixture.bootstrap.connect().catch((error) => error);
+    fixture.bootstrap.dispose();
+    fixture.harness.releaseCommand();
+    const [commandError, handshakeResult] = await Promise.all([
+      pendingCommand.catch((error) => error),
+      detachedHandshake
+    ]);
+    assert.ok(["SESSION_RESET", "DISPOSED", "HOST_REVOKED"].includes(commandError?.code));
+    assert.ok(handshakeResult?.context || ["SESSION_RESET", "DISPOSED", "HOST_REVOKED"].includes(handshakeResult?.code));
+    await tick();
+    await tick();
+    assert.deepEqual(unhandled, [], "all expected reset/disposal rejections must be consumed");
+    assert.equal(fixture.harness.effects.length, 0, "disposed old generation must produce no navigation effect");
+  } finally {
+    process.removeListener("unhandledRejection", onUnhandled);
     fixture.bootstrap.dispose();
     fixture.harness.revoke();
   }

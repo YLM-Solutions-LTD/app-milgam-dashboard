@@ -4,10 +4,6 @@ import { isBoundHostContext, revokeHostContext } from "./host-context.js";
 
 const LOG_PREFIX = "[milgam-dashboard.api]";
 
-function sanitizeEndpoint(endpoint) {
-  return String(endpoint || "").replace(/[\s\n\r\t]+/g, "");
-}
-
 export class DashboardRequestError extends Error {
   constructor({ kind, dataset, status = null, bodyBytes = null, itemCount = null, detail = null }) {
     super(buildSafeMessage(kind, dataset, status));
@@ -67,11 +63,9 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
     const dataset = DATASETS[datasetKey] || String(datasetKey || "unknown");
     if (!endpoint) throw new TypeError(`Unknown dashboard dataset: ${datasetKey}`);
     const requestBody = buildSearchBody(range);
-    const fullUrl = `${baseUrl}${sanitizeEndpoint(endpoint)}`;
     console.info(LOG_PREFIX, "Starting request", {
       dataset,
       endpoint,
-      url: fullUrl,
       range: { fromDate: requestBody.FromDate, toDate: requestBody.ToDate }
     });
 
@@ -164,7 +158,7 @@ export function createApiClient(context, { fetchImpl = globalThis.fetch } = {}) 
     const expectedRows = datasetKey === "currentEvents" ? 3 : datasetKey === "currentPermits" ? 1 : null;
     if (expectedRows !== null && (envelope.Items.length !== expectedRows || envelope.TotalCount !== expectedRows)) {
       throw new DashboardRequestError({ kind: "invalid-response", dataset, status: response.status,
-        body: sanitizeValue(parsed.value, secrets), detail: `Expected ${expectedRows} complete report row${expectedRows === 1 ? "" : "s"}` });
+        detail: `Expected ${expectedRows} complete report row${expectedRows === 1 ? "" : "s"}` });
     }
     return envelope;
   }
@@ -177,7 +171,7 @@ export function validateCompleteEnvelope(response, options = {}) {
   if (!response || typeof response !== "object" || !Array.isArray(response.Items)
     || !Number.isSafeInteger(response.TotalCount) || response.TotalCount < 0) {
     throw new DashboardRequestError({ kind: "invalid-response", dataset, status,
-      body: sanitizeValue(response, secrets), detail: "Complete Items/TotalCount envelope is invalid" });
+      detail: "Complete Items/TotalCount envelope is invalid" });
   }
   return { Items: response.Items, TotalCount: response.TotalCount };
 }
@@ -188,7 +182,6 @@ export function validateItemsEnvelope(response, { dataset = "unknown", status = 
       kind: "invalid-response",
       dataset,
       status,
-      body: sanitizeValue(response, secrets),
       detail: "Items must be an array"
     });
   }
@@ -199,7 +192,6 @@ export function validateItemsEnvelope(response, { dataset = "unknown", status = 
       kind: "invalid-response",
       dataset,
       status,
-      body: sanitizeValue(response, secrets),
       detail: "Paged response is incomplete"
     });
   }

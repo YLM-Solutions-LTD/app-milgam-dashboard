@@ -73,10 +73,16 @@ export function mapCurrentEquipment(envelope) {
   return { total: facts.size, facts: [...facts.values()], classification: "unavailable" };
 }
 
-export function createSnapshotController({ client, load = loadCurrentSnapshot, now = () => new Date(), onChange = () => {} }) {
+export function createSnapshotController({ client, load = loadCurrentSnapshot, now = () => new Date(), onChange = () => {}, initialData = null, initialRefreshedAt = null }) {
   let generation = 0;
   let controller = null;
-  let state = { status: "idle", data: null, lastGoodData: null, error: null, refreshedAt: null };
+  let state = {
+    status: initialData ? "stale" : "idle",
+    data: initialData,
+    lastGoodData: initialData,
+    error: null,
+    refreshedAt: initialRefreshedAt
+  };
   const emit = (patch) => { state = { ...state, ...patch }; onChange(state); };
   async function refresh() {
     const id = ++generation;

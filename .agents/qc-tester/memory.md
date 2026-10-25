@@ -1,5 +1,15 @@
 # QC tester memory
 
+## Active preview review — cycle 2, attempt 1
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`
+- Exact preview: `https://ea51f277.app-milgam-dashboard.pages.dev`
+- Exact PR head: `8f1e577bbcb4670878dec24ff570c1382a18d170`
+- Corrected trusted fixture origin: `https://milgam.ylm.co.il/controller-host-fixture/` (controller correction overrides the stale README example).
+- Scope: read-only review of `T-201` through `T-205` with the packaged SDK/bridge, fully local host/API fulfillment, and tenant traffic aborted.
+- Writable evidence root: `.agents/qc-tester/runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-2/` only.
+- Result: rejected with stable medium finding `qc-sdk-reentry-client-disposed-unhandled-v1`; revocation/re-entry correctly blocks old effects and recovers generation 2, but emits uncaught `Error: Client disposed.`. All other exercised functional, responsive, CSP, redaction, and local-fixture checks passed.
+
 - App: `milgam-dashboard`.
 - Treat the app, shared plan and task board, controller inputs, and other role homes as read-only.
 - Current test-authoring scope is the accepted T-101 through T-107 board for frozen action IDs 536946, 536949, 537034, 537037, and 537040; description content is excluded.
@@ -56,3 +66,21 @@
 - Current assignment is test-authoring cycle 2 attempt 1 for `event-436697-batch-7b4c276304a7e351ea41`; executable deterministic QC may change only under `tests/qc/`, and evidence/report may change only in the matching `test-authoring-2/` folder plus this memory.
 - Test-authoring cycle 2 attempt 1 result: `approve_with_limitations` for local deterministic scope. QC 28/28, site regression 59/59, concurrent accepted UAT 16/16, and controller fixture 2/2 pass on Node.js v20.20.2. New QC uses the byte-identical packaged SDK and supplied real GuestBridge at corrected `https://milgam.ylm.co.il`, proving Ready, exact Navigate, old pending-command zero effects after rotation, old capability revocation, and generation-2 recovery without an injected adapter or network.
 - The three cycle-2 source findings `verified-guest-sdk-command-path-missing-v1`, `host-session-revocation-must-invalidate-legacy-context-v1`, and `api-diagnostics-response-body-disclosure-v1` are closed in deterministic local regression scope. Exact deployed-preview responsive/visual/accessibility geometry, delivered headers/console/network, and full browser request-revocation/stale-retention behavior remain for the next controller preview stage; no deployment or release approval is claimed.
+- Current assignment is implementation-planning cycle 3 attempt 1 for `event-436697-batch-7b4c276304a7e351ea41`; plan revision 7 and structure IDs T-201 through T-205 are read-only, and only the matching run folder plus this memory may change.
+- Implementation-planning cycle 3 attempt 1 result: `approve_with_findings`. Fourteen planned checks trace all 26 acceptance criteria and explicitly gate the packaged SDK/Ready bridge, negative trust matrix, terminal 401/403 taint until distinct re-entry, transactional stale retention, response/concurrency races, exact Navigate single-flight through settlement, expected disposed-client rejection handling, marker-body redaction, CSP charts, true flag, responsive RTL/LTR accessibility, request counts, and 10k/DOM/render budgets. No tests were authored or executed.
+- Keep `qc-sdk-reentry-client-disposed-unhandled-v1` open until fresh deterministic and corrected-fixture browser evidence proves revoke/release/re-entry produces no pageerror or unhandled rejection. Existing defects are implementation requirements, not proof of current failure or completion.
+- Preserve frozen actions exactly `[536946,536949,537034,537037,537040,547704,547710,547713,569787,569843]`; use only `https://milgam.ylm.co.il/controller-host-fixture/` with locally fulfilled traffic, never widen CSP/origins, contact a tenant, deploy, or claim controller release completion.
+# Active assignment
+
+- Batch: `event-436697-batch-7b4c276304a7e351ea41`
+- Stage: `test-authoring-3`, cycle 3, attempt 1
+- Scope: deterministic QC authoring/execution using the corrected local controller-host fixture; no live tenant traffic.
+- Recovery status: reopened after cycle-3 implementation. Re-read shared plan revision 7 and current remediation inputs, discover both `.test.js` and `.test.mjs` inventories, re-run all required local suites and corrected controller-host harness, and decide every current fingerprint from fresh behavioral evidence. Prior rejection is historical evidence only.
+## 2026-10-25 — event-436697-batch-7b4c276304a7e351ea41 / test-authoring-3 / process attempt 1 recovery
+
+- Reopened current cycle-3 QC test-authoring run under controller recovery instructions.
+- Scope is read-only outside `tests/qc/` and this role home; prior run folders remain immutable.
+- Required inventory includes site tests, QC `*.test.js` and `*.test.mjs`, UAT `*.test.mjs`, and the corrected local controller-host harness suite.
+- Current traceability uses only T-201 through T-205 and frozen handled action order `536946,536949,537034,537037,537040,547704,547710,547713,569787,569843`.
+- Must retain and execute `tests/qc/operator-reentry-race.test.mjs`, use the packaged real SDK/GuestBridge fixture, and never use tenant traffic or tokens.
+- Completed ready: site 61/61, QC 30/30 including JS+MJS, UAT 21/21, harness 2/2, no skips. Strengthened the operator overlap regression with bounded generation polling, prior-generation revocation, and unhandled-rejection capture. Exact deployed-preview browser checks remain a later-stage limitation.

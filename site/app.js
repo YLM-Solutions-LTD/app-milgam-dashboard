@@ -74,6 +74,7 @@ function traceState(state) {
 }
 
 function acceptHostContext(context, client) {
+    const priorSnapshot = snapshotController?.getState();
     activeContext = context;
     console.info(LOG_PREFIX, "Host context callback invoked", summarizeContext(context));
     applyRuntimeLocale(context, document);
@@ -83,7 +84,9 @@ function acceptHostContext(context, client) {
     if (CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED) {
       snapshotController = createSnapshotController({
         client: createApiClient(context),
-        onChange: renderSnapshot
+        onChange: renderSnapshot,
+        initialData: priorSnapshot?.lastGoodData || null,
+        initialRefreshedAt: priorSnapshot?.refreshedAt || null
       });
       void snapshotController.refresh();
     } else {
@@ -108,7 +111,6 @@ const removeRevocationListener = onHostContextRevoked((context) => {
   activeContext = null;
   hostServices = null;
   snapshotController?.invalidate();
-  permitNavigationPending = false;
   if (service) service.send("HOST_CONTEXT_REVOKED");
 });
 
@@ -149,7 +151,12 @@ snapshotRefreshElement.addEventListener("click", () => { void refreshAuthorizati
 
 async function refreshAuthorization() {
   try {
-    await hostBootstrap.reconnect();
+    if (!activeContext || !hostServices) {
+      await hostBootstrap.reconnect();
+      return;
+    }
+    service.send("RETRY");
+    await snapshotController?.refresh();
   } catch (error) {
     console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
   }
@@ -271,6 +278,7 @@ async function navigateToPermits(event) {
   const buttons = [...snapshotContentElement.querySelectorAll("[data-permit]")];
   buttons.forEach((button) => { button.disabled = true; button.setAttribute("aria-busy", "true"); });
   try {
+    // Idempotent while the verified generation is active; rejects rather than reminting a tainted session.
     await hostBootstrap.reconnect();
     const services = hostServices;
     if (!services) throw Object.assign(new Error("Host service unavailable"), { code: "HOST_UNAVAILABLE" });

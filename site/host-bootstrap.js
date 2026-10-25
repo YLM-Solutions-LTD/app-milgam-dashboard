@@ -1,5 +1,5 @@
 import { ALLOWED_HOST_ORIGINS } from "./constants.js";
-import { contextFromSdk, revokeHostContext } from "./host-context.js";
+import { contextFromSdk, onHostContextRevoked, revokeHostContext } from "./host-context.js";
 
 function resolvedParentOrigin(windowObject) {
   const candidates = [windowObject.location?.ancestorOrigins?.[0], windowObject.document?.referrer];
@@ -22,25 +22,54 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
   let sessionSource = null;
   let disposed = false;
   let reconnecting = null;
+  let deniedSessionSource = null;
+  let removeContextRevocationListener = null;
 
-  const revoke = (reason) => {
-    if (context) revokeHostContext(context, reason);
+  const revoke = (reason, { denySession = false } = {}) => {
+    const revokedContext = context;
     context = null;
-    client?.dispose();
+    if (denySession) deniedSessionSource = sessionSource || "pending-session";
+    if (revokedContext) revokeHostContext(revokedContext, reason);
+    const revokedClient = client;
     client = null;
+    revokedClient?.dispose();
     onRevoked?.(reason);
   };
+
+  removeContextRevocationListener = onHostContextRevoked((revokedContext, metadata) => {
+    if (revokedContext !== context) return;
+    const reason = metadata?.reason || "revoked";
+    revoke(reason, { denySession: reason === "http-401" || reason === "http-403" });
+  });
 
   const observeSession = (event) => {
     if (disposed || event.source !== windowObject.parent || event.origin !== hostOrigin) return;
     const message = event.data;
     if (!message || message.protocol !== "SimplyVibe" || message.version !== 1 || message.type !== "Ready"
       || message.source !== "host" || typeof message.payload?.source !== "string") return;
-    if (sessionSource && sessionSource !== message.payload.source) {
+    const nextSessionSource = message.payload.source;
+    if (sessionSource && sessionSource !== nextSessionSource) {
+      sessionSource = nextSessionSource;
+      deniedSessionSource = null;
       revoke("session-reset");
-      queueMicrotask(() => { if (!disposed) void connect(); });
+      const pendingConnection = reconnecting;
+      queueMicrotask(() => {
+        const reconnectCurrentSession = () => {
+          if (disposed || sessionSource !== nextSessionSource) return;
+          connect().catch((error) => {
+            if (!["DISPOSED", "SESSION_RESET", "HOST_REVOKED"].includes(error?.code)) {
+              console.warn("[milgam-dashboard.host-bootstrap] Fresh session handshake failed", { code: error?.code || "HOST_UNAVAILABLE" });
+            }
+          });
+        };
+        // Let the disposed handshake clear the single-flight promise first.
+        // A superseded session must not reconnect over the newest session.
+        if (pendingConnection) void pendingConnection.then(reconnectCurrentSession, reconnectCurrentSession);
+        else reconnectCurrentSession();
+      });
+      return;
     }
-    sessionSource = message.payload.source;
+    sessionSource = nextSessionSource;
   };
 
   windowObject.addEventListener("message", observeSession);
@@ -50,9 +79,12 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
     if (!hostOrigin || typeof windowObject.SimplyVibeClient !== "function") {
       throw Object.assign(new Error("Verified host SDK is unavailable"), { code: "HOST_UNAVAILABLE" });
     }
+    if (context && client) return { context, client };
+    if (deniedSessionSource && (deniedSessionSource === "pending-session" || deniedSessionSource === sessionSource)) {
+      throw Object.assign(new Error("The current host authorization generation was rejected"), { code: "HOST_REVOKED" });
+    }
     if (reconnecting) return reconnecting;
     reconnecting = (async () => {
-      revoke("reconnect");
       const nextClient = new windowObject.SimplyVibeClient({ hostOrigin, timeoutMs });
       client = nextClient;
       // Register before ready so live host events cannot race bootstrap.
@@ -80,6 +112,7 @@ export function createHostBootstrap({ windowObject = window, onContext, onRevoke
       if (disposed) return;
       disposed = true;
       windowObject.removeEventListener("message", observeSession);
+      removeContextRevocationListener?.();
       revoke("disposed");
     }
   };

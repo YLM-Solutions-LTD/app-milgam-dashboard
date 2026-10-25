@@ -70,4 +70,25 @@ test("snapshot controller ignores superseded work and retains last good data on 
   assert.equal(controller.getState().data.marker, "current");
 });
 
+test("fresh application generation retains prior facts while its automatic refresh is pending or fails", async () => {
+  const prior = { marker: "last-good" };
+  let rejectLoad;
+  const states = [];
+  const controller = createSnapshotController({
+    client: {},
+    initialData: prior,
+    initialRefreshedAt: new Date("2026-10-25T00:00:00Z"),
+    load: () => new Promise((_resolve, reject) => { rejectLoad = reject; }),
+    onChange: (state) => states.push(state)
+  });
+  const refresh = controller.refresh();
+  assert.equal(controller.getState().status, "loading");
+  assert.equal(controller.getState().data, prior);
+  rejectLoad({ kind: "http", status: 500 });
+  await refresh;
+  assert.equal(controller.getState().status, "stale");
+  assert.equal(controller.getState().data, prior);
+  assert.ok(states.every((state) => state.data === prior));
+});
+
 test("release-candidate source keeps authorized current snapshot live calls enabled", () => assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true));

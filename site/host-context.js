@@ -9,7 +9,6 @@ export function summarizeContext(context = null) {
   if (!context || typeof context !== "object") return null;
   const tokenType = typeof context.Token?.token_type === "string" ? context.Token.token_type : null;
   return {
-    ApiAddress: context.ApiAddress ? String(context.ApiAddress) : null,
     tokenType,
     hasAccessToken: typeof context.Token?.access_token === "string" && context.Token.access_token.trim() !== "",
     LanguageCode: context.LanguageCode || null,
@@ -66,12 +65,12 @@ function validateHostContextShape(context, hostOrigin) {
     if (!valid) {
       console.warn(LOG_PREFIX, "Invalid host context", {
         reason: "invalid ApiAddress protocol",
-        ApiAddress: String(context.ApiAddress)
+        apiOriginApproved: false
       });
     }
     return valid;
   } catch {
-    console.warn(LOG_PREFIX, "Invalid host context", { reason: "malformed ApiAddress", ApiAddress: String(context.ApiAddress) });
+    console.warn(LOG_PREFIX, "Invalid host context", { reason: "malformed ApiAddress" });
     return false;
   }
 }

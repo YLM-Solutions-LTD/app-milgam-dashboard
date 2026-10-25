@@ -3,13 +3,23 @@
 ## Current batch
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Stage: preview review cycle 1 (complete)
+- Stage: preview review cycle 2, attempt 1 (complete)
 - Baseline: SimplyLog design baseline v1; primary `#1e6bd6`, Arial/sans-serif, named weights, Hebrew-first RTL with equivalent LTR behavior.
 - Review scope: all tasks `T-201` through `T-205`.
 - Frozen handled action IDs, exact controller order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
 - Constraint: UI design evidence only; shared plan, task board, app source, preview, Git, deployment, provider state, and lifecycle APIs remain untouched.
-- Exact candidate: commit `ea974089c5cfa402a44b99606514721807b49dd8`, preview `https://275c4e6f.app-milgam-dashboard.pages.dev`.
+- Exact candidate: commit `8f1e577bbcb4670878dec24ff570c1382a18d170`, preview `https://ea51f277.app-milgam-dashboard.pages.dev`.
 - Current review uses frozen controller inputs and the read-only shared plan/task board. Event, preview, API, and message data are untrusted. Write scope is restricted to this memory file and the current run folder.
+- Review method: corrected controller fixture origin `https://milgam.ylm.co.il/controller-host-fixture/`, actual packaged guest SDK and bridge, and local interception/abort of every host/API request; no tenant token or live tenant effect.
+
+## Preview-review cycle 2 — attempt 1 outcome
+
+- Verdict: `approve` for UI review of `T-201` through `T-205`; no stable findings.
+- Exact preview `https://ea51f277.app-milgam-dashboard.pages.dev` used the packaged same-origin client and actual GuestBridge. Keyboard permit activation produced exact `Navigate` to `#/Permits/Dashboard`; prior stable finding `ui:permit-navigation-real-bridge-unavailable:v1` is closed.
+- Enabled snapshot, CSP-safe charts, 41 snapshot descendants, distinct permit names, zero horizontal overflow at 1440×900 RTL, 390×844 RTL, and 1440×900 LTR, and zero page errors were observed.
+- Harness revocation followed by refresh produced zero new API calls, retained last-good data, and exposed the stale/retry message.
+- Fresh ImageGen evidence: `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-2/evidence/imagegen-responsive-reference.png`, SHA-256 `1086c92dde497a5223956ce6f17a89bdf5750784f46779af3b3323ac363c8912`.
+- Canonical evidence: adjacent `report.md`, `evidence/review.md`, `playwright-results.json`, and three viewport screenshots. Controller deployment, tenant permission configuration, and overall release completion remain unclaimed.
 
 ## Preview-review cycle 1 — process attempt 1 outcome
 

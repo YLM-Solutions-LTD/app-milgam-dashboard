@@ -80,6 +80,20 @@ test("T-203/T-204: packaged SDK is byte-identical to the supplied verified SDK a
   assert.doesNotMatch(source, /SimplyVibeHostAdapter/);
 });
 
+test("T-203/T-205: detached session-reset reconnect consumes expected client-disposal rejection", () => {
+  const bootstrapSource = read(new URL("../../site/host-bootstrap.js", import.meta.url));
+  assert.doesNotMatch(
+    bootstrapSource,
+    /queueMicrotask\(\(\) => \{[^}]*void connect\(\);[^}]*\}\)/s,
+    "a detached reconnect must not discard a rejecting connect() promise"
+  );
+  assert.match(
+    bootstrapSource,
+    /queueMicrotask\(\(\) => \{[\s\S]*?connect\(\)\.catch\(/,
+    "the session-reset boundary must consume expected DISPOSED/SESSION_RESET/HOST_REVOKED rejection"
+  );
+});
+
 test("T-203/T-204/T-205: real packaged SDK bootstrap performs Ready and exact Navigate through GuestBridge", async () => {
   const { guestWindow, hostLocation, harness } = controllerFixture();
   let accepted;
