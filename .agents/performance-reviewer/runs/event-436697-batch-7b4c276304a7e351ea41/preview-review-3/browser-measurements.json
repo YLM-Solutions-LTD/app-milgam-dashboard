@@ -1,7 +1,7 @@
 {
-  "measuredAt": "2026-10-25T22:44:54.599Z",
-  "preview": "https://5ab11833.app-milgam-dashboard.pages.dev/",
-  "commit": "c9686ba1ad6d4f7b0896ba32c29ad38dcf607022",
+  "measuredAt": "2026-10-25T23:12:44.455Z",
+  "preview": "https://ef2f1185.app-milgam-dashboard.pages.dev/",
+  "commit": "3dc45f69655efd2a2c6b0ad016b1a8cf8f738066",
   "browserVersion": "140.0.7339.16",
   "node": "v20.20.2",
   "harness": "controller-owned real GuestBridge and packaged guest SDK; corrected trusted origin; all API fulfilled locally",
@@ -12,7 +12,7 @@
         "width": 390,
         "height": 844
       },
-      "navigationToReadyMs": 452,
+      "navigationToReadyMs": 515,
       "initial": {
         "hasSimplyVibeClient": true,
         "snapshotElements": 41,
@@ -24,12 +24,12 @@
         "status": "עודכן: 2026-10-25T10:00:00"
       },
       "mappingSamplesMs": [
-        14.600000001490116,
-        11.099999997764826,
-        11.100000001490116,
+        13.400000002235174,
+        10.800000000745058,
+        10.599999997764826,
         11.5,
-        11.399999998509884,
-        12
+        15.199999999254942,
+        21.400000002235174
       ],
       "initialCalls": [
         {
@@ -39,10 +39,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968287724,
+          "startedAt": 1792969957466,
           "isCurrent": true,
-          "finishedAt": 1792968287785,
-          "responseAt": 1792968287786
+          "finishedAt": 1792969957527,
+          "responseAt": 1792969957528
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -51,10 +51,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968287724,
+          "startedAt": 1792969957466,
           "isCurrent": true,
-          "finishedAt": 1792968287785,
-          "responseAt": 1792968287786
+          "finishedAt": 1792969957527,
+          "responseAt": 1792969957528
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -63,10 +63,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968287727,
+          "startedAt": 1792969957469,
           "isCurrent": true,
-          "finishedAt": 1792968287845,
-          "responseAt": 1792968287847
+          "finishedAt": 1792969957602,
+          "responseAt": 1792969957604
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -75,10 +75,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968287729,
+          "startedAt": 1792969957472,
           "isCurrent": false,
-          "finishedAt": 1792968287846,
-          "responseAt": 1792968287855
+          "finishedAt": 1792969957604,
+          "responseAt": 1792969957623
         }
       ],
       "refreshCalls": [
@@ -89,10 +89,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968289375,
+          "startedAt": 1792969959196,
           "isCurrent": true,
-          "finishedAt": 1792968289453,
-          "responseAt": 1792968289454
+          "finishedAt": 1792969959258,
+          "responseAt": 1792969959275
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -101,10 +101,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968289376,
+          "startedAt": 1792969959196,
           "isCurrent": true,
-          "finishedAt": 1792968289453,
-          "responseAt": 1792968289454
+          "finishedAt": 1792969959275,
+          "responseAt": 1792969959275
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -113,10 +113,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968289377,
+          "startedAt": 1792969959198,
           "isCurrent": true,
-          "finishedAt": 1792968289493,
-          "responseAt": 1792968289494
+          "finishedAt": 1792969959312,
+          "responseAt": 1792969959313
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -125,14 +125,14 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968289377,
+          "startedAt": 1792969959198,
           "isCurrent": false,
-          "finishedAt": 1792968289494,
-          "responseAt": 1792968289503
+          "finishedAt": 1792969959313,
+          "responseAt": 1792969959321
         }
       ],
-      "refreshMs": 181,
-      "postResponseRenderMs": 20,
+      "refreshMs": 187,
+      "postResponseRenderMs": 19,
       "refreshBurstCalls": [
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -141,10 +141,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968289533,
+          "startedAt": 1792969959350,
           "isCurrent": true,
-          "finishedAt": 1792968289595,
-          "responseAt": 1792968289612
+          "finishedAt": 1792969959411,
+          "responseAt": 1792969959412
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -153,10 +153,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968289533,
+          "startedAt": 1792969959350,
           "isCurrent": true,
-          "finishedAt": 1792968289613,
-          "responseAt": 1792968289613
+          "finishedAt": 1792969959429,
+          "responseAt": 1792969959429
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -165,10 +165,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968289534,
+          "startedAt": 1792969959351,
           "isCurrent": true,
-          "finishedAt": 1792968289651,
-          "responseAt": 1792968289652
+          "finishedAt": 1792969959471,
+          "responseAt": 1792969959472
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -177,10 +177,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968289534,
+          "startedAt": 1792969959352,
           "isCurrent": false,
-          "finishedAt": 1792968289652,
-          "responseAt": 1792968289660
+          "finishedAt": 1792969959472,
+          "responseAt": 1792969959480
         }
       ],
       "heldState": {
@@ -199,56 +199,7 @@
           }
         ]
       },
-      "postRevokeCalls": [
-        {
-          "name": "MilgamDashboardCurrentEvents",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 281,
-          "startedAt": 1792968290254,
-          "isCurrent": true,
-          "finishedAt": 1792968290316,
-          "responseAt": 1792968290318
-        },
-        {
-          "name": "MilgamDashboardCurrentPermits",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 141,
-          "startedAt": 1792968290256,
-          "isCurrent": true,
-          "finishedAt": 1792968290316,
-          "responseAt": 1792968290318
-        },
-        {
-          "name": "MilgamDashboardCurrentEquipment",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 4070459,
-          "startedAt": 1792968290256,
-          "isCurrent": true,
-          "finishedAt": 1792968290372,
-          "responseAt": 1792968290373
-        },
-        {
-          "name": "MilgamDashboardByMonth",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
-          "method": "POST",
-          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 27,
-          "startedAt": 1792968290257,
-          "isCurrent": false,
-          "finishedAt": 1792968290373,
-          "responseAt": 1792968290380
-        }
-      ],
+      "postRevokeCalls": [],
       "reentryCalls": [
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -257,10 +208,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 281,
-          "startedAt": 1792968290517,
+          "startedAt": 1792969960334,
           "isCurrent": true,
-          "finishedAt": 1792968290579,
-          "responseAt": 1792968290581
+          "finishedAt": 1792969960395,
+          "responseAt": 1792969960396
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -269,10 +220,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 141,
-          "startedAt": 1792968290518,
+          "startedAt": 1792969960336,
           "isCurrent": true,
-          "finishedAt": 1792968290579,
-          "responseAt": 1792968290596
+          "finishedAt": 1792969960396,
+          "responseAt": 1792969960397
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -281,10 +232,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 4070459,
-          "startedAt": 1792968290519,
+          "startedAt": 1792969960337,
           "isCurrent": true,
-          "finishedAt": 1792968290634,
-          "responseAt": 1792968290635
+          "finishedAt": 1792969960456,
+          "responseAt": 1792969960458
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -293,10 +244,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 27,
-          "startedAt": 1792968290519,
+          "startedAt": 1792969960338,
           "isCurrent": false,
-          "finishedAt": 1792968290635,
-          "responseAt": 1792968290643
+          "finishedAt": 1792969960458,
+          "responseAt": 1792969960467
         }
       ],
       "reentryUi": {
@@ -327,10 +278,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968287724,
+          "startedAt": 1792969957466,
           "isCurrent": true,
-          "finishedAt": 1792968287785,
-          "responseAt": 1792968287786
+          "finishedAt": 1792969957527,
+          "responseAt": 1792969957528
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -339,10 +290,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968287724,
+          "startedAt": 1792969957466,
           "isCurrent": true,
-          "finishedAt": 1792968287785,
-          "responseAt": 1792968287786
+          "finishedAt": 1792969957527,
+          "responseAt": 1792969957528
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -351,10 +302,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968287727,
+          "startedAt": 1792969957469,
           "isCurrent": true,
-          "finishedAt": 1792968287845,
-          "responseAt": 1792968287847
+          "finishedAt": 1792969957602,
+          "responseAt": 1792969957604
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -363,10 +314,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968287729,
+          "startedAt": 1792969957472,
           "isCurrent": false,
-          "finishedAt": 1792968287846,
-          "responseAt": 1792968287855
+          "finishedAt": 1792969957604,
+          "responseAt": 1792969957623
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -375,10 +326,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968289375,
+          "startedAt": 1792969959196,
           "isCurrent": true,
-          "finishedAt": 1792968289453,
-          "responseAt": 1792968289454
+          "finishedAt": 1792969959258,
+          "responseAt": 1792969959275
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -387,10 +338,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968289376,
+          "startedAt": 1792969959196,
           "isCurrent": true,
-          "finishedAt": 1792968289453,
-          "responseAt": 1792968289454
+          "finishedAt": 1792969959275,
+          "responseAt": 1792969959275
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -399,10 +350,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968289377,
+          "startedAt": 1792969959198,
           "isCurrent": true,
-          "finishedAt": 1792968289493,
-          "responseAt": 1792968289494
+          "finishedAt": 1792969959312,
+          "responseAt": 1792969959313
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -411,10 +362,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968289377,
+          "startedAt": 1792969959198,
           "isCurrent": false,
-          "finishedAt": 1792968289494,
-          "responseAt": 1792968289503
+          "finishedAt": 1792969959313,
+          "responseAt": 1792969959321
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -423,10 +374,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968289533,
+          "startedAt": 1792969959350,
           "isCurrent": true,
-          "finishedAt": 1792968289595,
-          "responseAt": 1792968289612
+          "finishedAt": 1792969959411,
+          "responseAt": 1792969959412
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -435,10 +386,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968289533,
+          "startedAt": 1792969959350,
           "isCurrent": true,
-          "finishedAt": 1792968289613,
-          "responseAt": 1792968289613
+          "finishedAt": 1792969959429,
+          "responseAt": 1792969959429
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -447,10 +398,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968289534,
+          "startedAt": 1792969959351,
           "isCurrent": true,
-          "finishedAt": 1792968289651,
-          "responseAt": 1792968289652
+          "finishedAt": 1792969959471,
+          "responseAt": 1792969959472
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -459,58 +410,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968289534,
+          "startedAt": 1792969959352,
           "isCurrent": false,
-          "finishedAt": 1792968289652,
-          "responseAt": 1792968289660
-        },
-        {
-          "name": "MilgamDashboardCurrentEvents",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 281,
-          "startedAt": 1792968290254,
-          "isCurrent": true,
-          "finishedAt": 1792968290316,
-          "responseAt": 1792968290318
-        },
-        {
-          "name": "MilgamDashboardCurrentPermits",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 141,
-          "startedAt": 1792968290256,
-          "isCurrent": true,
-          "finishedAt": 1792968290316,
-          "responseAt": 1792968290318
-        },
-        {
-          "name": "MilgamDashboardCurrentEquipment",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 4070459,
-          "startedAt": 1792968290256,
-          "isCurrent": true,
-          "finishedAt": 1792968290372,
-          "responseAt": 1792968290373
-        },
-        {
-          "name": "MilgamDashboardByMonth",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
-          "method": "POST",
-          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 27,
-          "startedAt": 1792968290257,
-          "isCurrent": false,
-          "finishedAt": 1792968290373,
-          "responseAt": 1792968290380
+          "finishedAt": 1792969959472,
+          "responseAt": 1792969959480
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -519,10 +422,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 281,
-          "startedAt": 1792968290517,
+          "startedAt": 1792969960334,
           "isCurrent": true,
-          "finishedAt": 1792968290579,
-          "responseAt": 1792968290581
+          "finishedAt": 1792969960395,
+          "responseAt": 1792969960396
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -531,10 +434,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 141,
-          "startedAt": 1792968290518,
+          "startedAt": 1792969960336,
           "isCurrent": true,
-          "finishedAt": 1792968290579,
-          "responseAt": 1792968290596
+          "finishedAt": 1792969960396,
+          "responseAt": 1792969960397
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -543,10 +446,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 4070459,
-          "startedAt": 1792968290519,
+          "startedAt": 1792969960337,
           "isCurrent": true,
-          "finishedAt": 1792968290634,
-          "responseAt": 1792968290635
+          "finishedAt": 1792969960456,
+          "responseAt": 1792969960458
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -555,16 +458,16 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 27,
-          "startedAt": 1792968290519,
+          "startedAt": 1792969960338,
           "isCurrent": false,
-          "finishedAt": 1792968290635,
-          "responseAt": 1792968290643
+          "finishedAt": 1792969960458,
+          "responseAt": 1792969960467
         }
       ],
       "longTasks": [
         {
-          "startTime": 1690.1000000014901,
-          "duration": 72
+          "startTime": 1782.9000000022352,
+          "duration": 83
         }
       ],
       "consoleErrors": [],
@@ -580,59 +483,59 @@
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.css",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/app.css",
           "type": "stylesheet"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/app.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/constants.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/constants.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/api-client.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/api-client.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-machine.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/data-mappers.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-context.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-context.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/current-snapshot.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-services.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-services.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-bootstrap.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/date-range.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-data.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/date-range.js",
           "type": "script"
         }
       ],
@@ -643,7 +546,7 @@
         "width": 1440,
         "height": 900
       },
-      "navigationToReadyMs": 427,
+      "navigationToReadyMs": 444,
       "initial": {
         "hasSimplyVibeClient": true,
         "snapshotElements": 41,
@@ -655,12 +558,12 @@
         "status": "עודכן: 2026-10-25T10:00:00"
       },
       "mappingSamplesMs": [
-        13.900000002235174,
-        10.699999999254942,
-        11.300000000745058,
-        11.799999997019768,
-        11.400000002235174,
-        12.699999999254942
+        15.099999997764826,
+        11,
+        11,
+        13,
+        11.5,
+        12.600000001490116
       ],
       "initialCalls": [
         {
@@ -670,10 +573,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968291231,
+          "startedAt": 1792969961069,
           "isCurrent": true,
-          "finishedAt": 1792968291293,
-          "responseAt": 1792968291310
+          "finishedAt": 1792969961147,
+          "responseAt": 1792969961147
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -682,10 +585,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968291231,
+          "startedAt": 1792969961070,
           "isCurrent": true,
-          "finishedAt": 1792968291311,
-          "responseAt": 1792968291311
+          "finishedAt": 1792969961147,
+          "responseAt": 1792969961148
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -694,10 +597,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968291232,
+          "startedAt": 1792969961071,
           "isCurrent": true,
-          "finishedAt": 1792968291352,
-          "responseAt": 1792968291353
+          "finishedAt": 1792969961190,
+          "responseAt": 1792969961191
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -706,10 +609,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968291235,
+          "startedAt": 1792969961073,
           "isCurrent": false,
-          "finishedAt": 1792968291353,
-          "responseAt": 1792968291361
+          "finishedAt": 1792969961191,
+          "responseAt": 1792969961200
         }
       ],
       "refreshCalls": [
@@ -720,10 +623,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968292921,
+          "startedAt": 1792969962795,
           "isCurrent": true,
-          "finishedAt": 1792968292982,
-          "responseAt": 1792968292983
+          "finishedAt": 1792969962873,
+          "responseAt": 1792969962873
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -732,10 +635,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968292921,
+          "startedAt": 1792969962796,
           "isCurrent": true,
-          "finishedAt": 1792968292982,
-          "responseAt": 1792968292999
+          "finishedAt": 1792969962873,
+          "responseAt": 1792969962873
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -744,10 +647,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968292922,
+          "startedAt": 1792969962797,
           "isCurrent": true,
-          "finishedAt": 1792968293038,
-          "responseAt": 1792968293039
+          "finishedAt": 1792969962914,
+          "responseAt": 1792969962915
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -756,13 +659,13 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968292923,
+          "startedAt": 1792969962797,
           "isCurrent": false,
-          "finishedAt": 1792968293039,
-          "responseAt": 1792968293048
+          "finishedAt": 1792969962915,
+          "responseAt": 1792969962923
         }
       ],
-      "refreshMs": 173,
+      "refreshMs": 181,
       "postResponseRenderMs": 18,
       "refreshBurstCalls": [
         {
@@ -772,10 +675,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968293077,
+          "startedAt": 1792969962950,
           "isCurrent": true,
-          "finishedAt": 1792968293154,
-          "responseAt": 1792968293154
+          "finishedAt": 1792969963011,
+          "responseAt": 1792969963012
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -784,10 +687,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968293077,
+          "startedAt": 1792969962950,
           "isCurrent": true,
-          "finishedAt": 1792968293154,
-          "responseAt": 1792968293154
+          "finishedAt": 1792969963027,
+          "responseAt": 1792969963027
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -796,10 +699,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968293078,
+          "startedAt": 1792969962951,
           "isCurrent": true,
-          "finishedAt": 1792968293194,
-          "responseAt": 1792968293195
+          "finishedAt": 1792969963066,
+          "responseAt": 1792969963066
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -808,10 +711,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968293078,
+          "startedAt": 1792969962952,
           "isCurrent": false,
-          "finishedAt": 1792968293195,
-          "responseAt": 1792968293203
+          "finishedAt": 1792969963066,
+          "responseAt": 1792969963075
         }
       ],
       "heldState": {
@@ -830,56 +733,7 @@
           }
         ]
       },
-      "postRevokeCalls": [
-        {
-          "name": "MilgamDashboardCurrentEvents",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 281,
-          "startedAt": 1792968293799,
-          "isCurrent": true,
-          "finishedAt": 1792968293861,
-          "responseAt": 1792968293862
-        },
-        {
-          "name": "MilgamDashboardCurrentPermits",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 141,
-          "startedAt": 1792968293800,
-          "isCurrent": true,
-          "finishedAt": 1792968293880,
-          "responseAt": 1792968293880
-        },
-        {
-          "name": "MilgamDashboardCurrentEquipment",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 4070459,
-          "startedAt": 1792968293801,
-          "isCurrent": true,
-          "finishedAt": 1792968293918,
-          "responseAt": 1792968293919
-        },
-        {
-          "name": "MilgamDashboardByMonth",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
-          "method": "POST",
-          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 27,
-          "startedAt": 1792968293802,
-          "isCurrent": false,
-          "finishedAt": 1792968293919,
-          "responseAt": 1792968293928
-        }
-      ],
+      "postRevokeCalls": [],
       "reentryCalls": [
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -888,10 +742,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 281,
-          "startedAt": 1792968294062,
+          "startedAt": 1792969963931,
           "isCurrent": true,
-          "finishedAt": 1792968294123,
-          "responseAt": 1792968294124
+          "finishedAt": 1792969963992,
+          "responseAt": 1792969963994
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -900,10 +754,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 141,
-          "startedAt": 1792968294063,
+          "startedAt": 1792969963932,
           "isCurrent": true,
-          "finishedAt": 1792968294123,
-          "responseAt": 1792968294124
+          "finishedAt": 1792969964010,
+          "responseAt": 1792969964010
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -912,10 +766,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 4070459,
-          "startedAt": 1792968294063,
+          "startedAt": 1792969963933,
           "isCurrent": true,
-          "finishedAt": 1792968294184,
-          "responseAt": 1792968294186
+          "finishedAt": 1792969964047,
+          "responseAt": 1792969964048
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -924,10 +778,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 27,
-          "startedAt": 1792968294065,
+          "startedAt": 1792969963935,
           "isCurrent": false,
-          "finishedAt": 1792968294185,
-          "responseAt": 1792968294194
+          "finishedAt": 1792969964048,
+          "responseAt": 1792969964056
         }
       ],
       "reentryUi": {
@@ -958,10 +812,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968291231,
+          "startedAt": 1792969961069,
           "isCurrent": true,
-          "finishedAt": 1792968291293,
-          "responseAt": 1792968291310
+          "finishedAt": 1792969961147,
+          "responseAt": 1792969961147
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -970,10 +824,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968291231,
+          "startedAt": 1792969961070,
           "isCurrent": true,
-          "finishedAt": 1792968291311,
-          "responseAt": 1792968291311
+          "finishedAt": 1792969961147,
+          "responseAt": 1792969961148
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -982,10 +836,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968291232,
+          "startedAt": 1792969961071,
           "isCurrent": true,
-          "finishedAt": 1792968291352,
-          "responseAt": 1792968291353
+          "finishedAt": 1792969961190,
+          "responseAt": 1792969961191
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -994,10 +848,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968291235,
+          "startedAt": 1792969961073,
           "isCurrent": false,
-          "finishedAt": 1792968291353,
-          "responseAt": 1792968291361
+          "finishedAt": 1792969961191,
+          "responseAt": 1792969961200
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -1006,10 +860,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968292921,
+          "startedAt": 1792969962795,
           "isCurrent": true,
-          "finishedAt": 1792968292982,
-          "responseAt": 1792968292983
+          "finishedAt": 1792969962873,
+          "responseAt": 1792969962873
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -1018,10 +872,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968292921,
+          "startedAt": 1792969962796,
           "isCurrent": true,
-          "finishedAt": 1792968292982,
-          "responseAt": 1792968292999
+          "finishedAt": 1792969962873,
+          "responseAt": 1792969962873
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -1030,10 +884,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968292922,
+          "startedAt": 1792969962797,
           "isCurrent": true,
-          "finishedAt": 1792968293038,
-          "responseAt": 1792968293039
+          "finishedAt": 1792969962914,
+          "responseAt": 1792969962915
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -1042,10 +896,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968292923,
+          "startedAt": 1792969962797,
           "isCurrent": false,
-          "finishedAt": 1792968293039,
-          "responseAt": 1792968293048
+          "finishedAt": 1792969962915,
+          "responseAt": 1792969962923
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -1054,10 +908,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 281,
-          "startedAt": 1792968293077,
+          "startedAt": 1792969962950,
           "isCurrent": true,
-          "finishedAt": 1792968293154,
-          "responseAt": 1792968293154
+          "finishedAt": 1792969963011,
+          "responseAt": 1792969963012
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -1066,10 +920,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 141,
-          "startedAt": 1792968293077,
+          "startedAt": 1792969962950,
           "isCurrent": true,
-          "finishedAt": 1792968293154,
-          "responseAt": 1792968293154
+          "finishedAt": 1792969963027,
+          "responseAt": 1792969963027
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -1078,10 +932,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 4070459,
-          "startedAt": 1792968293078,
+          "startedAt": 1792969962951,
           "isCurrent": true,
-          "finishedAt": 1792968293194,
-          "responseAt": 1792968293195
+          "finishedAt": 1792969963066,
+          "responseAt": 1792969963066
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -1090,58 +944,10 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-1",
           "bytes": 27,
-          "startedAt": 1792968293078,
+          "startedAt": 1792969962952,
           "isCurrent": false,
-          "finishedAt": 1792968293195,
-          "responseAt": 1792968293203
-        },
-        {
-          "name": "MilgamDashboardCurrentEvents",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 281,
-          "startedAt": 1792968293799,
-          "isCurrent": true,
-          "finishedAt": 1792968293861,
-          "responseAt": 1792968293862
-        },
-        {
-          "name": "MilgamDashboardCurrentPermits",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 141,
-          "startedAt": 1792968293800,
-          "isCurrent": true,
-          "finishedAt": 1792968293880,
-          "responseAt": 1792968293880
-        },
-        {
-          "name": "MilgamDashboardCurrentEquipment",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
-          "method": "POST",
-          "body": "{}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 4070459,
-          "startedAt": 1792968293801,
-          "isCurrent": true,
-          "finishedAt": 1792968293918,
-          "responseAt": 1792968293919
-        },
-        {
-          "name": "MilgamDashboardByMonth",
-          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
-          "method": "POST",
-          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
-          "auth": "Bearer controller-synthetic-generation-1",
-          "bytes": 27,
-          "startedAt": 1792968293802,
-          "isCurrent": false,
-          "finishedAt": 1792968293919,
-          "responseAt": 1792968293928
+          "finishedAt": 1792969963066,
+          "responseAt": 1792969963075
         },
         {
           "name": "MilgamDashboardCurrentEvents",
@@ -1150,10 +956,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 281,
-          "startedAt": 1792968294062,
+          "startedAt": 1792969963931,
           "isCurrent": true,
-          "finishedAt": 1792968294123,
-          "responseAt": 1792968294124
+          "finishedAt": 1792969963992,
+          "responseAt": 1792969963994
         },
         {
           "name": "MilgamDashboardCurrentPermits",
@@ -1162,10 +968,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 141,
-          "startedAt": 1792968294063,
+          "startedAt": 1792969963932,
           "isCurrent": true,
-          "finishedAt": 1792968294123,
-          "responseAt": 1792968294124
+          "finishedAt": 1792969964010,
+          "responseAt": 1792969964010
         },
         {
           "name": "MilgamDashboardCurrentEquipment",
@@ -1174,10 +980,10 @@
           "body": "{}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 4070459,
-          "startedAt": 1792968294063,
+          "startedAt": 1792969963933,
           "isCurrent": true,
-          "finishedAt": 1792968294184,
-          "responseAt": 1792968294186
+          "finishedAt": 1792969964047,
+          "responseAt": 1792969964048
         },
         {
           "name": "MilgamDashboardByMonth",
@@ -1186,16 +992,16 @@
           "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
           "auth": "Bearer controller-synthetic-generation-2",
           "bytes": 27,
-          "startedAt": 1792968294065,
+          "startedAt": 1792969963935,
           "isCurrent": false,
-          "finishedAt": 1792968294185,
-          "responseAt": 1792968294194
+          "finishedAt": 1792969964048,
+          "responseAt": 1792969964056
         }
       ],
       "longTasks": [
         {
-          "startTime": 1725.699999999255,
-          "duration": 72
+          "startTime": 1764.8999999985099,
+          "duration": 74
         }
       ],
       "consoleErrors": [],
@@ -1211,59 +1017,59 @@
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.css",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/app.css",
           "type": "stylesheet"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/app.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/app.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/constants.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/constants.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/api-client.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/api-client.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-machine.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/data-mappers.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-context.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-context.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/current-snapshot.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-services.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-services.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/host-bootstrap.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/date-range.js",
           "type": "script"
         },
         {
-          "url": "https://5ab11833.app-milgam-dashboard.pages.dev/date-range.js",
+          "url": "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-data.js",
           "type": "script"
         }
       ],

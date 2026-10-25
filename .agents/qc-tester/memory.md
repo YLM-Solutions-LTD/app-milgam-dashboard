@@ -107,3 +107,10 @@
 - Scope is deterministic QC authoring/execution against plan revision 7 and every current remediation fingerprint, including refresh single-flight/burst coverage, with writes limited to `tests/qc/`, this memory, and the current QC run folder.
 - Required fresh inventory: site tests, QC `*.test.js` and `*.test.mjs`, UAT `*.test.mjs`, and controller-host-harness tests using the packaged real SDK/GuestBridge with fully local synthetic host/API traffic.
 - Result: ready / `approve_with_findings`. Added shared refresh-entry single-flight/settlement/release coverage. Fresh totals: site 61/61, QC 34/34, UAT 23/23, harness 2/2. Local browser fixture passed two viewports with exactly three burst requests, concurrency three, zero revoked requests, three fresh-re-entry requests, and zero page errors.
+
+## 2026-10-25 — preview-review cycle 3, process attempt 1, refresh-guard head
+
+- Exact target: head `3dc45f69655efd2a2c6b0ad016b1a8cf8f738066`, preview `https://ef2f1185.app-milgam-dashboard.pages.dev`.
+- Review is read-only outside this QC role home. Use the corrected synthetic controller fixture, actual packaged SDK/GuestBridge, and locally intercepted host/API traffic only; no tenant token or tenant traffic.
+- Re-run complete site, QC (`*.test.js` and `*.test.mjs`), UAT, and controller-harness inventories, then independently reproduce refresh bursts through both controls and retry paths, lock release after error/re-entry, lifecycle races, responsive RTL/LTR, accessibility, CSP, diagnostics, and console/network behavior for T-201 through T-205.
+- Result: `approve`, outcome `ready`. Exact-preview artifacts match local release-candidate bytes; site 61/61, QC 34/34, UAT 23/23, and harness 2/2 passed. Both refresh controls and retry bursts coalesced to exactly three requests, locks released after failure and re-entry, terminal 401/revocation emitted zero old-generation follow-up requests, distinct re-entry automatically emitted three, and all browser scenarios had zero page errors/unhandled rejections. All cycle-3 findings plus `perf-preview-refresh-verification-burst-request-amplification-v1` are closed in the corrected fixture scope.

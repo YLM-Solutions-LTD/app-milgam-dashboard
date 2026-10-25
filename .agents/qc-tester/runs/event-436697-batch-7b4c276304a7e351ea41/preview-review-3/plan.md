@@ -1,4 +1,6 @@
-# QC plan — preview-review cycle 3
+# QC plan — preview-review cycle 3, exact refresh-guard head
+
+Target head `3dc45f69655efd2a2c6b0ad016b1a8cf8f738066`; preview `https://ef2f1185.app-milgam-dashboard.pages.dev`.
 
 1. Confirm exact preview/source identity, frozen action order, shared revision-7 task criteria, current remediation fingerprints, and complete test inventory.
 2. Run all local suites without omitting `.mjs`, preserving exact commands and output.

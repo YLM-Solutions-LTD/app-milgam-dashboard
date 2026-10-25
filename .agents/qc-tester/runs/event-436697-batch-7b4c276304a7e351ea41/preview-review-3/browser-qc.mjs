@@ -3,8 +3,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 
-const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev';
-const head = 'b138df3040ab4468220a29f595d0caa62920f679';
+const preview = 'https://ef2f1185.app-milgam-dashboard.pages.dev';
+const head = '3dc45f69655efd2a2c6b0ad016b1a8cf8f738066';
 const host = 'https://milgam.ylm.co.il/controller-host-fixture/';
 const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const out = new URL('./evidence/', import.meta.url);
@@ -70,8 +70,10 @@ for (const spec of [{name:'desktop-rtl',viewport:{width:1440,height:900},dir:'rt
   result.scenarios.push({name:'permit-burst',harness:await x.page.evaluate(()=>controllerHarness.state()),activeId:await x.frame.evaluate(()=>document.activeElement?.getAttribute('data-permit')||document.activeElement?.id||document.activeElement?.tagName),disabledPending,disabledAfter:await buttons.first().isDisabled(),...errors(x)}); await x.context.close();
 }
 {
-  const x=await make({name:'refresh-burst',delays:true}); const b=x.frame.locator('#snapshot-refresh'); for(let i=0;i<10;i++) await b.click({force:true}); await x.page.waitForTimeout(900);
-  result.scenarios.push({name:'refresh-burst',currentCalls:current(x).length,content:(await x.frame.locator('#snapshot-content').innerText()).slice(0,500),...errors(x)}); await x.context.close();
+  const x=await make({name:'refresh-burst',delays:true}); const baseline=current(x).length;
+  await x.frame.evaluate(()=>{const controls=[document.querySelector('#snapshot-refresh'),document.querySelector('#refresh-button')];for(let i=0;i<10;i++)controls[i%2]?.click()});
+  await x.page.waitForTimeout(900);
+  result.scenarios.push({name:'refresh-burst-both-controls',burstCalls:current(x).length-baseline,refreshDisabled:await x.frame.locator('#snapshot-refresh').isDisabled(),content:(await x.frame.locator('#snapshot-content').innerText()).slice(0,500),...errors(x)}); await x.context.close();
 }
 {
   const x=await make({name:'marker-errors'}); x.setFailMode('marker'); await x.frame.locator('#snapshot-refresh').click(); await x.page.waitForTimeout(500); const serialized=JSON.stringify(x.consoleMessages)+JSON.stringify(x.pageErrors);
@@ -79,7 +81,9 @@ for (const spec of [{name:'desktop-rtl',viewport:{width:1440,height:900},dir:'rt
 }
 {
   const x=await make({name:'refresh-500'}), before=await x.frame.locator('#snapshot-content').innerText(); x.setFailMode('marker'); await x.frame.locator('#snapshot-refresh').click(); await x.page.waitForTimeout(500);
-  result.scenarios.push({name:'refresh-500',retained:(await x.frame.locator('#snapshot-content').innerText())===before,staleText:await x.frame.locator('#snapshot-status').innerText(),...errors(x)}); await x.context.close();
+  const beforeRetry=current(x).length; await x.frame.evaluate(()=>{const retry=document.querySelector('[data-snapshot-retry]');for(let i=0;i<10;i++)retry?.click()}); await x.page.waitForTimeout(500); const retryBurstCalls=current(x).length-beforeRetry;
+  x.setFailMode(null); const beforeRecovery=current(x).length; await x.frame.locator('[data-snapshot-retry]').click(); await x.page.waitForTimeout(500);
+  result.scenarios.push({name:'refresh-500-retry-lock-release',retained:(await x.frame.locator('#snapshot-content').innerText())===before,staleText:await x.frame.locator('#snapshot-status').innerText(),retryBurstCalls,recoveryCalls:current(x).length-beforeRecovery,recovered:!(await x.frame.locator('#snapshot-content').innerText()).includes('העדכון התקין האחרון'),...errors(x)}); await x.context.close();
 }
 {
   const x=await make({name:'terminal-401'}), before=await x.frame.locator('#snapshot-content').innerText(); x.setFailMode('401'); const baseline=current(x).length; await x.frame.locator('#snapshot-refresh').click(); await x.page.waitForTimeout(500); const afterFailure=current(x).length; await x.frame.locator('#snapshot-refresh').click({force:true}).catch(()=>{}); await x.page.waitForTimeout(400); const afterRepeat=current(x).length; x.setFailMode(null); await x.page.evaluate(()=>controllerHarness.reenter()); await x.page.waitForTimeout(1000); const afterReentry=current(x).length;
@@ -88,8 +92,8 @@ for (const spec of [{name:'desktop-rtl',viewport:{width:1440,height:900},dir:'rt
 {
   const x=await make({name:'revocation'}), before=await x.frame.locator('#snapshot-content').innerText(); await x.page.evaluate(()=>controllerHarness.holdCommand()); await x.frame.locator('[data-permit]').first().click(); await x.page.waitForTimeout(100); await x.page.evaluate(()=>controllerHarness.revoke()); const callsBefore=current(x).length; await x.page.evaluate(()=>controllerHarness.releaseCommand()); await x.frame.locator('#snapshot-refresh').click({force:true}).catch(()=>{}); await x.page.waitForTimeout(400);
   const revoked={harness:await x.page.evaluate(()=>controllerHarness.state()),newCalls:current(x).length-callsBefore,retained:(await x.frame.locator('#snapshot-content').innerText()).includes('10,000'),hash:await x.page.evaluate(()=>location.hash)};
-  await x.page.evaluate(()=>controllerHarness.reenter()); await x.page.waitForTimeout(1000); const callsPreFresh=current(x).length; await x.frame.locator('#snapshot-refresh').click({force:true}); await x.page.waitForTimeout(500);
-  result.scenarios.push({name:'revocation-reentry',revoked,freshGeneration:(await x.page.evaluate(()=>controllerHarness.state())).generation,freshCalls:current(x).length-callsPreFresh,...errors(x)}); await x.context.close();
+  const beforeReentry=current(x).length; await x.page.evaluate(()=>controllerHarness.reenter()); await x.page.waitForTimeout(1000); const automaticReentryCalls=current(x).length-beforeReentry; const callsPreFresh=current(x).length; await x.frame.locator('#snapshot-refresh').click({force:true}); await x.page.waitForTimeout(500);
+  result.scenarios.push({name:'revocation-reentry',revoked,freshGeneration:(await x.page.evaluate(()=>controllerHarness.state())).generation,automaticReentryCalls,postReentryRefreshCalls:current(x).length-callsPreFresh,...errors(x)}); await x.context.close();
 }
 {
   const context=await browser.newContext({viewport:{width:390,height:844}}), page=await context.newPage(), api=[]; page.on('request',r=>{if(r.url().includes('api.ylm.co.il'))api.push(r.url())}); await page.goto(preview,{waitUntil:'domcontentloaded'}); await page.waitForTimeout(3500); result.scenarios.push({name:'direct-access',apiRequests:api.length}); await context.close();

@@ -1,6 +1,6 @@
 {
-  "preview": "https://42ad1c5f.app-milgam-dashboard.pages.dev",
-  "head": "b138df3040ab4468220a29f595d0caa62920f679",
+  "preview": "https://ef2f1185.app-milgam-dashboard.pages.dev",
+  "head": "3dc45f69655efd2a2c6b0ad016b1a8cf8f738066",
   "browser": "140.0.7339.16",
   "node": "v20.20.2",
   "fixture": "controller-owned GuestBridge + packaged guest SDK",
@@ -13,7 +13,7 @@
       },
       "calls": 3,
       "exactTransport": true,
-      "startSpreadMs": 6.1328379999999925,
+      "startSpreadMs": 7.340366000000017,
       "decodedBytes": 914331,
       "analyticalDateAddedCurrentCalls": 0,
       "snapshotRetained": true,
@@ -35,7 +35,7 @@
       },
       "calls": 3,
       "exactTransport": true,
-      "startSpreadMs": 3.6886429999999564,
+      "startSpreadMs": 4.384358999999904,
       "decodedBytes": 914331,
       "analyticalDateAddedCurrentCalls": 0,
       "snapshotRetained": true,
@@ -57,7 +57,7 @@
       },
       "calls": 3,
       "exactTransport": true,
-      "startSpreadMs": 6.8832669999999325,
+      "startSpreadMs": 4.110449000000017,
       "decodedBytes": 914331,
       "analyticalDateAddedCurrentCalls": 0,
       "snapshotRetained": true,
@@ -79,7 +79,7 @@
       },
       "calls": 3,
       "exactTransport": true,
-      "startSpreadMs": 4.095559000000321,
+      "startSpreadMs": 4.1258490000000165,
       "decodedBytes": 914331,
       "analyticalDateAddedCurrentCalls": 0,
       "snapshotRetained": true,
@@ -166,6 +166,30 @@
       ]
     },
     {
+      "name": "both-refresh-controls-burst",
+      "currentCalls": 3,
+      "routes": [
+        "MilgamDashboardCurrentEvents",
+        "MilgamDashboardCurrentPermits",
+        "MilgamDashboardCurrentEquipment"
+      ],
+      "errors": []
+    },
+    {
+      "name": "retry-control-burst",
+      "retainedBeforeRetry": true,
+      "currentCalls": 3,
+      "routes": [
+        "MilgamDashboardCurrentEvents",
+        "MilgamDashboardCurrentPermits",
+        "MilgamDashboardCurrentEquipment"
+      ],
+      "lockReleased": true,
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
       "name": "direct-entry",
       "apiRequests": 0
     }
@@ -173,19 +197,19 @@
   "executableRequests": [
     "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
     "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/app.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/constants.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/api-client.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/data-mappers.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-context.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/current-snapshot.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-services.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-bootstrap.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/date-range.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-data.js"
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/app.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/constants.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/date-range.js"
   ],
   "abortedRequests": [],
   "headers": {

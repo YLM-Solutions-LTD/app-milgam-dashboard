@@ -1,7 +1,7 @@
-# Performance preview-review plan
+# Performance review plan
 
-- Review exact supplied head `b138df3040ab4468220a29f595d0caa62920f679` at `https://42ad1c5f.app-milgam-dashboard.pages.dev` through the corrected controller fixture and real packaged SDK/GuestBridge.
-- Fulfill all host/API traffic locally; never request a tenant token.
-- Measure both required viewports, request count/concurrency/body/bytes, 10,000-row mapping, DOM/render limits, refresh and permit bursts, CSP/executable inventory, and lifecycle recovery.
-- Reproduce every cycle-3 fingerprint plus silent disconnect, fresh/overlapping re-entry, stale retention, and detached rejection behavior.
-
+- Inspect shared revision 7, all `T-201`–`T-205` contracts, cycle-3 remediation fingerprints, accepted reports, corrected harness instructions, and the trusted refresh-guard follow-up.
+- Confirm exact preview source identity without Git mutation.
+- Through the real SDK/GuestBridge fixture with local API interception, measure 10,000-row mapping/render/DOM behavior at 390x844 and 1440x900.
+- Exercise snapshot refresh, analytical refresh, stale retry, 500/401 failures, revoked refresh, fresh and overlapping re-entry, and held permit commands; record request counts, concurrency, bytes, and browser errors.
+- Report stable findings only when reproducible; preserve the frozen action order and shared task IDs.

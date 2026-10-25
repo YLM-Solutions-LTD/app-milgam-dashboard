@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const { chromium } = playwright;
-const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev';
-const expectedCommit = 'b138df3040ab4468220a29f595d0caa62920f679';
+const preview = 'https://ef2f1185.app-milgam-dashboard.pages.dev';
+const expectedCommit = '3dc45f69655efd2a2c6b0ad016b1a8cf8f738066';
 const fixtureOrigin = 'https://milgam.ylm.co.il';
 const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const out = '/workspace/src/apps/milgam-dashboard/.agents/ui-designer/runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/evidence';
@@ -26,7 +26,7 @@ const browser=await chromium.launch({executablePath:'/ms-playwright/chromium_hea
 async function setup(viewport,{ltr=false}={}) {
  const context=await browser.newContext({viewport,deviceScaleFactor:1});
  const calls=[],consoleMessages=[],pageErrors=[],aborted=[],executables=[];
- let currentFailure=null;
+ let currentFailure=null, apiDelay=0;
  await context.route('**/*',async route=>{
    const req=route.request(), url=new URL(req.url());
    if(url.origin===fixtureOrigin && url.pathname.startsWith('/controller-host-fixture/')){
@@ -37,6 +37,7 @@ async function setup(viewport,{ltr=false}={}) {
      return route.fulfill({status:200,contentType:path.extname(file)==='.js'?'text/javascript':'text/html',body});
    }
    if(url.origin==='https://api.ylm.co.il'){
+     if(apiDelay) await new Promise(resolve=>setTimeout(resolve,apiDelay));
      const key=Object.keys(fixtures).find(k=>req.url().includes(k));
      const record={key,status:200,body:req.postData(),authorization:req.headers().authorization||null,time:Date.now()};
      if(currentFailure && key===currentFailure.key){ record.status=currentFailure.status; calls.push(record); return route.fulfill({status:currentFailure.status,contentType:'application/json',body:JSON.stringify({marker:'PRIVATE-BODY-MARKER',detail:'internal address hidden'})}); }
@@ -52,7 +53,7 @@ async function setup(viewport,{ltr=false}={}) {
  page.on('request',r=>{if(['script','worker'].includes(r.resourceType())) executables.push(r.url());});
  await page.goto(`${fixtureOrigin}/controller-host-fixture/index.html?preview=${encodeURIComponent(preview)}`);
  await page.waitForTimeout(3500);
- return {context,page,frame:page.frameLocator('#guest'),calls,consoleMessages,pageErrors,aborted,executables,setFailure:v=>{currentFailure=v;}};
+ return {context,page,frame:page.frameLocator('#guest'),calls,consoleMessages,pageErrors,aborted,executables,setFailure:v=>{currentFailure=v;},setDelay:v=>{apiDelay=v;}};
 }
 async function snapshotMetrics(frame){
  return frame.locator('body').evaluate(body=>({
@@ -85,6 +86,7 @@ const after401=await snapshotMetrics(frame); const countAfter401=calls.length;
 await frame.locator('#snapshot-refresh').click(); await page.waitForTimeout(500); const countAfterDeniedRetry=calls.length;
 desktop.setFailure(null); await page.evaluate(()=>window.controllerHarness.reenter()); await page.waitForTimeout(1800);
 const afterReentry=await snapshotMetrics(frame); const countAfterReentry=calls.length;
+const reentryCurrentCalls=calls.slice(countAfterDeniedRetry,countAfterReentry).filter(call=>call.key?.startsWith('MilgamDashboardCurrent')).length;
 await page.screenshot({path:`${out}/preview-reentry-recovered-rtl.png`,fullPage:true});
 
 await page.evaluate(()=>window.controllerHarness.holdCommand());
@@ -94,6 +96,36 @@ await permit.evaluate(el=>{for(let i=0;i<20;i++) el.click();});
 await page.waitForTimeout(250); const pendingPermit=await snapshotMetrics(frame);
 await page.evaluate(()=>window.controllerHarness.releaseCommand()); await page.waitForTimeout(600);
 const effectsAfterBurst=await page.evaluate(()=>window.controllerHarness.state().effects);
+
+// Exercise the app-level refresh guard through both visible refresh controls.
+desktop.setDelay(350);
+const beforeMixedBurst=calls.length;
+await frame.locator('body').evaluate(()=>{
+  const snapshot=document.querySelector('#snapshot-refresh');
+  const analytical=document.querySelector('#refresh-button');
+  for(let i=0;i<10;i++){ snapshot?.click(); analytical?.click(); }
+});
+const mixedBurstImmediate=await snapshotMetrics(frame);
+await page.waitForTimeout(1200);
+const mixedBurstCalls=calls.slice(beforeMixedBurst);
+const mixedBurstCurrentCalls=mixedBurstCalls.filter(call=>call.key?.startsWith('MilgamDashboardCurrent')).length;
+const mixedBurstAfter=await snapshotMetrics(frame);
+
+// A failed refresh exposes retry; a burst on that retry remains single-flight and releases afterward.
+desktop.setDelay(0); desktop.setFailure({key:'MilgamDashboardCurrentEvents',status:500});
+await frame.locator('#snapshot-refresh').click(); await page.waitForTimeout(800);
+desktop.setDelay(350);
+const beforeRetryBurst=calls.length;
+await frame.locator('body').evaluate(()=>{ const retry=document.querySelector('[data-snapshot-retry]'); for(let i=0;i<10;i++) retry?.click(); });
+const retryBurstImmediate=await snapshotMetrics(frame);
+await page.waitForTimeout(1200);
+const retryBurstCalls=calls.slice(beforeRetryBurst);
+const retryBurstCurrentCalls=retryBurstCalls.filter(call=>call.key?.startsWith('MilgamDashboardCurrent')).length;
+desktop.setFailure(null); desktop.setDelay(0);
+const beforePostErrorRecovery=calls.length;
+await frame.locator('[data-snapshot-retry]').click(); await page.waitForTimeout(800);
+const postErrorRecoveryCalls=calls.slice(beforePostErrorRecovery).filter(call=>call.key?.startsWith('MilgamDashboardCurrent')).length;
+const retryBurstAfter=await snapshotMetrics(frame);
 
 const mobile=await setup({width:390,height:844});
 await mobile.frame.locator('[data-permit]').first().focus();
@@ -112,7 +144,8 @@ const raceState=await race.page.evaluate(()=>window.controllerHarness.state());
 
 const response=await fetch(preview);
 const results={preview,expectedCommit,browserVersion:browser.version(),headers:Object.fromEntries(response.headers),sdkSha256:'ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1',initial,after500,after401,afterReentry,pendingPermit,effectsAfterBurst,
- lifecycle:{before500,after500Calls:calls.length-before500,before401,countAfter401,deniedRetryNewCalls:countAfterDeniedRetry-countAfter401,reentryNewCalls:countAfterReentry-countAfterDeniedRetry,allCalls:calls},
+ lifecycle:{before500,after500Calls:calls.length-before500,before401,countAfter401,deniedRetryNewCalls:countAfterDeniedRetry-countAfter401,reentryNewCalls:countAfterReentry-countAfterDeniedRetry,reentryCurrentCalls,allCalls:calls},
+ refreshGuard:{mixedBurstImmediate,mixedBurstCurrentCalls,mixedBurstAfter,retryBurstImmediate,retryBurstCurrentCalls,postErrorRecoveryCalls,retryBurstAfter},
  desktopRuntime:{consoleMessages:desktop.consoleMessages,pageErrors:desktop.pageErrors,aborted:[...new Set(desktop.aborted)],executables:[...new Set(desktop.executables)]},mobile:mobileMetrics,mobileRuntime:{consoleMessages:mobile.consoleMessages,pageErrors:mobile.pageErrors},ltr:ltrMetrics,ltrRuntime:{consoleMessages:ltr.consoleMessages,pageErrors:ltr.pageErrors},race:{metrics:raceMetrics,state:raceState,calls:race.calls,pageErrors:race.pageErrors,consoleMessages:race.consoleMessages}};
 fs.writeFileSync(`${out}/playwright-results.json`,JSON.stringify(results,null,2));
 await desktop.context.close(); await mobile.context.close(); await ltr.context.close(); await race.context.close(); await browser.close();

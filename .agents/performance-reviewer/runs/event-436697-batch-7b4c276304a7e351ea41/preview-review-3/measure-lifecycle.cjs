@@ -2,7 +2,7 @@ const { chromium } = require('/usr/local/lib/node_modules/@playwright/test/node_
 const fs = require('fs');
 const path = require('path');
 
-const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev/';
+const preview = 'https://ef2f1185.app-milgam-dashboard.pages.dev/';
 const hostBase = 'https://milgam.ylm.co.il/controller-host-fixture/';
 const fixtureDir = '/workspace/.simplyvibe/input/controller-host-harness';
 const files = { 'index.html': 'index.html', 'host-fixture.js': 'host-fixture.js', 'vendor/guest-bridge.js': 'vendor/guest-bridge.js', 'vendor/simplyvibe-client.js': 'vendor/simplyvibe-client.js' };
@@ -53,6 +53,12 @@ const output = process.argv[2];
   }));
   const baseline = await snapshot();
 
+  const beforeAnalyticalBurst = calls.length;
+  await frame.evaluate(() => { const button = document.querySelector('#refresh-button'); for (let i = 0; i < 10; i++) button.dispatchEvent(new MouseEvent('click', { bubbles: true })); });
+  for (let i = 0; i < 100 && calls.length < beforeAnalyticalBurst + 4; i++) await page.waitForTimeout(25);
+  await frame.waitForFunction(() => document.querySelector('#snapshot-refresh')?.disabled === false, null, { timeout: 10000 });
+  const analyticalBurstCalls = calls.slice(beforeAnalyticalBurst);
+
   currentMode = '500';
   const before500 = calls.length;
   await frame.locator('#snapshot-refresh').click();
@@ -60,9 +66,17 @@ const output = process.argv[2];
   const after500 = await snapshot();
   const calls500 = calls.slice(before500);
 
+  const beforeRetryBurst500 = calls.length;
+  await frame.evaluate(() => { const button = document.querySelector('[data-snapshot-retry]'); for (let i = 0; i < 10; i++) button.dispatchEvent(new MouseEvent('click', { bubbles: true })); });
+  for (let i = 0; i < 100 && calls.length < beforeRetryBurst500 + 3; i++) await page.waitForTimeout(25);
+  await frame.waitForFunction(() => document.querySelector('[data-snapshot-retry]') && document.querySelector('#snapshot-refresh')?.disabled === false, null, { timeout: 10000 });
+  const retryBurst500Calls = calls.slice(beforeRetryBurst500);
+
   currentMode = 'ok';
+  const beforeRetryRecovery = calls.length;
   await frame.locator('[data-snapshot-retry]').click();
   await frame.waitForFunction(() => !document.querySelector('#snapshot-status')?.textContent?.includes('האחרון'), null, { timeout: 10000 });
+  const retryRecoveryCalls = calls.slice(beforeRetryRecovery);
 
   currentMode = '401';
   const before401 = calls.length;
@@ -118,8 +132,9 @@ const output = process.argv[2];
 
   const markerLeak = consoleMessages.filter(entry => /PERF_PRIVATE_(500|401)_MARKER/.test(entry.text));
   fs.writeFileSync(output, JSON.stringify({
-    preview, commit: 'b138df3040ab4468220a29f595d0caa62920f679', browserVersion: await browser.version(),
-    baseline, calls500, after500, retained500: after500.html === baseline.html,
+    preview, commit: '3dc45f69655efd2a2c6b0ad016b1a8cf8f738066', browserVersion: await browser.version(),
+    baseline, analyticalBurstCalls, calls500, after500, retained500: after500.html === baseline.html,
+    retryBurst500Calls, retryRecoveryCalls,
     calls401, after401, retained401: after401.html === baseline.html,
     deniedRefreshCalls, reentryCalls, afterReentry, silentRevokeCalls, silentRecoveryCalls,
     permitBurst: { effectsBefore, heldEffects: held.effects.length, releasedEffects: released.effects.length, addedEffects: released.effects.length - effectsBefore },

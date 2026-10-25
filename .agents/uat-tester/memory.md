@@ -1,5 +1,13 @@
 # UAT tester memory
 
+## Active run — preview review cycle 3, process attempt 1, exact head 3dc45f6
+
+- Independently execute UAT-201 through UAT-210 against `https://ef2f1185.app-milgam-dashboard.pages.dev` using the controller-owned actual GuestBridge and packaged SDK at the corrected synthetic Milgam origin; locally fulfill host/API traffic and block all tenant traffic.
+- Revalidate every revision-7 lifecycle fingerprint plus the trusted refresh-guard follow-up: bursts across both refresh controls and retry must remain one three-request chain and release their lock after failure/re-entry.
+- Authorized writes are only this memory and `runs/event-436697-batch-7b4c276304a7e351ea41/preview-review-3/`; application source, tests, shared artifacts, prior runs, Git/provider/deployment/lifecycle state remain read-only.
+- Frozen handled action IDs: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`.
+- Result: `approve_with_findings`. All ten workflows passed on the exact preview. Both refresh controls shared one three-request chain, retry burst issued exactly three and released its lock, terminal 401/fresh re-entry/stale retention/permit single-flight/disposal safety passed, and site 61/61, QC 34/34, UAT 23/23, harness 2/2 passed. Remaining low-severity limitation: synthetic permissions do not prove deployed tenant permission configuration.
+
 ## Active run — test authoring cycle 3, process attempt 2
 
 - Revalidate shared plan revision 7 and every current remediation fingerprint against the current source; all earlier reports and operator measurements are context rather than approval.

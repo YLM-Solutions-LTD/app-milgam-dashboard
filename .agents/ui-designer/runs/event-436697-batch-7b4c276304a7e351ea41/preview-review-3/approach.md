@@ -1,8 +1,7 @@
 # UI preview-review approach
 
-- Exact candidate: `b138df3040ab4468220a29f595d0caa62920f679` at `https://42ad1c5f.app-milgam-dashboard.pages.dev`.
-- Applied SimplyLog baseline v1 to every shared task `T-201`–`T-205`.
-- Loaded the preview only inside the corrected `https://milgam.ylm.co.il/controller-host-fixture/` harness, using its actual GuestBridge and the preview's packaged SDK. All API routes were fulfilled locally; unexpected traffic was aborted.
-- Exercised ready, 500 stale retention, 401 terminal denial, unchanged-session retry, fresh re-entry, 20-activation permit burst, held-command revocation, and overlapping re-entry.
-- Captured 1440×900 RTL, 390×844 RTL, and 1440×900 LTR views; inspected overflow, focus, accessible names, chart visibility, CSP styles, snapshot DOM size, console, and page errors.
-- Generated a fresh non-runtime ImageGen reference for the stale-but-retained state and compared hierarchy/state clarity without treating subjective differences as defects.
+- Review exact preview `https://ef2f1185.app-milgam-dashboard.pages.dev` for controller-associated head `3dc45f69655efd2a2c6b0ad016b1a8cf8f738066` against plan revision 7 and `T-201`–`T-205`.
+- Use only the corrected synthetic Milgam controller origin, actual packaged SimplyVibeClient/GuestBridge, locally fulfilled API responses, and aborted unrelated traffic.
+- Reproduce every cycle-3 lifecycle fingerprint and the trusted refresh-burst follow-up through both refresh controls and retry.
+- Inspect desktop RTL, mobile RTL, and desktop LTR for state clarity, clipping, focus, charts, and CSP effects; create fresh ImageGen review evidence.
+

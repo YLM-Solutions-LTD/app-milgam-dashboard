@@ -1,39 +1,35 @@
-# UI evidence — exact preview cycle 3
+# UI exact-preview evidence
 
-## Outcome
+## Candidate and method
 
-Approve for the UI designer role across `T-201`–`T-205`. No stable UI, responsive, accessibility, interaction, or state-communication defect was reproduced on the exact preview.
-
-## Exact artifact and method
-
-- Controller-supplied head: `b138df3040ab4468220a29f595d0caa62920f679`.
-- Preview: `https://42ad1c5f.app-milgam-dashboard.pages.dev`.
-- Chromium: `140.0.7339.16`.
-- Corrected local fixture origin with actual GuestBridge and packaged SDK; every API response was synthetic and locally fulfilled. No real tenant token/request was used.
-- CSP kept `script-src 'self'` and `style-src 'self'`; 0 runtime inline styles and 0 relevant CSP/page errors were observed.
+- Exact URL: `https://ef2f1185.app-milgam-dashboard.pages.dev`; controller-associated head: `3dc45f69655efd2a2c6b0ad016b1a8cf8f738066`.
+- Chromium `140.0.7339.16`, corrected synthetic Milgam fixture, actual SDK/GuestBridge, 10,000 local equipment rows, and locally intercepted API routes. No tenant token or real tenant traffic was used.
+- Strict CSP retained `script-src 'self'`, `style-src 'self'`, `object-src 'none'`, and `base-uri 'none'`. No inline chart style or page error occurred.
 
 ## Task evidence
 
-- `T-201`: initial view issued all three exact current routes with `{}` and rendered events, three separate permit controls, and equipment total. Period analytics coexisted without clearing snapshot data.
-- `T-202`: charts remained visible in desktop/mobile RTL and desktop LTR. All required views had 0 horizontal overflow; snapshot had 41 descendant nodes. Permit and refresh controls showed a 3 px visible keyboard outline.
-- `T-203`: populated snapshot text length remained 276 after both 500 and 401. The stale message explicitly states that the last valid update remains shown. The distinctive synthetic body marker never appeared in console output. The three permit controls have distinct accessible names.
-- `T-204`: 20 rapid activations while the real bridge command was held produced exactly one `Navigate` effect with `#/Permits/Dashboard`. The desktop, phone, and LTR captures show coherent hierarchy and intact charts.
-- `T-205`: unchanged-session refresh after 401 added 0 requests. Fresh re-entry used generation 2 and automatically issued exactly three current-report calls, with supported analytical recovery. A held command followed by revoke/release and two overlapping re-entry calls reached generation 3 with 0 navigation effects and 0 page errors.
+- `T-201`: verified-host load displayed current events, permits, and 10,000 equipment in a 41-descendant snapshot; unchanged-session retry after 401 emitted zero calls.
+- `T-202`: donut, stack, swatches, and bars were visible at 1440×900 RTL, 390×844 RTL, and 1440×900 LTR. Each had zero horizontal overflow and zero inline styles.
+- `T-203`: after 500 and 401, all last-good facts stayed visible with explicit stale/retry copy. Fresh re-entry automatically made exactly three current calls and restored normal state.
+- `T-204`: three permit controls had distinct accessible names. Holding the real bridge command while firing 20 activations produced one `Navigate` to `#/Permits/Dashboard`. Mobile focus had a visible 3px outline. Overlapping re-entry reached generation 3 with zero page errors/effects.
+- `T-205`: 401 tainted the unchanged session; ordinary refresh could not recover it, while fresh re-entry did.
 
-## Current fingerprint disposition
+## Refresh-burst follow-up
 
-- `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1`: not reproduced; unchanged-session retry added 0 calls.
-- `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`: not reproduced; fresh generation 2 automatically issued three current calls.
-- `uat-snapshot-refresh-failure-last-good-cleared-v1`: not reproduced; all populated facts remained visible after 500 and 401 with stale copy.
-- `uat-authorization-expiry-old-generation-refresh-allowed-v1`: not reproduced; old-generation retry added 0 calls.
-- `uat-permit-command-singleflight-race-v1`: not reproduced; 20 activations produced one effect.
-- `qc-sdk-reentry-client-disposed-unhandled-v1`: not reproduced; overlapping re-entry race produced 0 page errors and no unhandled disposed/session-reset message.
+- Ten synchronous rounds through both `#snapshot-refresh` and `#refresh-button` produced exactly three current calls. Both controls disabled synchronously while pending and re-enabled on settlement.
+- After a 500 exposed retry, ten retry activations produced exactly three current calls. A later successful retry made exactly three calls and restored normal status, proving error-path lock release.
 
-## ImageGen comparison
+## Finding disposition
 
-Fresh reference: `imagegen-stale-reference.png`, SHA-256 `9708baa830b7b36c58e7e088742764d0a210f78c4cf71bc538fc33afe966aead`. It supports a persistent stale banner, retained metrics, discrete permit actions, visible retry focus, and continued chart visibility. The preview satisfies those behavioral principles; stylistic differences are non-blocking.
+- `simplyvibe-auth-lifecycle-401-refresh-reuses-rejected-generation-v1`: not reproduced; unchanged-session retry added zero requests.
+- `perf-preview-fresh-reentry-does-not-restart-snapshot-generation-v1`: not reproduced; re-entry issued three current calls.
+- `uat-snapshot-refresh-failure-last-good-cleared-v1`: not reproduced for 500 or 401; facts remained visibly stale.
+- `uat-authorization-expiry-old-generation-refresh-allowed-v1`: not reproduced; old-generation refresh remained denied.
+- `uat-permit-command-singleflight-race-v1`: not reproduced; 20 activations produced one navigation.
+- `qc-sdk-reentry-client-disposed-unhandled-v1`: not reproduced; overlapping re-entry produced no page error.
+- `perf-preview-refresh-verification-burst-request-amplification-v1`: not reproduced through either refresh control or retry; each burst produced three current calls.
 
-## Limitations
+Fresh ImageGen reference: `imagegen-stale-reference-v2.png`, SHA-256 `a904312ca29915001e95e9492956efc6a7b849effd19a2f6c0df84c0bf32b90c`. The preview implements its important behavior—retained facts, stale messaging, retry, distinct actions, responsive RTL hierarchy, and visible focus—without requiring source changes.
 
-- Commit-to-preview binding is controller-supplied; provider and Git APIs were intentionally not called.
-- The faithful harness validates client behavior with synthetic permissions, not real tenant permission configuration or controller release completion.
+Limitations: commit association is controller-supplied; the fixture proves client behavior with synthetic permissions, not tenant permission configuration, publication, or controller release completion.
+

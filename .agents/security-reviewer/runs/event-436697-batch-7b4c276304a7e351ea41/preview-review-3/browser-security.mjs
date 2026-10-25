@@ -2,7 +2,7 @@ import { chromium } from '/workspace/src/apps/milgam-dashboard/.agents/uat-teste
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const preview = 'https://42ad1c5f.app-milgam-dashboard.pages.dev';
+const preview = 'https://ef2f1185.app-milgam-dashboard.pages.dev';
 const hostBase = 'https://milgam.ylm.co.il/controller-host-fixture/';
 const fixtureRoot = '/workspace/.simplyvibe/input/controller-host-harness';
 const browser = await chromium.launch({ executablePath: '/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell', headless: true });
@@ -106,5 +106,28 @@ async function runDirect() {
   results.direct={api,connection:await page.locator('#connection-status').innerText()}; await context.close();
 }
 
-await runLifecycle(); await runRace(); await runDirect();
+async function runRefreshBursts() {
+  const context=await browser.newContext(); const state={phase:'normal',api:[],unexpected:[]},pageErrors=[];
+  await routes(context,state); const page=await context.newPage(); page.on('pageerror',e=>pageErrors.push(String(e)));
+  await page.goto(`${hostBase}index.html?preview=${encodeURIComponent(preview)}`); const frame=page.frames().find(f=>f.url().startsWith(preview));
+  await frame.locator('#snapshot-content .snapshot-grid').waitFor({timeout:10000});
+  const current=(rows)=>rows.filter(r=>/Current(?:Events|Permits|Equipment)/.test(r.url));
+
+  const mixedAt=state.api.length;
+  await frame.evaluate(()=>{const a=document.querySelector('#snapshot-refresh'),b=document.querySelector('#refresh-button');for(let i=0;i<10;i++) (i%2?a:b).dispatchEvent(new MouseEvent('click',{bubbles:true}));});
+  await page.waitForTimeout(700);
+  const mixed=state.api.slice(mixedAt);
+
+  state.phase='refresh-500';
+  await frame.locator('#snapshot-refresh').click(); await page.waitForTimeout(500);
+  state.phase='normal';
+  const retryAt=state.api.length;
+  await frame.evaluate(()=>{const b=document.querySelector('[data-snapshot-retry]');for(let i=0;i<10;i++)b.dispatchEvent(new MouseEvent('click',{bubbles:true}));});
+  await page.waitForTimeout(700);
+  const retry=state.api.slice(retryAt);
+  results.refreshBursts={mixedCurrent:current(mixed),mixedAll:mixed,retryCurrent:current(retry),retryAll:retry,pageErrors,unexpected:state.unexpected};
+  await context.close();
+}
+
+await runLifecycle(); await runRace(); await runDirect(); await runRefreshBursts();
 console.log(JSON.stringify(results,null,2)); await browser.close();

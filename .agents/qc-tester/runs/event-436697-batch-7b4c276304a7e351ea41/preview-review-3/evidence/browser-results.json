@@ -1,10 +1,10 @@
 {
-  "preview": "https://42ad1c5f.app-milgam-dashboard.pages.dev",
-  "head": "b138df3040ab4468220a29f595d0caa62920f679",
+  "preview": "https://ef2f1185.app-milgam-dashboard.pages.dev",
+  "head": "3dc45f69655efd2a2c6b0ad016b1a8cf8f738066",
   "host": "https://milgam.ylm.co.il/controller-host-fixture/",
   "browser": "140.0.7339.16",
   "headers": {
-    "date": "Sun, 25 Oct 2026 22:58:24 GMT",
+    "date": "Sun, 25 Oct 2026 23:12:58 GMT",
     "content-type": "text/html; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
@@ -15,11 +15,11 @@
     "referrer-policy": "no-referrer",
     "x-content-type-options": "nosniff",
     "x-robots-tag": "noindex",
-    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=OdCo0Ug%2BtPoQEIRGniLvR3K97VN6vE3EsX5lkDC416K5rfa1d%2FoN05QT6BD%2FCozNkdHhPFd33hny8C1QaZBclnMOQcl6xN55vmrvEXP%2Fzvutdmubn3LgdvA7dNS%2FAxujpHxOWOGxWJKEPWZUclCDXwhJO9NKeeszPPU%3D\"}]}",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=viYHVKozv4VM7Z7HPHjQfKDaZ93QE6sgj%2FaxTpBp27bJ0XHM0tpSoRVD9EiHiDBysw3j9nMU0VH9up8veMk1cro2uTVNzmVRiNo74B63sGP9%2B47Gr7NFYR5t42%2FDf1jsOr7Isf0mx5AJI2z6v6uDYzQs9jIZdRVGZWA%3D\"}]}",
     "etag": "W/\"9691891ee4c2a3a6f1277c76e17f9666\"",
     "content-encoding": "br",
     "server": "cloudflare",
-    "cf-ray": "a504d36a1f1c3d7c-TLV",
+    "cf-ray": "a504e8bcec678e45-TLV",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "scenarios": [
@@ -30,7 +30,7 @@
         "height": 900
       },
       "dir": "rtl",
-      "renderMs": 469.307574,
+      "renderMs": 1104.524868,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -65,7 +65,7 @@
         "height": 900
       },
       "dir": "ltr",
-      "renderMs": 342.401376,
+      "renderMs": 330.324924,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -100,7 +100,7 @@
         "height": 900
       },
       "dir": "rtl",
-      "renderMs": 312.7484780000002,
+      "renderMs": 348.9672800000003,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -135,7 +135,7 @@
         "height": 844
       },
       "dir": "rtl",
-      "renderMs": 332.72021700000005,
+      "renderMs": 337.85898899999984,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -170,7 +170,7 @@
         "height": 844
       },
       "dir": "ltr",
-      "renderMs": 323.520477,
+      "renderMs": 298.350899,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -205,7 +205,7 @@
         "height": 844
       },
       "dir": "rtl",
-      "renderMs": 331.8797860000004,
+      "renderMs": 409.9460259999996,
       "currentCalls": 3,
       "exactBodies": true,
       "dateChangeCurrentCalls": 0,
@@ -253,8 +253,9 @@
       "pageErrors": []
     },
     {
-      "name": "refresh-burst",
-      "currentCalls": 6,
+      "name": "refresh-burst-both-controls",
+      "burstCalls": 3,
+      "refreshDisabled": false,
       "content": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
       "console": [],
       "pageErrors": []
@@ -419,10 +420,25 @@
       "pageErrors": []
     },
     {
-      "name": "refresh-500",
+      "name": "refresh-500-retry-lock-release",
       "retained": true,
-      "staleText": "הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב",
+      "staleText": "עודכן: 2026-10-25T09:00:00",
+      "retryBurstCalls": 3,
+      "recoveryCalls": 3,
+      "recovered": true,
       "console": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+        },
         {
           "type": "error",
           "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
@@ -450,6 +466,14 @@
         {
           "type": "error",
           "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
         }
       ],
       "pageErrors": []
@@ -467,7 +491,8 @@
         "hash": ""
       },
       "freshGeneration": 2,
-      "freshCalls": 3,
+      "automaticReentryCalls": 3,
+      "postReentryRefreshCalls": 3,
       "console": [],
       "pageErrors": []
     },
@@ -479,19 +504,19 @@
   "executableRequests": [
     "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
     "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/app.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/constants.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/api-client.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-machine.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/data-mappers.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-context.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/current-snapshot.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-services.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/host-bootstrap.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/dashboard-data.js",
-    "https://42ad1c5f.app-milgam-dashboard.pages.dev/date-range.js"
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/app.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/constants.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://ef2f1185.app-milgam-dashboard.pages.dev/date-range.js"
   ],
   "blockedRequests": []
 }
