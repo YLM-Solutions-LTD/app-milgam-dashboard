@@ -1,0 +1,85 @@
+{
+  "preview": "https://c9756759.app-milgam-dashboard.pages.dev",
+  "expectedCommit": "50972d0b555115d3b1c9da90f7df0dc4790c6e8e",
+  "browser": "140.0.7339.16",
+  "runs": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "rtl",
+      "status": "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.",
+      "currentRequests": 0,
+      "refreshDisabled": true,
+      "analyticalVisible": true,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "domCount": 7
+      },
+      "errors": [],
+      "responseCsp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dir": "rtl",
+      "status": "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.",
+      "currentRequests": 0,
+      "refreshDisabled": true,
+      "analyticalVisible": true,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "domCount": 7
+      },
+      "errors": [],
+      "responseCsp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "ltr",
+      "status": "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.",
+      "currentRequests": 0,
+      "refreshDisabled": true,
+      "analyticalVisible": true,
+      "geometry": {
+        "dir": "ltr",
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "domCount": 7
+      },
+      "errors": [],
+      "responseCsp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    },
+    {
+      "name": "direct-timeout",
+      "apiRequests": 0,
+      "text": "M\nהדשבורד זמין מתוך SimplyLog\n\nיש לפתוח את ‎/App/milgam-dashboard‎ מתוך SimplyLog. הדף יתחבר אוטומטית כשיתקבל הקשר מארח מאומת."
+    }
+  ],
+  "executableRequests": [
+    "https://c9756759.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/app.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/constants.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://c9756759.app-milgam-dashboard.pages.dev/date-range.js"
+  ]
+}

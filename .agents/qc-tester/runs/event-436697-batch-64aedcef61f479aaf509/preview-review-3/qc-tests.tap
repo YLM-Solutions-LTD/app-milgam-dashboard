@@ -1,0 +1,333 @@
+TAP version 13
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'https://evil.invalid',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://evil.invalid' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'http://localhost:5500',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'http://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context {
+#   reason: 'invalid ApiAddress protocol',
+#   ApiAddress: 'https://api.ylm.co.il'
+# }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   ApiAddress: 'https://api.ylm.co.il',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Failed to parse host message payload
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# QC_EQUIPMENT_METRICS [{"rows":0,"decodedBytes":27,"durationsMs":[0.003,0.002,0.002,0.002,0.002]},{"rows":1,"decodedBytes":231,"durationsMs":[0.008,0.011,0.007,0.006,0.039]},{"rows":1000,"decodedBytes":207422,"durationsMs":[3.192,2.863,3.122,3.082,2.907]},{"rows":10000,"decodedBytes":2083924,"durationsMs":[23.798,27.837,25.569,25.086,23.241]}]
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: QC-201..QC-212 traceability preserves every shared task ID
+ok 1 - QC-201..QC-212 traceability preserves every shared task ID
+  ---
+  duration_ms: 1.460053
+  ...
+# Subtest: T-101/T-103: accepted synthetic postMessage context fans out exactly three concurrent empty-body calls
+ok 2 - T-101/T-103: accepted synthetic postMessage context fans out exactly three concurrent empty-body calls
+  ---
+  duration_ms: 3.505628
+  ...
+# Subtest: T-101/T-104: an unbound object cannot construct an authorization-bearing API client
+ok 3 - T-101/T-104: an unbound object cannot construct an authorization-bearing API client
+  ---
+  duration_ms: 0.347812
+  ...
+# Subtest: T-101/T-104: synthetic postMessage trust rejects wrong source, origin, HTTP, and cross-environment API
+ok 4 - T-101/T-104: synthetic postMessage trust rejects wrong source, origin, HTTP, and cross-environment API
+  ---
+  duration_ms: 0.766628
+  ...
+# Subtest: T-101/T-103/T-104: public markers, direct access and mutation cannot cross the host capability boundary
+ok 5 - T-101/T-103/T-104: public markers, direct access and mutation cannot cross the host capability boundary
+  ---
+  duration_ms: 0.52502
+  ...
+# Subtest: T-101/T-103: late valid host message recovers once after rejected and malformed messages
+ok 6 - T-101/T-103: late valid host message recovers once after rejected and malformed messages
+  ---
+  duration_ms: 1.137542
+  ...
+# Subtest: T-101/T-103/T-104: replacement authorization revokes the old generation and admits fresh re-entry
+ok 7 - T-101/T-103/T-104: replacement authorization revokes the old generation and admits fresh re-entry
+  ---
+  duration_ms: 0.665524
+  ...
+# Subtest: T-101/T-103/T-104: revocation denies late API and host-command completion
+ok 8 - T-101/T-103/T-104: revocation denies late API and host-command completion
+  ---
+  duration_ms: 0.708626
+  ...
+# Subtest: T-102: identical equipment rows deduplicate to the complete population while conflicts reject
+ok 9 - T-102: identical equipment rows deduplicate to the complete population while conflicts reject
+  ---
+  duration_ms: 0.331512
+  ...
+# Subtest: T-102: current-equipment transport preserves duplicate rows for mapper deduplication
+ok 10 - T-102: current-equipment transport preserves duplicate rows for mapper deduplication
+  ---
+  duration_ms: 0.413115
+  ...
+# Subtest: T-102/T-105: strict event and permit adapters reject semantic lies and preserve valid zero
+ok 11 - T-102/T-105: strict event and permit adapters reject semantic lies and preserve valid zero
+  ---
+  duration_ms: 0.474417
+  ...
+# Subtest: T-102/T-106: representative equipment volumes stay linear, nullable and aggregate-only
+ok 12 - T-102/T-106: representative equipment volumes stay linear, nullable and aggregate-only
+  ---
+  duration_ms: 178.776363
+  ...
+# Subtest: T-103: newest refresh wins and failed refresh retains only last good snapshot
+ok 13 - T-103: newest refresh wins and failed refresh retains only last good snapshot
+  ---
+  duration_ms: 0.761428
+  ...
+# Subtest: T-103/T-106: burst of ten refreshes commits generation ten with no retry storm
+ok 14 - T-103/T-106: burst of ten refreshes commits generation ten with no retry storm
+  ---
+  duration_ms: 0.624823
+  ...
+# Subtest: T-104: host date and navigation boundaries preserve exact arguments and sequencing
+ok 15 - T-104: host date and navigation boundaries preserve exact arguments and sequencing
+  ---
+  duration_ms: 0.488418
+  ...
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Accepted host message {
+#   ApiAddress: 'https://localhost:5721',
+#   tokenType: null,
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: null,
+#   ApplicationName: null
+# }
+# Subtest: T-105/T-106: static UI contract exposes one polite non-atomic status, semantic controls, focus, responsive stack and bidi
+ok 16 - T-105/T-106: static UI contract exposes one polite non-atomic status, semantic controls, focus, responsive stack and bidi
+  ---
+  duration_ms: 9.209838
+  ...
+# Subtest: T-101/T-103/T-106: HTTP, offline, timeout-like abort, malformed, and valid-zero responses stay distinguishable
+ok 17 - T-101/T-103/T-106: HTTP, offline, timeout-like abort, malformed, and valid-zero responses stay distinguishable
+  ---
+  duration_ms: 2.200181
+  ...
+# Subtest: T-104/T-105: repeated permit activation performs one ready-command pair per activation in stable order
+ok 18 - T-104/T-105: repeated permit activation performs one ready-command pair per activation in stable order
+  ---
+  duration_ms: 0.400415
+  ...
+# Subtest: T-104/T-105/T-106: permit navigation is exact, pending-locked, recoverable and retains focus contract
+ok 19 - T-104/T-105/T-106: permit navigation is exact, pending-locked, recoverable and retains focus contract
+  ---
+  duration_ms: 1.419552
+  ...
+# Subtest: T-101/T-106/T-107: executable dependency is same-origin and static headers enforce a token-realm CSP
+ok 20 - T-101/T-106/T-107: executable dependency is same-origin and static headers enforce a token-realm CSP
+  ---
+  duration_ms: 1.247446
+  ...
+# Subtest: T-105/T-106: source-level responsive, zoom, bidi, accessibility and bounded aggregate UI contracts
+ok 21 - T-105/T-106: source-level responsive, zoom, bidi, accessibility and bounded aggregate UI contracts
+  ---
+  duration_ms: 1.417452
+  ...
+# Subtest: T-101/T-106: analytical body builder and snapshot transport remain isolated
+ok 22 - T-101/T-106: analytical body builder and snapshot transport remain isolated
+  ---
+  duration_ms: 1.021838
+  ...
+# Subtest: T-107: delivered source restores current-snapshot live calls to disabled
+ok 23 - T-107: delivered source restores current-snapshot live calls to disabled
+  ---
+  duration_ms: 0.109304
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 269.472192

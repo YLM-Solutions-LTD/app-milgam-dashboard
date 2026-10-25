@@ -1,0 +1,324 @@
+{
+  "measuredAt": "2026-10-25T09:05:54.247Z",
+  "preview": "https://1de11912.app-milgam-dashboard.pages.dev/",
+  "commit": "d9ef28ddc6be1d9b6b9fb2f066bcde19c53c193b",
+  "browserVersion": "140.0.7339.16",
+  "node": "v20.20.2",
+  "equipmentRows": 10000,
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "navigationToReadyMs": 893,
+      "initial": {
+        "snapshotElements": 41,
+        "contentElements": 34,
+        "totalDocumentElements": 83,
+        "width": 358,
+        "scrollWidth": 356,
+        "viewportWidth": 374,
+        "equipmentText": "10,000",
+        "heap": 12592094
+      },
+      "after": {
+        "heap": 12672244,
+        "snapshotElements": 41
+      },
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919151649
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919151649
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919151650
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "start": 1792919151661
+        }
+      ],
+      "refreshMs": 224,
+      "postResponseReadyMs": 70,
+      "refreshCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152124
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152124
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152124
+        }
+      ],
+      "burstCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152320
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152320
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919152320
+        }
+      ],
+      "responses": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919151691
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919151691
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919151766
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "bytes": 27,
+          "at": 1792919151766
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919152166
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919152166
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919152244
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919152363
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919152363
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919152430
+        }
+      ],
+      "hostCalls": [
+        {
+          "type": "ready",
+          "at": 1285
+        },
+        {
+          "type": "command",
+          "name": "Navigate",
+          "parameter": {
+            "Url": "#/Permits/Dashboard"
+          },
+          "at": 1360.199999988079
+        }
+      ],
+      "longTasks": [],
+      "consoleErrors": []
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "navigationToReadyMs": 849,
+      "initial": {
+        "snapshotElements": 41,
+        "contentElements": 34,
+        "totalDocumentElements": 83,
+        "width": 1280,
+        "scrollWidth": 1278,
+        "viewportWidth": 1424,
+        "equipmentText": "10,000",
+        "heap": 12857058
+      },
+      "after": {
+        "heap": 12606844,
+        "snapshotElements": 41
+      },
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153120
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153120
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153120
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "start": 1792919153131
+        }
+      ],
+      "refreshMs": 220,
+      "postResponseReadyMs": 74,
+      "refreshCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153606
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153606
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153607
+        }
+      ],
+      "burstCalls": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153806
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153806
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "method": "POST",
+          "body": "{}",
+          "start": 1792919153807
+        }
+      ],
+      "responses": [
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919153162
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919153162
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919153243
+        },
+        {
+          "name": "MilgamDashboardByMonth",
+          "bytes": 27,
+          "at": 1792919153243
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919153647
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919153647
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919153727
+        },
+        {
+          "name": "MilgamDashboardCurrentEvents",
+          "bytes": 281,
+          "at": 1792919153847
+        },
+        {
+          "name": "MilgamDashboardCurrentPermits",
+          "bytes": 141,
+          "at": 1792919153847
+        },
+        {
+          "name": "MilgamDashboardCurrentEquipment",
+          "bytes": 4070459,
+          "at": 1792919153927
+        }
+      ],
+      "hostCalls": [
+        {
+          "type": "ready",
+          "at": 1267.699999988079
+        },
+        {
+          "type": "command",
+          "name": "Navigate",
+          "parameter": {
+            "Url": "#/Permits/Dashboard"
+          },
+          "at": 1343
+        }
+      ],
+      "longTasks": [],
+      "consoleErrors": []
+    }
+  ]
+}

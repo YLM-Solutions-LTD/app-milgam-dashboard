@@ -1,0 +1,286 @@
+{
+  "preview": "https://1de11912.app-milgam-dashboard.pages.dev",
+  "expectedCommit": "d9ef28ddc6be1d9b6b9fb2f066bcde19c53c193b",
+  "browser": "140.0.7339.16",
+  "runs": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "direction": "rtl",
+      "htmlDir": "rtl",
+      "box": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440
+      },
+      "domCount": 41,
+      "snapshotStable": true,
+      "currentCallsUnchanged": true,
+      "currentCalls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919169657
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919169660
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919169660
+        }
+      ],
+      "visibleText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: DISPLAY:2026-10-25T09:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: DISPLAY:2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+      "hostCalls": [
+        [
+          "date",
+          "2026-10-25T09:00:00"
+        ],
+        [
+          "date",
+          "2026-10-25"
+        ],
+        [
+          "ready"
+        ],
+        [
+          "Navigate",
+          {
+            "Url": "#/Permits/Dashboard"
+          }
+        ]
+      ],
+      "consoleErrors": []
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "direction": "rtl",
+      "htmlDir": "rtl",
+      "box": {
+        "scrollWidth": 390,
+        "clientWidth": 390
+      },
+      "domCount": 41,
+      "snapshotStable": true,
+      "currentCallsUnchanged": true,
+      "currentCalls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919170553
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919170554
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919170555
+        }
+      ],
+      "visibleText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: DISPLAY:2026-10-25T09:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: DISPLAY:2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+      "hostCalls": [
+        [
+          "date",
+          "2026-10-25T09:00:00"
+        ],
+        [
+          "date",
+          "2026-10-25"
+        ],
+        [
+          "ready"
+        ],
+        [
+          "Navigate",
+          {
+            "Url": "#/Permits/Dashboard"
+          }
+        ]
+      ],
+      "consoleErrors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "direction": "ltr",
+      "htmlDir": "ltr",
+      "box": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440
+      },
+      "domCount": 41,
+      "snapshotStable": true,
+      "currentCallsUnchanged": true,
+      "currentCalls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919171419
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919171420
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919171421
+        }
+      ],
+      "visibleText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: DISPLAY:2026-10-25T09:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: DISPLAY:2026-10-25\n\nציוד\n\n2 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+      "hostCalls": [
+        [
+          "date",
+          "2026-10-25T09:00:00"
+        ],
+        [
+          "date",
+          "2026-10-25"
+        ],
+        [
+          "ready"
+        ],
+        [
+          "Navigate",
+          {
+            "Url": "#/Permits/Dashboard"
+          }
+        ]
+      ],
+      "consoleErrors": []
+    },
+    {
+      "name": "first-error-retry",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "direction": "rtl",
+      "firstFailureNoContent": true,
+      "recovered": true,
+      "calls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172271
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172272
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172273
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "authorization": "[present]",
+          "t": 1792919172278
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "authorization": "[present]",
+          "t": 1792919172294
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "authorization": "[present]",
+          "t": 1792919172294
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "authorization": "[present]",
+          "t": 1792919172295
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "authorization": "[present]",
+          "t": 1792919172296
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172363
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172364
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}",
+          "authorization": "[present]",
+          "t": 1792919172364
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+      ]
+    },
+    {
+      "name": "direct-timeout",
+      "apiRequests": 0,
+      "text": "M\nהדשבורד זמין מתוך SimplyLog\n\nיש לפתוח את ‎/App/milgam-dashboard‎ מתוך SimplyLog. הדף יתחבר אוטומטית כשיתקבל הקשר מארח מאומת."
+    }
+  ]
+}

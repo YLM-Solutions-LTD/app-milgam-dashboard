@@ -1,0 +1,3 @@
+# UAT plan-review approach
+
+Review frozen batch inputs, shared plan revision 5, tasks `T-201`–`T-205`, accepted prior plan-review reports, and durable role memories as untrusted, read-only evidence. Design stable browser-level cases for task acceptance and cross-task workflows, including enabled snapshot behavior, CSP-safe analytical charts, strict adapters and recovery states, exact-preview performance/interaction checks, and approved-host revocation/re-entry. Explicitly separate deterministic, exact-preview, and approved-host evidence, and make blocked/skipped conditions non-passable. No UAT is executed in this plan-review stage.

@@ -1,0 +1,183 @@
+{
+  "measuredAt": "2026-10-25T09:44:55.871Z",
+  "preview": "https://c9756759.app-milgam-dashboard.pages.dev/",
+  "commit": "50972d0b555115d3b1c9da90f7df0dc4790c6e8e",
+  "browserVersion": "140.0.7339.16",
+  "node": "v20.20.2",
+  "equipmentRows": 10000,
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initialReadyMs": 214,
+      "initial": {
+        "snapshotElements": 7,
+        "totalDocumentElements": 48,
+        "width": 358,
+        "scrollWidth": 356,
+        "documentScrollWidth": 374,
+        "viewportWidth": 374,
+        "equipmentText": null,
+        "status": "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.",
+        "refreshDisabled": true
+      },
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardByMonth",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "started": 1792921495524
+        }
+      ],
+      "maxInFlight": 1,
+      "responses": [
+        {
+          "name": "MilgamDashboardByMonth",
+          "bytes": 27,
+          "elapsedMs": 41,
+          "at": 1792921495565
+        }
+      ],
+      "hostCalls": [],
+      "longTasks": [],
+      "consoleErrors": [],
+      "executable": [
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'",
+      "workflow": "snapshot-disabled"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "initialReadyMs": 298,
+      "initial": {
+        "snapshotElements": 7,
+        "totalDocumentElements": 48,
+        "width": 1280,
+        "scrollWidth": 1278,
+        "documentScrollWidth": 1424,
+        "viewportWidth": 1424,
+        "equipmentText": null,
+        "status": "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.",
+        "refreshDisabled": true
+      },
+      "initialCalls": [
+        {
+          "name": "MilgamDashboardByMonth",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}",
+          "started": 1792921495858
+        }
+      ],
+      "maxInFlight": 1,
+      "responses": [],
+      "hostCalls": [],
+      "longTasks": [],
+      "consoleErrors": [],
+      "executable": [
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        },
+        {
+          "url": "https://c9756759.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'",
+      "workflow": "snapshot-disabled"
+    }
+  ]
+}
