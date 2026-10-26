@@ -1,0 +1,64 @@
+Milgam dashboard: range controls and actionable snapshot errors
+26 October 2026 — LOCAL CHANGES ONLY, NOT DEPLOYED
+
+User symptoms: "לא ניתן לטעון את תמונת המצב"; analytical filter allows only a specific month instead of a range.
+
+Confirmed snapshot defect:
+The user supplied an HTTP200 CurrentPermits response whose ValidCount, MissingCount and OverdueCount are decimal strings, while outer TotalCount is numeric. The snapshot adapter required Number.isSafeInteger directly on each field and rejected those legitimate strings. This made the whole snapshot fail despite successful HTTP responses. The fix normalizes decimal integer strings before validation and arithmetic, for current event and permit counts. It continues to reject missing, malformed, negative, fractional and unsafe counts; event reconciliation remains enforced. This specific failure requires no database change.
+
+Implemented in C:/dev/simplylog/mini-apps/src/apps/milgam-dashboard/site:
+- Replaced month/year dropdowns with From/To calendar inputs and Apply.
+- Validate actual calendar dates, supported SQL datetime years, and From <= To before any request.
+- Allow single-day, cross-month/year, and ranges outside the discovered months, including after empty discovery.
+- Apply the same range to the four existing analytical report requests. Preserve aggregation, chart calculations and grouping.
+- Abort superseded loads; ignore old responses and out-of-order authorization checks. Preserve applied range on fresh host entry.
+- Keep current snapshot calls, values and timestamps independent of applying analytical ranges.
+- Include the final calendar day's SQL datetime precision, ending at 23:59:59.997. Preserve the existing timezone-less request convention.
+- Replace the generic snapshot error with report-specific Hebrew guidance, and safe support details containing the known endpoint and HTTP status or error class.
+- Accept report aggregate counts serialized as decimal integer strings, preserving separate valid/missing/overdue units and all date strings.
+- Preserve 401/403 status when authorization revokes the snapshot. Show permission/re-entry guidance and disable ineffective retry until fresh host entry.
+- Preserve existing stale-data behavior; no fabricated zeroes, raw API error bodies, tokens or credentials are shown.
+- Correct analytical Refresh to refresh ready data rather than send an ignored RETRY event.
+
+Changed runtime files:
+site/date-range.js
+site/dashboard-data.js
+site/dashboard-machine.js
+site/app.js
+site/app.css
+site/index.html
+site/current-snapshot.js
+site/snapshot-error.js (new)
+
+Changed tests:
+site/tests/api-client.test.js
+site/tests/dashboard-data.test.js
+site/tests/dashboard-machine.test.js
+site/tests/current-snapshot.test.js
+site/tests/date-range.test.js (new)
+
+Validation:
+- 130 automated tests passed, zero failures/skips, including the existing site/QC/UAT suites and real SDK/GuestBridge harness. Added an end-to-end HTTP200 transport-to-snapshot regression with string aggregate counts, plus malformed/unsafe count rejection.
+- Browser checks passed at 1440x900 and 390x844 with Hebrew RTL, no horizontal overflow, no page/CSP errors, both certificate links, invalid ranges producing zero requests, single-day/cross-year ranges, empty data, delayed obsolete responses, and snapshot stability.
+- Browser fixtures now serialize current event/permit aggregates as strings, reproducing the supplied response shape. They load correctly. Synthetic initial equipment HTTP500 reports the correct endpoint/status; synthetic permit HTTP403 retains stale facts and disables retry; private response markers do not reach DOM/logs.
+- Browser traffic was entirely intercepted, with Docker network disabled. These are LOCAL SYNTHETIC screenshots, not testsl or production validation.
+- Full evidence: candidate/evidence/node-tests.log and browser-results.json. Screenshots: range-rtl-1440.png, range-rtl-390.png, range-controls-1440.png, range-controls-390.png, snapshot-error-1440.png, snapshot-error-390.png.
+
+Configuration:
+The mounted app's constants.js remains false, preserving the earlier authorized local-only post-release revert. The isolated verification candidate has CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED=true, matching the existing released production configuration. No flag change was deployed.
+Candidate app: candidate/workspace/src/apps/milgam-dashboard
+Release controller must use the tested enabled candidate configuration for any later reviewed release, not silently publish the local false flag.
+
+Date-contract evidence, source only:
+- SimplyLog.Incidents/DynamicListSearchEngineSearchEngine.cs maps the entity to Report_ByEntity_<EntityName>.
+- SimplyLog.Incidents/SearchArgumentsHelper.cs:50-57 parses FromDate/ToDate as DateTime.
+- Simple.SimplyLog.Data/Mappers/EventFilterArgsExtensions.cs:78-79 binds DbType.DateTime.
+- Simple/Data/DataHelper.cs:19-26 converts through the existing ToUniversalTime path.
+- SimplyLogDatabase/Patches/CreateMilgamDashboardEntityReports.sql uses inclusive <= @ToDate.
+- SimplyLogDatabase/Create/CreateDatabase.sql:3025 defines Event.StartTime as datetime.
+No SQL procedure was changed. Deployed schema/timezone configuration was not independently checked.
+
+Remaining release/verification limits:
+The supplied certificate response exposed a confirmed frontend parsing defect and is now accepted by the adapter. Production has not been updated; the other real snapshot responses and live tenant reconciliation remain unverified. The synthetic equipment HTTP500 is a diagnostic test, not the user's actual error. No backend defect or DB update is implied by this response.
+The equipment validity classification remains outside this targeted range/error change and still requires confirmed application-service business rules.
+No live DB/API tenant data inspection, backend mutation, permission changes, controller rerun or production deployment occurred in this follow-up.

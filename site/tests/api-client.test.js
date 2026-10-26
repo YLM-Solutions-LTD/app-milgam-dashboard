@@ -20,15 +20,15 @@ test("date helpers construct exact selected-month and discovery ranges, includin
   assert.equal(daysInMonth(2025, 2), 28);
   assert.deepEqual(buildMonthRange(2024, 2), {
     FromDate: "2024-02-01T00:00:00",
-    ToDate: "2024-02-29T23:59:59"
+    ToDate: "2024-02-29T23:59:59.997"
   });
   assert.deepEqual(buildMonthRange(2026, 8), {
     FromDate: "2026-08-01T00:00:00",
-    ToDate: "2026-08-31T23:59:59"
+    ToDate: "2026-08-31T23:59:59.997"
   });
   assert.deepEqual(buildPeriodDiscoveryRange(new Date(2026, 7, 20, 12)), {
     FromDate: "2000-01-01T00:00:00",
-    ToDate: "2026-08-31T23:59:59"
+    ToDate: "2026-08-31T23:59:59.997"
   });
 });
 
@@ -44,7 +44,7 @@ test("search body has the exact contract keys and selected-month dates", () => {
     SortDirectionSecondary: null,
     ItemStatus: 0,
     FromDate: "2026-08-01T00:00:00",
-    ToDate: "2026-08-31T23:59:59"
+    ToDate: "2026-08-31T23:59:59.997"
   });
 });
 

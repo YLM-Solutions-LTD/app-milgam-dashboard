@@ -1,7 +1,8 @@
 import { ALLOWED_HOST_ORIGINS, CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, DATASETS } from "./constants.js";
 import { createApiClient } from "./api-client.js";
 import { createDashboardMachine } from "./dashboard-machine.js";
-import { yearsFromPeriods } from "./data-mappers.js";
+import { buildDateRange, calendarRangeForMonth } from "./date-range.js";
+import { snapshotErrorCopy } from "./snapshot-error.js";
 import { applyRuntimeLocale, onHostContextRevoked, summarizeContext } from "./host-context.js";
 import { createSnapshotController } from "./current-snapshot.js";
 import { createHostServices } from "./host-services.js";
@@ -43,6 +44,9 @@ let permitNavigationPending = false;
 let activeContext = null;
 let refreshPending = null;
 let refreshAnalyticsRequested = false;
+let rangeDraft = null;
+let rangeSelectionKey = null;
+let rangeApplyGeneration = 0;
 
 console.info(LOG_PREFIX, "Bootstrapping mini-app", {
   title: document.title,
@@ -108,11 +112,12 @@ const hostBootstrap = createHostBootstrap({
   onContext: acceptHostContext
 });
 
-const removeRevocationListener = onHostContextRevoked((context) => {
+const removeRevocationListener = onHostContextRevoked((context, { reason } = {}) => {
   if (context !== activeContext) return;
   activeContext = null;
   hostServices = null;
-  snapshotController?.invalidate();
+  snapshotController?.invalidate({ kind: "authorization-revoked", dataset: "hostContext",
+    status: reason === "http-403" ? 403 : reason === "http-401" ? 401 : null });
   if (service) service.send("HOST_CONTEXT_REVOKED");
 });
 
@@ -159,7 +164,7 @@ function refreshAuthorization({ analytics = true } = {}) {
       const previousContext = activeContext;
       const verified = await hostBootstrap.verify();
       if (verified.context !== previousContext || activeContext !== previousContext) return; // Fresh re-entry already loads its data.
-      if (refreshAnalyticsRequested) service.send("RETRY");
+      if (refreshAnalyticsRequested) service.send(["ready", "loadingDashboard", "empty"].includes(service.state.value) ? "REFRESH" : "RETRY");
       await snapshotController?.refresh();
     } catch (error) {
       console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
@@ -176,11 +181,11 @@ function refreshAuthorization({ analytics = true } = {}) {
   return refreshPending;
 }
 
-async function dispatchAuthorized(event) {
+async function dispatchAuthorized(event, isCurrent = () => true) {
   try {
     const previousContext = activeContext;
     const verified = await hostBootstrap.verify();
-    if (verified.context === previousContext) service.send(event);
+    if (verified.context === previousContext && isCurrent()) service.send(event);
   } catch (error) {
     console.warn(LOG_PREFIX, "Host reauthorization failed", { code: error?.code || "HOST_UNAVAILABLE" });
   }
@@ -216,41 +221,55 @@ function renderConnection(state) {
 }
 
 function renderControls(state) {
-  const { periods, selectedPeriod, refreshedAt } = state.context;
-  const years = yearsFromPeriods(periods);
-  const months = selectedPeriod
-    ? periods.filter((period) => period.available && period.year === selectedPeriod.year)
-    : [];
-  const periodLoading = state.matches("awaitingHost") || state.matches("loadingPeriods") || years.length === 0;
+  const { selectedPeriod, selectedRange, refreshedAt } = state.context;
+  const now = new Date();
+  const applied = selectedRange || calendarRangeForMonth(selectedPeriod?.year || now.getFullYear(), selectedPeriod?.month || now.getMonth() + 1);
+  const key = `${applied.fromDate}/${applied.toDate}`;
+  if (!rangeDraft || rangeSelectionKey !== key) {
+    rangeDraft = { ...applied };
+    rangeSelectionKey = key;
+  }
+  const periodLoading = state.matches("awaitingHost") || state.matches("loadingPeriods");
   const refreshed = refreshedAt ? formatDateTime(refreshedAt) : "טרם בוצע רענון";
 
   controlsElement.innerHTML = `
+    <form id="date-range-form" class="date-range-form" novalidate>
     <div class="field">
-      <label for="year-select">שנה</label>
-      <select id="year-select" ${periodLoading ? "disabled" : ""}>
-        ${years.length ? years.map((year) => (
-          `<option value="${year}"${year === selectedPeriod?.year ? " selected" : ""}>${formatYear(year)}</option>`
-        )).join("") : '<option value="">—</option>'}
-      </select>
+      <label for="from-date">מתאריך</label>
+      <input id="from-date" name="fromDate" type="date" min="1753-01-01" max="9999-12-31" required value="${escapeAttribute(rangeDraft.fromDate)}" aria-describedby="range-error" ${periodLoading ? "disabled" : ""}>
     </div>
     <div class="field">
-      <label for="month-select">חודש</label>
-      <select id="month-select" aria-describedby="period-label" ${periodLoading || !selectedPeriod ? "disabled" : ""}>
-        ${months.length ? months.map((period) => (
-          `<option value="${period.month}" aria-label="${escapeAttribute(`${MONTH_NAMES[period.month - 1]} ${period.year}, ${period.label}`)}"${period.month === selectedPeriod.month ? " selected" : ""}>${MONTH_NAMES[period.month - 1]}</option>`
-        )).join("") : '<option value="">—</option>'}
-      </select>
-      <span id="period-label" class="sr-only">${selectedPeriod ? `תווית תקופה: ${escapeHtml(selectedPeriod.label)}` : "לא נבחרה תקופה"}</span>
+      <label for="to-date">עד תאריך (כולל)</label>
+      <input id="to-date" name="toDate" type="date" min="1753-01-01" max="9999-12-31" required value="${escapeAttribute(rangeDraft.toDate)}" aria-describedby="range-error" ${periodLoading ? "disabled" : ""}>
     </div>
-    <button id="refresh-button" class="button" type="button" ${!selectedPeriod || refreshPending ? "disabled" : ""}>רענון נתונים</button>
+    <button id="apply-range" class="button button-primary" type="submit" ${periodLoading ? "disabled" : ""}>החלת טווח</button>
+    <button id="refresh-button" class="button" type="button" ${periodLoading || refreshPending ? "disabled" : ""}>רענון נתונים</button>
     <span class="refresh-note">עדכון אחרון: ${escapeHtml(refreshed)}</span>
+    <p id="range-error" class="range-error" role="alert"></p>
+    </form>
   `;
 
-  controlsElement.querySelector("#year-select")?.addEventListener("change", (event) => {
-    void dispatchAuthorized({ type: "YEAR_CHANGED", year: Number(event.target.value) });
+  const form = controlsElement.querySelector("#date-range-form");
+  form.addEventListener("input", () => {
+    rangeDraft = { fromDate: form.elements.fromDate.value, toDate: form.elements.toDate.value };
+    form.querySelector("#range-error").textContent = "";
+    form.querySelectorAll("input").forEach((input) => input.removeAttribute("aria-invalid"));
   });
-  controlsElement.querySelector("#month-select")?.addEventListener("change", (event) => {
-    void dispatchAuthorized({ type: "MONTH_CHANGED", month: Number(event.target.value) });
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const range = { fromDate: form.elements.fromDate.value, toDate: form.elements.toDate.value };
+    try { buildDateRange(range.fromDate, range.toDate); }
+    catch {
+      form.querySelector("#range-error").textContent = range.fromDate && range.toDate && range.fromDate > range.toDate
+        ? "תאריך ההתחלה חייב להיות מוקדם מתאריך הסיום או שווה לו."
+        : "יש להזין שני תאריכים תקינים בין השנים 1753 ו־9999.";
+      form.querySelectorAll("input").forEach((input) => input.setAttribute("aria-invalid", "true"));
+      form.elements.fromDate.focus();
+      return;
+    }
+    rangeDraft = range;
+    const generation = ++rangeApplyGeneration;
+    void dispatchAuthorized({ type: "RANGE_APPLIED", range }, () => generation === rangeApplyGeneration);
   });
   controlsElement.querySelector("#refresh-button")?.addEventListener("click", () => {
     void refreshAuthorization();
@@ -258,7 +277,8 @@ function renderControls(state) {
 }
 
 function renderSnapshot(state) {
-  snapshotRefreshElement.disabled = Boolean(refreshPending) || state.status === "loading" || state.status === "disabled";
+  const failure = state.error ? snapshotErrorCopy(state.error) : null;
+  snapshotRefreshElement.disabled = Boolean(refreshPending) || state.status === "loading" || state.status === "disabled" || failure?.retry === false;
   if (state.status === "disabled") {
     snapshotStatusElement.textContent = "תמונת המצב הנוכחית אינה מופעלת בסביבה זו.";
     snapshotContentElement.replaceChildren();
@@ -270,7 +290,7 @@ function renderSnapshot(state) {
     return;
   }
   if (state.status === "error") {
-    snapshotStatusElement.innerHTML = 'לא ניתן לטעון את תמונת המצב. <button class="link-button" data-snapshot-retry type="button">נסו שוב</button>';
+    snapshotStatusElement.innerHTML = renderSnapshotFailure(state.error);
     snapshotContentElement.replaceChildren();
     snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => { void refreshAuthorization({ analytics: false }); });
     return;
@@ -278,11 +298,17 @@ function renderSnapshot(state) {
   if (!state.data) return;
   const stale = state.status === "stale";
   snapshotStatusElement.innerHTML = stale
-    ? 'הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. <button class="link-button" data-snapshot-retry type="button">נסו שוב</button>'
+    ? `הנתונים המוצגים הם העדכון התקין האחרון. ${renderSnapshotFailure(state.error)}`
     : `עודכן: ${escapeHtml(hostServices?.toDisplayDate(state.data.events.asOf) || String(state.data.events.asOf))}`;
   snapshotContentElement.innerHTML = renderSnapshotContent(state.data);
   snapshotStatusElement.querySelector("[data-snapshot-retry]")?.addEventListener("click", () => { void refreshAuthorization({ analytics: false }); });
   snapshotContentElement.querySelectorAll("[data-permit]").forEach((button) => button.addEventListener("click", navigateToPermits));
+}
+
+function renderSnapshotFailure(error) {
+  const failure = snapshotErrorCopy(error);
+  return `${escapeHtml(failure.message)} ${failure.retry ? '<button class="link-button" data-snapshot-retry type="button">נסו שוב</button>' : ""}
+    <details class="snapshot-error-details"><summary>פרטי תקלה לתמיכה</summary><code dir="ltr">${escapeHtml(failure.diagnostic)}</code></details>`;
 }
 
 function renderSnapshotContent(data) {
@@ -338,7 +364,8 @@ function renderStateCard(state) {
   }
   if (state.matches("loadingDashboard")) {
     const period = state.context.selectedPeriod;
-    const label = period ? `${MONTH_NAMES[period.month - 1]} ${formatYear(period.year)}` : "התקופה שנבחרה";
+    const range = state.context.selectedRange;
+    const label = range ? `${range.fromDate} — ${range.toDate}` : period ? `${MONTH_NAMES[period.month - 1]} ${formatYear(period.year)}` : "התקופה שנבחרה";
     return loadingCard("טוען את נתוני הדשבורד", label);
   }
   if (state.matches("empty")) {
@@ -346,8 +373,8 @@ function renderStateCard(state) {
       icon: "0",
       title: "אין נתונים לתקופה שנבחרה",
       text: state.context.emptyReason === "periods"
-        ? "לא נמצאו חודשים זמינים בטווח הדיווח."
-        : "אפשר לבחור חודש אחר או לנסות לרענן את הנתונים.",
+        ? "לא נמצאו נתונים בטווח ברירת המחדל. אפשר לבחור טווח תאריכים אחר."
+        : "אפשר לבחור טווח תאריכים אחר או לנסות לרענן את הנתונים.",
       action: "נסה שוב"
     });
   }

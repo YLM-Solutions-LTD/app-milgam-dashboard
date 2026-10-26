@@ -18,7 +18,7 @@ test("period discovery uses the long discovery range and latest available month"
   const result = await loadPeriods(client, { now: new Date(2026, 7, 20) });
   assert.deepEqual(calls, [{
     key: "periods",
-    range: { FromDate: "2000-01-01T00:00:00", ToDate: "2026-08-31T23:59:59" }
+    range: { FromDate: "2000-01-01T00:00:00", ToDate: "2026-08-31T23:59:59.997" }
   }]);
   assert.deepEqual(result.selectedPeriod, {
     year: 2026, month: 8, label: "8/26", eventCount: 2, available: true
@@ -41,7 +41,7 @@ test("four selected-month datasets start in parallel with the exact same range a
   assert.deepEqual(calls.map((call) => call.key), ["division", "summary", "category", "closure"]);
   assert.equal(calls.every((call) => call.signal === controller.signal), true);
   assert.equal(calls.every((call) => call.range.FromDate === "2024-02-01T00:00:00"), true);
-  assert.equal(calls.every((call) => call.range.ToDate === "2024-02-29T23:59:59"), true);
+  assert.equal(calls.every((call) => call.range.ToDate === "2024-02-29T23:59:59.997"), true);
 
   resolvers.get("division")([]);
   resolvers.get("summary")([

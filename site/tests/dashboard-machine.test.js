@@ -135,6 +135,49 @@ test("period selection transitions choose the latest available month in a change
   service.stop();
 });
 
+test("arbitrary ranges supersede in-flight work and reject invalid changes without requests", async () => {
+  const requests = [];
+  const service = makeService({ loadPeriods: async () => periodsResult,
+    loadDashboard: (_client, selection, { signal }) => new Promise((resolve) => requests.push({ selection, signal, resolve })) });
+  service.send({ type: "HOST_CONTEXT_RECEIVED", context: {} });
+  await waitUntil(() => requests.length === 1);
+  const firstRange = { fromDate: "2025-12-20", toDate: "2026-02-03" };
+  const lastRange = { fromDate: "2024-02-29", toDate: "2024-02-29" };
+  service.send({ type: "RANGE_APPLIED", range: firstRange });
+  await waitUntil(() => requests.length === 2);
+  service.send({ type: "RANGE_APPLIED", range: { fromDate: "2026-03-02", toDate: "2026-01-01" } });
+  await Promise.resolve();
+  assert.equal(requests.length, 2);
+  service.send({ type: "RANGE_APPLIED", range: lastRange });
+  await waitUntil(() => requests.length === 3);
+  assert.equal(requests[0].signal.aborted, true);
+  assert.equal(requests[1].signal.aborted, true);
+  assert.deepEqual(requests[2].selection, lastRange);
+  requests[2].resolve({ isEmpty: false, marker: "latest range" });
+  await waitForState(service, (state) => state.matches("ready"));
+  requests[0].resolve({ isEmpty: false, marker: "old month" });
+  requests[1].resolve({ isEmpty: false, marker: "old range" });
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(service.state.context.data.marker, "latest range");
+  assert.deepEqual(service.state.context.selectedRange, lastRange);
+  service.stop();
+});
+
+test("a range can be applied after empty period discovery and survives host re-entry", async () => {
+  const selections = [];
+  const service = makeService({ loadPeriods: async () => ({ periods: [], selectedPeriod: null }),
+    loadDashboard: async (_client, selection) => { selections.push(selection); return { isEmpty: true }; } });
+  service.send({ type: "HOST_CONTEXT_RECEIVED", context: {} });
+  await waitForState(service, (state) => state.matches("empty"));
+  const range = { fromDate: "1999-12-01", toDate: "2001-01-31" };
+  service.send({ type: "RANGE_APPLIED", range });
+  await waitForState(service, (state) => state.matches("empty") && state.context.emptyReason === "dashboard");
+  service.send({ type: "HOST_CONTEXT_RECEIVED", context: { generation: "new" } });
+  await waitForState(service, (state) => state.matches("empty") && selections.length === 2);
+  assert.deepEqual(selections, [range, range]);
+  service.stop();
+});
+
 function makeService({ loadPeriods, loadDashboard }) {
   const machine = createDashboardMachine(XState, {
     createClient: () => ({}),

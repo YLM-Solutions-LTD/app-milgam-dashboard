@@ -34,6 +34,7 @@ body {
 }
 
 button,
+input,
 select {
   font: inherit;
 }
@@ -165,6 +166,12 @@ h1 {
   padding: 1rem 1.25rem;
 }
 
+.date-range-form { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; inline-size: 100%; }
+.range-error { flex-basis: 100%; margin: 0; color: var(--danger); }
+.range-error:empty { display: none; }
+.snapshot-error-details { margin-block-start: .5rem; }
+.snapshot-error-details code { display: block; overflow-wrap: anywhere; margin-block-start: .4rem; }
+
 .field {
   display: grid;
   gap: 0.4rem;
@@ -178,6 +185,7 @@ h1 {
 }
 
 select,
+input[type="date"],
 .button {
   min-block-size: 44px;
   border: 1px solid #bec9db;
@@ -186,11 +194,13 @@ select,
   color: var(--ink);
 }
 
-select {
+select,
+input[type="date"] {
   padding: 0.55rem 0.8rem;
 }
 
-select:disabled {
+select:disabled,
+input:disabled {
   cursor: not-allowed;
   opacity: 0.58;
 }
@@ -598,6 +608,9 @@ th:last-child {
   .controls-card {
     display: grid;
   }
+
+  .date-range-form { display: grid; min-inline-size: 0; }
+  input[type="date"] { inline-size: 100%; min-inline-size: 0; }
 
   .field {
     min-inline-size: 0;

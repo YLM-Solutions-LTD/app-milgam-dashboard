@@ -1,0 +1,5 @@
+Operator-requested preview for the user's 26 October 2026 report: current snapshots fail and production lacks From/To controls.
+Prepared from current repository main with only the hash-checked tested patch applied.
+No automated action batch, completed action IDs, independent controller review, release approval, or production deployment is claimed.
+The attached local synthetic validation covers 130 tests and desktop/mobile browser cases. Live browser inspection remains blocked by the browser's saved origin permission.
+This preview is for review and a subsequent normal controller request/release. Existing manual release gates remain required.

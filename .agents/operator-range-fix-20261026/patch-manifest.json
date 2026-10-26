@@ -1,0 +1,58 @@
+[
+  {
+    "path": "site/date-range.js",
+    "sha256": "678b4cd41a82dd8c10b372bf4e3cb2146c198a4a2691eefc442a11f2a22a3cb5"
+  },
+  {
+    "path": "site/dashboard-data.js",
+    "sha256": "1be7d1f95d975b5b3c17c6e16ea3319bb80f50b01a99e81383970287621b1e90"
+  },
+  {
+    "path": "site/dashboard-machine.js",
+    "sha256": "889cf0da277a54b184e6c93cc497f452f49dedbf3bafd7c4666be0c268976772"
+  },
+  {
+    "path": "site/app.js",
+    "sha256": "b12e6c5a986e52fd524f7e901ab11100c380df4ab18d8fd04586a7eb179c4948"
+  },
+  {
+    "path": "site/app.css",
+    "sha256": "afb6b5b808ae51da85e59e2f9f7b78a81a2cb2adfd16b1cd96e8080d8b3f209a"
+  },
+  {
+    "path": "site/index.html",
+    "sha256": "0294d62ec45ea0c1500b751f4af9b90ed3c4ad63cf1d0c4e5405f4152182633b"
+  },
+  {
+    "path": "site/current-snapshot.js",
+    "sha256": "40363af53c8506ed13a7bf8409d52bcc1a2df1476116123a3fcffd756db8c6cf"
+  },
+  {
+    "path": "site/snapshot-error.js",
+    "sha256": "eaabf65615d2308280c3a218f180579ac12a3a3c5493bb5e1d4f15a9b4d83a06"
+  },
+  {
+    "path": "site/constants.js",
+    "sha256": "898e9a226b7c8469265f7adabd6013af54b147f7d17cde522460d5554a592ee2"
+  },
+  {
+    "path": "site/tests/api-client.test.js",
+    "sha256": "b4cd71c4a73cd7dc7d6d5993363f159c869c6fc378a0b2b0cf7426c97545a215"
+  },
+  {
+    "path": "site/tests/dashboard-data.test.js",
+    "sha256": "30bdba11e8c3d618b1475869fcb6bd5ff2218e0c95342184291d8dcc5cb0d912"
+  },
+  {
+    "path": "site/tests/dashboard-machine.test.js",
+    "sha256": "aad8dbbeee2d3cc19d03a543b8b1978891f7c2cdeeea97f0c9c8f4120059c075"
+  },
+  {
+    "path": "site/tests/current-snapshot.test.js",
+    "sha256": "60f6c121981a74f2f422871db534e567cc5ac9cdb59d0aac86fbb727144f9f9f"
+  },
+  {
+    "path": "site/tests/date-range.test.js",
+    "sha256": "134a7d163b070dd68bd52365efa1e1b65b79a60ac493e5b927ba40d84a991568"
+  }
+]

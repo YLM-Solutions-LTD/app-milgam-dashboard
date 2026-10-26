@@ -100,10 +100,10 @@ export function createSnapshotController({ client, load = loadCurrentSnapshot, n
     }
     return state;
   }
-  function invalidate() {
+  function invalidate(error = { kind: "authorization-revoked", status: null, dataset: "hostContext" }) {
     generation += 1;
     controller?.abort();
-    emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: { kind: "authorization-revoked", status: null, dataset: "hostContext" } });
+    emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: safeError(error) });
   }
   return { refresh, invalidate, getState: () => state, dispose: () => { generation += 1; controller?.abort(); } };
 }
@@ -113,7 +113,14 @@ function requireEnvelope(value, dataset, length = null) {
     || (length !== null && (value.Items.length !== length || value.TotalCount !== length))) invalid(dataset, "Invalid complete envelope");
 }
 function requireRow(row, dataset, index) { if (!row || typeof row !== "object" || Array.isArray(row)) invalid(dataset, `Invalid row ${index}`); }
-function count(value, field, dataset, index) { if (!Number.isSafeInteger(value) || value < 0) invalid(dataset, `Invalid ${field} at row ${index}`); return value; }
+function count(value, field, dataset, index) {
+  // Dynamic reports can serialize aggregate columns as decimal strings, even
+  // though the outer paging TotalCount is numeric. Normalize before arithmetic.
+  const text = typeof value === "string" ? value.trim() : null;
+  const parsed = text !== null && /^\d+$/.test(text) ? Number(text) : value;
+  if (!Number.isSafeInteger(parsed) || parsed < 0) invalid(dataset, `Invalid ${field} at row ${index}`);
+  return parsed;
+}
 function requiredValue(value, field, dataset, index) { if (value === null || value === undefined || String(value).trim() === "") invalid(dataset, `Missing ${field} at row ${index}`); return value; }
 function invalid(dataset, detail) { throw new DatasetValidationError(dataset, detail); }
 function safeError(error) { return { kind: error?.kind || "unknown", status: Number.isInteger(error?.status) ? error.status : null, dataset: error?.dataset || "currentSnapshot" }; }
