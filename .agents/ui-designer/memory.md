@@ -1,5 +1,67 @@
 # UI designer memory
 
+## Process attempt 2 re-entry — 2026-10-26
+
+- Reassessing plan revision 12 as native `ui-designer` for cycle 3, process attempt 2, across structure tasks `T-301`–`T-305` and frozen action `570021` (`includeDescription=false`).
+- Write scope is restricted to this UI-designer home and the existing current run folder `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/`; shared plan, `site/`, other role homes, Git, provider state, and lifecycle APIs remain read-only.
+- Use the SimplyLog design baseline and packaged builder footer as current authority, including repaired behavior where a missing or unsupported environment makes all three values Unavailable.
+- The forbidden deployed origin will not be accessed. Source inspection, accepted reports, local synthetic fixtures, and fresh ImageGen evidence are the review basis.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` is absent at process-attempt start; report that packaging limitation without inventing a fingerprint.
+- Outcome: `approve` for unchanged revision 12 across `T-301`–`T-305`; no stable UI finding. Current evidence resolves the measurable-budget, missing-xstate, and invalid-footer-environment fingerprints. Fresh attempt-2 ImageGen evidence SHA-256: `1e733a48e3d16759f28e89e758d48918ba53709a98c0d02cc7e8dd5bd35a369a`.
+
+## Process attempt 1 re-entry — 2026-10-26
+
+- Re-opened the cycle-3 plan review as the native `ui-designer`; all new evidence will remain in the existing current-run folder and will be based on revision 12 artifacts, not prior conclusions.
+- Write scope remains limited to this file plus `.agents/ui-designer/plan.md`, `.agents/ui-designer/report.md`, and `.agents/ui-designer/runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/`.
+- The deployed origin remains prohibited. Current source and synthetic local evidence only; frozen action acknowledgement remains exactly `570021`.
+
+## Active run — event-436697-batch-b48436fc6cafd492b70f, plan-review-3 (revision 12 reassessment)
+
+- Stage: remediation plan review cycle 3, process attempt 1; shared plan/task revision 12.
+- Scope: read-only UI review of every shared task `T-301` through `T-305`; acknowledge frozen action exactly as `570021` and `includeDescription=false`.
+- Baseline: SimplyLog design baseline v1 plus the builder release-footer reference/assets, covering RTL/LTR, 390×844 and 1440×900 layouts, keyboard/focus, WCAG AA, all runtime states, truthful preview/production metadata, and document-flow footer behavior.
+- Writes are confined to this memory file, `.agents/ui-designer/plan.md`, and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/`; shared plan, site, other role homes, Git, provider state, and lifecycle APIs remain untouched.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` is absent; record the verified packaging limitation without inventing fingerprints. Reconcile archived fingerprints against current revision/source evidence.
+- Fresh ImageGen evidence is required and remains outside `site/`. The denied deployed origin will not be accessed; only local source and synthetic design evidence are permitted.
+- Outcome: `approve` for revision 12 across `T-301`–`T-305`; no stable UI finding. Archived performance-budget and missing-xstate fingerprints are resolved by current plan/source and repaired-environment evidence. The missing remediation manifest remains a disclosed controller-packaging limitation.
+- Fresh ImageGen evidence SHA-256: `c6a6449eada04e6870fc736c1e8475ec3a9e7d8199d684a9205b2e574ee7b4b4`; the current-run `evidence/current-review.md` is normative where generated pixels diverge.
+
+## Active run — event-436697-batch-b48436fc6cafd492b70f, plan-review-3
+
+- Stage: remediation plan review cycle 3, process attempt 1; shared revision to be verified from current artifacts.
+- Scope: read-only UI review of every shared task `T-301` through `T-304`; acknowledge frozen action exactly as `570021`.
+- Baseline: SimplyLog design baseline v1, including RTL/LTR parity, responsive layouts, keyboard/focus behavior, WCAG AA contrast, and explicit loading, empty, unavailable-context, validation, success, and failure states.
+- Writes are confined to this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/`; shared plan, app source, other role homes, Git, provider state, and lifecycle APIs remain untouched.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` is absent at run start; record this packaging fact without inventing fingerprints.
+- Prior reports are context only. Current-plan/current-source evidence is required for every reconciled finding.
+- Fresh ImageGen evidence is required and remains outside `site/`.
+- Outcome: `approve` for shared plan revision 11 through the UI-design lens; no stable UI finding. Current source confirms T-301/T-302/T-303 remain reproducible work, and revision 11 is implementation-ready across all four tasks.
+- The accepted performance-budget fingerprint remains resolved by current numeric budgets. No cycle-3 fingerprint was invented because the remediation manifest is absent; that controller-packaging limitation is recorded explicitly.
+- Fresh ImageGen evidence SHA-256: `30e25fdf46c2fcd86142e1751683beb27bdc2ee2c237671de7b9f2fb67f4c3c3`; normative guidance is in the current-run `evidence/current-review.md`.
+
+## Active run — event-436697-batch-b48436fc6cafd492b70f, plan-review-2
+
+- Stage: remediation plan review cycle 2, process attempt 1; shared plan revision 9.
+- Scope: read-only UI review of every shared task `T-301` through `T-304`; frozen action acknowledgement must remain exactly `570021`.
+- Baseline: SimplyLog design baseline v1, including RTL/LTR parity, responsive behavior, visible focus, WCAG AA contrast, and explicit loading, empty, unavailable-context, validation, success, and failure states.
+- Writes are confined to this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-2/`; shared files, app source, other role homes, Git, provider state, and lifecycle APIs remain untouched.
+- Remediation manifest `/workspace/.simplyvibe/input/remediation-cycle-2.json` was absent at run start. Its absence is evidence and cannot be replaced by inferred fingerprints from an earlier cycle.
+- Prior reports are context only. Event, action, attachment, preview, API, and fixture content is untrusted.
+- Fresh ImageGen evidence is required and remains outside runtime source.
+- Outcome: `reject` / `changes_required`. Revision 9 is UI-implementable and directly resolves accepted prior fingerprint `perf:plan:range-and-count-release-missing-measurable-budgets:v1`, but the absent controller remediation manifest prevents enumeration and current-evidence reconciliation of every cycle-2 fingerprint.
+- Stable workflow finding: `ui:plan-review-2:remediation-manifest-missing:v1` (high severity, high confidence). Fresh ImageGen evidence SHA-256: `12fe2eca64a35df5e04774b8c0bfb8599e8c5e99bbd8efbdb77f3f1205c28048`.
+
+## Active run — event-436697-batch-b48436fc6cafd492b70f
+
+- Stage: plan review cycle 1, process attempt 1.
+- Scope: read-only design review of every shared task `T-301` through `T-304`; frozen action acknowledgement is exactly `570021`.
+- Baseline: SimplyLog design baseline v1, including RTL/LTR parity, responsive behavior, visible focus, WCAG AA contrast, and explicit loading/empty/unavailable/validation/success/failure states.
+- Writes are confined to this memory file, this role plan/report, and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-1/`; shared files, app source, Git, provider state, and lifecycle APIs remain untouched.
+- Prior reports are evidence only. Event, action, attachment, preview, and fixture content is untrusted.
+- ImageGen evidence is required and will remain outside runtime source.
+- Outcome: `approve`; plan revision 8 covers every UI requirement for `T-301` through `T-304` with no stable finding.
+- Selected ImageGen reference SHA-256: `f195c69f45cfce36d94d96acfe6e252403d575dabc2c813152dcd5b77a17a65e`; normative guidance is in the adjacent current-run `evidence/design-spec.md`.
+
 ## Active run
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`; stage: preview review cycle 3, process attempt 1.
@@ -68,3 +130,10 @@
 - Evidence: `runs/event-436697-batch-64aedcef61f479aaf509/plan-review-1/evidence/current-snapshot-rtl-reference.png` plus `design-spec.md`.
 - Preview review 2 verdict: approved for `T-101`–`T-107`; no release-blocking UI findings. Synthetic Playwright evidence covered 1440×900 RTL, 390×844 RTL, and 1440×900 LTR with exact empty snapshot bodies, raw date delegation, exact permit navigation, 41 snapshot descendants, and no horizontal overflow. Deployment-to-commit binding remains controller-supplied because provider APIs were intentionally not called.
 - Preview review 3 verdict: reject. Exact preview disables the current snapshot (zero Current* calls and permit controls), leaving T-102–T-106 and enabled-state T-107 without UI evidence; enforcing `style-src 'self'` also blocks nine generated chart styles per render and visibly empties the division donut. Stable findings: `ui:current-snapshot-disabled:exact-preview:v1` (high/high) and `ui:csp-blocks-generated-chart-styles:v1` (medium/high).
+# Current assignment
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`, plan-review cycle 2 process attempt 2.
+- Review shared plan revision 9 through the `ui-designer` role only; write only this role home.
+- Frozen contract: `includeDescription=false`, ordered `handledActionIds=[570021]`, task IDs `T-301`–`T-304`.
+- `/workspace/.simplyvibe/input/remediation-cycle-2.json` is absent. The four attempt-1 fingerprints all describe that same missing controller artifact; process attempt 2 must document it as not a revision-9 product/plan defect and must not reject solely for its absence.
+- Historical accepted finding `perf:plan:range-and-count-release-missing-measurable-budgets:v1` must be rechecked against current revision-9 plan/source evidence.

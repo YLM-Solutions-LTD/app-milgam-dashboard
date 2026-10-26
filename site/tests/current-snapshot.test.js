@@ -40,6 +40,16 @@ test("strict adapters reconcile events, preserve separate permits, and reject co
   assert.equal(mapCurrentEquipment({ Items: [duplicate, { ...duplicate }], TotalCount: 1 }).total, 1);
 });
 
+test("approved aggregate fields accept safe decimal strings and reject malformed or unsafe values", () => {
+  const stringEvents = { ...events, Items: events.Items.map((row) => ({ ...row, TotalCount: `  ${row.TotalCount} `, OpenCount: String(row.OpenCount) })) };
+  const stringPermits = { ...permits, Items: [{ ...permits.Items[0], ValidCount: "004", MissingCount: "2", OverdueCount: "1" }] };
+  assert.equal(mapCurrentEvents(stringEvents).overall.total, 8);
+  assert.deepEqual(mapCurrentPermits(stringPermits), { valid: 4, missing: 2, overdue: 1, asOf: "raw-asof", valueDate: "raw-value" });
+  for (const invalid of ["", "-1", "+1", "1.5", "1e2", "9007199254740992", "9".repeat(1000)]) {
+    assert.throws(() => mapCurrentPermits({ ...permits, Items: [{ ...permits.Items[0], ValidCount: invalid }] }), /invalid data/);
+  }
+});
+
 test("10,000 equipment facts map within budget and add no inferred classification", () => {
   const Items = Array.from({ length: 10_000 }, (_, index) => ({ EquipmentId: index + 1, IsActive: index % 2 === 0, LastTreatmentDate: null, AsOf: "raw" }));
   mapCurrentEquipment({ Items, TotalCount: Items.length });

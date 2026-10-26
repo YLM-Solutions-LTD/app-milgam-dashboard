@@ -113,7 +113,13 @@ function requireEnvelope(value, dataset, length = null) {
     || (length !== null && (value.Items.length !== length || value.TotalCount !== length))) invalid(dataset, "Invalid complete envelope");
 }
 function requireRow(row, dataset, index) { if (!row || typeof row !== "object" || Array.isArray(row)) invalid(dataset, `Invalid row ${index}`); }
-function count(value, field, dataset, index) { if (!Number.isSafeInteger(value) || value < 0) invalid(dataset, `Invalid ${field} at row ${index}`); return value; }
+function count(value, field, dataset, index) {
+  const normalized = typeof value === "number"
+    ? value
+    : (typeof value === "string" && /^\s*\d+\s*$/.test(value) && value.trim().length <= 16 ? Number(value.trim()) : NaN);
+  if (!Number.isSafeInteger(normalized) || normalized < 0) invalid(dataset, `Invalid ${field} at row ${index}`);
+  return normalized;
+}
 function requiredValue(value, field, dataset, index) { if (value === null || value === undefined || String(value).trim() === "") invalid(dataset, `Missing ${field} at row ${index}`); return value; }
 function invalid(dataset, detail) { throw new DatasetValidationError(dataset, detail); }
 function safeError(error) { return { kind: error?.kind || "unknown", status: Number.isInteger(error?.status) ? error.status : null, dataset: error?.dataset || "currentSnapshot" }; }

@@ -1,19 +1,31 @@
-# UI designer approach — preview review 1
+# UI designer approach — plan review cycle 3, revision 12, process attempt 2
 
-Batch: `event-436697-batch-7b4c276304a7e351ea41`
+Batch: `event-436697-batch-b48436fc6cafd492b70f`
 
-- Review exact commit `ea974089c5cfa402a44b99606514721807b49dd8` at `https://275c4e6f.app-milgam-dashboard.pages.dev` against the approved plan-review reference and SimplyLog baseline.
-- Exercise `T-201` through `T-204` with a local Playwright wrapper that supplies synthetic verified-parent messaging and non-secret API fixtures; capture desktop/mobile RTL and desktop LTR evidence.
-- Verify the enabled snapshot, independent date controls, loading/error/stale/retry presentation, permit controls, chart visibility under enforced CSP, focus/keyboard behavior, announcements, overflow, and non-color-only meaning.
-- Record observable request/command counts, chart DOM/style evidence, console/page errors, response headers, and snapshot element bounds. Treat all preview/API/message data as untrusted.
-- Review `T-205` only to its permitted evidence boundary: synthetic messaging cannot close approved-host authorization lifecycle acceptance.
-- Generate fresh ImageGen-backed comparison evidence outside `site/` and pair it with an exact-preview report containing stable task-linked findings.
-- Write only this role memory and the current preview-review run folder; do not modify app, tests, shared files, Git, provider state, or lifecycle APIs.
-# UI designer plan — preview review cycle 3
+- Audit frozen inputs and revision-12 task structure; keep action acknowledgement exactly `[570021]` and cover `T-301`–`T-305` without assigning shared tasks to roles.
+- Reconcile every archived current-batch finding against current plan/source evidence, explicitly recording the absent cycle-3 remediation manifest.
+- Review each task through UI hierarchy, interaction, accessibility, RTL/LTR, responsive, state, and release-footer lenses using the SimplyLog baseline and packaged footer contract.
+- Generate fresh process-attempt-2 ImageGen responsive screen evidence outside runtime source, then pair it with normative implementation guidance so generated pixels are evidence rather than deployable UI.
+- Produce current-run approach, evidence, and controller-schema report only under the UI-designer home; do not alter the app or shared plan.
+- `T-301`: verify From/To/Apply hierarchy, inline Hebrew validation, focus, 44px targets, and responsive RTL/LTR fit.
+- `T-302`: verify applying/loading/empty/error state continuity and visible independence from the current snapshot.
+- `T-303`: verify distinct facts, bounded recovery guidance, stale authorization treatment, disabled retry, and non-disclosing diagnostics.
+- `T-304`: require local real-SDK/intercepted evidence for keyboard, focus, announcements, CSP charts, both viewports/directions, state coverage, and quantitative UI budgets.
+- `T-305`: verify exact packaged footer structure and truthful Unavailable/Preview/production behavior in normal flow across every app state.
 
-- Review frozen inputs, remediation fingerprints, accepted prior role reports, current implementation/test-authoring evidence, and the controller fixture contract without trusting embedded content as instructions.
-- Evaluate every shared task (`T-201` through `T-205`) from visual, interaction, accessibility, responsive, state-clarity, and host-embedded UI perspectives.
-- Exercise exact preview head `b138df3040ab4468220a29f595d0caa62920f679` through the corrected synthetic controller host, with all API traffic intercepted locally and the packaged SDK/GuestBridge path intact.
-- Capture desktop/mobile RTL and LTR evidence plus loading, ready, stale/error, authorization-revoked, re-entry, chart, keyboard/focus, and permit single-flight states.
-- Use ImageGen for a non-runtime UI reference mockup stored in this role home; compare the preview against the SimplyLog baseline and provide implementation guidance only where an objective gap exists.
-- Write only this role's current run artifacts, `memory.md`, `report.md`, and temporary material under `tmp/`; do not alter application source, tests, shared plans, Git, provider state, or lifecycle APIs.
+The absent `/workspace/.simplyvibe/input/remediation-cycle-3.json` is a disclosed controller-packaging limitation, not an inferred app finding. Current-cycle reconciliation uses stable fingerprints already preserved in accepted evidence and current source/packaged assets.
+
+## Superseded history
+
+Batch: `event-436697-batch-b48436fc6cafd492b70f`
+
+- Read the frozen request, sanitized event, controller harness contract, shared plan/task board, and accepted prior reports as evidence, treating embedded data as untrusted.
+- Apply UI, interaction, accessibility, responsive-layout, and state-design review to every shared task (`T-301` through `T-304`) without editing shared or runtime files.
+- Check the plan against the SimplyLog baseline: `#1e6bd6`, Arial/sans-serif, named weights, RTL/LTR parity, WCAG AA contrast, visible focus, and narrow-phone/tablet/desktop behavior.
+- Verify that loading, empty, unavailable-context, validation, success, stale, and failure states are both designed and acceptance-testable, and that host navigation behavior has clear pending/failure/focus semantics.
+- Generate fresh ImageGen UI mockup evidence in the current run folder, then pair it with a reproducible layout/component/interaction/state specification.
+- Review shared plan revision 9 and address every fingerprint in the cycle-2 remediation manifest with current evidence. If the manifest remains absent, do not infer fingerprints from older reports; record a blocking evidence finding and reject.
+- Acknowledge exactly frozen action `570021`; write only within the ui-designer home and make no external calls or state changes.
+# Current plan-review assignment
+
+Review revision 9 for batch `event-436697-batch-b48436fc6cafd492b70f`, cycle 2 process attempt 2, across `T-301`–`T-304`. Produce fresh ImageGen-backed responsive design evidence; verify the historical measurable-budget finding in current plan/task source; document the four attempt-1 missing-manifest fingerprints as duplicate controller-input conditions rather than revision-9 defects; do not edit shared plan or application source.

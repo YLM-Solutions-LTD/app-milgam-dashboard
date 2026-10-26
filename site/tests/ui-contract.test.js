@@ -7,6 +7,7 @@ const cssUrl = new URL("../app.css", import.meta.url);
 const htmlUrl = new URL("../index.html", import.meta.url);
 const headersUrl = new URL("../_headers", import.meta.url);
 const dependencyUrl = new URL("../assets/xstate-4.38.3.js", import.meta.url);
+const footerUrl = new URL("../assets/release-footer.js", import.meta.url);
 
 test("static app pins same-origin XState 4.38.3 and exposes Hebrew-first accessible shell", async () => {
   const html = await readFile(htmlUrl, "utf8");
@@ -85,4 +86,17 @@ test("chart rendering uses CSP-safe local classes and SVG presentation attribute
 test("production source contains no forbidden endpoint or data fallback", async () => {
   const source = await readFile(appUrl, "utf8");
   assert.doesNotMatch(source, /EventStatistics|byAverage|fabricated|mockData|fixture/i);
+});
+
+test("release footer is same-origin, unique, semantic, and defaults to unavailable", async () => {
+  const [html, footer] = await Promise.all([readFile(htmlUrl, "utf8"), readFile(footerUrl, "utf8")]);
+  assert.equal((html.match(/data-simplyvibe-release/g) || []).length, 1);
+  assert.match(html, /assets\/release-footer\.css/);
+  assert.match(html, /assets\/release-footer\.js/);
+  for (const name of ["version", "updated", "released"]) {
+    assert.match(html, new RegExp(`data-release-label="${name}"`));
+    assert.match(html, new RegExp(`data-release-value="${name}"`));
+  }
+  assert.match(footer, /releaseEnvironment !== 'preview'.*releaseEnvironment !== 'production'/s);
+  assert.doesNotMatch(footer, /fetch\(|Date\.now|new Date\(\)/);
 });

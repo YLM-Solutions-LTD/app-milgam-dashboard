@@ -1,180 +1,171 @@
 {
   "schemaVersion": 1,
-  "batchKey": "event-436697-batch-7b4c276304a7e351ea41",
+  "batchKey": "event-436697-batch-b48436fc6cafd492b70f",
   "appName": "milgam-dashboard",
-  "planRevision": 7,
-  "summary": "Close the preserved dashboard's remaining verified-SDK lifecycle races: taint rejected authorization generations until controller re-entry, restart work on a fresh generation, retain last-good snapshot content, enforce command single-flight, and consume expected disposal errors while preserving enabled snapshots, strict CSP, and prior accepted behavior.",
-  "source": {
-    "includeDescription": false,
-    "actionIds": [536946, 536949, 537034, 537037, 537040, 547704, 547710, 547713, 569787, 569843]
-  },
+  "planRevision": 12,
+  "summary": "Apply and independently verify inclusive From/To analytics, decimal-string snapshot counts, and a truthful all-state release footer while preserving the enabled snapshot, verified host lifecycle, security, accessibility, and controller-owned release gate.",
+  "source": {"includeDescription": false, "actionIds": [570021]},
   "assumptions": [
-    "Prior application changes are preserved, but prior preview rejection and blocked-batch recovery grant no release approval.",
-    "The three supplied current-report Search routes and existing host ready, executeCommand, and ToDisplayDate boundaries remain the only supported browser contracts.",
-    "Deployment is controller-owned and outside application implementation; exact-preview and production evidence may be collected only by later authorized stages.",
-    "The supplied controller-owned GuestBridge harness is approved for protocol acceptance only when served at the corrected https://milgam.ylm.co.il/controller-host-fixture/ origin with all host/API traffic fulfilled locally and all real tenant traffic blocked.",
-    "The earlier https://ylm.ylm.co.il fixture example and resulting frame-ancestor rejection were a controller configuration error, not an application defect; existing trusted origins and CSP must not be widened."
+    "Existing endpoints and inclusive SQL datetime comparison are unchanged; no database or backend change is required.",
+    "The attachment and prior preview are source evidence, not independent review, tenant proof, or approval.",
+    "Accepted host, snapshot lifecycle, CSP, chart, permit, and equipment-classification contracts remain mandatory.",
+    "Production release and tenant verification remain controller-owned and require fresh review and authorization.",
+    "Release metadata is stamped only by the trusted controller workflow; generated source cannot infer or invent it."
   ],
   "tasks": [
     {
-      "id": "T-201",
-      "title": "Preserve the authorized live snapshot release configuration",
-      "component": "Current snapshot feature boundary and release configuration",
-      "objective": "Keep current-report calls enabled for the recovered release candidate and prevent remediation or tests from silently restoring the disabled preview state.",
+      "id": "T-301",
+      "title": "Add inclusive From/To calendar controls and range contract",
+      "component": "Analytical filter UI and date-range utilities",
+      "objective": "Replace month-only selection with an accessible explicit calendar range whose validated timezone-less SQL datetime bounds drive analytics without discovered-period restrictions.",
       "dependsOn": [],
       "requirements": [
-        "Set CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED to true in the release-candidate source and keep it true through implementation, tests, exact-preview review, and the one controller-owned production deployment.",
-        "Limit the flag to current snapshot calls; preserve analytical loading, authenticated permissions, and date-range behavior.",
-        "When enabled, load exactly the three documented Search routes concurrently with body {} and no dates, location filters, pagination, username, or administrator identity.",
-        "Do not deploy or call provider/SimplyLog lifecycle APIs from application work. A false local-only revert is permitted only after successful production release under separate authorization and must not trigger deployment."
+        "Provide native From and To date inputs plus Apply; discovery may seed but never constrain the range.",
+        "Replace the current month-only construction and controls rooted in site/date-range.js and the dashboard selection lifecycle; do not retain 23:59:59 month bounds as the applied range path.",
+        "Accept real YYYY-MM-DD dates in years 1753 through 9999 with From not after To; invalid input issues zero requests.",
+        "Convert exactly to FromDate T00:00:00 and inclusive ToDate T23:59:59.997 without a timezone suffix.",
+        "Support one-day, cross-month/year, and out-of-discovery ranges, including empty discovery.",
+        "Keep draft edits separate and retain the applied range across refresh and fresh authorized re-entry.",
+        "Use Hebrew labels/errors, aria-invalid and useful focus; preserve keyboard use, 44px targets, RTL/LTR, and responsive fit.",
+        "Ten draft edits must initiate zero analytical or snapshot requests; the subsequent accepted Apply initiates exactly four analytical and zero snapshot requests."
       ],
       "acceptanceCriteria": [
-        "Source and deterministic tests assert CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED is true for this release candidate.",
-        "A verified host context starts the snapshot lifecycle; a rejected context produces zero authenticated current-report calls.",
-        "Changing analytical year/month produces zero current-report calls and does not clear the snapshot.",
-        "No implementation or test step resets the flag to false before controller release completion."
+        "Valid one-day and cross-year submissions expose exact inclusive bounds including .997 and no Z.",
+        "Missing, impossible, reversed, pre-1753, and post-9999 input announces an inline error, focuses an input, and produces zero API effects.",
+        "A valid range absent from discovery applies after both non-empty and empty discovery.",
+        "Controls remain labeled, keyboard operable, and overflow-free at 390x844 and 1440x900 in RTL and LTR.",
+        "At each required viewport/direction, record the accepted Apply request counts and post-response render time; render completes under 50 ms with no app-attributable task lasting 50 ms or more."
       ],
       "validationScenarios": [
-        "Inspect release-candidate configuration and run a regression that fails when the flag is false.",
-        "Accept a valid synthetic bound capability and assert one request to each exact route with body {}; exercise rejected/direct contexts and assert zero requests.",
-        "Change periods after snapshot readiness and assert snapshot values, timestamp, and request count remain unchanged."
+        "Exercise leap/non-leap dates, both year bounds, reversed dates, one day, and December-to-January.",
+        "Edit without applying, refresh, then apply; verify only Apply changes requests and re-entry retains the range.",
+        "Return no periods, enter an arbitrary valid range, and verify Apply remains usable."
       ]
     },
     {
-      "id": "T-202",
-      "title": "Render analytical charts under the enforced CSP",
-      "component": "Donut, swatch, stacked-bar, bar-chart presentation and CSP headers",
-      "objective": "Replace CSP-blocked runtime inline styles with a finite local presentation system while keeping strict response headers, accurate accessible values, and the existing visual hierarchy.",
+      "id": "T-302",
+      "title": "Drive analytics through one generation-bound applied range",
+      "component": "Analytical data loader and XState lifecycle",
+      "objective": "Load all four analytical reports concurrently with identical applied bounds and prevent stale request or authorization generations from committing.",
+      "dependsOn": ["T-301"],
+      "requirements": [
+        "Store selectedRange independently from periods and pass it to division, summary, category, and closure.",
+        "Separate analytical Apply/REFRESH from the coupled authorization-refresh path currently visible in site/app.js so analytics never triggers the snapshot controller.",
+        "Start exactly four concurrent analytical requests per accepted Apply or analytical refresh.",
+        "Abort superseded work and ignore stale request IDs and out-of-order authorization/apply generations.",
+        "Refresh ready/empty analytics through REFRESH; reserve RETRY for recoverable error states.",
+        "Preserve aggregation, charts, CSP, sanitization, errors, and host authorization.",
+        "Keep analytical operations isolated from the enabled three-report current snapshot.",
+        "Measure 0, 1, and 1,000 rows per report, including duplicate-heavy and malformed boundaries; record decoded bytes, warmed mapping/render time, peak concurrency, long tasks, and dashboard descendants.",
+        "Bound the 1,000-row-per-report case to 4,000 combined rows and 4 MiB decoded, warmed aggregate mapping under 100 ms, post-response render under 50 ms, no app-attributable task of 50 ms or more, and at most 600 dashboard descendants."
+      ],
+      "acceptanceCriteria": [
+        "All four request bodies carry identical FromDate and ToDate for the applied range.",
+        "Ten rapid applications initiate exactly 40 analytical and zero snapshot requests with peak active analytical concurrency at most four; only the newest four may complete and commit, while the prior 36 are aborted or settle ignored.",
+        "Refresh reloads the displayed applied range in ready and empty states.",
+        "Analytics creates no extra snapshot call and changes no snapshot facts or timestamp.",
+        "Evidence records analytical initiated, aborted, completed, and committed totals plus decoded bytes, mapping/render samples, peak concurrency, descendant count, and long-task count."
+      ],
+      "validationScenarios": [
+        "Resolve delayed old and new ranges out of order and verify only new data renders.",
+        "Refresh an empty result and verify four requests retain the applied range.",
+        "Observe snapshot calls, facts, and timestamp across multiple analytical applies."
+      ]
+    },
+    {
+      "id": "T-303",
+      "title": "Normalize snapshot aggregate strings and bound recovery guidance",
+      "component": "Current snapshot adapters, lifecycle, and error UI",
+      "objective": "Accept legitimate decimal-string event/permit aggregates without weakening invariants and present report-specific recovery guidance without disclosing untrusted content.",
       "dependsOn": [],
       "requirements": [
-        "Remove generated inline style attributes/properties for donut gradients, legend swatches, stacked widths, and bar widths.",
-        "Use reviewed same-origin CSS classes, quantized classes, or CSP-compatible SVG presentation without runtime code injection or remote dependencies.",
-        "Preserve exact textual values and accessible names even if visual magnitudes use finite quantization; meaning must not depend on color alone.",
-        "Keep response-header CSP at least default-src self, script-src self, style-src self, object-src none, and base-uri none; do not add unsafe-inline, unsafe-eval, wildcard script sources, or a global bypass.",
-        "Preserve responsive Hebrew RTL and runtime LTR layout, visible focus, chart semantics, and analytical date behavior."
+        "Normalize safe non-negative integer numbers and trimmed digit-only strings for event/permit aggregate fields.",
+        "Replace only the number-only field guard currently used by site/current-snapshot.js event/permit adapters; retain numeric envelope TotalCount and equipment population behavior.",
+        "Keep envelope TotalCount numeric, equipment unchanged, and all reconciliation, distinct permit, required-date, and no-fabrication invariants.",
+        "Reject missing, empty, signed, fractional, exponent, negative, unsafe, malformed, and unreconciled values.",
+        "Preserve dataset and bounded HTTP status/error class through invalidation and show report-specific Hebrew guidance.",
+        "Expose only fixed endpoint paths and bounded classifications; never body text, arbitrary errors, API addresses, markers, tokens, or credentials.",
+        "Retain stale last-good facts and disable retry for 401/403/revocation until fresh re-entry; ordinary failures remain retryable.",
+        "Keep CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED true and exactly three concurrent calls per snapshot load/refresh.",
+        "Measure 0, 1, 1,000, and 10,000 equipment rows with valid aggregate fixtures; record decoded bytes, warmed mapping/render time, peak concurrency, long tasks, and snapshot descendants.",
+        "Bound the 10,000-row snapshot to 2.5 MiB decoded, warmed mapping under 100 ms, render under 50 ms, no app-attributable task of 50 ms or more, and at most 80 snapshot descendants at both viewports/directions."
       ],
       "acceptanceCriteria": [
-        "The rendered DOM contains no inline style used by the affected chart visuals and requires no relaxation of style-src self.",
-        "Division donut, all swatches, stacked segments, and bars are visibly rendered for zero, single-category, mixed, and maximum fixtures.",
-        "Accessible labels expose exact counts/percentages and distinguish categories independently of color.",
-        "An enforcing preview emits zero relevant CSP style violations and makes zero third-party executable requests."
+        "HTTP 200 with numeric envelope counts and decimal-string event/permit aggregates renders correct numeric, separately categorized facts.",
+        "Malformed/unsafe variants fail without fabricated values or partial commit.",
+        "Known failures identify the report and expose only fixed endpoint/status diagnostics; private response data never reaches DOM/logs.",
+        "401/403 after good data retains stale facts, disables retry, issues no old-generation effect, and recovers only after fresh verified re-entry.",
+        "Ten refresh/retry activations while pending coalesce to exactly three initiated requests, peak concurrency three, and one commit; after terminal denial the same burst initiates zero until fresh re-entry.",
+        "Very long digit strings and 9007199254740992 reject without partial render or nonlinear work."
       ],
       "validationScenarios": [
-        "Render representative analytical fixtures, inspect DOM/style sources, and assert no affected inline style attributes exist.",
-        "Capture desktop and mobile RTL plus LTR regression views and verify visible donut, swatches, stacks, bars, exact labels, no clipping, and coherent focus order.",
-        "Inspect exact-preview response headers, console, and executable network requests; assert strict CSP, no relevant violation, and same-origin execution only."
+        "Test whitespace/leading-zero strings, then empty, signed, decimal, exponent, unsafe, and negative values.",
+        "Simulate equipment 500, permit 403, network, invalid response, and initial failure; verify copy, retry, diagnostics, and rendering.",
+        "Burst refresh/retry while pending; verify one bounded three-request chain and no disabled-flag regression."
       ]
     },
     {
-      "id": "T-203",
-      "title": "Bind the verified guest SDK and protect regressions",
-      "component": "Guest SDK bootstrap, adapters, capability lifecycle, diagnostics, state orchestration, and deterministic suites",
-      "objective": "Package the supplied verified guest SDK, make its private session the authority for commands and authorization lifetime, remove API response bodies from diagnostics, and rerun deterministic coverage without weakening accepted contracts.",
-      "dependsOn": ["T-201", "T-202"],
+      "id": "T-304",
+      "title": "Run complete suites and prepare the reviewed release candidate",
+      "component": "Automated tests, intercepted host preview, and controller release gate",
+      "objective": "Prove the exact candidate satisfies new and preserved contracts with inventory-aware evidence for fresh controller reviews and authorization.",
+      "dependsOn": ["T-301", "T-302", "T-303", "T-305"],
       "requirements": [
-        "Validate event scope cardinality/reconciliation, separate permit metrics, raw report-date delegation, and explicit loading, empty, initial-error, retry, refresh-error, and stale states without fabricated zeros.",
-        "Deduplicate identical equipment facts by EquipmentId before unique population reconciliation; reject conflicting duplicates, malformed rows, and incomplete populations, and keep classification unavailable.",
-        "Accept authenticated contexts only through verified parent source, approved HTTPS parent/API origins, immutable values, and a private non-forgeable capability brand; public markers or booleans are insufficient.",
-        "Package the controller-supplied hash-recorded SimplyVibeClient as a same-origin dependency, instantiate it with the exact trusted parent origin, and bind host services to that private instance; remove reliance on globalThis.SimplyVibeHostAdapter or any test-injected adapter.",
-        "Treat SDK session reset, disposal, timeout, replacement, or disconnect as revocation of the matching application capability: abort its requests, invalidate pending commands, deny new authenticated effects, and require a fresh verified SDK generation for re-entry.",
-        "Bind requests, date responses, and commands to capability/request generations; revoke/abort on replacement or 401/403, retain last-good stale data, ignore late results, and require fresh verified re-entry.",
-        "Model an API 401/403 as a terminal taint of the matching SDK session and credential generation: refresh or reconnect against that unchanged identity must perform zero authenticated requests, even if ready() can still return its cached context.",
-        "Detect a genuinely fresh controller bridge/session identity, create exactly one new application generation, and automatically restart the three-report snapshot lifecycle plus supported analytical work without requiring a user refresh.",
-        "Make snapshot refresh transactional: preserve committed content and timestamp while a refresh is pending and on any 500, 401/403, malformed, or transport failure; expose stale/error status without replacing last-good content with an empty render.",
-        "Acquire the permit Navigate single-flight guard synchronously before awaiting ready() and retain it until command settlement; rapid pointer/keyboard activation, revocation, and rerender must not create a second chain.",
-        "Treat rejection from a deliberately disposed/replaced client as an expected generation transition, consume it at every detached async boundary, and prevent unhandledrejection or pageerror without hiding unrelated failures.",
-        "Limit browser diagnostics to bounded metadata such as dataset, status, kind, byte count, and item count; never log or retain raw/parsed API bodies, snippets, personal/internal fields, credentials, or full serialized request errors.",
-        "Preserve exact permit Navigate payload, single-flight activation, safe focus restoration, keyboard access, RTL/LTR semantics, current charts, permissions, and analytical date behavior.",
-        "Use synthetic non-secret fixtures and keep all tests local and deterministic; do not weaken existing assertions."
+        "Rediscover all applicable JS/MJS/CJS test and spec files; record exact commands, failures, skips, and totals.",
+        "Keep the repaired locked xstate 4.38.3 dependency available and rerun the unchanged configured site command; never omit dashboard-machine.test.js or rely only on the archived missing-dependency failure.",
+        "Run configured site plus complete QC JS+MJS, UAT MJS, and controller harness suites without partial-glob pass claims.",
+        "Cover dates, four exact bodies, latest generation, string-count transport-to-render, rejection variants, disclosure, and lifecycle isolation.",
+        "Use actual packaged guest SDK and intercepted GuestBridge at https://milgam.ylm.co.il/controller-host-fixture/; block real tenant traffic and fake adapters.",
+        "Verify exact certificate Navigate, strict CSP/no page errors, RTL/LTR responsiveness/accessibility, and authorization/re-entry behavior.",
+        "Keep snapshots enabled in the exact candidate and require fresh reviews/approval; never reuse prior approval or synthetic permissions.",
+        "For all performance cases record browser/version, candidate identity, viewport/direction, row counts, decoded bytes, request lifecycle totals, peak concurrency, warmed mapping/render samples, descendant counts, long tasks, and third-party executable requests.",
+        "Verify the T-305 footer through source and intercepted browser checks in host-waiting/loading, no-context, empty, error, stale, and ready states, with no deployed-origin access."
       ],
       "acceptanceCriteria": [
-        "All focused UAT, QC, and existing regression suites pass with the live snapshot flag true.",
-        "The production guest loads the verified same-origin client, performs the real Ready handshake, and sends the exact Navigate command through GuestBridge without an injected adapter or public host-service global.",
-        "Revoking the faithful harness session makes the legacy context unusable: a refresh sends zero old-token requests, pending work has zero late effects, and fresh re-entry is the only recovery path.",
-        "After an HTTP 401/403, repeated refresh actions and cached ready()/reconnect results issue zero requests until the controller provides a distinct fresh session; the fresh session automatically issues exactly three snapshot requests under the new generation.",
-        "A populated snapshot remains rendered and visibly stale after a 500 or 401/403 refresh failure, with no fabricated values and no transient empty content commit.",
-        "Synthetic HTTP/invalid-response bodies containing distinctive personal/internal markers are absent from console output and error serialization while safe metadata remains observable.",
-        "Tests fail for a forged host-shaped object, altered snapshot request body, conflicting equipment duplicate, stale-generation commit, fabricated zero, parameterized permit URL, unsafe focus cleanup, or affected inline chart style.",
-        "A 10,000-row equipment fixture maps/deduplicates within 100 ms after warm-up on the recorded runtime and produces no equipment fact-list DOM growth.",
-        "A 10-refresh burst commits only generation 10, and 20 rapid permit activations yield one pending command chain."
-        ,"Revocation and fresh re-entry, including disposal while a command is pending, produce zero uncaught page errors or unhandled promise rejections."
+        "Evidence lists the complete inventory and exact commands; all required suites pass with zero unexplained failures, while any failure blocks readiness.",
+        "Both viewports pass intercepted range, snapshot, navigation, responsive, CSP, disclosure, and no-page-error checks in RTL and LTR.",
+        "The 0/1/1,000 analytical and 0/1/1,000/10,000 equipment fixtures satisfy the T-302/T-303 byte, timing, concurrency, DOM, long-task, and burst ceilings; third-party executable requests equal zero.",
+        "Changed runtime and verified SDK artifact identity is established and the candidate flag remains true.",
+        "Fresh reviews have no critical high-confidence issue or required workflow failure; release remains pending new authorized controller approval.",
+        "Footer evidence proves exactly one marker, all three labels/values, truthful unstamped/preview/production variants, language-direction behavior, responsive wrapping, and zero footer network/authentication calls."
       ],
       "validationScenarios": [
-        "Run focused API/adapter/state/host/UI tests and the full existing regression suite; record commands, runtime, totals, failures, and skips.",
-        "Exercise zero, one, 1,000, 10,000, duplicate-heavy, nullable, conflicting, and malformed equipment fixtures and record decoded bytes and mapping durations.",
-        "Run the negative trust matrix plus revoke/re-entry simulations, reverse-order stale responses, refresh bursts, permit bursts, removed/rerendered focus targets, and analytical period changes.",
-        "Run SDK bootstrap/integrity tests against the supplied verified client and GuestBridge: no injected adapter, exact origin, Ready correlation, session rotation/disposal, command single-flight, and generation-bound results.",
-        "Return 500 and 401/403 during refresh after a populated snapshot; assert the last-good DOM/timestamp remain, stale/error state is announced, and post-401 refresh/reconnect makes zero old-generation calls.",
-        "Rotate to a fresh fixture session after revocation/401; assert automatic exactly-three snapshot requests, new-generation analytical recovery, and no disposed-client pageerror/unhandledrejection.",
-        "Return synthetic HTTP and malformed bodies with unique sensitive markers, capture console/error output, and assert none of the markers or body snippets are exposed.",
-        "Inspect fixtures and output for credentials, raw event text, signed URLs, or weakened assertions."
+        "Inventory and run site, QC, UAT, and harness suites across every existing applicable extension and reconcile counts.",
+        "Exercise two viewports/directions, valid/invalid ranges, string aggregates, error classes, re-entry, bursts, and navigation with all traffic intercepted.",
+        "Attempt release gating with only attachment claims, old approval, or synthetic permission and verify refusal with limitations reported.",
+        "Inject explicit synthetic footer attributes locally to test unavailable, malformed, preview, and production rendering without presenting fixtures as actual release metadata."
       ]
     },
     {
-      "id": "T-204",
-      "title": "Verify the exact enabled preview",
-      "component": "Exact-preview browser acceptance, responsive behavior, CSP, and performance evidence",
-      "objective": "Demonstrate in the corrected controller-owned fixture that the exact artifact packages the real guest command path, enables current snapshots, keeps diagnostics body-free, and meets visual, interaction, network, and performance requirements.",
-      "dependsOn": ["T-203"],
+      "id": "T-305",
+      "title": "Add a truthful all-state release footer",
+      "component": "Shared document shell and packaged release metadata assets",
+      "objective": "Expose Version, Last update, and Release date in one accessible responsive footer that remains visible in every application state and renders only trusted controller-stamped metadata.",
+      "dependsOn": [],
       "requirements": [
-        "Serve the controller fixture only at https://milgam.ylm.co.il/controller-host-fixture/, fulfill host/API traffic locally with non-secret fixtures, block real tenant traffic, and load the exact release-candidate preview with the live snapshot flag true.",
-        "Do not add https://ylm.ylm.co.il to frame-ancestors or trusted origins; the earlier failing origin was a corrected controller-fixture mistake.",
-        "Exercise all three current routes, permit navigation, independent period changes, loading/error/stale/retry states, and existing analytical workflows.",
-        "Verify 390×844 and 1440×900 in RTL and LTR, keyboard flow, focus visibility, announcements, chart visibility, horizontal overflow, and console/page errors.",
-        "Measure three-request concurrency, decoded bytes, 10,000-row mapping/rendering, snapshot DOM count, 10-refresh behavior, and 20-activation command behavior.",
-        "Capture CSP response headers and executable network URLs; no third-party executable or relevant CSP violation is allowed."
-        ,"Inject distinctive personal/internal markers into synthetic error bodies and capture the browser console; no body field, snippet, credential, or full error object may be emitted."
+        "Copy the builder skill's packaged release-footer.js and release-footer.css unchanged into site/assets and load them from relative same-origin paths.",
+        "Place exactly one packaged footer[data-simplyvibe-release] with its semantic dl and data-release-label/data-release-value hooks outside state-dependent main content in site/index.html.",
+        "Keep the footer in normal document flow and visible during host waiting, loading, no-context, empty, error, stale, and ready states.",
+        "Render localized Hebrew/English Version, Last update, and Release date labels and values based on document language, preserving bdi isolation and RTL/LTR behavior.",
+        "Treat missing or malformed metadata as Unavailable; previews explicitly identify Preview and show Not released; only valid production stamps show a release date.",
+        "Accept only a 12-character lowercase hexadecimal releaseVersion and valid UTC timestamps; format timestamps in the viewer timezone without using viewer current time.",
+        "Reserve stamping for the trusted controller workflow: Git version, latest site-source commit time, and frozen production publication time must never be inferred from data refresh, event, page-open, or hand-maintained values.",
+        "Make no footer network or authentication request and include no user, tenant, token, credential, or controller-internal metadata.",
+        "Keep the release footer visually distinct from data-refresh timestamps, responsive without overlap or horizontal overflow at 390x844 and 1440x900, and accessible under zoom in RTL and LTR."
       ],
       "acceptanceCriteria": [
-        "The preview shows current event, permit, and equipment-total data rather than a disabled state and issues exactly three current requests per load/refresh.",
-        "SimplyVibeClient is packaged and initialized from same-origin assets, both permit controls produce exactly Navigate with {Url: '#/Permits/Dashboard'} through GuestBridge, and 20 rapid activations produce one pending command chain.",
-        "API failure console output contains safe metadata only and none of the synthetic response-body markers.",
-        "A 500 or 401/403 refresh failure leaves the last-good snapshot content rendered as stale; after 401/403, repeated refresh produces zero authenticated requests until fixture re-entry.",
-        "Fresh fixture re-entry automatically starts exactly three current-report calls for the new generation and restores supported analytical work without an uncaught disposed-client error.",
-        "All affected charts are visible at both viewports with zero relevant CSP console errors, no uncaught exception, and no third-party executable request.",
-        "The ready snapshot contains at most 80 DOM elements and renders within 50 ms at both viewports; 10,000 rows map within 100 ms on the recorded runtime.",
-        "Snapshot state remains independent of analytical dates; refresh and permit bursts obey generation and single-flight limits."
-        ,"Holding the first real bridge command while dispatching 20 rapid activations yields exactly one Navigate effect after release, including across revocation/re-entry races."
+        "Every runtime state retains one visible footer with all three labels and values; state transitions never remove or duplicate it.",
+        "Unstamped and invalid synthetic metadata render localized Unavailable values and never synthesize a timestamp or version.",
+        "Synthetic preview metadata renders the validated 12-character version with an explicit Preview label, valid Last update, and Not released for Release date.",
+        "Synthetic production metadata renders the validated version and both valid frozen timestamps; changing document language relocalizes labels and values.",
+        "At both required viewports and directions the footer remains in flow, wraps without horizontal overflow or content obstruction, and remains distinguishable from dashboard last-refresh copy.",
+        "Static and browser evidence records exactly one footer marker, same-origin asset loads, zero footer fetch/auth calls, and the absence of sensitive metadata."
       ],
       "validationScenarios": [
-        "Run enabled snapshot happy path, initial failure/retry, stale refresh failure, analytical period change, and exact permit navigation through the real packaged SDK in the preview.",
-        "After a populated snapshot, inject 500 then 401/403 refresh failures; verify last-good retention, terminal old-generation denial, zero cached-session replay, and automatic three-call recovery only after controller re-entry.",
-        "Hold a permit command, issue 20 rapid activations, revoke/release/re-enter, and record command effects plus pageerror/unhandledrejection events.",
-        "Record screenshots and accessibility/keyboard observations at both viewports in RTL and LTR, including all affected charts.",
-        "Record browser/runtime versions, response headers, console/page errors, executable requests, route/request counts, bytes, timings, nodes, refresh winner, and command count."
-      ]
-    },
-    {
-      "id": "T-205",
-      "title": "Prove authorization lifecycle and hand off release",
-      "component": "Approved host lifecycle acceptance and controller-owned release evidence",
-      "objective": "Close the authorization lifecycle gate with the supplied faithful controller harness at its corrected local-only origin and provide truthful evidence for controller release and any later local-only flag revert.",
-      "dependsOn": ["T-204"],
-      "requirements": [
-        "Use the supplied controller-owned GuestBridge harness at https://milgam.ylm.co.il/controller-host-fixture/ with locally fulfilled traffic only; synthetic injected adapters and unapproved parent messaging cannot satisfy this gate.",
-        "Preserve the existing trusted-origin and frame-ancestor policy; do not authorize the mistaken https://ylm.ylm.co.il origin and do not contact a real tenant.",
-        "Revoke or expire authorization during snapshot/analytical requests and during a permit command; verify abort/denial, stale retention, and zero old-generation effects.",
-        "After API 401/403, mark the rejected credential/session generation terminally unusable; user refresh, host reconnect, or cached ready context must not reactivate it.",
-        "Provide fresh verified authorization and prove a new capability generation recovers data and accepts only correctly bound command responses.",
-        "On fresh verified re-entry, automatically restart current snapshot work exactly once and consume expected prior-client disposal rejections without uncaught browser errors.",
-        "Keep the live-call flag true through the single controller-owned production deployment; application work must not deploy or invoke lifecycle/provider APIs.",
-        "If the approved environment is unavailable, report the exact gate blocked/skipped and do not claim release approval. Any post-release false revert is separately authorized, local-only, and not deployed."
-      ],
-      "acceptanceCriteria": [
-        "Old-generation late API and command responses cause zero UI, network, navigation, or state effects after revocation.",
-        "Last-good values remain visible as stale while new authenticated work is denied until fresh verified re-entry.",
-        "Fresh authorization creates a new generation, restores current and analytical data, and rejects mismatched command responses.",
-        "An unchanged bridge/session identity cannot clear a 401/403 taint; before a distinct re-entry, every refresh/reconnect attempt produces zero authenticated traffic.",
-        "Refresh failure never clears last-good snapshot facts, and fresh re-entry produces exactly one recovery load rather than zero or duplicate loads.",
-        "Harness disconnect/session rotation revokes the legacy JSON context so post-revocation refresh and command attempts produce zero old-token requests or bridge effects.",
-        "Release evidence clearly separates local tests, exact-preview results, approved-host lifecycle results, controller deployment status, and any skipped check; no unsupported approval claim is made."
-      ],
-      "validationScenarios": [
-        "Begin concurrent requests, revoke before settlement, resolve old responses, and assert abort plus zero commit; attempt further requests and assert denial.",
-        "Reject one current request with 401, attempt repeated refresh/reconnect on the unchanged session and assert zero requests, then rotate the controller session and assert one automatic three-request recovery generation.",
-        "Reject a populated refresh with 500 and with 401/403; compare pre/post snapshot content and timestamp, assert stale visibility, and verify no empty content commit.",
-        "Begin permit navigation, revoke before response, return an old or mismatched response, and assert no navigation; re-enter freshly and prove the exact command succeeds only for the new generation.",
-        "Review the release record for enabled-flag evidence through production, controller-owned deployment provenance, honest skipped/blocking reasons, and no deployment of a later local false revert."
+        "Render host-waiting/loading, missing-context, empty, recoverable error, terminal authorization error with stale data, and ready states; assert the same single footer remains visible.",
+        "Exercise absent attributes, malformed version/timestamps, valid preview attributes with empty release time, and valid production attributes using explicit local synthetic fixtures.",
+        "Switch html lang and dir between Hebrew RTL and English LTR, resize to 390x844 and 1440x900, and inspect wrapping, bdi isolation, labels, values, and overflow.",
+        "Instrument fetch and host-command paths while rendering and changing language; assert the footer initiates no request or authentication operation."
       ]
     }
   ]

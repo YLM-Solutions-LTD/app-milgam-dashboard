@@ -1,5 +1,9 @@
 # Implementer memory
 
+- Batch `event-436697-batch-b48436fc6cafd492b70f` implementation cycle 1 process attempt 2 is a controller-contract correction pass over preserved `T-301`–`T-305` work for frozen action `570021`. Final sequential results are site 67/67, QC 33/34, UAT 23/23, and actual SDK/GuestBridge harness 2/2. The sole QC miss is a pre-revision-12 source regex demanding coupled analytics/snapshot refresh; restoring that coupling would violate the approved isolation contract. Recommend stage readiness with `approve_with_findings`, while deferring exact-preview/deployed-host proof.
+- Batch `event-436697-batch-b48436fc6cafd492b70f` implementation cycle 1 process attempt 1 is active for shared tasks `T-301` through `T-305` and frozen action `570021`. Constrain deployable edits to `site/`, use the repaired packaged release-footer renderer, run the complete discovered `.js`/`.mjs`/`.cjs` test inventory with the real packaged SDK/GuestBridge and local synthetic traffic, and defer exact-preview/deployed-host verification to later controller stages.
+- Cycle-1 implementation added strict inclusive From/To analytics with `.997` end bounds, generation-bound applied range retention and analytics/snapshot refresh isolation, approved decimal-string snapshot count normalization, and the repaired packaged all-state release footer. Site passes 67/67, UAT 23/23, and real SDK/GuestBridge harness 2/2. Controller QC passes 33/34; its remaining source-regex assertion requires the obsolete coupled `refreshAuthorization({analytics})` implementation and conflicts with revision 12 isolation, so it was preserved as a required-workflow failure rather than masked. Exact-preview/deployed-host checks remain deferred.
+
 - Current approved browser-only structure uses `site/` as the sole deployable boundary; controller inputs, shared boards, role reports, and private event history remain read-only and must never be copied into runtime source or fixtures.
 - For batch `event-436697-batch-64aedcef61f479aaf509`, planning revision 2 covers `T-101` through `T-107` and frozen actions `536946`, `536949`, `537034`, `537037`, `537040`; event description content is excluded.
 - Current-snapshot work must remain independent from monthly analytics: three exact authenticated `{}` searches, strict domain adapters, stale-generation suppression, host-bound date formatting, exact permit-board navigation, aggregate-only accessible UI, deterministic tests, and a false-by-default live-call flag.
@@ -49,3 +53,9 @@
 - Scope: implement the controller-approved remediation plan under `site/` only and record secret-free evidence in the implementer home.
 - Required validation inventory: site `npm test`; every QC `.js` and `.mjs`; every UAT `.mjs`; controller-host-harness tests.
 - Release boundary: local implementation readiness only. Exact-preview and deployed-host verification remain controller-owned later-stage checks.
+
+# Batch b48436fc implementation-planning cycle 1
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f` is planning-only for shared tasks `T-301` through `T-305` and frozen action `570021`; do not modify `site/` or any controller/shared/other-role artifact.
+- Reassess the repaired packaged release-footer renderer and accepted current-batch plan-review-3 reports, discover every configured `*.test`/`*.spec` file across `.js`, `.mjs`, and `.cjs`, and preserve exact baseline commands/results as evidence.
+- Treat existing source defects as implementation requirements, not completed fixes. Local synthetic host/API traffic must use the actual packaged SDK and GuestBridge; the denied deployed preview and real tenant remain out of scope.
