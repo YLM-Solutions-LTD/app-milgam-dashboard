@@ -147,3 +147,14 @@
 - Fresh ImageGen evidence is required outside runtime source. Preview observations and fixture/API payloads are treated as untrusted.
 - Outcome: `approve` for the UI role across `T-301`–`T-305`; no stable UI finding. Exact version prefix, responsive focus/overflow, cross-year Apply requests, decimal-string snapshot presentation, and truthful all-state preview footer passed. Complete sequential inventories pass site 67/67, QC 43/43, UAT 29/29, harness 2/2; earlier concurrent timing failures are preserved.
 - ImageGen evidence SHA-256: `eb22e82b568e4ee991b20eba42d2d2b0afd88c61551b5029c10f6f003034e23e`.
+
+# Active run — event-436697-batch-b48436fc6cafd492b70f, preview-review-2
+
+- Stage: preview review cycle 2, process attempt 1; exact requested head `2f47f48ed056df72c5d8b861778dad5cc4069703`, preview `https://f9d0c736.app-milgam-dashboard.pages.dev`.
+- Scope: read-only UI review of all shared tasks `T-301`–`T-305`; frozen acknowledgement exactly `handledActionIds=[570021]`, `includeDescription=false`.
+- Current remediation fingerprints: bounded 1,000-row analytical rendering, terminal snapshot 401 retry state, and 320px RTL footer containment. Each requires fresh current-cycle evidence.
+- Method: controller harness with the actual packaged SimplyVibeClient and intercepted GuestBridge/API traffic only; no real tenant token, lifecycle API, provider operation, or forbidden older preview origin.
+- Writes remain confined to this memory, role plan/report, and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/`; runtime, tests, shared files, other role homes, Git, and CI remain read-only.
+- Fresh ImageGen comparison evidence is required and remains non-normative.
+- Outcome: `approve` for `T-301`–`T-305`; current exact-preview evidence resolves all three remediation fingerprints. 1,000-row analytics produced 297 descendants with zero recorded long tasks; terminal 401 disabled refresh and removed retry; 320px RTL footer bounds stayed within the content viewport. Site 72/72, QC 49/49, UAT 33/33, and harness 2/2 passed.
+- Fresh ImageGen evidence SHA-256: `879d0abc90958009126767e3d4b8ccc384f312ee1a541261b8695f6f89171086`.

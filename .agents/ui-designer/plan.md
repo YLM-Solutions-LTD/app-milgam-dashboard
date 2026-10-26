@@ -2,6 +2,15 @@
 
 Batch: `event-436697-batch-b48436fc6cafd492b70f`
 
+# UI designer approach — preview review cycle 2
+
+- Review exact requested head `2f47f48ed056df72c5d8b861778dad5cc4069703` at `https://f9d0c736.app-milgam-dashboard.pages.dev` across `T-301`–`T-305`.
+- Exercise the actual guest SDK through the controller GuestBridge with all host/API traffic intercepted; never request a tenant token.
+- Reproduce all three cycle-2 fingerprints using fresh analytical-volume, terminal-401, and 320px RTL cases, and record either corrected behavior or a stable finding.
+- Verify RTL/LTR hierarchy, keyboard/focus, loading/error/stale/ready/no-context continuity, responsive containment, and truthful all-state preview footer values.
+- Generate fresh ImageGen screen evidence outside runtime source, then compare it against observable preview behavior and the SimplyLog baseline.
+- Write only the UI designer home; do not modify app source, tests, shared plans, prior runs, Git, providers, or lifecycle state.
+
 - Audit frozen inputs and revision-12 task structure; keep action acknowledgement exactly `[570021]` and cover `T-301`–`T-305` without assigning shared tasks to roles.
 - Reconcile every archived current-batch finding against current plan/source evidence, explicitly recording the absent cycle-3 remediation manifest.
 - Review each task through UI hierarchy, interaction, accessibility, RTL/LTR, responsive, state, and release-footer lenses using the SimplyLog baseline and packaged footer contract.

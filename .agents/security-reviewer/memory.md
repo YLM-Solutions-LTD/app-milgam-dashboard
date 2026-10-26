@@ -1,5 +1,21 @@
 # Security reviewer memory
 
+## Current assignment — preview review cycle 2, process attempt 1
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; exact head `2f47f48ed056df72c5d8b861778dad5cc4069703`; exact preview `https://f9d0c736.app-milgam-dashboard.pages.dev`.
+- Review every current shared structure task and every remediation-cycle-2 fingerprint using current-cycle source and exact-preview evidence, with the actual packaged guest SDK/controller GuestBridge and fully local synthetic host/API fixtures only.
+- Verify host/source/origin and bearer confinement, authorization generation disposal, rejected/direct-context denial, bounded diagnostics, executable provenance/CSP, safe untrusted-data rendering, exact Navigate behavior, and the required truthful release footer in loading/error/no-context/preview states.
+- Authorized writes are this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/` only. `site/`, tests, `.agents/shared`, other role homes, prior runs, Git/provider state, deployments, and SimplyLog lifecycle state are immutable/out of scope.
+- Never request a real tenant token or access the explicitly forbidden older preview origin. Preserve the frozen action order and report the exact role value `security-reviewer`.
+
+## Preview review cycle 2 result
+
+- Verdict: approve across `T-301` through `T-305`; no concrete client-security defect reproduced at exact head `2f47f48ed056df72c5d8b861778dad5cc4069703` and preview `f9d0c736`.
+- Current-cycle actual-SDK/GuestBridge evidence closed the terminal-401 and 320px-footer fingerprints: retry is denied until distinct session re-entry, old generation/effects remain blocked, and the truthful Preview/Not released footer stays inside the 320px RTL viewport.
+- Hostile 1,000-row labels remained escaped under bounded pagination (297 dashboard descendants, zero injected executable/event-handler nodes or dialogs). Strict CSP, approved-origin bearer confinement, direct-context denial, held-command revocation, and bounded response diagnostics held.
+- Fresh inventory-aware suites passed site 72, QC 49, UAT 33, and harness 2 (156 total). Synthetic permissions remain non-evidence for tenant policy or controller release authority.
+- Full structured result: `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/report.json`.
+
 ## Current assignment — preview review cycle 1
 
 - Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `preview-review`; cycle 1; process attempt 1; exact head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`; exact preview `https://8248a782.app-milgam-dashboard.pages.dev`.

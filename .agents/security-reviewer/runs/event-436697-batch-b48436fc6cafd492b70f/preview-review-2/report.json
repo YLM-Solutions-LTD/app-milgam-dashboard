@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "batchKey": "event-436697-batch-b48436fc6cafd492b70f",
+  "appName": "milgam-dashboard",
+  "stage": "preview-review",
+  "cycle": 2,
+  "outcome": "approved",
+  "summary": "Security approves exact preview f9d0c736 at controller-declared head 2f47f48ed056df72c5d8b861778dad5cc4069703 across T-301 through T-305. Current-cycle actual-SDK/intercepted-GuestBridge evidence closes the terminal-401 and 320px-footer remediation fingerprints, confirms bounded escaped rendering for hostile 1,000-row labels, and preserves parent/origin/bearer confinement, revocation and re-entry isolation, bounded diagnostics, strict CSP, direct-context denial, and truthful Preview/Not released metadata. Complete discovered suites pass 156/156. No concrete client-security defect was reproduced; this role does not claim tenant authorization, production publication, controller completion, or overall release approval.",
+  "handledActionIds": [570021],
+  "roles": [
+    {
+      "role": "security-reviewer",
+      "verdict": "approve",
+      "taskIds": ["T-301", "T-302", "T-303", "T-304", "T-305"],
+      "evidence": [
+        ".agents/security-reviewer/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/approach.md",
+        ".agents/security-reviewer/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/evidence.md",
+        ".agents/security-reviewer/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/evidence/browser-results.json",
+        ".agents/security-reviewer/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/evidence/deployed-source-hashes.jsonl"
+      ]
+    }
+  ],
+  "findings": []
+}

@@ -1,0 +1,1135 @@
+{
+  "preview": "https://f9d0c736.app-milgam-dashboard.pages.dev",
+  "expectedVersion": "2f47f48ed056",
+  "browserVersion": "140.0.7339.16",
+  "desktopReady": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 1424,
+    "bodyClientWidth": 1424,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 72,
+      "y": 1400.6875,
+      "width": 1280,
+      "height": 53.46875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-10-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-10-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "apply-range",
+      "outline": "rgb(239, 141, 34) solid 3px"
+    },
+    "footerAfterMain": true
+  },
+  "mobileReady": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 374,
+    "bodyClientWidth": 374,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 16,
+      "y": 2398.5,
+      "width": 342,
+      "height": 107.1875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-10-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-10-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 57.59375
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "from-date",
+      "outline": "rgb(239, 141, 34) solid 3px"
+    },
+    "footerAfterMain": true
+  },
+  "narrowReady": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 304,
+    "bodyClientWidth": 304,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 16,
+      "y": 3059.5,
+      "width": 272,
+      "height": 107.1875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-10-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-10-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 76.59375
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 153.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 153.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 153.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  },
+  "ltrReady": {
+    "lang": "en",
+    "dir": "ltr",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 10/26/26, 5:47 PM\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nVersion\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+    "bodyScrollWidth": 1424,
+    "bodyClientWidth": 1424,
+    "footerCount": 1,
+    "footerText": "Version\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 72,
+      "y": 1400.6875,
+      "width": 1280,
+      "height": 53.46875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (Preview)"
+      },
+      {
+        "key": "updated",
+        "text": "10/26/26, 5:44 PM"
+      },
+      {
+        "key": "released",
+        "text": "Not released"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-10-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-10-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  },
+  "loadingState": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nטוען תמונת מצב נוכחית…\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: טרם בוצע רענון\nטוען תקופות זמינות\n\nמאתר את החודש האחרון שבו קיימים נתונים.\n\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 374,
+    "bodyClientWidth": 374,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 16,
+      "y": 935.15625,
+      "width": 342,
+      "height": 107.1875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "",
+        "disabled": true,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "",
+        "disabled": true,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": true,
+        "height": 57.59375
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": true,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": true,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "טוען תקופות זמינות"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nטוען תמונת מצב נוכחית…",
+    "dashboardDescendants": 0,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  },
+  "errorState": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לטעון את תמונת המצב. נסו שוב\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 374,
+    "bodyClientWidth": 374,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 16,
+      "y": 2379.203125,
+      "width": 342,
+      "height": 107.1875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-10-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-10-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 57.59375
+      },
+      {
+        "id": "",
+        "text": "נסו שוב",
+        "disabled": false,
+        "height": 21
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nלא ניתן לטעון את תמונת המצב. נסו שוב",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  },
+  "directMetrics": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nממתין לחיבור מאובטח\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: טרם בוצע רענון\nM\nהדשבורד זמין מתוך SimplyLog\n\nיש לפתוח את ‎/App/milgam-dashboard‎ מתוך SimplyLog. הדף יתחבר אוטומטית כשיתקבל הקשר מארח מאומת.\n\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 390,
+    "bodyClientWidth": 390,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 16,
+      "y": 1026.34375,
+      "width": 358,
+      "height": 107.1875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "",
+        "disabled": true,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "",
+        "disabled": true,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 57.59375
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": true,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": true,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "הדשבורד זמין מתוך SimplyLog"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב",
+    "dashboardDescendants": 0,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  },
+  "requestEvidence": {
+    "beforeDraft": 8,
+    "afterDraft": 8,
+    "draftDelta": 0,
+    "applyCalls": [
+      {
+        "key": "MilgamDashboardByDivision",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "resourceType": "fetch"
+      },
+      {
+        "key": "MilgamDashboardSummary",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "resourceType": "fetch"
+      },
+      {
+        "key": "MilgamDashboardByCategory",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "resourceType": "fetch"
+      },
+      {
+        "key": "MilgamDashboardClosureByCategory",
+        "method": "POST",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "resourceType": "fetch"
+      }
+    ]
+  },
+  "runtime": {
+    "desktop": {
+      "pageErrors": [],
+      "consoleMessages": [
+        "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+        "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedRange: null, hasRuntime: false, requestStage: null}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.app] State machine started",
+        "info: [milgam-dashboard.host-context] Accepted SDK context {tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null, LanguageDirection: rtl}",
+        "info: [milgam-dashboard.app] Host context callback invoked {tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null, LanguageDirection: rtl}",
+        "info: [milgam-dashboard.app] Locale applied {lang: he, dir: rtl}",
+        "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+        "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedRange: null, hasRuntime: true, requestStage: periods}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 83}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+        "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+        "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+        "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 105}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 355}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 226}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 372}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+        "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}",
+        "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 3, requestStage: dashboard}",
+        "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 105}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 355}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 226}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 372}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 3}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 3}",
+        "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+      ],
+      "aborted": [],
+      "executableRequests": [
+        "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+        "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/app.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/constants.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/api-client.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/date-range.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/host-context.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/current-snapshot.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/host-services.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/pagination.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-data.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/data-mappers.js"
+      ]
+    },
+    "mobile": {
+      "pageErrors": [],
+      "consoleMessages": [
+        "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+        "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedRange: null, hasRuntime: false, requestStage: null}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.app] State machine started",
+        "info: [milgam-dashboard.host-context] Accepted SDK context {tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null, LanguageDirection: rtl}",
+        "info: [milgam-dashboard.app] Host context callback invoked {tokenType: Bearer, hasAccessToken: true, LanguageCode: he, CultureInfo: null, LanguageDirection: rtl}",
+        "info: [milgam-dashboard.app] Locale applied {lang: he, dir: rtl}",
+        "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+        "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedRange: null, hasRuntime: true, requestStage: periods}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 83}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+        "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+        "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+        "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 105}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 355}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 226}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 372}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+        "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+      ]
+    },
+    "ltr": {
+      "pageErrors": [],
+      "consoleMessages": [
+        "info: [milgam-dashboard.app] Bootstrapping mini-app {title: דשבורד קריאות מילגם, userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36…Gecko) HeadlessChrome/140.0.7339.16 Safari/537.36, allowedOrigins: Array(5), xstateReady: true}",
+        "info: [milgam-dashboard.app] State transition {state: awaitingHost, hostTimedOut: false, selectedRange: null, hasRuntime: false, requestStage: null}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: awaitingHost, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.app] State machine started",
+        "info: [milgam-dashboard.host-context] Accepted SDK context {tokenType: Bearer, hasAccessToken: true, LanguageCode: en, CultureInfo: null, LanguageDirection: ltr}",
+        "info: [milgam-dashboard.app] Host context callback invoked {tokenType: Bearer, hasAccessToken: true, LanguageCode: en, CultureInfo: null, LanguageDirection: ltr}",
+        "info: [milgam-dashboard.app] Locale applied {lang: en, dir: ltr}",
+        "info: [milgam-dashboard.machine] Service started {successType: PERIODS_LOADED, requestId: 1, requestStage: periods}",
+        "info: [milgam-dashboard.app] State transition {state: loadingPeriods, hostTimedOut: false, selectedRange: null, hasRuntime: true, requestStage: periods}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingPeriods, hasData: false, periods: 0}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByMonth, endpoint: /api/Entity/MilgamDashboardByMonth/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByMonth, status: 200, ok: true, bodyBytes: 83}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByMonth, itemCount: 1}",
+        "info: [milgam-dashboard.machine] Service completed {successType: PERIODS_LOADED, requestId: 1}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: PERIODS_LOADED, requestId: 1}",
+        "info: [milgam-dashboard.machine] Service started {successType: DASHBOARD_LOADED, requestId: 2, requestStage: dashboard}",
+        "info: [milgam-dashboard.app] State transition {state: loadingDashboard, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: false, state: loadingDashboard, hasData: false, periods: 1}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByDivision, endpoint: /api/Entity/MilgamDashboardByDivision/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardSummary, endpoint: /api/Entity/MilgamDashboardSummary/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardByCategory, endpoint: /api/Entity/MilgamDashboardByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Starting request {dataset: MilgamDashboardClosureByCategory, endpoint: /api/Entity/MilgamDashboardClosureByCategory/Search, range: Object}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByDivision, status: 200, ok: true, bodyBytes: 105}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByDivision, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardSummary, status: 200, ok: true, bodyBytes: 355}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardSummary, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardByCategory, status: 200, ok: true, bodyBytes: 226}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.api] Response received {dataset: MilgamDashboardClosureByCategory, status: 200, ok: true, bodyBytes: 372}",
+        "info: [milgam-dashboard.api] Request successful {dataset: MilgamDashboardClosureByCategory, itemCount: 2}",
+        "info: [milgam-dashboard.machine] Service completed {successType: DASHBOARD_LOADED, requestId: 2}",
+        "warning: [milgam-dashboard.machine] Service aborted {successType: DASHBOARD_LOADED, requestId: 2}",
+        "info: [milgam-dashboard.app] State transition {state: ready, hostTimedOut: false, selectedRange: Object, hasRuntime: true, requestStage: dashboard}",
+        "debug: [milgam-dashboard.app] Rendering {isReady: true, state: ready, hasData: true, periods: 1}"
+      ]
+    }
+  },
+  "invalid": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\n\nיש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.\n\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 1424,
+    "bodyClientWidth": 1424,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 72,
+      "y": 1431.6875,
+      "width": 1280,
+      "height": 53.46875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2026-02-02",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-01-01",
+        "disabled": false,
+        "invalid": "true",
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "to-date",
+      "outline": "rgb(239, 141, 34) solid 3px"
+    },
+    "footerAfterMain": true
+  },
+  "afterApply": {
+    "lang": "he",
+    "dir": "rtl",
+    "bodyText": "דלגו לתוכן הראשי\nM\n\nSimplyLog\n\nדשבורד קריאות מילגם\nמחובר ל-SimplyLog\n\nללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין\n\nמתאריך\nעד תאריך (כולל)\nהחלת טווח\nרענון נתונים\nעדכון אחרון: 26.10.2026, 17:47\nחלוקה לפי חטיבות\n12\nסניפים\n7 · 58.3%\nמטה\n5 · 41.7%\nבניין מטה מול סניפים\nמטה\n41.7%\nסניפים\n58.3%\nמטה: 5 · 41.7%\nסניפים: 7 · 58.3%\nתמהיל קריאות מטה\nאחזקה\n5\nתמהיל קריאות סניפים\nניקיון\n7\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n4\nממוצע זמן סגירה\n2.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nאחזקה\t2.0\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n6\nממוצע זמן סגירה\n3.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nניקיון\t3.0\nגרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "bodyScrollWidth": 1424,
+    "bodyClientWidth": 1424,
+    "footerCount": 1,
+    "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "footerDisplay": "block",
+    "footerRect": {
+      "x": 72,
+      "y": 1400.6875,
+      "width": 1280,
+      "height": 53.46875
+    },
+    "releaseAttributes": {
+      "data-release-version": "2f47f48ed056",
+      "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+      "data-release-released-at": "",
+      "data-release-environment": "preview"
+    },
+    "releaseValues": [
+      {
+        "key": "version",
+        "text": "2f47f48ed056 (תצוגה מקדימה)"
+      },
+      {
+        "key": "updated",
+        "text": "26.10.2026, 17:44"
+      },
+      {
+        "key": "released",
+        "text": "טרם פורסם"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "from-date",
+        "type": "date",
+        "value": "2025-12-31",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      },
+      {
+        "id": "to-date",
+        "type": "date",
+        "value": "2026-01-01",
+        "disabled": false,
+        "invalid": null,
+        "height": 44
+      }
+    ],
+    "buttons": [
+      {
+        "id": "snapshot-refresh",
+        "text": "רענון תמונת מצב",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "",
+        "text": "בתוקף\n9\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "חסרים\n2\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "",
+        "text": "באיחור\n1\nפתיחת לוח האישורים",
+        "disabled": false,
+        "height": 104.15625
+      },
+      {
+        "id": "apply-range",
+        "text": "החלת טווח",
+        "disabled": false,
+        "height": 44
+      },
+      {
+        "id": "refresh-button",
+        "text": "רענון נתונים",
+        "disabled": false,
+        "height": 44
+      }
+    ],
+    "headings": [
+      "דשבורד קריאות מילגם",
+      "תמונת מצב נוכחית",
+      "אירועים בכל התקופות",
+      "אישורים",
+      "ציוד",
+      "חלוקה לפי חטיבות",
+      "בניין מטה מול סניפים",
+      "תמהיל קריאות מטה",
+      "תמהיל קריאות סניפים",
+      "ממוצע ימים לסגירת קריאה – מטה",
+      "ממוצע ימים לסגירת קריאה – סניפים"
+    ],
+    "snapshotText": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nעודכן: 2026-10-26T08:00:00\nאירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 2 פתוחים\nמטה\n5 סה״כ · 1 פתוחים\nסניפים\n7 סה״כ · 1 פתוחים\nאישורים\nבתוקף\n9\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n1 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+    "dashboardDescendants": 92,
+    "active": {
+      "id": "",
+      "outline": "rgb(23, 34, 59) none 0px"
+    },
+    "footerAfterMain": true
+  }
+}

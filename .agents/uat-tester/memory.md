@@ -1,5 +1,14 @@
 # UAT tester memory
 
+## Active assignment — batch b48436 preview review cycle 2, process attempt 1
+
+- Review exact head `2f47f48ed056df72c5d8b861778dad5cc4069703` at authorized preview `https://f9d0c736.app-milgam-dashboard.pages.dev`, applying UAT to every shared structure-based task and every cycle-2 remediation fingerprint.
+- Authorized writes are only this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/`; site, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Use Playwright through the controller-owned actual GuestBridge and packaged SDK with synthetic postMessage permissions and locally intercepted API routes only; never request a tenant token or access the forbidden older origin.
+- Rediscover all test/spec extensions and run the complete configured inventories. Preserve exact commands, failures, exact candidate identity, browser/viewports/direction, footer-state evidence, and honest tenant-permission limitations.
+- Frozen handled action IDs will be taken exactly and in order from `pending-actions.json`; event Description participates only if `includeDescription=true`.
+- Result: `approve_with_findings`. Exact-preview UAT closes all three cycle-2 fingerprints: bounded analytics renders 297 descendants with corroborated zero long tasks, terminal 401 disables both retry paths with zero old-generation calls, and the 320px RTL footer is contained. Complete suites pass site 72/72, QC 49/49, UAT 33/33, harness 2/2. Remaining low limitation: synthetic permissions are not deployed-tenant proof.
+
 ## Active assignment — batch b48436 test-authoring cycle 2, process attempt 1
 
 - Revalidate shared plan revision and every current cycle-2 remediation fingerprint with deterministic UAT, preserving frozen action order and structure-based task IDs.

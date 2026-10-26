@@ -1,5 +1,16 @@
 # QC tester memory
 
+## 2026-10-26 — event-436697-batch-b48436fc6cafd492b70f / preview-review-2 / process attempt 1
+
+- Exact target is PR head `2f47f48ed056df72c5d8b861778dad5cc4069703` at `https://f9d0c736.app-milgam-dashboard.pages.dev`.
+- Review shared structure tasks T-301 through T-305 and every remediation-cycle-2 fingerprint using the controller-supplied actual SDK/GuestBridge harness with locally fulfilled synthetic host/API traffic; never request or expose a tenant token.
+- Writes are confined to this memory and `.agents/qc-tester/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/` plus role `tmp/`; application source, repository tests, shared artifacts, other role homes, prior runs, Git/GitHub, and provider state are read-only.
+- Discover all applicable test extensions and run the complete configured site, QC, UAT, and harness inventories. Exercise functional, responsive, accessibility, visual, RTL/LTR, lifecycle, analytical performance, and all-state release-footer behavior in the exact preview.
+- Preserve the frozen handled action order exactly as declared by `pending-actions.json`; prior-cycle fixes are historical evidence only and every current fingerprint requires fresh cycle-2 evidence.
+- Result: `approve`, outcome `ready`. Exact preview head prefix, responsive RTL/LTR range behavior, terminal 401 recovery, actual GuestBridge Navigate, truthful all-state footer, and no-context gating passed with fully intercepted traffic.
+- Fresh complete suites pass site 72/72, QC 49/49, UAT 33/33, and harness 2/2 with zero skips. The 1,000-row analytical case rendered 297 dashboard descendants with zero observed long tasks; the 320px RTL footer stayed within left=16/right=288 of the 304px client box; terminal 401 disabled refresh and exposed no retry.
+- All three remediation-cycle-2 fingerprints are closed by current-cycle exact-preview evidence. Synthetic fixture permissions do not prove tenant permission configuration, production publication, or controller completion.
+
 ## 2026-10-26 — event-436697-batch-b48436fc6cafd492b70f / implementation-planning-2 / process attempt 2
 
 - Active scope is implementation-planning QC only for shared plan revision 12 and structure IDs T-301 through T-305; application source, shared artifacts, preview, and other role homes remain read-only.

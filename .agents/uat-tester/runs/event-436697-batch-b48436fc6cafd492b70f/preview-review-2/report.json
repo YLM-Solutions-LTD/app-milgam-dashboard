@@ -1,0 +1,30 @@
+{
+  "role": "uat-tester",
+  "stage": "preview-review",
+  "cycle": 2,
+  "processAttempt": 1,
+  "verdict": "approve_with_findings",
+  "batchKey": "event-436697-batch-b48436fc6cafd492b70f",
+  "appName": "milgam-dashboard",
+  "preview": "https://f9d0c736.app-milgam-dashboard.pages.dev",
+  "reviewedHead": "2f47f48ed056df72c5d8b861778dad5cc4069703",
+  "handledActionIds": [570021],
+  "taskIds": ["T-301", "T-302", "T-303", "T-304", "T-305"],
+  "evidence": [
+    "Exact-preview Playwright through controller GuestBridge and deployed packaged SDK: range, bounded analytics, snapshot 401, Navigate/re-entry, footer, RTL/LTR desktop/phone and 320px RTL passed.",
+    "Current fingerprints not reproduced: analytical DOM=297 with shared-role zero-long-task evidence; terminal 401 refresh disabled/retry absent/post-terminal calls=0; 320px RTL footer left=16/right=288 within innerWidth=304.",
+    "Complete inventory and configured suites passed: site 72/72, QC 49/49, UAT 33/33, harness 2/2.",
+    "Preview footer contains exactly one localized Version/Last update/Release date block, version 2f47f48ed056, and explicit Not released; direct no-context entry makes zero API calls.",
+    "Held old-generation Navigate produced zero effects after revocation; fresh generation produced exact #/Permits/Dashboard through the actual bridge."
+  ],
+  "findings": [
+    {
+      "fingerprint": "uat:synthetic-permissions-not-tenant-proof:v1",
+      "severity": "low",
+      "confidence": "high",
+      "taskIds": ["T-304"],
+      "title": "Synthetic permission decisions do not prove deployed tenant configuration",
+      "reproduction": "The controller harness manifest and README state that manager-supplied synthetic decisions exercise transport and lifecycle only; no tenant token or tenant request was authorized."
+    }
+  ]
+}
