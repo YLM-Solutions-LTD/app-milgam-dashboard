@@ -21,7 +21,7 @@
   },
   {
     "path": "site/index.html",
-    "sha256": "0294d62ec45ea0c1500b751f4af9b90ed3c4ad63cf1d0c4e5405f4152182633b"
+    "sha256": "99ddb64f95c8f0ac8989d66d04146c46dbd237c94536d6b838e4d3c33df2dd8c"
   },
   {
     "path": "site/current-snapshot.js",
@@ -54,5 +54,13 @@
   {
     "path": "site/tests/date-range.test.js",
     "sha256": "134a7d163b070dd68bd52365efa1e1b65b79a60ac493e5b927ba40d84a991568"
+  },
+  {
+    "path": "site/release-footer.js",
+    "sha256": "f507d8a5083e19ac86aff1798bd88f9566d44e72e730c8aee7025e9f8c7202db"
+  },
+  {
+    "path": "site/release-footer.css",
+    "sha256": "8630140fc81581724156afa21d80393359561fdcc8c11d1567aab1385c1daa31"
   }
 ]
