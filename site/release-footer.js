@@ -5,6 +5,9 @@ const copy = {
 
 export function releaseFields(data, language = 'en', timeZone) {
   const text = copy[language.startsWith('he') ? 'he' : 'en'];
+  if (data.releaseEnvironment !== 'preview' && data.releaseEnvironment !== 'production') {
+    return { text, version: text.unknown, updated: text.unknown, released: text.unknown };
+  }
   const date = value => {
     if (!value || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(value) || !Number.isFinite(Date.parse(value))) return text.unknown;
     return new Intl.DateTimeFormat(language, { dateStyle: 'short', timeStyle: 'short', ...(timeZone ? { timeZone } : {}) }).format(new Date(value));

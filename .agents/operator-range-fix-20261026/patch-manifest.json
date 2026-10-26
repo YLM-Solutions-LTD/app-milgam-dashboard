@@ -57,10 +57,14 @@
   },
   {
     "path": "site/release-footer.js",
-    "sha256": "f507d8a5083e19ac86aff1798bd88f9566d44e72e730c8aee7025e9f8c7202db"
+    "sha256": "bd3aa96202a55cd9533d2d4dca2c2c49e62aafc6035fe81448fe809a0959c08a"
   },
   {
     "path": "site/release-footer.css",
     "sha256": "8630140fc81581724156afa21d80393359561fdcc8c11d1567aab1385c1daa31"
+  },
+  {
+    "sha256": "f592eae38d2a6b5d24ecedd5c06df09eeed2384dafe340fbd0793e14217e8ea6",
+    "path": "site/tests/release-footer.test.js"
   }
 ]
