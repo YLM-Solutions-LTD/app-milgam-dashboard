@@ -1,0 +1,22 @@
+COMMAND: find site tests/uat tests/qc ... applicable extensions
+site/tests/api-client.test.js
+site/tests/current-snapshot.test.js
+site/tests/dashboard-data.test.js
+site/tests/dashboard-machine.test.js
+site/tests/data-mappers.test.js
+site/tests/date-range.test.js
+site/tests/host-bootstrap.test.js
+site/tests/host-context.test.js
+site/tests/host-services.test.js
+site/tests/pagination.test.js
+site/tests/release-footer.test.js
+site/tests/ui-contract.test.js
+tests/qc/operator-reentry-race.test.mjs
+tests/qc/range-footer-qc.test.mjs
+tests/qc/sdk-bridge-qc.test.mjs
+tests/qc/snapshot-qc.test.js
+tests/uat/current-snapshot.uat.test.mjs
+tests/uat/range-footer.uat.test.mjs
+tests/uat/remediation-cycle-2.uat.test.mjs
+tests/uat/verified-host-bridge.uat.test.mjs
+/workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs

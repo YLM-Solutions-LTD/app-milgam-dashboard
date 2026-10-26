@@ -1,0 +1,27 @@
+{
+  "role": "uat-tester",
+  "verdict": "approve",
+  "handledActionIds": [570021],
+  "includeDescription": false,
+  "taskIds": ["T-301", "T-302", "T-303", "T-304", "T-305"],
+  "counts": {
+    "uat": { "passed": 33, "failed": 0, "skipped": 0 },
+    "site": { "passed": 72, "failed": 0, "skipped": 0 },
+    "qc": { "passed": 49, "failed": 0, "skipped": 0 },
+    "harness": { "passed": 2, "failed": 0, "skipped": 0 }
+  },
+  "findings": [],
+  "limitations": [
+    "Exact-preview Chromium DOM, long-task, responsive geometry, and deployed metadata verification were not authorized in test authoring.",
+    "Synthetic harness permissions do not prove deployed tenant permission configuration."
+  ],
+  "evidence": [
+    "tests/uat/remediation-cycle-2.uat.test.mjs",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/evidence.md",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/inventory.log",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/uat.log",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/site.log",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/qc.log",
+    ".agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/harness.log"
+  ]
+}

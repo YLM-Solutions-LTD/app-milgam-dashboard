@@ -31,6 +31,26 @@ body {
 body {
   min-inline-size: 320px;
   overflow-x: hidden;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 320px) {
+  body { min-inline-size: 0; }
+}
+
+.release-footer {
+  inline-size: min(calc(100% - 2rem), 1280px);
+  max-inline-size: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+.release-footer dl,
+.release-footer dl > div,
+.release-footer dd,
+.release-footer bdi {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
 }
 
 button,
@@ -488,6 +508,17 @@ select:disabled {
   font-weight: bold;
   text-align: end;
 }
+
+.detail-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  margin-block-start: 1rem;
+}
+
+.detail-range { min-inline-size: 0; color: var(--muted); text-align: center; }
 
 .kpi-grid {
   display: grid;

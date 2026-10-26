@@ -1,5 +1,21 @@
 # UAT tester memory
 
+## Active assignment — batch b48436 test-authoring cycle 2, process attempt 1
+
+- Revalidate shared plan revision and every current cycle-2 remediation fingerprint with deterministic UAT, preserving frozen action order and structure-based task IDs.
+- Authorized writes are limited to this memory, `tests/uat/`, `.agents/uat-tester/tmp/`, and `runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/`; site/shared/prior runs/other roles/Git/provider state remain read-only.
+- Use the controller-owned actual GuestBridge and packaged SDK with synthetic postMessage/API fixtures only. Never use a tenant token, access the forbidden deployed origin, or claim exact-preview/tenant verification.
+- Discover all applicable test extensions and execute complete configured site, QC, UAT, and harness inventories. Preserve commands, counts, remediation traceability, and limitations in the current run evidence.
+- Result: `approve`. Added UAT-306–UAT-309 for all three cycle-2 fingerprints. Complete execution passed UAT 33/33, site 72/72, QC 49/49, and harness 2/2 on Node.js v20.20.2. Local deterministic evidence closes the terminal-401 behavior and proves bounded analytical windows plus footer containment source contracts; exact Chromium DOM/long-task/320px geometry and deployed tenant permissions remain final-review limitations.
+
+## Active assignment — batch b48436 preview review cycle 1
+
+- Review exact head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c` at authorized preview `https://8248a782.app-milgam-dashboard.pages.dev` for shared tasks `T-301`–`T-305`, preserving frozen handled action order `[570021]` with `includeDescription=false`.
+- Authorized writes are limited to this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/`; site, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Execute UAT-301–UAT-309 through Playwright with the controller-owned actual GuestBridge and deployed packaged SDK, fully intercepted host/API traffic, synthetic permissions, and no tenant token or tenant request. Never access the prohibited older origin.
+- Rediscover and run complete configured inventories without partial-glob pass claims. Exact commands, failures, candidate identity, browser/viewport/direction, request accounting, footer states, and limitations belong in current-run evidence.
+- Result: `reject`. Exact-preview range, decimal-string aggregates, actual-bridge Navigate/re-entry, responsive/footer/CSP checks passed; complete suites passed site 67/67, QC 43/43, UAT 29/29, harness 2/2. Required terminal 401 UX failed because retry remained enabled and ordinary retry guidance was shown until fresh re-entry (`uat:snapshot-terminal-401-retry-enabled:v1`).
+
 ## Active assignment — batch b48436 test-authoring cycle 1
 
 - Author and execute deterministic UAT for shared plan revision 12 tasks `T-301`–`T-305`, preserving frozen handled action order `[570021]` with `includeDescription=false`.

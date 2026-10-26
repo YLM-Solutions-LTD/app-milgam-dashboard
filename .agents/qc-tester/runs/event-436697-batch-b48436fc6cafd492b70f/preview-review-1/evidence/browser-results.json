@@ -1,0 +1,271 @@
+{
+  "preview": "https://8248a782.app-milgam-dashboard.pages.dev",
+  "head": "1c5ebdae74cb6a1fae0f818b9f44997e43b8245c",
+  "browser": "140.0.7339.16",
+  "headers": {
+    "date": "Mon, 26 Oct 2026 17:21:27 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'",
+    "referrer-policy": "no-referrer",
+    "x-content-type-options": "nosniff",
+    "x-robots-tag": "noindex",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=NPNp41R2ooCzhHXsm2EBuxEB16KhSPcO7ON%2Byvcb8l1WstyCIcl3m2IxEVoMj3OonXCPLi2WAeSHKYc5mTvbbnPRnnpv4qewQRBLXZEcgi%2BHKmx4ZCLgfic8bWXouD68n%2FI%2F%2Ba%2Fu3pEVGxxM1XCjeButyTv4AcXuBGE%3D\"}]}",
+    "etag": "W/\"b5727ab41da46283fcc4574614c78115\"",
+    "content-encoding": "br",
+    "server": "cloudflare",
+    "cf-ray": "a50b2332eda93d7c-TLV",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerPosition": "static",
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "1c5ebdae74cb",
+          "data-release-updated-at": "2026-10-26T17:18:44.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "ltr",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "ltr",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerText": "Version\n1c5ebdae74cb (Preview)\nLast update\n10/26/26, 5:18 PM\nRelease date\nNot released",
+        "footerVisible": true,
+        "footerPosition": "static",
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "Release details",
+          "data-release-version": "1c5ebdae74cb",
+          "data-release-updated-at": "2026-10-26T17:18:44.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerPosition": "static",
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "1c5ebdae74cb",
+          "data-release-updated-at": "2026-10-26T17:18:44.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile-ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dir": "ltr",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "ltr",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerText": "Version\n1c5ebdae74cb (Preview)\nLast update\n10/26/26, 5:18 PM\nRelease date\nNot released",
+        "footerVisible": true,
+        "footerPosition": "static",
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "Release details",
+          "data-release-version": "1c5ebdae74cb",
+          "data-release-updated-at": "2026-10-26T17:18:44.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "clipped": []
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "narrow-rtl",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 320,
+        "clientWidth": 304,
+        "footerCount": 1,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerPosition": "static",
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "1c5ebdae74cb",
+          "data-release-updated-at": "2026-10-26T17:18:44.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "clipped": [
+          "FOOTER"
+        ]
+      },
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "rapid-apply",
+      "analytical": 40,
+      "snapshot": 0,
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "name": "navigate",
+      "harness": {
+        "authorized": true,
+        "generation": 1,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "console": [],
+      "pageErrors": []
+    }
+  ],
+  "blocked": [],
+  "executables": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/app.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/constants.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/data-mappers.js"
+  ]
+}

@@ -101,4 +101,32 @@ test("fresh application generation retains prior facts while its automatic refre
   assert.ok(states.every((state) => state.data === prior));
 });
 
+test("terminal 401 and 403 latch the generation, retain facts, and block retry effects", async () => {
+  for (const status of [401, 403]) {
+    let calls = 0;
+    const prior = { marker: "last-good" };
+    const controller = createSnapshotController({
+      client: {},
+      initialData: prior,
+      load: async () => { calls += 1; throw { kind: "http", status, dataset: "currentEvents" }; }
+    });
+    await controller.refresh();
+    assert.equal(controller.getState().status, "stale");
+    assert.equal(controller.getState().data, prior);
+    assert.equal(controller.getState().terminalAuthorization, true);
+    await Promise.all(Array.from({ length: 10 }, () => controller.refresh()));
+    assert.equal(calls, 1);
+  }
+});
+
+test("explicit revocation is terminal for the disposed generation", async () => {
+  let calls = 0;
+  const controller = createSnapshotController({ client: {}, load: async () => { calls += 1; return { marker: "new" }; } });
+  controller.invalidate();
+  await controller.refresh();
+  assert.equal(calls, 0);
+  assert.equal(controller.getState().terminalAuthorization, true);
+  assert.equal(controller.getState().error.kind, "authorization-revoked");
+});
+
 test("release-candidate source keeps authorized current snapshot live calls enabled", () => assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true));

@@ -1,5 +1,21 @@
 # Security reviewer memory
 
+## Current assignment — preview review cycle 1
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `preview-review`; cycle 1; process attempt 1; exact head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`; exact preview `https://8248a782.app-milgam-dashboard.pages.dev`.
+- Review all shared structure tasks `T-301` through `T-305` and acknowledge frozen action `570021` exactly once with `includeDescription=false`.
+- Use only the actual packaged guest SDK with the controller GuestBridge harness at the fully intercepted trusted origin and synthetic API fixtures; never request a real tenant token or access the forbidden older preview origin.
+- Security focus: strict parent/source/origin and API/bearer confinement; revocation and generation isolation; untrusted date/count/error handling; exact Navigate; direct/rejected-context denial; diagnostics redaction; CSP/executable provenance; truthful, non-sensitive release metadata in every state.
+- Authorized writes are this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/` only. Site, tests, shared artifacts, other role homes, previous runs, Git/provider state, deployments, and SimplyLog lifecycle state remain immutable.
+
+## Preview review cycle 1 result
+
+- Verdict: approve across `T-301` through `T-305`; no concrete client-security defect reproduced at the exact preview/head.
+- Deployed security-relevant assets matched supplied source bytes; strict CSP and same-origin executable provenance held. The real packaged SDK plus intercepted GuestBridge passed bearer/API confinement, direct-context denial, terminal 401 denial, generation-2 re-entry, revoked held-command rejection, and bounded diagnostic disclosure checks.
+- The preview footer was singular, visible, non-overflowing, and truthfully showed version `1c5ebdae74cb`, Preview, trusted source update time, and Not released; no sensitive metadata or footer request path was observed.
+- Complete inventory-aware suites passed site 67, QC 43, UAT 29, and harness 2 (141 total). Synthetic permissions remain non-evidence for tenant policy or controller release authority.
+- Full result: `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/report.md`.
+
 ## Current assignment — cycle 3, process attempt 2 contract remediation
 
 - Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `plan-review`; cycle 3; process attempt 2; shared revision 12; frozen action order `570021`; `includeDescription=false`.

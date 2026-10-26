@@ -1,0 +1,42 @@
+# Concrete browser implementation plan — revision 13
+
+## T-301 — preserve inclusive range controls
+
+- Preserve `site/date-range.js`, `site/dashboard-data.js`, `site/dashboard-machine.js`, and the From/To/Apply UI contracts already covered by current tests: canonical real dates in years 1753–9999, `From <= To`, timezone-less `T00:00:00` / `T23:59:59.997`, four identical analytical bodies, zero effects for invalid input, and draft/applied separation.
+- Keep native date controls, 44px targets, logical RTL/LTR styling, announced validation, relevant-input focus, selected-range retention across analytical refresh and verified fresh host entry, and complete range tests. This remediation must not regress or reopen the passing range work.
+
+## T-302 — bounded analytical detail and stable page state
+
+1. Add module-private presentation state in `site/app.js` for independent division, headquarters-category, branches-category, headquarters-closure, and branches-closure windows. Use a small deterministic page size chosen so the complete ready dashboard remains below 600 descendants with all five windows rendered. Reset each window to page 0 when a new analytical generation commits; clamp it after data replacement.
+2. Refactor `renderDivision`, `renderCategory`, and `renderClosureSection` so totals, percentages, summaries, and accessible chart descriptions are computed from the full validated arrays, while only the current stable-order slice enters the DOM. Do not map or join all 1,000 rows to build hidden markup. For the donut, render bounded visible segments plus an explicit aggregated remainder segment when needed; retain full-data total and localized summary without an unbounded aria-label.
+3. Add a reusable pager renderer with localized “items X–Y of N” text, previous/next buttons, disabled boundary semantics, and a dedicated polite live-status node. Bind paging by event delegation after dashboard render. Paging changes presentation state and rerenders only the affected bounded section (or the bounded dashboard), never calls the API, never remaps transport payloads, preserves stable source order, and returns focus to the activated pager control without unexpected focus movement.
+4. Add app-owned logical CSS for pager layout, shrinkable labels, visible focus, and narrow/wide RTL/LTR wrapping. Preserve chart/table headings, captions, list/table semantics, strict CSP, the existing `#1e6bd6`/Arial baseline, and all aggregation values.
+5. Extend site tests with pure page-window/clamp/range helpers and static UI contracts. Extend intercepted browser coverage with 1,000 rows for division/category/closure: reconcile every source item exactly once across pages, full totals unchanged, zero API calls during navigation, <=600 descendants, render samples <50ms, and no app-attributable >=50ms long task at 390×844 and 1440×900 in both directions. Retain 4,000-row/4MiB, <100ms warmed mapping, request accounting, abort/commit, and peak-concurrency checks.
+
+## T-303 — terminal snapshot authorization state
+
+1. Extend `createSnapshotController` in `site/current-snapshot.js` with an explicit terminal flag/classification for `authorization-revoked` and bounded HTTP 401/403 only. On terminal failure, preserve `lastGoodData` and `refreshedAt`, publish terminal `stale`/`error` state, and retain the denial for that controller/verified host generation. Never infer terminality from response text.
+2. Make `refresh()` return the current terminal state without constructing an `AbortController`, invoking `load`, or issuing API calls. Keep ordinary failures retryable and preserve three concurrent snapshot calls, coalescing, safe decimal normalization, equipment constraints, and `CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED=true`.
+3. Treat `acceptHostContext(context, client)` in `site/app.js` as the only reset: a distinct verified SDK/client generation disposes the denied controller, creates a new controller seeded with last-good facts/timestamp, and automatically begins exactly one fresh three-request generation. Same-generation verify/refresh cannot clear denial.
+4. Update `renderSnapshot` so terminal states disable `#snapshot-refresh`, emit concise Hebrew re-entry guidance, and omit `[data-snapshot-retry]`; stale facts remain visible. Recoverable stale/error states retain the retry control. Ensure shared `refreshPending` cleanup cannot re-enable the terminal control.
+5. Add controller/UI tests for both 401 and 403 after good data, explicit revocation, stale retention, disabled toolbar, absent retry/ordinary guidance, ten attempted activations producing zero API effects, and exactly three fresh requests only after distinct real-SDK GuestBridge re-entry. Preserve bounded diagnostics/no-disclosure assertions and ordinary 400/404/500/network/invalid-response recovery.
+
+## T-305 — 320px RTL footer containment without changing packaged assets
+
+1. Keep `site/assets/release-footer.js` and `release-footer.css` byte-identical to the repaired builder package and retain exactly one semantic footer outside `<main>`. Do not add runtime metadata generation, fetch, authentication, or invented stamps.
+2. Remove the app shell’s clipping dependency in `site/app.css`: replace `body { min-inline-size:320px; overflow-x:hidden; }` with a shrink-safe document shell, constrain the footer border box to the viewport, and add app-owned overrides that set its `dl` and field children to `min-inline-size:0`, `max-inline-size:100%`, and wrapping/bidi-safe sizing. Account for padding and borders with the existing global `border-box`; do not edit packaged CSS.
+3. Audit other 320px shell children so the fix does not merely move clipping. At 320×844 Hebrew RTL assert footer and each field bounding box remain within `[0, innerWidth]`, `scrollWidth <= innerWidth`, all text is recoverable, and no overlap occurs. Repeat 390×844 and 1440×900 in RTL/LTR, zoom, and every waiting/loading/no-context/empty/error/stale/ready state.
+4. Preserve exact environment gating: missing/unsupported environments render all values unavailable, preview is explicitly Preview/Not released, and only valid production metadata displays frozen timestamps. Footer tests use explicit synthetic attributes and assert zero fetch/host/authentication effects.
+
+## T-304 — complete regression and remediation proof
+
+1. Immediately before execution, inventory `*.test.{js,mjs,cjs}` and `*.spec.{js,mjs,cjs}`. Run exactly `cd site && npm test`, `node --test tests/qc/*.test.js tests/qc/*.test.mjs`, `node --test tests/uat/*.test.mjs`, and `node --test /workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs`; preserve commands, totals, skips, failures, Node/browser versions, and candidate identity. Any unexplained failure blocks implementation readiness.
+2. Reproduce all three cycle-2 fingerprints before editing, then verify corrected behavior after editing. Browser checks must use the actual packaged SDK and unmodified GuestBridge at fully intercepted `https://milgam.ylm.co.il/controller-host-fixture/`; abort all real tenant/API traffic and never inject a fake adapter/readiness promise.
+3. Record analytical/snapshot decoded bytes, initiated/aborted/completed/committed totals, peak concurrency, warmed mapping/render samples, descendant counts, long tasks, directions/viewports, and third-party executable requests. Verify exact permit `Navigate {Url:'#/Permits/Dashboard'}`, strict CSP, no page errors, and SDK/footer asset hashes.
+4. Confirm the candidate still has snapshot calls enabled and that the footer remains truthful in every state. Hand evidence to fresh controller reviews; exact deployed head/version, tenant permissions, approval, publication, and completion remain controller-owned.
+
+## Fingerprint closure criteria
+
+- `perf-preview-analytical-1000-row-unbounded-dom-long-tasks-v1`: closed only by full-data-correct, reachable stable pagination/windowing with <=600 descendants and no >=50ms app task in the intercepted browser cases.
+- `uat-snapshot-terminal-401-retry-enabled-v1`: closed only when terminal 401/403/revocation retains stale facts, disables both retry paths, makes zero old-generation effects, and recovers on distinct verified re-entry.
+- `qc-footer-320-rtl-edge-clipping-v1`: closed only when footer and fields remain inside the 320px RTL viewport without hidden overflow or horizontal recovery, while packaged footer bytes remain unchanged.

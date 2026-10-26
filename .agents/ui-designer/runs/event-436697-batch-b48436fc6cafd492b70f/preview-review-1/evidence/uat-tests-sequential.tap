@@ -1,0 +1,400 @@
+TAP version 13
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT traceability covers every recovered structure task T-201 through T-205
+ok 1 - UAT traceability covers every recovered structure task T-201 through T-205
+  ---
+  duration_ms: 1.512057
+  ...
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT-201 authenticated entry loads one coherent three-report snapshot
+ok 2 - UAT-201 authenticated entry loads one coherent three-report snapshot
+  ---
+  duration_ms: 27.435433
+  ...
+# Subtest: UAT-204 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+ok 3 - UAT-204 exact semantics distinguish validated zero, separate units, raw dates, and unavailable classification
+  ---
+  duration_ms: 0.683026
+  ...
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Parsing JSON message payload
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Rejected host message { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Blocked message origin {
+#   origin: 'http://localhost:5500',
+#   allowedOrigins: [ 'https://localhost:5500' ]
+# }
+# [milgam-dashboard.host-context] Rejected host message { origin: 'http://localhost:5500' }
+# [milgam-dashboard.host-context] Invalid host context { reason: 'invalid ApiAddress protocol', apiOriginApproved: false }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Invalid host context { reason: 'invalid ApiAddress protocol', apiOriginApproved: false }
+# [milgam-dashboard.host-context] Rejected host message: invalid runtime context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Failed to parse host message payload
+# [milgam-dashboard.host-context] Message event received { origin: 'https://localhost:5500' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Host context accepted
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# [milgam-dashboard.host-context] Unwrapping nested payload { wrapper: 'context' }
+# [milgam-dashboard.host-context] Accepted host message {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he-IL',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: null
+# }
+# Subtest: UAT-202 analytical period requests remain distinct from current snapshot requests
+ok 4 - UAT-202 analytical period requests remain distinct from current snapshot requests
+  ---
+  duration_ms: 3.240122
+  ...
+# Subtest: UAT-205 superseded slow responses cannot replace generation ten
+ok 5 - UAT-205 superseded slow responses cannot replace generation ten
+  ---
+  duration_ms: 0.941035
+  ...
+# Subtest: UAT-205 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+ok 6 - UAT-205 malformed, permission, and invalid JSON failures stay explicit without fabricated metrics
+  ---
+  duration_ms: 3.43403
+  ...
+# Subtest: UAT-208 trust boundary supports revocation, late-result denial, and fresh synthetic re-entry
+ok 7 - UAT-208 trust boundary supports revocation, late-result denial, and fresh synthetic re-entry
+  ---
+  duration_ms: 2.853508
+  ...
+# Subtest: UAT-205 failed refresh retains the complete last-good snapshot
+ok 8 - UAT-205 failed refresh retains the complete last-good snapshot
+  ---
+  duration_ms: 0.376114
+  ...
+# Subtest: UAT-205/UAT-208 HTTP 500 and 401 refreshes retain last-good data and timestamp
+ok 9 - UAT-205/UAT-208 HTTP 500 and 401 refreshes retain last-good data and timestamp
+  ---
+  duration_ms: 0.928935
+  ...
+# Subtest: UAT-208 a 401 terminally denies the rejected synthetic generation
+ok 10 - UAT-208 a 401 terminally denies the rejected synthetic generation
+  ---
+  duration_ms: 2.478993
+  ...
+# Subtest: UAT-206 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+ok 11 - UAT-206 permit host chain uses exact unfiltered navigation and is structurally busy-locked
+  ---
+  duration_ms: 3.839945
+  ...
+# Subtest: UAT-209 host navigation failure path preserves data and clears busy state by contract
+ok 12 - UAT-209 host navigation failure path preserves data and clears busy state by contract
+  ---
+  duration_ms: 1.250747
+  ...
+# UAT_PERFORMANCE [{"rows":0,"decodedBytes":27,"durationMs":0.01,"unique":0},{"rows":1,"decodedBytes":127,"durationMs":0.01,"unique":1},{"rows":1000,"decodedBytes":103422,"durationMs":3.292,"unique":1000},{"rows":10000,"decodedBytes":1043924,"durationMs":26.912,"unique":10000}]
+# Subtest: UAT-207 responsive bidi and accessible snapshot shell contracts are present
+ok 13 - UAT-207 responsive bidi and accessible snapshot shell contracts are present
+  ---
+  duration_ms: 1.770567
+  ...
+# Subtest: UAT-204 strict contracts and representative volumes remain within mapper budget
+ok 14 - UAT-204 strict contracts and representative volumes remain within mapper budget
+  ---
+  duration_ms: 71.710999
+  ...
+# Subtest: UAT-203 and UAT-210 delivery is enabled, CSP-safe, locally pinned, and synthetic
+ok 15 - UAT-203 and UAT-210 delivery is enabled, CSP-safe, locally pinned, and synthetic
+  ---
+  duration_ms: 4.955086
+  ...
+# [milgam-dashboard.mappers] Invalid MilgamDashboardSummary data: Summary must contain exactly two scope rows
+# Subtest: UAT-301 through UAT-305 trace every revision-12 task
+ok 16 - UAT-301 through UAT-305 trace every revision-12 task
+  ---
+  duration_ms: 1.578859
+  ...
+# Subtest: UAT-301 accepts inclusive boundary, leap-day, one-day, and cross-year ranges
+ok 17 - UAT-301 accepts inclusive boundary, leap-day, one-day, and cross-year ranges
+  ---
+  duration_ms: 0.730227
+  ...
+# Subtest: UAT-302 empty discovery seeds a usable default and an Apply loads exactly four identical bodies
+ok 18 - UAT-302 empty discovery seeds a usable default and an Apply loads exactly four identical bodies
+  ---
+  duration_ms: 2.698601
+  ...
+# Subtest: UAT-303 HTTP-200 decimal strings normalize end-to-end while unsafe forms fail closed
+ok 19 - UAT-303 HTTP-200 decimal strings normalize end-to-end while unsafe forms fail closed
+  ---
+  duration_ms: 0.847331
+  ...
+# Subtest: UAT-304 source preserves analytics/snapshot isolation, enabled live calls, and exact Navigate
+ok 20 - UAT-304 source preserves analytics/snapshot isolation, enabled live calls, and exact Navigate
+  ---
+  duration_ms: 7.599286
+  ...
+# Subtest: UAT-305 release footer is singular, external to main, packaged unchanged, and network independent
+ok 21 - UAT-305 release footer is singular, external to main, packaged unchanged, and network independent
+  ---
+  duration_ms: 15.66669
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208 healthy verification burst shares one live SDK handshake
+ok 22 - UAT-208 healthy verification burst shares one live SDK handshake
+  ---
+  duration_ms: 25.387055
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208 silent bridge loss blocks effects until distinct controller re-entry
+ok 23 - UAT-208 silent bridge loss blocks effects until distinct controller re-entry
+  ---
+  duration_ms: 314.76785
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-206 packaged verified SDK reaches the real GuestBridge Navigate path
+ok 24 - UAT-206 packaged verified SDK reaches the real GuestBridge Navigate path
+  ---
+  duration_ms: 4.432467
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208/UAT-209 bridge revocation denies old commands and requires fresh SDK generation
+ok 25 - UAT-208/UAT-209 bridge revocation denies old commands and requires fresh SDK generation
+  ---
+  duration_ms: 25.921976
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208 fresh bridge re-entry automatically starts all three snapshot routes
+ok 26 - UAT-208 fresh bridge re-entry automatically starts all three snapshot routes
+  ---
+  duration_ms: 32.034206
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-208 overlapping bridge re-entry keeps newest automatic three-snapshot recovery
+ok 27 - UAT-208 overlapping bridge re-entry keeps newest automatic three-snapshot recovery
+  ---
+  duration_ms: 23.594088
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# Subtest: UAT-209 reset, pending handshake, command rejection, and disposal emit no unhandled rejection
+ok 28 - UAT-209 reset, pending handshake, command rejection, and disposal emit no unhandled rejection
+  ---
+  duration_ms: 33.99498
+  ...
+# [milgam-dashboard.host-context] Accepted SDK context {
+#   tokenType: 'Bearer',
+#   hasAccessToken: true,
+#   LanguageCode: 'he',
+#   CultureInfo: null,
+#   LanguageDirection: 'rtl',
+#   ApplicationName: 'milgam-dashboard'
+# }
+# [milgam-dashboard.api] Starting request {
+#   dataset: 'MilgamDashboardByMonth',
+#   endpoint: '/api/Entity/MilgamDashboardByMonth/Search',
+#   range: { fromDate: '2026-01-01T00:00:00', toDate: '2026-01-31T23:59:59' }
+# }
+# [milgam-dashboard.api] Response received {
+#   dataset: 'MilgamDashboardByMonth',
+#   status: 500,
+#   ok: false,
+#   bodyBytes: 80
+# }
+# Subtest: UAT-205 synthetic API error bodies stay out of logs and serialized errors
+ok 29 - UAT-205 synthetic API error bodies stay out of logs and serialized errors
+  ---
+  duration_ms: 4.129955
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 518.989938

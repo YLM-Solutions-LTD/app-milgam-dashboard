@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "batchKey": "event-436697-batch-b48436fc6cafd492b70f",
   "appName": "milgam-dashboard",
-  "planRevision": 12,
-  "summary": "Apply and independently verify inclusive From/To analytics, decimal-string snapshot counts, and a truthful all-state release footer while preserving the enabled snapshot, verified host lifecycle, security, accessibility, and controller-owned release gate.",
+  "planRevision": 13,
+  "summary": "Remediate bounded analytical rendering, terminal snapshot authorization recovery, and 320px RTL footer containment while preserving the accepted range, count, host, metadata, accessibility, and controller-owned release contracts.",
   "source": {"includeDescription": false, "actionIds": [570021]},
   "assumptions": [
     "Existing endpoints and inclusive SQL datetime comparison are unchanged; no database or backend change is required.",
@@ -57,19 +57,24 @@
         "Preserve aggregation, charts, CSP, sanitization, errors, and host authorization.",
         "Keep analytical operations isolated from the enabled three-report current snapshot.",
         "Measure 0, 1, and 1,000 rows per report, including duplicate-heavy and malformed boundaries; record decoded bytes, warmed mapping/render time, peak concurrency, long tasks, and dashboard descendants.",
-        "Bound the 1,000-row-per-report case to 4,000 combined rows and 4 MiB decoded, warmed aggregate mapping under 100 ms, post-response render under 50 ms, no app-attributable task of 50 ms or more, and at most 600 dashboard descendants."
+        "Bound the 1,000-row-per-report case to 4,000 combined rows and 4 MiB decoded, warmed aggregate mapping under 100 ms, post-response render under 50 ms, no app-attributable task of 50 ms or more, and at most 600 dashboard descendants.",
+        "Replace per-row eager analytical markup with accessible deterministic pagination, windowing, or equivalent progressive disclosure; full validated data continues to drive totals while only a bounded detail window enters the DOM.",
+        "Expose localized visible-range and total-count text plus keyboard-operable previous/next controls, keep stable source order, and reset or clamp the window when the applied data changes.",
+        "Detail navigation must issue zero API calls, avoid full-payload remapping, preserve headings/table semantics, announce the visible range, and retain focus predictably."
       ],
       "acceptanceCriteria": [
         "All four request bodies carry identical FromDate and ToDate for the applied range.",
         "Ten rapid applications initiate exactly 40 analytical and zero snapshot requests with peak active analytical concurrency at most four; only the newest four may complete and commit, while the prior 36 are aborted or settle ignored.",
         "Refresh reloads the displayed applied range in ready and empty states.",
         "Analytics creates no extra snapshot call and changes no snapshot facts or timestamp.",
-        "Evidence records analytical initiated, aborted, completed, and committed totals plus decoded bytes, mapping/render samples, peak concurrency, descendant count, and long-task count."
+        "Evidence records analytical initiated, aborted, completed, and committed totals plus decoded bytes, mapping/render samples, peak concurrency, descendant count, and long-task count.",
+        "At 1,000 division, category, and closure rows, complete totals remain correct, every detail row is reachable exactly once in stable order, page/window changes make zero API calls, dashboard descendants stay at or below 600, and no app-attributable task lasts 50 ms or more."
       ],
       "validationScenarios": [
         "Resolve delayed old and new ranges out of order and verify only new data renders.",
         "Refresh an empty result and verify four requests retain the applied range.",
-        "Observe snapshot calls, facts, and timestamp across multiple analytical applies."
+        "Observe snapshot calls, facts, and timestamp across multiple analytical applies.",
+        "Navigate every analytical detail page/window with keyboard controls at 1,000-row volume and reconcile visible IDs, totals, API count, live status, focus, DOM cardinality, and long tasks."
       ]
     },
     {
@@ -86,6 +91,9 @@
         "Preserve dataset and bounded HTTP status/error class through invalidation and show report-specific Hebrew guidance.",
         "Expose only fixed endpoint paths and bounded classifications; never body text, arbitrary errors, API addresses, markers, tokens, or credentials.",
         "Retain stale last-good facts and disable retry for 401/403/revocation until fresh re-entry; ordinary failures remain retryable.",
+        "Classify safe authorization-revoked errors and bounded HTTP 401/403 as terminal for the current verified host generation; do not derive terminal status from response body text.",
+        "Persist terminal denial in snapshot controller state so refresh short-circuits with zero API effects until acceptHostContext supplies a distinct verified context/client generation.",
+        "In terminal stale/error UI disable #snapshot-refresh, omit or disable [data-snapshot-retry], and announce concise re-entry guidance; retain last-good data and timestamp without presenting ordinary try-again copy.",
         "Keep CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED true and exactly three concurrent calls per snapshot load/refresh.",
         "Measure 0, 1, 1,000, and 10,000 equipment rows with valid aggregate fixtures; record decoded bytes, warmed mapping/render time, peak concurrency, long tasks, and snapshot descendants.",
         "Bound the 10,000-row snapshot to 2.5 MiB decoded, warmed mapping under 100 ms, render under 50 ms, no app-attributable task of 50 ms or more, and at most 80 snapshot descendants at both viewports/directions."
@@ -94,13 +102,13 @@
         "HTTP 200 with numeric envelope counts and decimal-string event/permit aggregates renders correct numeric, separately categorized facts.",
         "Malformed/unsafe variants fail without fabricated values or partial commit.",
         "Known failures identify the report and expose only fixed endpoint/status diagnostics; private response data never reaches DOM/logs.",
-        "401/403 after good data retains stale facts, disables retry, issues no old-generation effect, and recovers only after fresh verified re-entry.",
+        "401/403 after good data retains stale facts, disables toolbar refresh, exposes no enabled retry control or ordinary retry guidance, issues no old-generation effect, and recovers only after fresh verified re-entry.",
         "Ten refresh/retry activations while pending coalesce to exactly three initiated requests, peak concurrency three, and one commit; after terminal denial the same burst initiates zero until fresh re-entry.",
         "Very long digit strings and 9007199254740992 reject without partial render or nonlinear work."
       ],
       "validationScenarios": [
         "Test whitespace/leading-zero strings, then empty, signed, decimal, exponent, unsafe, and negative values.",
-        "Simulate equipment 500, permit 403, network, invalid response, and initial failure; verify copy, retry, diagnostics, and rendering.",
+        "Simulate equipment 500, permit 403, network, invalid response, and initial failure; verify ordinary retry only for recoverable failures and re-entry-only guidance for terminal authorization.",
         "Burst refresh/retry while pending; verify one bounded three-request chain and no disabled-flag regression."
       ]
     },
@@ -119,11 +127,14 @@
         "Verify exact certificate Navigate, strict CSP/no page errors, RTL/LTR responsiveness/accessibility, and authorization/re-entry behavior.",
         "Keep snapshots enabled in the exact candidate and require fresh reviews/approval; never reuse prior approval or synthetic permissions.",
         "For all performance cases record browser/version, candidate identity, viewport/direction, row counts, decoded bytes, request lifecycle totals, peak concurrency, warmed mapping/render samples, descendant counts, long tasks, and third-party executable requests.",
-        "Verify the T-305 footer through source and intercepted browser checks in host-waiting/loading, no-context, empty, error, stale, and ready states, with no deployed-origin access."
+        "Verify the T-305 footer through source and intercepted browser checks in host-waiting/loading, no-context, empty, error, stale, and ready states, with no deployed-origin access.",
+        "Reproduce each remediation-cycle-2 fingerprint before the change and verify its corrected behavior after the change using the locally intercepted actual-SDK harness; preserve exact observations and do not substitute earlier-cycle evidence.",
+        "Before running, rediscover all *.test.{js,mjs,cjs} and *.spec.{js,mjs,cjs}; current inventory is 11 site JS, 4 QC (1 JS/3 MJS), 3 UAT MJS, and 1 harness MJS with no CJS/spec files.",
+        "Run exactly cd site && npm test; node --test tests/qc/*.test.js tests/qc/*.test.mjs; node --test tests/uat/*.test.mjs; and node --test /workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs, preserving failures, totals, skips, and environment details."
       ],
       "acceptanceCriteria": [
         "Evidence lists the complete inventory and exact commands; all required suites pass with zero unexplained failures, while any failure blocks readiness.",
-        "Both viewports pass intercepted range, snapshot, navigation, responsive, CSP, disclosure, and no-page-error checks in RTL and LTR.",
+        "Required 390x844 and 1440x900 viewports pass intercepted range, snapshot, navigation, responsive, CSP, disclosure, and no-page-error checks in RTL and LTR; supplemental 320x844 RTL passes footer containment.",
         "The 0/1/1,000 analytical and 0/1/1,000/10,000 equipment fixtures satisfy the T-302/T-303 byte, timing, concurrency, DOM, long-task, and burst ceilings; third-party executable requests equal zero.",
         "Changed runtime and verified SDK artifact identity is established and the candidate flag remains true.",
         "Fresh reviews have no critical high-confidence issue or required workflow failure; release remains pending new authorized controller approval.",
@@ -131,7 +142,7 @@
       ],
       "validationScenarios": [
         "Inventory and run site, QC, UAT, and harness suites across every existing applicable extension and reconcile counts.",
-        "Exercise two viewports/directions, valid/invalid ranges, string aggregates, error classes, re-entry, bursts, and navigation with all traffic intercepted.",
+        "Exercise required viewports/directions plus supplemental 320x844 RTL, valid/invalid ranges, string aggregates, terminal 401/403, ordinary error classes, re-entry, bursts, detail paging, and navigation with all traffic intercepted.",
         "Attempt release gating with only attachment claims, old approval, or synthetic permission and verify refusal with limitations reported.",
         "Inject explicit synthetic footer attributes locally to test unavailable, malformed, preview, and production rendering without presenting fixtures as actual release metadata."
       ]
@@ -151,20 +162,22 @@
         "Accept only a 12-character lowercase hexadecimal releaseVersion and valid UTC timestamps; format timestamps in the viewer timezone without using viewer current time.",
         "Reserve stamping for the trusted controller workflow: Git version, latest site-source commit time, and frozen production publication time must never be inferred from data refresh, event, page-open, or hand-maintained values.",
         "Make no footer network or authentication request and include no user, tenant, token, credential, or controller-internal metadata.",
-        "Keep the release footer visually distinct from data-refresh timestamps, responsive without overlap or horizontal overflow at 390x844 and 1440x900, and accessible under zoom in RTL and LTR."
+        "Keep the release footer visually distinct from data-refresh timestamps, responsive without overlap or horizontal overflow at supplemental 320x844 and required 390x844 and 1440x900, and accessible under zoom in RTL and LTR.",
+        "Preserve the packaged release-footer.js and release-footer.css bytes; place any narrow-width fix in app-owned layout/CSS and account for the footer border box, shrinkable flex children, wrapping bdi values, and body min-width/overflow interaction.",
+        "Do not treat overflow-x:hidden as success: at 320px RTL the footer bounding box and each field must remain within the viewport and all text must be recoverable without horizontal scrolling."
       ],
       "acceptanceCriteria": [
         "Every runtime state retains one visible footer with all three labels and values; state transitions never remove or duplicate it.",
         "Unstamped and invalid synthetic metadata render localized Unavailable values and never synthesize a timestamp or version.",
         "Synthetic preview metadata renders the validated 12-character version with an explicit Preview label, valid Last update, and Not released for Release date.",
         "Synthetic production metadata renders the validated version and both valid frozen timestamps; changing document language relocalizes labels and values.",
-        "At both required viewports and directions the footer remains in flow, wraps without horizontal overflow or content obstruction, and remains distinguishable from dashboard last-refresh copy.",
+        "At supplemental 320x844 RTL and both required viewports/directions the footer remains in flow, its bounding box stays within 0..innerWidth, every field wraps without clipping or content obstruction, and it remains distinguishable from dashboard last-refresh copy.",
         "Static and browser evidence records exactly one footer marker, same-origin asset loads, zero footer fetch/auth calls, and the absence of sensitive metadata."
       ],
       "validationScenarios": [
         "Render host-waiting/loading, missing-context, empty, recoverable error, terminal authorization error with stale data, and ready states; assert the same single footer remains visible.",
         "Exercise absent attributes, malformed version/timestamps, valid preview attributes with empty release time, and valid production attributes using explicit local synthetic fixtures.",
-        "Switch html lang and dir between Hebrew RTL and English LTR, resize to 390x844 and 1440x900, and inspect wrapping, bdi isolation, labels, values, and overflow.",
+        "Switch html lang and dir between Hebrew RTL and English LTR, resize to 320x844, 390x844, and 1440x900, and inspect bounding boxes, wrapping, bdi isolation, labels, values, clipping, and scroll width.",
         "Instrument fetch and host-command paths while rendering and changing language; assert the footer initiates no request or authentication operation."
       ]
     }

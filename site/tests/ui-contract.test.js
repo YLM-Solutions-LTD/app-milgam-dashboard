@@ -100,3 +100,15 @@ test("release footer is same-origin, unique, semantic, and defaults to unavailab
   assert.match(footer, /releaseEnvironment !== 'preview'.*releaseEnvironment !== 'production'/s);
   assert.doesNotMatch(footer, /fetch\(|Date\.now|new Date\(\)/);
 });
+
+test("analytical detail is bounded by accessible paging and terminal snapshot copy omits retry", async () => {
+  const [source, css] = await Promise.all([readFile(appUrl, "utf8"), readFile(cssUrl, "utf8")]);
+  assert.match(source, /pageWindow/);
+  assert.match(source, /data-page-step/);
+  assert.match(source, /aria-live="polite"/);
+  assert.match(source, /terminalAuthorization/);
+  assert.match(source, /יש להיכנס מחדש דרך SimplyLog/);
+  assert.match(css, /\.detail-pager/);
+  assert.match(css, /@media \(max-width: 320px\)[\s\S]*body \{ min-inline-size: 0; \}/);
+  assert.match(css, /\.release-footer[\s\S]*max-inline-size/);
+});

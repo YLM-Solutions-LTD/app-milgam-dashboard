@@ -1,0 +1,116 @@
+{
+  "preview": "https://8248a782.app-milgam-dashboard.pages.dev",
+  "head": "1c5ebdae74cb6a1fae0f818b9f44997e43b8245c",
+  "browser": "140.0.7339.16",
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "initialCalls": 8,
+      "draftDelta": 0,
+      "applyCalls": [
+        "MilgamDashboardByDivision",
+        "MilgamDashboardSummary",
+        "MilgamDashboardByCategory",
+        "MilgamDashboardClosureByCategory"
+      ],
+      "applyBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}"
+      ],
+      "decodedBytes": 321116,
+      "peak": 4,
+      "elapsedMs": 997,
+      "metrics": {
+        "dir": "rtl",
+        "width": [
+          1424,
+          1424
+        ],
+        "dashboardNodes": 13066,
+        "snapshotNodes": 41,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "longTasks": [
+          152,
+          143
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-ltr",
+      "initialCalls": 8,
+      "draftDelta": 0,
+      "applyCalls": [
+        "MilgamDashboardByDivision",
+        "MilgamDashboardSummary",
+        "MilgamDashboardByCategory",
+        "MilgamDashboardClosureByCategory"
+      ],
+      "applyBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-02T23:59:59.997\"}"
+      ],
+      "decodedBytes": 321116,
+      "peak": 4,
+      "elapsedMs": 985.4,
+      "metrics": {
+        "dir": "ltr",
+        "width": [
+          374,
+          374
+        ],
+        "dashboardNodes": 13066,
+        "snapshotNodes": 41,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "Version\n1c5ebdae74cb (Preview)\nLast update\n10/26/26, 5:18 PM\nRelease date\nNot released",
+        "longTasks": [
+          125,
+          115
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "snapshot-refresh-burst",
+      "calls": [
+        "MilgamDashboardCurrentEvents",
+        "MilgamDashboardCurrentPermits",
+        "MilgamDashboardCurrentEquipment"
+      ],
+      "peak": 4,
+      "errors": []
+    },
+    {
+      "name": "no-context",
+      "apiCalls": 0,
+      "footer": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+      "count": 1
+    }
+  ],
+  "unexpected": [],
+  "executables": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/app.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/constants.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-data.js"
+  ]
+}

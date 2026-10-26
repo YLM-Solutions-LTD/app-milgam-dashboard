@@ -29,3 +29,13 @@ Batch: `event-436697-batch-b48436fc6cafd492b70f`
 # Current plan-review assignment
 
 Review revision 9 for batch `event-436697-batch-b48436fc6cafd492b70f`, cycle 2 process attempt 2, across `T-301`–`T-304`. Produce fresh ImageGen-backed responsive design evidence; verify the historical measurable-budget finding in current plan/task source; document the four attempt-1 missing-manifest fingerprints as duplicate controller-input conditions rather than revision-9 defects; do not edit shared plan or application source.
+# UI designer approach — preview review cycle 1
+
+Batch: `event-436697-batch-b48436fc6cafd492b70f`; exact head: `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`.
+
+- Review all `T-301`–`T-305` criteria through UI hierarchy, interaction, accessibility, responsiveness, state continuity, and truthful footer presentation.
+- Use the controller harness with its real GuestBridge and the preview's packaged SimplyVibeClient; intercept host/API traffic locally and abort all real tenant traffic.
+- Capture desktop/mobile and RTL/LTR evidence, inspect focus, target sizing, overflow, state visibility, and exact Preview footer values in waiting/loading/error/ready paths.
+- Discover the complete configured test inventory and preserve exact commands/results relevant to the candidate without editing tests.
+- Generate a fresh ImageGen UI reference from observed preview structure, stored only in the current run as comparative design evidence.
+- Record stable findings with reproduction and confidence, then issue only the UI role verdict. No implementation, deployment, tenant-permission, release, or controller-completion claim.

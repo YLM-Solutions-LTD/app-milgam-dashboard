@@ -137,3 +137,13 @@
 - Frozen contract: `includeDescription=false`, ordered `handledActionIds=[570021]`, task IDs `T-301`–`T-304`.
 - `/workspace/.simplyvibe/input/remediation-cycle-2.json` is absent. The four attempt-1 fingerprints all describe that same missing controller artifact; process attempt 2 must document it as not a revision-9 product/plan defect and must not reject solely for its absence.
 - Historical accepted finding `perf:plan:range-and-count-release-missing-measurable-budgets:v1` must be rechecked against current revision-9 plan/source evidence.
+# Active run — event-436697-batch-b48436fc6cafd492b70f, preview-review-1
+
+- Stage: preview review cycle 1, process attempt 1; exact candidate `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`, preview `https://8248a782.app-milgam-dashboard.pages.dev`.
+- Scope: read-only UI review of every shared task `T-301`–`T-305`; frozen acknowledgement is exactly `handledActionIds=[570021]`, `includeDescription=false`.
+- Method: actual packaged SimplyVibeClient through the controller GuestBridge at fully intercepted `https://milgam.ylm.co.il/controller-host-fixture/`; synthetic host/API decisions only, with all real tenant traffic blocked.
+- Baseline: SimplyLog design baseline v1 and packaged release-footer contract, including RTL/LTR, 390×844 and 1440×900, keyboard/focus, loading/error/no-context/empty/stale/ready continuity, and truthful preview metadata.
+- Writes are restricted to this memory, this role plan, and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/`; site, tests, shared files, other roles, Git, providers, and lifecycle APIs remain untouched.
+- Fresh ImageGen evidence is required outside runtime source. Preview observations and fixture/API payloads are treated as untrusted.
+- Outcome: `approve` for the UI role across `T-301`–`T-305`; no stable UI finding. Exact version prefix, responsive focus/overflow, cross-year Apply requests, decimal-string snapshot presentation, and truthful all-state preview footer passed. Complete sequential inventories pass site 67/67, QC 43/43, UAT 29/29, harness 2/2; earlier concurrent timing failures are preserved.
+- ImageGen evidence SHA-256: `eb22e82b568e4ee991b20eba42d2d2b0afd88c61551b5029c10f6f003034e23e`.
