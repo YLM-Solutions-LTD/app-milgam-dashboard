@@ -1,6 +1,7 @@
 import { createApiClient } from "./api-client.js";
 import { loadDashboard, loadPeriods } from "./dashboard-data.js";
 import { selectLatestPeriod } from "./data-mappers.js";
+import { buildDateRange } from "./date-range.js";
 
 const LOG_PREFIX = "[milgam-dashboard.machine]";
 
@@ -29,6 +30,11 @@ export function createDashboardMachine(XState, dependencies = {}) {
   const { createMachine, assign } = XState;
 
   const selectionTransitions = {
+    RANGE_APPLIED: {
+      target: "loadingDashboard",
+      cond: "canApplyRange",
+      actions: "selectRange"
+    },
     YEAR_CHANGED: {
       target: "loadingDashboard",
       cond: "canSelectYear",
@@ -70,6 +76,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         client: null,
         periods: [],
         selectedPeriod: null,
+        selectedRange: null,
         data: null,
         error: null,
         failedStage: null,
@@ -196,7 +203,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         storePeriods: assign((context, event) => ({
           periods: event.result.periods,
           selectedPeriod: event.result.selectedPeriod,
-          emptyReason: event.result.selectedPeriod ? null : "periods"
+          emptyReason: context.selectedRange || event.result.selectedPeriod ? null : "periods"
         })),
         storeDashboard: assign((context, event) => ({
           data: event.result,
@@ -205,6 +212,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         })),
         selectYear: assign((context, event) => ({
           selectedPeriod: selectLatestPeriod(context.periods, Number(event.year)),
+          selectedRange: null,
           data: null
         })),
         selectMonth: assign((context, event) => ({
@@ -213,6 +221,11 @@ export function createDashboardMachine(XState, dependencies = {}) {
             && period.year === context.selectedPeriod?.year
             && period.month === Number(event.month)
           )),
+          selectedRange: null,
+          data: null
+        })),
+        selectRange: assign((context, event) => ({
+          selectedRange: { fromDate: event.range.fromDate, toDate: event.range.toDate },
           data: null
         })),
         storeError: assign((context, event) => ({
@@ -224,7 +237,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         hasNoRuntime: (context) => context.runtime === null,
         isCurrentRequest: (context, event) => event.requestId === context.requestId,
         isCurrentEmptyPeriodsResult: (context, event) => (
-          event.requestId === context.requestId && !event.result.selectedPeriod
+          event.requestId === context.requestId && !event.result.selectedPeriod && !context.selectedRange
         ),
         isCurrentEmptyDashboardResult: (context, event) => (
           event.requestId === context.requestId && event.result.isEmpty
@@ -236,8 +249,13 @@ export function createDashboardMachine(XState, dependencies = {}) {
         isNetworkError: currentErrorGuard((error) => error?.kind === "network"),
         isInvalidResponse: currentErrorGuard((error) => error?.kind === "invalid-response"),
         failedWhileLoadingPeriods: (context) => context.failedStage === "periods",
-        hasSelectedPeriod: (context) => Boolean(context.selectedPeriod),
-        hasNoSelectedPeriod: (context) => !context.selectedPeriod,
+        hasSelectedPeriod: (context) => Boolean(context.selectedRange || context.selectedPeriod),
+        hasNoSelectedPeriod: (context) => !context.selectedRange && !context.selectedPeriod,
+        canApplyRange: (context, event) => {
+          if (!context.runtime) return false;
+          try { buildDateRange(event.range?.fromDate, event.range?.toDate); return true; }
+          catch { return false; }
+        },
         canSelectYear: (context, event) => Boolean(selectLatestPeriod(context.periods, Number(event.year))),
         canSelectMonth: (context, event) => context.periods.some((period) => (
           period.available
@@ -253,7 +271,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         ),
         dashboardLoader: (context) => createAbortableService(
           context,
-          (signal) => deps.loadDashboard(context.client, context.selectedPeriod, { signal }),
+          (signal) => deps.loadDashboard(context.client, context.selectedRange || context.selectedPeriod, { signal }),
           "DASHBOARD_LOADED"
         )
       }

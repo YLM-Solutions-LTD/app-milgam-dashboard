@@ -1,4 +1,4 @@
-import { buildMonthRange, buildPeriodDiscoveryRange } from "./date-range.js";
+import { buildDateRange, calendarRangeForMonth, buildPeriodDiscoveryRange } from "./date-range.js";
 import { mapDashboardDatasets, mapPeriods, selectLatestPeriod } from "./data-mappers.js";
 
 export async function loadPeriods(client, { now = new Date(), signal } = {}) {
@@ -9,7 +9,9 @@ export async function loadPeriods(client, { now = new Date(), signal } = {}) {
 
 export async function loadDashboard(client, selectedPeriod, { signal } = {}) {
   if (!selectedPeriod) throw new TypeError("A selected period is required");
-  const range = buildMonthRange(selectedPeriod.year, selectedPeriod.month);
+  const selection = "fromDate" in selectedPeriod || "toDate" in selectedPeriod
+    ? selectedPeriod : calendarRangeForMonth(selectedPeriod.year, selectedPeriod.month);
+  const range = buildDateRange(selection.fromDate, selection.toDate);
 
   const [division, summary, category, closure] = await Promise.all([
     client.requestItems("division", range, { signal }),

@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#f2f5fc" />
     <title>דשבורד קריאות מילגם</title>
     <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./release-footer.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">דלגו לתוכן הראשי</a>
@@ -25,7 +26,7 @@
       <section id="snapshot-region" class="snapshot-region" aria-labelledby="snapshot-heading">
         <div class="snapshot-heading-row">
           <div>
-            <p class="eyebrow">ללא תלות בחודש הנבחר</p>
+            <p class="eyebrow">ללא תלות בטווח התאריכים הנבחר</p>
             <h2 id="snapshot-heading">תמונת מצב נוכחית</h2>
           </div>
           <button id="snapshot-refresh" class="button" type="button">רענון תמונת מצב</button>
@@ -38,6 +39,15 @@
       <div id="dashboard" class="dashboard" aria-live="polite"></div>
     </main>
 
+<footer class="release-footer" data-simplyvibe-release aria-label="פרטי גרסה">
+  <dl>
+    <div><dt data-release-label="version">גרסה</dt><dd><bdi data-release-value="version">לא זמין</bdi></dd></div>
+    <div><dt data-release-label="updated">עדכון אחרון</dt><dd><bdi data-release-value="updated">לא זמין</bdi></dd></div>
+    <div><dt data-release-label="released">תאריך שחרור</dt><dd><bdi data-release-value="released">לא זמין</bdi></dd></div>
+  </dl>
+</footer>
+
+    <script type="module" src="./release-footer.js"></script>
     <script src="./assets/xstate-4.38.3.js"></script>
     <script src="./assets/simplyvibe-client.js"></script>
     <script type="module" src="./app.js"></script>

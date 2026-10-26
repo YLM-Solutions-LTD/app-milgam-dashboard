@@ -40,6 +40,29 @@ test("strict adapters reconcile events, preserve separate permits, and reject co
   assert.equal(mapCurrentEquipment({ Items: [duplicate, { ...duplicate }], TotalCount: 1 }).total, 1);
 });
 
+test("HTTP200 report counts serialized as strings normalize without changing timestamps or units", async () => {
+  const serializedEvents = { ...events, Items: events.Items.map(row => ({ ...row, TotalCount: String(row.TotalCount), OpenCount: String(row.OpenCount) })) };
+  const serializedPermits = { Items: [{ ValidCount: "14", MissingCount: "0", OverdueCount: "2", AsOf: "2026-10-01T13:03:40.6610000", ValueDate: "2026-10-01T02:00:00.0000000", __Key__: "current" }], IsPaged: true, PageIndex: 1, PageSize: 50, TotalCount: 1 };
+  const client = createApiClient(context, { fetchImpl: async (url) => new Response(JSON.stringify(
+    url.includes("CurrentEvents") ? serializedEvents : url.includes("CurrentPermits") ? serializedPermits : equipment
+  ), { status: 200 }) });
+  const result = await loadCurrentSnapshot(client);
+  assert.equal(result.events.overall.total, 8);
+  assert.equal(result.events.headquarters.total + result.events.branches.total, result.events.overall.total);
+  assert.equal(result.events.overall.open, 3);
+  assert.deepEqual(result.permits, { valid: 14, missing: 0, overdue: 2,
+    asOf: serializedPermits.Items[0].AsOf, valueDate: serializedPermits.Items[0].ValueDate });
+});
+
+test("string normalization still rejects missing, malformed, negative, fractional and unsafe counts", () => {
+  for (const invalidCount of [null, undefined, false, true, "", " ", "-1", "1.5", "1e3", "0x10", "NaN", "Infinity", "9007199254740993", -1, 1.5, Infinity, {}, []]) {
+    const broken = { ...permits, Items: [{ ...permits.Items[0], ValidCount: invalidCount }] };
+    assert.throws(() => mapCurrentPermits(broken), /invalid data/, String(invalidCount));
+  }
+  const brokenEvents = { ...events, Items: events.Items.map((row, index) => ({ ...row, TotalCount: index ? String(row.TotalCount) : "9", OpenCount: String(row.OpenCount) })) };
+  assert.throws(() => mapCurrentEvents(brokenEvents), /invalid data/);
+});
+
 test("10,000 equipment facts map within budget and add no inferred classification", () => {
   const Items = Array.from({ length: 10_000 }, (_, index) => ({ EquipmentId: index + 1, IsActive: index % 2 === 0, LastTreatmentDate: null, AsOf: "raw" }));
   mapCurrentEquipment({ Items, TotalCount: Items.length });
@@ -89,6 +112,15 @@ test("fresh application generation retains prior facts while its automatic refre
   assert.equal(controller.getState().status, "stale");
   assert.equal(controller.getState().data, prior);
   assert.ok(states.every((state) => state.data === prior));
+});
+
+test("authorization invalidation retains the permission status and last-good data", async () => {
+  const controller = createSnapshotController({ client: {}, load: async () => ({ marker: "last good" }) });
+  await controller.refresh();
+  controller.invalidate({ kind: "authorization-revoked", dataset: "hostContext", status: 403 });
+  assert.equal(controller.getState().error.status, 403);
+  assert.equal(controller.getState().status, "stale");
+  assert.equal(controller.getState().data.marker, "last good");
 });
 
 test("release-candidate source keeps authorized current snapshot live calls enabled", () => assert.equal(CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED, true));
