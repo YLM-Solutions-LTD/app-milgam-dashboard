@@ -1,5 +1,65 @@
 # UAT tester memory
 
+## Active assignment — batch b48436 preview review cycle 2, process attempt 1
+
+- Review exact head `2f47f48ed056df72c5d8b861778dad5cc4069703` at authorized preview `https://f9d0c736.app-milgam-dashboard.pages.dev`, applying UAT to every shared structure-based task and every cycle-2 remediation fingerprint.
+- Authorized writes are only this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/`; site, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Use Playwright through the controller-owned actual GuestBridge and packaged SDK with synthetic postMessage permissions and locally intercepted API routes only; never request a tenant token or access the forbidden older origin.
+- Rediscover all test/spec extensions and run the complete configured inventories. Preserve exact commands, failures, exact candidate identity, browser/viewports/direction, footer-state evidence, and honest tenant-permission limitations.
+- Frozen handled action IDs will be taken exactly and in order from `pending-actions.json`; event Description participates only if `includeDescription=true`.
+- Result: `approve_with_findings`. Exact-preview UAT closes all three cycle-2 fingerprints: bounded analytics renders 297 descendants with corroborated zero long tasks, terminal 401 disables both retry paths with zero old-generation calls, and the 320px RTL footer is contained. Complete suites pass site 72/72, QC 49/49, UAT 33/33, harness 2/2. Remaining low limitation: synthetic permissions are not deployed-tenant proof.
+
+## Active assignment — batch b48436 test-authoring cycle 2, process attempt 1
+
+- Revalidate shared plan revision and every current cycle-2 remediation fingerprint with deterministic UAT, preserving frozen action order and structure-based task IDs.
+- Authorized writes are limited to this memory, `tests/uat/`, `.agents/uat-tester/tmp/`, and `runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/`; site/shared/prior runs/other roles/Git/provider state remain read-only.
+- Use the controller-owned actual GuestBridge and packaged SDK with synthetic postMessage/API fixtures only. Never use a tenant token, access the forbidden deployed origin, or claim exact-preview/tenant verification.
+- Discover all applicable test extensions and execute complete configured site, QC, UAT, and harness inventories. Preserve commands, counts, remediation traceability, and limitations in the current run evidence.
+- Result: `approve`. Added UAT-306–UAT-309 for all three cycle-2 fingerprints. Complete execution passed UAT 33/33, site 72/72, QC 49/49, and harness 2/2 on Node.js v20.20.2. Local deterministic evidence closes the terminal-401 behavior and proves bounded analytical windows plus footer containment source contracts; exact Chromium DOM/long-task/320px geometry and deployed tenant permissions remain final-review limitations.
+
+## Active assignment — batch b48436 preview review cycle 1
+
+- Review exact head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c` at authorized preview `https://8248a782.app-milgam-dashboard.pages.dev` for shared tasks `T-301`–`T-305`, preserving frozen handled action order `[570021]` with `includeDescription=false`.
+- Authorized writes are limited to this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/`; site, tests, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Execute UAT-301–UAT-309 through Playwright with the controller-owned actual GuestBridge and deployed packaged SDK, fully intercepted host/API traffic, synthetic permissions, and no tenant token or tenant request. Never access the prohibited older origin.
+- Rediscover and run complete configured inventories without partial-glob pass claims. Exact commands, failures, candidate identity, browser/viewport/direction, request accounting, footer states, and limitations belong in current-run evidence.
+- Result: `reject`. Exact-preview range, decimal-string aggregates, actual-bridge Navigate/re-entry, responsive/footer/CSP checks passed; complete suites passed site 67/67, QC 43/43, UAT 29/29, harness 2/2. Required terminal 401 UX failed because retry remained enabled and ordinary retry guidance was shown until fresh re-entry (`uat:snapshot-terminal-401-retry-enabled:v1`).
+
+## Active assignment — batch b48436 test-authoring cycle 1
+
+- Author and execute deterministic UAT for shared plan revision 12 tasks `T-301`–`T-305`, preserving frozen handled action order `[570021]` with `includeDescription=false`.
+- Authorized writes are limited to this memory, `tests/uat/`, `.agents/uat-tester/tmp/`, and `runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-1/`; site, shared artifacts, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Use synthetic postMessage/API fixtures and the controller-owned unmodified GuestBridge/SimplyVibeClient only; block tenant traffic, never use a real token, and do not access the forbidden deployed origin.
+- Discover all test/spec extensions and run the complete configured site, QC, UAT, and controller harness inventories; preserve exact commands and outcomes.
+- UAT focus: From/To validation and exact `.997` bodies, analytics/snapshot isolation and generations, decimal-string aggregates and bounded failures, actual SDK Navigate lifecycle, and truthful all-state release footer behavior.
+- Result: approve for deterministic test authoring. Complete UAT passes 29/29, site 67/67, complete QC JS+MJS 43/43, and controller harness 2/2 on Node.js v20.20.2. Exact-preview/browser viewport and real tenant permission verification remain later controller gates.
+
+## Active assignment — batch b48436 plan-review cycle 3, repaired environment
+
+- Review shared plan revision 12 and structure-based tasks `T-301`–`T-305` read-only; apply UAT workflows to every task and preserve frozen handled action order exactly as `[570021]` (`includeDescription=false`).
+- Authorized writes are only this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/`; shared artifacts, site/tests, prior runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Reassess all accepted current-batch reports and archived cycle-3-before-footer-dependency-repair evidence against current sources. Verify the reported absent `remediation-cycle-3.json` explicitly and do not infer missing controller fingerprints.
+- Discover every configured test and extension, execute complete site/QC/UAT/controller-harness suites in the repaired environment, and preserve exact commands/results in current-run evidence.
+- Final preview acceptance must use the exact authorized preview through the actual packaged SDK/controller GuestBridge with locally intercepted traffic; the denied origin must not be accessed, and synthetic permissions are not tenant proof.
+- Result: approved. Revision 12 is implementation-ready for `T-301`–`T-305`; UAT-301–UAT-309 cover the all-state release footer as well as the existing range/count/lifecycle contracts. Fresh complete baseline execution passes site 61/61, QC 34/34, UAT 23/23, and harness 2/2. The archived missing-xstate fingerprint is resolved; the remediation manifest remains absent and was not reconstructed. No implementation or exact-preview pass is claimed.
+
+## 2026-10-26 — batch b48436 plan-review cycle 3
+
+- Reviewed shared plan revision 11 and task board `T-301`–`T-304` against frozen action order `[570021]`; `includeDescription=false`.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` is absent. Revision 11 records this as controller packaging state and does not invent a remediation fingerprint; it is not an app-controlled defect.
+- Current source still reproduces the intended remediation seams: month-only `.999`-short bounds and period lifecycle (`site/date-range.js:8-14`, `site/dashboard-machine.js:93-150`), coupled analytics/snapshot refresh (`site/app.js:154-176`), and number-only event/permit counts (`site/current-snapshot.js:26-56,116`). Revision 11 requires concrete fixes and exact-candidate verification.
+- Complete current inventory: 9 site JS tests, 3 QC tests (1 JS/2 MJS), 2 UAT MJS tests, and 1 controller-harness MJS test; no CJS/spec files. Fresh diagnostic execution: site 49/50 with `ERR_MODULE_NOT_FOUND: xstate`; QC 34/34; UAT 23/23; harness 2/2. No site-suite or readiness pass is claimed.
+- Final UAT must execute UAT-301 through UAT-308 against the exact authorized preview using the actual packaged SDK/GuestBridge and fully intercepted traffic; fixture permissions are not tenant proof.
+
+## Current assignment — date-range batch plan review cycle 2
+
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`; stage: `plan-review-2`; process attempt: 1.
+- Review shared plan revision 9 and tasks `T-301` through `T-304` read-only, applying UAT traceability to every task and preserving frozen handled action order exactly as `570021` (`includeDescription=false`).
+- Authorized writes are only this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-2/`; shared artifacts, site/tests, previous runs, other role homes, Git/provider/deployment/controller state remain read-only.
+- Read the complete accepted prior report set and current frozen/shared inputs. Independently verify the controller-referenced `/workspace/.simplyvibe/input/remediation-cycle-2.json`; if absent, do not infer its current fingerprints or claim remediation completeness.
+- Plan-review cases are designs only. Exact-preview behavior requires later execution through the packaged SDK and controller GuestBridge with intercepted traffic; synthetic permission decisions do not prove deployed tenant permissions.
+- Result: `blocked` / role verdict `reject`. Revision 9 closes the sole historical cycle-1 performance fingerprint visible in accepted reports, but `/workspace/.simplyvibe/input/remediation-cycle-2.json` is absent, so the complete current fingerprint set cannot be reconciled without inference. Stable finding: `uat:plan-review:current-remediation-manifest-absent:v1`.
+
 ## Active run — preview review cycle 3, process attempt 1, exact head 3dc45f6
 
 - Independently execute UAT-201 through UAT-210 against `https://ef2f1185.app-milgam-dashboard.pages.dev` using the controller-owned actual GuestBridge and packaged SDK at the corrected synthetic Milgam origin; locally fulfill host/API traffic and block all tenant traffic.
@@ -214,3 +274,33 @@
 - Never use a tenant token, production endpoint, deployment, Git mutation, or external lifecycle API.
 - Process attempt 1 resumed on 2026-10-25 after controller recovery. Revalidate the patched operator re-entry race source and preserve all extensions in the complete UAT/QC/site/harness inventory; earlier cycle-3 counts are context, not approval for this attempt.
 - Recovered attempt result: ready/approve. UAT 21/21, site 61/61, complete QC JS+MJS 30/30, and controller harness 2/2 passed on Node.js v20.20.2. Added behavioral UAT for overlapping bridge re-entry: newest generation 3 automatically starts exactly three snapshot routes with zero unhandled rejection. Exact-preview browser and real tenant permission acceptance remain unclaimed later-stage gates.
+# Current assignment — date-range batch plan review cycle 1
+
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`; stage: `plan-review-1`; process attempt: 1.
+- Frozen action order is exactly `570021`; `includeDescription=false`, so the event Description is background only.
+- Review shared plan revision 8 and tasks `T-301` through `T-304` read-only; design task-traceable UAT without executing or claiming preview behavior.
+- Authorized writes are only this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-1/`. Shared artifacts, app/site/tests, prior runs, other role homes, Git/provider/deployment/controller state are read-only.
+- Final-preview execution must use the exact controller-authorized preview through the actual packaged SDK and controller GuestBridge fixture at the fully intercepted Milgam host origin; synthetic permission decisions do not prove deployed tenant permissions.
+- Test inventory must include every existing `*.test.{js,mjs,cjs}` and `*.spec.{js,mjs,cjs}` file before configured site, QC, UAT, and harness runs; no partial-glob pass claim is valid.
+- Result: `approve`. `UAT-301` through `UAT-308` trace every shared task and the cross-task range, snapshot, authorization, accessibility, inventory, and controller-gate workflows. These cases are plan designs only; no suite or preview was executed and no release readiness is claimed.
+# Current review memory
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`, plan-review cycle 2 process attempt 2 reviewed shared revision 9 (`T-301`–`T-304`) with frozen action order `[570021]`; `includeDescription=false`.
+- `/workspace/.simplyvibe/input/remediation-cycle-2.json` is absent. Treat the four process-attempt-1 missing-manifest fingerprints as role-specific descriptions of the same absent controller artifact, not application or revision-9 defects and not a reason by itself to block plan review.
+- Historical `perf:plan:range-and-count-release-missing-measurable-budgets:v1` is resolved in revision 9 by explicit volume, byte, mapping/render, long-task, DOM, concurrency, and burst-accounting requirements.
+- Current inventory is 9 site JS tests, 3 QC tests (JS+MJS), 2 UAT MJS tests, and 1 controller harness MJS test; no CJS/spec files. Current execution: site 49/50 with one `ERR_MODULE_NOT_FOUND` for absent installed `xstate`; QC 34/34; UAT 23/23; harness 2/2. This is plan-stage diagnostic evidence, not exact-preview or release readiness.
+- Final UAT must execute revision-9 workflows against the exact controller-authorized preview via the real packaged SDK/GuestBridge, fully intercepted at the trusted Milgam origin; synthetic permissions are not tenant proof.
+
+## Current review — date-range batch plan review cycle 3
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; revision 12; frozen action `[570021]`; `includeDescription=false`; tasks `T-301`–`T-305`.
+- Verdict: approve. `UAT-301`–`UAT-309` cover every task, cross-task lifecycle, repaired exact-environment footer truth rule, complete inventory, and release gate.
+- `remediation-cycle-3.json` is absent and was not reconstructed. Archived performance-budget and missing-xstate fingerprints are resolved by current contracts and repaired 61/61 baseline evidence.
+- Exact-preview/browser and tenant permission behavior remain unexecuted; the denied origin was not accessed and release readiness is not claimed.
+
+## Current review — date-range batch plan review cycle 3, process attempt 2
+
+- Revalidated unchanged revision 12 and tasks `T-301`–`T-305`; frozen action order remains exactly `[570021]` and `includeDescription=false`.
+- Verdict: approve for plan review. `UAT-301`–`UAT-309` remain implementation-ready and cover the exact-environment footer repair, actual packaged SDK/GuestBridge lifecycle, Navigate, and every shared task.
+- Complete fresh baseline inventory passed: configured site 61/61, QC JS+MJS 34/34, UAT MJS 23/23, and controller harness 2/2. No CJS/spec tests exist.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` remains absent, so unknown fingerprints were not reconstructed. The denied deployed origin was not accessed; exact-preview and tenant-permission acceptance remain later controller gates.

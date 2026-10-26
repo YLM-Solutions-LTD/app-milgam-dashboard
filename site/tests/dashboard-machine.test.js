@@ -9,7 +9,7 @@ const periodsResult = {
     { year: 2026, month: 1, label: "1/26", eventCount: 1, available: true },
     { year: 2026, month: 2, label: "2/26", eventCount: 1, available: true }
   ],
-  selectedPeriod: { year: 2026, month: 2, label: "2/26", eventCount: 1, available: true }
+  selectedRange: { from: "2026-02-01", to: "2026-02-28" }
 };
 
 test("XState lifecycle waits for host, exposes recoverable timeout, then reaches ready", async () => {
@@ -30,7 +30,7 @@ test("XState lifecycle waits for host, exposes recoverable timeout, then reaches
   service.send({ type: "HOST_CONTEXT_RECEIVED", context: { marker: "host" } });
   const ready = await waitForState(service, (state) => state.matches("ready"));
   assert.equal(ready.context.data.marker, "ready");
-  assert.equal(ready.context.selectedPeriod.month, 2);
+  assert.equal(ready.context.selectedRange.to, "2026-02-28");
   assert.ok(visited.includes("loadingPeriods"));
   assert.ok(visited.includes("loadingDashboard"));
   service.stop();
@@ -39,12 +39,12 @@ test("XState lifecycle waits for host, exposes recoverable timeout, then reaches
 test("valid empty period result and empty dashboard result transition to empty", async (t) => {
   await t.test("no periods", async () => {
     const service = makeService({
-      loadPeriods: async () => ({ periods: [], selectedPeriod: null }),
-      loadDashboard: async () => { throw new Error("must not run"); }
+      loadPeriods: async () => ({ periods: [], selectedRange: { from: "2026-08-01", to: "2026-08-31" } }),
+      loadDashboard: async () => ({ isEmpty: true })
     });
     service.send({ type: "HOST_CONTEXT_RECEIVED", context: {} });
     const state = await waitForState(service, (current) => current.matches("empty"));
-    assert.equal(state.context.emptyReason, "periods");
+    assert.equal(state.context.emptyReason, "dashboard");
     service.stop();
   });
 
@@ -81,24 +81,24 @@ for (const [error, expected] of [
   });
 }
 
-test("changing month aborts the superseded request and stale completion cannot replace current data", async () => {
+test("applying a range aborts the superseded request and stale completion cannot replace current data", async () => {
   const requests = [];
   const machine = createDashboardMachine(XState, {
     createClient: () => ({}),
     loadPeriods: async () => periodsResult,
-    loadDashboard: (_client, period, { signal }) => new Promise((resolve) => {
-      requests.push({ period, signal, resolve });
+    loadDashboard: (_client, range, { signal }) => new Promise((resolve) => {
+      requests.push({ range, signal, resolve });
     })
   });
   const service = XState.interpret(machine).start();
   service.send({ type: "HOST_CONTEXT_RECEIVED", context: {} });
   await waitUntil(() => requests.length === 1);
-  assert.equal(requests[0].period.month, 2);
+  assert.equal(requests[0].range.to, "2026-02-28");
 
-  service.send({ type: "MONTH_CHANGED", month: 1 });
+  service.send({ type: "RANGE_APPLIED", range: { from: "2025-12-20", to: "2026-01-05" } });
   await waitUntil(() => requests.length === 2);
   assert.equal(requests[0].signal.aborted, true);
-  assert.equal(requests[1].period.month, 1);
+  assert.equal(requests[1].range.from, "2025-12-20");
 
   requests[0].resolve({ isEmpty: false, marker: "stale" });
   await Promise.resolve();
@@ -106,32 +106,33 @@ test("changing month aborts the superseded request and stale completion cannot r
   requests[1].resolve({ isEmpty: false, marker: "current" });
   const ready = await waitForState(service, (state) => state.matches("ready"));
   assert.equal(ready.context.data.marker, "current");
-  assert.equal(ready.context.selectedPeriod.month, 1);
+  assert.equal(ready.context.selectedRange.to, "2026-01-05");
   service.stop();
 });
 
-test("period selection transitions choose the latest available month in a changed year", async () => {
+test("applied range is retained by analytical refresh", async () => {
   const selectionHistory = [];
   const result = {
     periods: [
       { year: 2025, month: 12, label: "12/25", eventCount: 1, available: true },
       ...periodsResult.periods
     ],
-    selectedPeriod: periodsResult.selectedPeriod
+    selectedRange: periodsResult.selectedRange
   };
   const service = makeService({
     loadPeriods: async () => result,
-    loadDashboard: async (_client, period) => {
-      selectionHistory.push(`${period.year}-${period.month}`);
+    loadDashboard: async (_client, range) => {
+      selectionHistory.push(`${range.from}/${range.to}`);
       return { isEmpty: false };
     }
   });
   service.send({ type: "HOST_CONTEXT_RECEIVED", context: {} });
   await waitForState(service, (state) => state.matches("ready"));
-  service.send({ type: "YEAR_CHANGED", year: 2025 });
-  const changed = await waitForState(service, (state) => state.matches("ready") && state.context.selectedPeriod.year === 2025);
-  assert.equal(changed.context.selectedPeriod.month, 12);
-  assert.deepEqual(selectionHistory, ["2026-2", "2025-12"]);
+  service.send({ type: "RANGE_APPLIED", range: { from: "2025-12-20", to: "2026-01-05" } });
+  await waitForState(service, (state) => state.matches("ready") && state.context.selectedRange.from === "2025-12-20");
+  service.send("REFRESH");
+  await waitForState(service, (state) => state.matches("ready") && selectionHistory.length === 3);
+  assert.deepEqual(selectionHistory, ["2026-02-01/2026-02-28", "2025-12-20/2026-01-05", "2025-12-20/2026-01-05"]);
   service.stop();
 });
 

@@ -81,10 +81,12 @@ export function createSnapshotController({ client, load = loadCurrentSnapshot, n
     data: initialData,
     lastGoodData: initialData,
     error: null,
-    refreshedAt: initialRefreshedAt
+    refreshedAt: initialRefreshedAt,
+    terminalAuthorization: false
   };
   const emit = (patch) => { state = { ...state, ...patch }; onChange(state); };
   async function refresh() {
+    if (state.terminalAuthorization) return state;
     const id = ++generation;
     controller?.abort();
     controller = new AbortController();
@@ -93,17 +95,18 @@ export function createSnapshotController({ client, load = loadCurrentSnapshot, n
       const data = await load(client, { signal: controller.signal });
       if (id !== generation) return state;
       const refreshedAt = now();
-      emit({ status: "ready", data, lastGoodData: data, error: null, refreshedAt });
+      emit({ status: "ready", data, lastGoodData: data, error: null, refreshedAt, terminalAuthorization: false });
     } catch (error) {
       if (id !== generation || controller.signal.aborted) return state;
-      emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: safeError(error) });
+      const safe = safeError(error);
+      emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: safe, terminalAuthorization: isTerminalAuthorization(safe) });
     }
     return state;
   }
   function invalidate() {
     generation += 1;
     controller?.abort();
-    emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: { kind: "authorization-revoked", status: null, dataset: "hostContext" } });
+    emit({ status: state.lastGoodData ? "stale" : "error", data: state.lastGoodData, error: { kind: "authorization-revoked", status: null, dataset: "hostContext" }, terminalAuthorization: true });
   }
   return { refresh, invalidate, getState: () => state, dispose: () => { generation += 1; controller?.abort(); } };
 }
@@ -113,7 +116,14 @@ function requireEnvelope(value, dataset, length = null) {
     || (length !== null && (value.Items.length !== length || value.TotalCount !== length))) invalid(dataset, "Invalid complete envelope");
 }
 function requireRow(row, dataset, index) { if (!row || typeof row !== "object" || Array.isArray(row)) invalid(dataset, `Invalid row ${index}`); }
-function count(value, field, dataset, index) { if (!Number.isSafeInteger(value) || value < 0) invalid(dataset, `Invalid ${field} at row ${index}`); return value; }
+function count(value, field, dataset, index) {
+  const normalized = typeof value === "number"
+    ? value
+    : (typeof value === "string" && /^\s*\d+\s*$/.test(value) && value.trim().length <= 16 ? Number(value.trim()) : NaN);
+  if (!Number.isSafeInteger(normalized) || normalized < 0) invalid(dataset, `Invalid ${field} at row ${index}`);
+  return normalized;
+}
 function requiredValue(value, field, dataset, index) { if (value === null || value === undefined || String(value).trim() === "") invalid(dataset, `Missing ${field} at row ${index}`); return value; }
 function invalid(dataset, detail) { throw new DatasetValidationError(dataset, detail); }
 function safeError(error) { return { kind: error?.kind || "unknown", status: Number.isInteger(error?.status) ? error.status : null, dataset: error?.dataset || "currentSnapshot" }; }
+function isTerminalAuthorization(error) { return error.kind === "authorization-revoked" || error.status === 401 || error.status === 403; }

@@ -1,0 +1,20 @@
+TAP version 13
+# Subtest: real SDK and bridge handshake and parent Navigate command
+ok 1 - real SDK and bridge handshake and parent Navigate command
+  ---
+  duration_ms: 7.921694
+  ...
+# Subtest: revocation and new bridge session reject old pending command without effects
+ok 2 - revocation and new bridge session reject old pending command without effects
+  ---
+  duration_ms: 23.360367
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 203.13644

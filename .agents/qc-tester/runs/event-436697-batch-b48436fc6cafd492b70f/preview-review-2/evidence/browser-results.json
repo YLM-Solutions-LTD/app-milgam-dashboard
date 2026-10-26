@@ -1,0 +1,402 @@
+{
+  "preview": "https://f9d0c736.app-milgam-dashboard.pages.dev",
+  "head": "2f47f48ed056df72c5d8b861778dad5cc4069703",
+  "browser": "140.0.7339.16",
+  "headers": {
+    "date": "Mon, 26 Oct 2026 17:50:46 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'",
+    "referrer-policy": "no-referrer",
+    "x-content-type-options": "nosniff",
+    "x-robots-tag": "noindex",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=pUgAuTGjDKOYLasWnkDalJyIBnrt4hNqPHfbPaVmkOF5RGe1f7Rmkfwjz%2FpLFaDwYouWrTIrn%2B1QI5%2BWS5174FIblG5xohS3tqr%2Bls84jKtOzE2JscmkMXM82wnzSQn2t4GVVSmJZteCeLZ7V%2F7gGB9CWAjel6F1edk%3D\"}]}",
+    "etag": "W/\"33503d9de3b8ff62a647ad6493ef7222\"",
+    "content-encoding": "br",
+    "server": "cloudflare",
+    "cf-ray": "a50b4e249bc22187-TLV",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "dashboardNodes": 297,
+        "footerCount": 1,
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerBox": {
+          "left": 72,
+          "right": 1352,
+          "width": 1280
+        },
+        "footerClipped": [],
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "2f47f48ed056",
+          "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "live": [
+          "מחובר ל-SimplyLog",
+          "עודכן: 2026-10-26T09:00:00",
+          "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+          "",
+          "חלוקה לפי חטיבות\n10\nDivision 1\n10 · 100.0%\nDivision 10\n0 · 0.0%\nDivision 100\n0 · 0.0%\nDivision 1000\n0 · 0.0%\nDivision 101\n0 · 0.0%\nDivision 102\n0 · 0.0%\nDivision 103\n0 · 0.0%\nDivision 104\n0 · 0.0%\nDivision 105\n0 · 0.0%\nDivision 106\n0 · 0.0%\nהקודם\n1–10 מתוך 1,000\nהבא\nבניין מטה מול סניפים\nמטה\n50.0%\nסניפים\n50.0%\nמטה: 5 · 50.0%\nסניפים: 5 · 50.0%\nתמהיל קריאות מטה\nCategory 1\n5\nCategory 101\n0\nCategory 103\n0\nCategory 105\n0\nCategory 107\n0\nCategory 109\n0\nCategory 11\n0\nCategory 111\n0\nCategory 113\n0\nCategory 115\n0\nהקודם\n1–10 מתוך 500\nהבא\nתמהיל קריאות סניפים\nCategory 2\n5\nCategory 10\n0\nCategory 100\n0\nCategory 1000\n0\nCategory 102\n0\nCategory 104\n0\nCategory 106\n0\nCategory 108\n0\nCategory 110\n0\nCategory 112\n0\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n2\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 1\t1.0\nCategory 101\t—\nCategory 103\t—\nCategory 105\t—\nCategory 107\t—\nCategory 109\t—\nCategory 11\t—\nCategory 111\t—\nCategory 113\t—\nCategory 115\t—\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n3\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 2\t1.0\nCategory 10\t—\nCategory 100\t—\nCategory 1000\t—\nCategory 102\t—\nCategory 104\t—\nCategory 106\t—\nCategory 108\t—\nCategory 110\t—\nCategory 112\t—\nהקודם\n1–10 מתוך 500\nהבא",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ],
+        "longTasks": []
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dir": "ltr",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "ltr",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "dashboardNodes": 297,
+        "footerCount": 1,
+        "footerText": "Version\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+        "footerVisible": true,
+        "footerBox": {
+          "left": 72,
+          "right": 1352,
+          "width": 1280
+        },
+        "footerClipped": [],
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "Release details",
+          "data-release-version": "2f47f48ed056",
+          "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "live": [
+          "מחובר ל-SimplyLog",
+          "עודכן: 2026-10-26T09:00:00",
+          "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+          "",
+          "חלוקה לפי חטיבות\n10\nDivision 1\n10 · 100.0%\nDivision 10\n0 · 0.0%\nDivision 100\n0 · 0.0%\nDivision 1000\n0 · 0.0%\nDivision 101\n0 · 0.0%\nDivision 102\n0 · 0.0%\nDivision 103\n0 · 0.0%\nDivision 104\n0 · 0.0%\nDivision 105\n0 · 0.0%\nDivision 106\n0 · 0.0%\nהקודם\n1–10 מתוך 1,000\nהבא\nבניין מטה מול סניפים\nמטה\n50.0%\nסניפים\n50.0%\nמטה: 5 · 50.0%\nסניפים: 5 · 50.0%\nתמהיל קריאות מטה\nCategory 1\n5\nCategory 101\n0\nCategory 103\n0\nCategory 105\n0\nCategory 107\n0\nCategory 109\n0\nCategory 11\n0\nCategory 111\n0\nCategory 113\n0\nCategory 115\n0\nהקודם\n1–10 מתוך 500\nהבא\nתמהיל קריאות סניפים\nCategory 2\n5\nCategory 10\n0\nCategory 100\n0\nCategory 1000\n0\nCategory 102\n0\nCategory 104\n0\nCategory 106\n0\nCategory 108\n0\nCategory 110\n0\nCategory 112\n0\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n2\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 1\t1.0\nCategory 101\t—\nCategory 103\t—\nCategory 105\t—\nCategory 107\t—\nCategory 109\t—\nCategory 11\t—\nCategory 111\t—\nCategory 113\t—\nCategory 115\t—\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n3\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 2\t1.0\nCategory 10\t—\nCategory 100\t—\nCategory 1000\t—\nCategory 102\t—\nCategory 104\t—\nCategory 106\t—\nCategory 108\t—\nCategory 110\t—\nCategory 112\t—\nהקודם\n1–10 מתוך 500\nהבא",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ],
+        "longTasks": []
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "dashboardNodes": 297,
+        "footerCount": 1,
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerBox": {
+          "left": 16,
+          "right": 358,
+          "width": 342
+        },
+        "footerClipped": [],
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "2f47f48ed056",
+          "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "live": [
+          "מחובר ל-SimplyLog",
+          "עודכן: 2026-10-26T09:00:00",
+          "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+          "",
+          "חלוקה לפי חטיבות\n10\nDivision 1\n10 · 100.0%\nDivision 10\n0 · 0.0%\nDivision 100\n0 · 0.0%\nDivision 1000\n0 · 0.0%\nDivision 101\n0 · 0.0%\nDivision 102\n0 · 0.0%\nDivision 103\n0 · 0.0%\nDivision 104\n0 · 0.0%\nDivision 105\n0 · 0.0%\nDivision 106\n0 · 0.0%\nהקודם\n1–10 מתוך 1,000\nהבא\nבניין מטה מול סניפים\nמטה\n50.0%\nסניפים\n50.0%\nמטה: 5 · 50.0%\nסניפים: 5 · 50.0%\nתמהיל קריאות מטה\nCategory 1\n5\nCategory 101\n0\nCategory 103\n0\nCategory 105\n0\nCategory 107\n0\nCategory 109\n0\nCategory 11\n0\nCategory 111\n0\nCategory 113\n0\nCategory 115\n0\nהקודם\n1–10 מתוך 500\nהבא\nתמהיל קריאות סניפים\nCategory 2\n5\nCategory 10\n0\nCategory 100\n0\nCategory 1000\n0\nCategory 102\n0\nCategory 104\n0\nCategory 106\n0\nCategory 108\n0\nCategory 110\n0\nCategory 112\n0\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n2\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 1\t1.0\nCategory 101\t—\nCategory 103\t—\nCategory 105\t—\nCategory 107\t—\nCategory 109\t—\nCategory 11\t—\nCategory 111\t—\nCategory 113\t—\nCategory 115\t—\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n3\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 2\t1.0\nCategory 10\t—\nCategory 100\t—\nCategory 1000\t—\nCategory 102\t—\nCategory 104\t—\nCategory 106\t—\nCategory 108\t—\nCategory 110\t—\nCategory 112\t—\nהקודם\n1–10 מתוך 500\nהבא",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ],
+        "longTasks": []
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile-ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dir": "ltr",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "ltr",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "dashboardNodes": 297,
+        "footerCount": 1,
+        "footerText": "Version\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+        "footerVisible": true,
+        "footerBox": {
+          "left": 16,
+          "right": 358,
+          "width": 342
+        },
+        "footerClipped": [],
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "Release details",
+          "data-release-version": "2f47f48ed056",
+          "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "live": [
+          "מחובר ל-SimplyLog",
+          "עודכן: 2026-10-26T09:00:00",
+          "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+          "",
+          "חלוקה לפי חטיבות\n10\nDivision 1\n10 · 100.0%\nDivision 10\n0 · 0.0%\nDivision 100\n0 · 0.0%\nDivision 1000\n0 · 0.0%\nDivision 101\n0 · 0.0%\nDivision 102\n0 · 0.0%\nDivision 103\n0 · 0.0%\nDivision 104\n0 · 0.0%\nDivision 105\n0 · 0.0%\nDivision 106\n0 · 0.0%\nהקודם\n1–10 מתוך 1,000\nהבא\nבניין מטה מול סניפים\nמטה\n50.0%\nסניפים\n50.0%\nמטה: 5 · 50.0%\nסניפים: 5 · 50.0%\nתמהיל קריאות מטה\nCategory 1\n5\nCategory 101\n0\nCategory 103\n0\nCategory 105\n0\nCategory 107\n0\nCategory 109\n0\nCategory 11\n0\nCategory 111\n0\nCategory 113\n0\nCategory 115\n0\nהקודם\n1–10 מתוך 500\nהבא\nתמהיל קריאות סניפים\nCategory 2\n5\nCategory 10\n0\nCategory 100\n0\nCategory 1000\n0\nCategory 102\n0\nCategory 104\n0\nCategory 106\n0\nCategory 108\n0\nCategory 110\n0\nCategory 112\n0\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n2\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 1\t1.0\nCategory 101\t—\nCategory 103\t—\nCategory 105\t—\nCategory 107\t—\nCategory 109\t—\nCategory 11\t—\nCategory 111\t—\nCategory 113\t—\nCategory 115\t—\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n3\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 2\t1.0\nCategory 10\t—\nCategory 100\t—\nCategory 1000\t—\nCategory 102\t—\nCategory 104\t—\nCategory 106\t—\nCategory 108\t—\nCategory 110\t—\nCategory 112\t—\nהקודם\n1–10 מתוך 500\nהבא",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ],
+        "longTasks": []
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "narrow-rtl",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "dir": "rtl",
+      "rangeCalls": 4,
+      "rangeBodies": [
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}",
+        "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2025-12-31T00:00:00\",\"ToDate\":\"2026-01-01T23:59:59.997\"}"
+      ],
+      "invalidNewCalls": 0,
+      "metrics": {
+        "dir": "rtl",
+        "scrollWidth": 304,
+        "clientWidth": 304,
+        "dashboardNodes": 297,
+        "footerCount": 1,
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "footerVisible": true,
+        "footerBox": {
+          "left": 16,
+          "right": 288,
+          "width": 272
+        },
+        "footerClipped": [],
+        "footerAttrs": {
+          "class": "release-footer",
+          "data-simplyvibe-release": "",
+          "aria-label": "פרטי גרסה",
+          "data-release-version": "2f47f48ed056",
+          "data-release-updated-at": "2026-10-26T17:44:55.000Z",
+          "data-release-released-at": "",
+          "data-release-environment": "preview"
+        },
+        "invalid": null,
+        "active": "to-date",
+        "validation": "",
+        "live": [
+          "מחובר ל-SimplyLog",
+          "עודכן: 2026-10-26T09:00:00",
+          "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+          "",
+          "חלוקה לפי חטיבות\n10\nDivision 1\n10 · 100.0%\nDivision 10\n0 · 0.0%\nDivision 100\n0 · 0.0%\nDivision 1000\n0 · 0.0%\nDivision 101\n0 · 0.0%\nDivision 102\n0 · 0.0%\nDivision 103\n0 · 0.0%\nDivision 104\n0 · 0.0%\nDivision 105\n0 · 0.0%\nDivision 106\n0 · 0.0%\nהקודם\n1–10 מתוך 1,000\nהבא\nבניין מטה מול סניפים\nמטה\n50.0%\nסניפים\n50.0%\nמטה: 5 · 50.0%\nסניפים: 5 · 50.0%\nתמהיל קריאות מטה\nCategory 1\n5\nCategory 101\n0\nCategory 103\n0\nCategory 105\n0\nCategory 107\n0\nCategory 109\n0\nCategory 11\n0\nCategory 111\n0\nCategory 113\n0\nCategory 115\n0\nהקודם\n1–10 מתוך 500\nהבא\nתמהיל קריאות סניפים\nCategory 2\n5\nCategory 10\n0\nCategory 100\n0\nCategory 1000\n0\nCategory 102\n0\nCategory 104\n0\nCategory 106\n0\nCategory 108\n0\nCategory 110\n0\nCategory 112\n0\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – מטה\nסה״כ קריאות סגורות\n2\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 1\t1.0\nCategory 101\t—\nCategory 103\t—\nCategory 105\t—\nCategory 107\t—\nCategory 109\t—\nCategory 11\t—\nCategory 111\t—\nCategory 113\t—\nCategory 115\t—\nהקודם\n1–10 מתוך 500\nהבא\nממוצע ימים לסגירת קריאה – סניפים\nסה״כ קריאות סגורות\n3\nממוצע זמן סגירה\n1.0 ימים\nממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\nקטגוריה\tממוצע זמן סגירה (ימים)\nCategory 2\t1.0\nCategory 10\t—\nCategory 100\t—\nCategory 1000\t—\nCategory 102\t—\nCategory 104\t—\nCategory 106\t—\nCategory 108\t—\nCategory 110\t—\nCategory 112\t—\nהקודם\n1–10 מתוך 500\nהבא",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ],
+        "longTasks": []
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "terminal-401",
+      "newCalls": [
+        {
+          "key": "MilgamDashboardCurrentEvents",
+          "body": "{}",
+          "method": "POST",
+          "status": 401
+        },
+        {
+          "key": "MilgamDashboardCurrentPermits",
+          "body": "{}",
+          "method": "POST",
+          "status": 200
+        },
+        {
+          "key": "MilgamDashboardCurrentEquipment",
+          "body": "{}",
+          "method": "POST",
+          "status": 200
+        }
+      ],
+      "metrics": {
+        "refreshDisabled": true,
+        "retryCount": 0,
+        "retryEnabled": 0,
+        "status": "הנתונים המוצגים הם העדכון התקין האחרון. ההרשאה פגה; יש להיכנס מחדש דרך SimplyLog כדי לרענן.",
+        "text": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "footerCount": 1
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "navigate",
+      "harness": {
+        "authorized": true,
+        "generation": 1,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "no-context",
+      "apiCalls": 0,
+      "metrics": {
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "connection": "ממתין לחיבור מאובטח",
+        "scroll": [
+          390,
+          390
+        ]
+      }
+    }
+  ],
+  "blocked": [],
+  "executables": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/app.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/constants.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/pagination.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/data-mappers.js"
+  ]
+}

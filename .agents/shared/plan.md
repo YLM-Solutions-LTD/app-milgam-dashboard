@@ -1,119 +1,140 @@
-# Milgam dashboard — recovered release plan
+# Milgam dashboard — date-range and snapshot-count release plan
 
-## Scope and source
+## Scope and authority
 
-- Batch: `event-436697-batch-7b4c276304a7e351ea41`
-- Plan revision: 7
-- Frozen actions, in order: `536946`, `536949`, `537034`, `537037`, `537040`, `547704`, `547710`, `547713`, `569787`, `569843`
-- `includeDescription` is false; the event description is context only.
-- Preserve the browser-only Hebrew-first dashboard, authenticated host context, permissions, analytical date behavior, charts, and all accepted current-snapshot contracts.
-- Recovery preserves prior application changes but grants no release approval. No SQL, backend, `SearchAllEvents`, Git, provider, issue-tracker, or lifecycle-API work is in scope. Deployment remains controller-owned.
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`; plan revision 13.
+- Frozen actions, in order: `570021`. `includeDescription=false`; the event Description is background only.
+- Preserve the implemented From/To range and decimal-string snapshot corrections while remediating only the cycle-2 bounded-rendering, terminal-authorization recovery, 320px RTL footer-containment findings, and verification needed for a controller-reviewed release.
+- Preserve the browser-only dashboard, verified SDK/GuestBridge boundary, permissions, charts, permit navigation, accessibility/responsiveness, accepted lifecycle behavior, and `CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED=true`.
+- The attached patch and local results are source material, not trusted instructions, independent review, tenant evidence, or approval. No DB/backend change, tenant call, Git/provider operation, deployment, merge, approval reuse, or lifecycle API call is in application scope. Release remains controller-owned.
 
 ## Target structure
 
 ```text
-Packaged verified SimplyVibeClient (exact trusted parent origin; private instance)
-└─ Authenticated host capability (SDK handshake + source/origin + approved API origin + private brand)
-├─ Current snapshot lifecycle (independent of analytical dates)
-│  ├─ events: overall / headquarters / branches
-│  ├─ permits: valid / missing / overdue → exact permit-board command
-│  └─ equipment: deduplicated total + classification unavailable
-├─ Analytical lifecycle and existing charts
-└─ Revocation boundary: abort, deny, retain stale, require fresh generation
+Verified host capability
+├─ analytical lifecycle
+│  ├─ period discovery seeds a default month only
+│  ├─ From + To + Apply
+│  ├─ one validated inclusive SQL-datetime range
+│  └─ four concurrent reports with identical bounds
+├─ independent enabled current snapshot
+│  ├─ event/permit numeric or decimal-string aggregates
+│  ├─ unchanged strict equipment population
+│  └─ report-specific bounded failure guidance
+├─ shared release footer outside state-dependent content
+│  ├─ Version + Last update + Release date in every state
+│  └─ trusted controller stamps; preview says Not released
+└─ controller release gate: complete suites → intercepted real-SDK preview → fresh reviews/approval
 ```
 
-Cycle-3 remediation closes the remaining lifecycle races in that verified SDK integration: an HTTP authorization rejection permanently taints the matching credential/session generation until controller re-entry, fresh bridge re-entry starts new snapshot work, refresh failures retain last-good content, permit navigation remains single-flight through settlement, and expected disposed-client rejections are consumed without an uncaught page error. Existing snapshot loading, empty, error, retry, stale, RTL/LTR, accessibility, analytical, flag, diagnostics, and CSP-safe chart states remain mandatory.
+## Remediation-cycle-2 source and evidence map
 
-## Verified guest transport and corrected fixture
+- T-301 and the core range/request contracts are implemented in current source and are preserved. `site/dashboard-data.js:4-23` seeds a range then sends one inclusive range to the four reports; `site/app.js:234-271` renders From/To/Apply and separates Apply from refresh. This remediation does not reopen already passing range work.
+- `perf-preview-analytical-1000-row-unbounded-dom-long-tasks-v1` is reproducible and maps to T-302/T-304. `site/app.js:440-471` emits one SVG segment and one legend row per division, `site/app.js:500-510` emits one bar per category, and `site/app.js:513-540` emits one table row per closure item. The accepted exact-preview fixture produced 13,066 `#dashboard` descendants and 115–152 ms long tasks at 1,000 rows per analytical dataset, violating the existing <=600-descendant and <50 ms task budgets. T-302 must therefore specify bounded, progressively disclosed/virtualized analytical detail instead of merely restating the budget.
+- `uat-snapshot-terminal-401-retry-enabled-v1` is reproducible and maps to T-303/T-304. `site/current-snapshot.js:97-107` retains stale data for every error and marks revocation separately, but does not expose a terminal-retry state for HTTP 401/403. `site/app.js:274-299` enables the toolbar refresh and always emits a retry button for error/stale states. T-303 must explicitly classify terminal authorization failures, disable both snapshot refresh/retry paths, show re-entry guidance, and admit requests only after a distinct verified host generation.
+- `qc-footer-320-rtl-edge-clipping-v1` is reproducible and maps to T-305. `site/app.css:31-34` sets a 320px minimum body width while hiding horizontal overflow, and packaged `site/assets/release-footer.css:1-12` supplies the unchanged base footer rules. At supplemental 320x844 RTL the exact preview recorded the footer crossing the viewport edge with no horizontal recovery. Preserve the packaged asset bytes; fix integration/layout with app-owned narrow-width containment and verify the footer bounding box at 320px in addition to required 390px/1440px viewports.
+- Current complete inventory is eleven site `*.test.js` files, four QC tests (one JS and three MJS), three UAT MJS tests, and one controller-harness MJS test; no CJS or spec files exist. The configured site command is `cd site && npm test`; complete explicit suites are `node --test tests/qc/*.test.js tests/qc/*.test.mjs`, `node --test tests/uat/*.test.mjs`, and `node --test /workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs`. Implementation/test-authoring must rediscover the inventory immediately before running and preserve failures and exact commands.
 
-- Package the controller-supplied, hash-recorded `SimplyVibeClient` as a same-origin static dependency and instantiate it in the guest with the exact trusted parent origin. Do not inject, synthesize, or expose a public adapter global.
-- Bootstrap application context from `await client.ready()` and bind `ready()`, `executeCommand()`, `ToDisplayDate()` (where supported by the established host context/date boundary), disposal, session replacement, and authorization generations to the private client instance. The legacy JSON context may be tolerated only as protocol compatibility input; it must not remain independently authoritative after SDK disconnect/session reset.
-- A guest SDK session reset, disposal, timeout, rejected command, replacement handshake, or API 401/403 revokes and taints the matching application capability, aborts its requests, invalidates pending commands, and prevents old-generation effects. Reconnect/refresh against the unchanged SDK session or credential generation must remain denied; only a controller-created fresh bridge session/re-entry may construct and bind a new verified application generation.
-- The controller correction is authoritative: exercise the fixture at `https://milgam.ylm.co.il/controller-host-fixture/`, fulfill all host/API traffic locally, and make no real tenant request. The earlier `https://ylm.ylm.co.il` example and its frame-ancestor failure are not app defects. Preserve the existing trusted origins and CSP; do not add the mistaken origin.
+## T-301 — Calendar range contract and controls
 
-## Existing browser contracts
+Replace month/year controls with native From/To dates and Apply. Discovery may seed a month, but never constrain later ranges.
 
-After a verified host capability is accepted, issue one concurrent `POST` with body `{}` to each endpoint per snapshot load/refresh:
-
-- `/api/Entity/MilgamDashboardCurrentEvents/Search`
-- `/api/Entity/MilgamDashboardCurrentPermits/Search`
-- `/api/Entity/MilgamDashboardCurrentEquipment/Search`
-
-Do not send dates, locations, pagination, username, or administrator identity. Validate the complete `{ Items, TotalCount }` envelope once. Missing procedures, 401/403, transport errors, malformed responses, and permission failures are errors, never fabricated zeroes.
-
-Events require the unique scopes `overall`, `headquarters`, and `branches`; non-negative integer totals/open counts; `open <= total`; present `AsOf`; and headquarters plus branches reconciliation to overall. Permits require one row with separate non-negative `ValidCount`, `MissingCount`, and `OverdueCount`, plus `AsOf` and `ValueDate`; never combine missing and overdue as “invalid.” Equipment is normalized then deduplicated by `EquipmentId` before comparing the unique population with envelope `TotalCount`; identical duplicates are ignored, while conflicting duplicates, malformed rows, and incomplete populations are rejected. Render equipment total but keep validity classification explicitly unavailable.
-
-Pass report dates unchanged through `ToDisplayDate()` and never append `Z`. Each permit metric performs exactly:
+- Accept real `YYYY-MM-DD` values in years 1753–9999 and require `From <= To`.
+- Convert exactly to timezone-less `FromDate=<from>T00:00:00` and inclusive `ToDate=<to>T23:59:59.997`; never append `Z`.
+- Invalid/missing/impossible/reversed/out-of-bound input shows an announced Hebrew inline error, applies `aria-invalid`, focuses a relevant input, and issues zero requests.
+- Support one day, cross-month/year, and out-of-discovery ranges, including empty discovery. Draft edits do not change displayed data until Apply succeeds; retain the applied range across refresh and fresh authorized re-entry.
+- Preserve keyboard use, 44px targets, logical RTL/LTR layout, and fit at 390×844 and 1440×900.
 
 ```text
-await host.ready()
-await host.executeCommand("Navigate", { Url: "#/Permits/Dashboard" })
+┌ מתאריך ───────┐ ┌ עד תאריך (כולל) ┐ [החלת טווח] [רענון נתונים]
+│ YYYY-MM-DD    │ │ YYYY-MM-DD       │  עדכון אחרון: …
+└───────────────┘ └──────────────────┘
+! validation/status message when applicable
 ```
 
-No filter parameters are invented. A pending command is single-flight, generation-bound, and restores focus only to a captured, still-connected and focusable control.
+## T-302 — Analytical range state and request lifecycle
 
-## Capability and state model
-
-Only a capability created by verified `event.source === window.parent`, an approved HTTPS parent origin, an approved corresponding HTTPS `ApiAddress`, and a module-private/non-forgeable binding may authorize requests or commands. Public flags such as `__trustedHostOrigin` or caller-supplied booleans are insufficient. Direct access, fallback, timeout, mutation, mismatched response source/origin, and unapproved origins result in zero authenticated effects.
+Store `selectedRange` separately from discovered periods. Applying a valid range starts one analytical generation whose four existing reports share exact bounds.
 
 ```text
-accept verified host with fresh bridge/session identity → generation += 1 → enable analytical/snapshot work
-refresh snapshot → requestId += 1 → abort prior → fetch three reports concurrently
-late result with stale requestId or generation → ignore
-HTTP 401/403 or authorization loss → revoke + taint generation → abort requests/commands
-                                     → retain last-good data as stale → deny refresh/reconnect
-fresh controller bridge re-entry → new SDK/application generation → auto-restart snapshot work
+host accepted → discover default → selectedRange := latest/current full month → load four reports
+RANGE_APPLIED(valid) → selectedRange := range → requestId++ → abort superseded → load four reports
+late stale request/authorization/apply generation → ignore
+REFRESH in ready/empty/loading-dashboard → reload selectedRange
 ```
 
-Snapshot loading/error/timestamp/last-good state remains separate from analytical month/year state. A refresh is transactional: loading/error bookkeeping must not clear committed content. Period changes produce zero snapshot requests. Initial failure shows no numeric placeholders; refresh failure, including 401/403, retains prior values visibly marked stale. Retry is actionable for ordinary transport/server failures, but authorization failures keep authenticated retry disabled until a genuinely fresh controller re-entry. A snapshot-ready UI may coexist with analytical loading/error and vice versa.
+- Load division, summary, category, and closure concurrently and exactly once per accepted Apply/refresh.
+- Preserve mappings, charts, CSP, authorization, and loading/empty/error behavior.
+- Abort superseded work where possible and prevent out-of-order results from committing.
+- Use `REFRESH` for ready/empty analytics; reserve `RETRY` for recoverable errors.
+- Applying analytics must not issue, cancel, clear, or alter the independent three-report snapshot; snapshot refresh must not change the analytical range.
+- Performance contract: exercise 0, 1, and 1,000 rows per analytical report (at most 4,000 combined and 4 MiB decoded across the four responses), including duplicate-heavy and malformed boundaries. On a warmed run, aggregate mapping must finish under 100 ms, post-response ready rendering under 50 ms at each required viewport/direction, with no app-attributable task lasting 50 ms or more and no more than 600 dashboard descendants.
+- Bound visible analytical detail independently from aggregate computation: summaries and totals always cover the complete validated dataset, while division/category/closure detail uses accessible pagination, windowing, or an equivalent deterministic disclosure capped so a ready dashboard remains at or below 600 descendants. Do not silently truncate: expose localized range/count text and keyboard-operable previous/next controls, preserve stable item order, and reset or clamp the visible window when data/range changes.
+- Rendering a page/window must be proportional to the visible items, not the 1,000-row input. Page navigation must not call the API or remap the full payload, must retain headings/table semantics and chart summaries, and must announce the newly visible range without moving focus unexpectedly.
+- Ten draft edits initiate zero requests. Ten rapid valid Applies initiate exactly 40 analytical requests, no snapshot requests, and at most four active analytical requests at once: the newest four may complete and commit, while the prior 36 must be aborted or settle ignored. Record initiated/aborted/completed/committed totals, peak concurrency, decoded bytes, mapping time, render time, long tasks, and DOM count.
 
-## Authorized flag behavior
+## T-303 — Snapshot count normalization and terminal recovery guidance
 
-For this recovered release candidate, `CURRENT_SNAPSHOT_LIVE_CALLS_ENABLED` must be `true` in source and must remain true through implementation, local tests, exact-preview review, and the single controller-owned production deployment. Tests assert the authorized true configuration. Do not reset it during remediation or preview review.
-
-Only after a successful production release may the controller or a separately authorized local follow-up restore it to false when live verification remains unavailable. That local-only revert must not trigger another deployment. The application implementation must not deploy or call lifecycle APIs.
-
-## CSP-safe chart presentation
-
-Keep the response-header CSP strict and local: at minimum `default-src 'self'`, `script-src 'self'`, `style-src 'self'`, `object-src 'none'`, and `base-uri 'none'`, with only approved connection and framing origins. Do not add `unsafe-inline`, `unsafe-eval`, wildcard executable sources, remote runtime dependencies, or a global CSP bypass.
-
-Remove runtime inline style attributes/properties used for donut gradients, swatches, stacked widths, and bar widths. Use a finite, reviewed presentation mechanism compatible with `style-src 'self'` (for example predefined classes/quantized classes and SVG attributes where allowed by the enforced policy). Preserve accurate labels and accessible numeric text even when a visual is quantized. There must be no CSP style violation, blank donut, missing swatch, or zero-width bar caused by the policy.
-
-Low-fidelity behavior:
+Normalize event/permit aggregate counts before validation/arithmetic:
 
 ```text
-RTL/LTR dashboard
-├─ snapshot cards: semantic counts/statuses; responsive stack; <=80 nodes
-└─ analytical charts
-   ├─ donut: visible segments + textual legend
-   ├─ stacks/bars: visible CSP-safe magnitude + exact accessible values
-   └─ swatches: predefined local classes
+safe non-negative integer number → accept
+trimmed digit-only string converting to safe non-negative integer → accept as number
+anything else → existing dataset validation error
 ```
 
-## Accessibility, direction, and performance
+- Apply only to event `TotalCount`/`OpenCount` and permit `ValidCount`/`MissingCount`/`OverdueCount`. Keep envelope `TotalCount` numeric and equipment unchanged.
+- Preserve safe/non-negative, `open <= total`, scope reconciliation, separate permit categories, required dates, and no-fabricated-zero rules. Reject empty, signed, fractional, exponent, negative, unsafe, missing, malformed, and unreconciled values.
+- Preserve dataset and bounded HTTP status/error class through invalidation. Show concise Hebrew guidance for authentication/permission, unavailable report, server, invalid response, or network errors.
+- Diagnostics may contain only a fixed known endpoint and bounded classification—never body text, API address, arbitrary exception, token, credential, or private marker.
+- On 401/403/revocation retain last-good facts as stale and disable ineffective retry until fresh controller re-entry. Ordinary failures remain retryable.
+- Define terminal authorization as safe error kind `authorization-revoked` or bounded HTTP status 401/403. Persist that terminal classification in snapshot controller state for the rejected host generation; `refresh()` must short-circuit with zero API calls until `acceptHostContext` supplies a distinct verified context/client generation. The UI must disable `#snapshot-refresh`, omit/disable `[data-snapshot-retry]`, and announce concise re-entry guidance while retaining stale last-good facts. Never infer terminal state from untrusted response body text.
+- Keep exactly three concurrent snapshot calls per load/refresh and keep live calls enabled in source, tests, preview, and the reviewed candidate.
+- Performance contract: exercise 0, 1, 1,000, and 10,000 equipment rows while keeping the two aggregate fixtures valid; record decoded bytes and peak concurrency. The 10,000-row fixture must stay at or below 2.5 MiB decoded across the snapshot generation, map in under 100 ms warmed, render in under 50 ms, create no app-attributable task of 50 ms or more, and keep the snapshot region at no more than 80 descendants at both viewports/directions.
+- A ten-activation snapshot refresh/retry burst while one generation is pending must coalesce to exactly three initiated requests, peak concurrency three, and one commit; superseded results are ignored. After terminal 401/403/revocation, the same burst initiates zero requests until verified fresh re-entry. Very long digit strings and `9007199254740992` must be rejected without partial render or nonlinear work.
 
-- Preserve native keyboard-operable permit controls, distinct accessible names, visible focus, polite status announcements, sufficient contrast, and non-color-only meaning.
-- Use logical layout properties and runtime `dir`; verify 390×844 and 1440×900 in RTL and LTR without clipping or incoherent focus order.
-- Exactly three snapshot calls start concurrently per load/refresh, none on period changes, no automatic retries, and at most three current-generation requests remain in flight.
-- Map/deduplicate 10,000 equipment rows within 100 ms after warm-up on the recorded runtime. A ready snapshot renders within 50 ms at both recorded viewports and contains at most 80 snapshot DOM elements; equipment growth adds no fact-list nodes.
-- A 10-refresh burst commits only generation 10. Twenty rapid permit activations while pending produce one command chain.
-- Acquire the permit-navigation single-flight guard synchronously before any awaited `ready()`/command step and release it only when that one chain settles; disposal/revocation consumes expected rejected promises and cannot open a second chain or emit an uncaught page error.
-- Record runtime/browser versions, fixture sizes, decoded bytes, mapping/render timings, node count, request concurrency, and command count.
+## T-304 — Independent verification and release preparation
 
-## Validation and release gates
+Rediscover all `*.test.{js,mjs,cjs}` and `*.spec.{js,mjs,cjs}` before execution so new tests cannot be omitted. Current inventory spans `site/tests/*.test.js`, QC JS+MJS, UAT MJS, and controller `host-fixture.test.mjs`. Run the configured site suite plus complete explicit QC/UAT/harness suites; preserve exact commands, totals, skips, and failures. Never call a partial glob passing.
 
-Local deterministic suites cover exact request bodies, strict adapters, identical/conflicting equipment duplicates, private host binding, stale suppression, flag=true, chart presentation without inline styles, CSP header integrity, loading/empty/error/stale states, RTL/LTR and keyboard semantics, and existing analytical regressions. Assertions must not be weakened.
+Required deterministic coverage:
 
-Exact-preview review must use the same artifact intended for release and prove: snapshot enabled; three current routes exercised; permit navigation; no relevant CSP console errors; all chart visuals visible on desktop/mobile RTL (plus LTR layout regression); 10,000-row mapping/render and DOM budgets; refresh and permit bursts; and no third-party executable request.
+- real/leap/impossible/boundary/reversed dates; single-day `.997`; no `Z`; four identical bodies; invalid zero requests; empty discovery; latest generation; refresh applied range;
+- HTTP-200 string aggregates end-to-end plus malformed/unsafe variants and reconciliation;
+- bounded report-specific 400/404/500/network/invalid-response guidance; stale 401/403 with disabled retry; no untrusted-data disclosure;
+- analytics/snapshot isolation, snapshot concurrency/coalescing, terminal generation denial, fresh re-entry, and certificate links issuing exactly `Navigate {Url:"#/Permits/Dashboard"}`;
+- RTL/LTR keyboard/focus, announcement, overflow, CSP, charts, and no page errors at both viewports.
+- performance fixtures and budgets above, recording browser/version, candidate identity, viewport/direction, fixture row counts, decoded bytes, initiated/aborted/completed/committed totals, peak concurrency, warmed mapping/render samples, descendant counts, long tasks, and third-party executable requests (expected zero).
+- analytical detail navigation at 1,000-row volume: full-data totals remain correct, every item is reachable in stable order without duplication, keyboard/focus/live-status behavior is accessible, page changes issue zero API calls, dashboard descendants remain <=600, and no app-attributable task reaches 50 ms;
+- terminal snapshot 401 and 403 after last-good data: stale facts remain, refresh is disabled, no retry control or ordinary retry copy is exposed, repeated activation attempts issue zero requests, and only distinct verified re-entry enables a fresh three-request generation;
+- release-footer source and browser checks from T-305, including exactly one marker, all app states, metadata variants, bidi, wrapping, and no network/authentication dependency.
 
-Authorization lifecycle release acceptance requires an approved real SimplyLog host or controller-owned faithful harness. Revoke/expire authorization during requests and a command; prove abort and zero old-generation effects, stale retention, denial of subsequent authenticated work, fresh verified re-entry, recovery under a new generation, and command-response generation binding. Synthetic unapproved messaging cannot close this gate. If no approved environment exists, report the gate blocked/skipped honestly and do not claim release approval.
+Use the actual packaged SDK via the controller fixture at fully intercepted `https://milgam.ylm.co.il/controller-host-fixture/`; abort real tenant traffic. Never inject a fake adapter/readiness promise, widen origins/CSP, or treat synthetic permissions as tenant proof.
 
-Browser diagnostics must be metadata-only. For HTTP, invalid JSON/envelopes, mapper, and service failures, log bounded fields such as dataset, status, error kind, and byte/count information; never log or retain raw/parsed API response bodies, snippets, personal/internal fields, tokens, or full serialized error objects. User-visible failures remain generic and actionable, while in-memory validation may inspect a response only for the immediate adapter decision.
+Release preparation requires implementation evidence, every fresh controller review, no critical high-confidence issue/required workflow failure, the exact enabled candidate, and new authorized approval. Previous approvals, PR metadata, attachment claims, and fixture decisions do not authorize release. Live tenant reconciliation remains a controller-owned limitation.
 
-## Implementation sequence
+## T-305 — Truthful release footer and narrow-width containment
 
-1. `T-201` sets and protects the authorized release flag.
-2. `T-202` replaces CSP-blocked runtime chart styling while preserving strict headers and visuals.
-3. `T-203` implements the explicit active/tainted/awaiting-fresh-session lifecycle, transactional last-good state, synchronous command single-flight, safe disposal handling, and all prior SDK/diagnostics regressions.
-4. `T-204` collects exact-preview functional, responsive, CSP, SDK-command, diagnostics, and performance evidence, including 401 denial and automatic fresh-reentry recovery, in the corrected local-only controller fixture.
-5. `T-205` validates authorization revocation/taint/re-entry and generation-bound requests/commands through that faithful harness and defines the controller-owned release/revert handoff.
+Keep the builder skill's packaged `release-footer.js` and `release-footer.css` in `site/assets/`, and retain exactly one copy of the packaged semantic footer markup in `site/index.html`, after the state-dependent main content and before scripts. Preserve `footer[data-simplyvibe-release]`, its `<dl>`, `data-release-label`, and `data-release-value` hooks; load both assets with relative same-origin paths.
+
+```text
+<main> host-waiting / loading / no-context / empty / error / stale / ready </main>
+<footer data-simplyvibe-release>
+  Version | Last update | Release date
+</footer>
+```
+
+- Keep the footer in document flow, never fixed or overlaid, visible at supplemental 320×844 plus required 390×844 and 1440×900, keyboard/zoom safe, wrapping without horizontal overflow, and localized by document language in RTL Hebrew and LTR English.
+- Preserve the packaged footer JS/CSS unchanged. Apply any 320px containment correction in app-owned layout/CSS: account for borders/padding in the footer border box, allow flex children and isolated values to shrink/wrap, and keep `footer.getBoundingClientRect()` within `[0, innerWidth]` without relying on clipped overflow or horizontal scrolling.
+- Generated source starts with unavailable values. Missing or malformed attributes render `Unavailable` / `לא זמין`; no runtime fallback may invent metadata.
+- The trusted controller publication workflow alone stamps `data-release-version` as the first 12 lowercase hex characters of the deployed Git commit, `data-release-updated-at` as the UTC commit time of the most recent `site/` change from full history, `data-release-released-at` as the frozen production artifact preparation time, and `data-release-environment` as `preview` or `production`.
+- Preview has an empty production release timestamp and renders an explicit `Preview` / `תצוגה מקדימה` version label plus `Not released` / `טרם פורסם`. Production formats valid frozen timestamps in the viewer's timezone. Never substitute page-open time, viewer current time, data refresh time, event time, or a hand-maintained version.
+- The renderer performs no authentication or network request and responds to document-language changes. Release metadata contains no user, tenant, token, or controller-internal data and is visually distinct from dashboard refresh timestamps.
+- Source validation may inject explicit synthetic attributes to exercise unstamped, malformed, preview, and production formatting, but those fixtures are never claimed as actual release facts. Exact-preview version matching the reviewed head's first 12 SHA characters remains a later controller-owned check; the denied deployed origin must not be accessed during this planning cycle.
+
+## Assumptions and non-goals
+
+- Existing endpoints and inclusive SQL `datetime` comparison are unchanged; these frontend defects need no DB change.
+- Existing host-capability, snapshot lifecycle, CSP/chart, permit, and equipment-classification contracts remain mandatory.
+- The prepared patch guides but is not applied mechanically when it conflicts with current source or this plan.
+- Planning does not assert production readiness or release approval.

@@ -1,0 +1,12 @@
+# Current-cycle evidence
+
+- Candidate: exact preview `https://f9d0c736.app-milgam-dashboard.pages.dev`; exact head `2f47f48ed056df72c5d8b861778dad5cc4069703`; Chromium `140.0.7339.16`; Node `v20.20.2`.
+- Browser execution: `node .agents/uat-tester/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/run-preview.mjs`; raw output and observations are in `evidence/browser-run.log` and `evidence/observations.json`.
+- Complete suite commands: `(cd site && npm test)` => 72/72; `node --test tests/qc/*.test.js tests/qc/*.test.mjs` => 49/49; `node --test tests/uat/*.test.mjs` => 33/33; `node --test /workspace/.simplyvibe/input/controller-host-harness/host-fixture.test.mjs` => 2/2. Raw TAP is preserved in this run's `evidence/` directory.
+- Inventory: 11 site JS, 5 QC (1 JS/4 MJS), 4 UAT MJS, and 1 harness MJS; no CJS/spec files. Exact paths are in `evidence/inventory.txt`.
+- `perf-preview-analytical-1000-row-unbounded-dom-long-tasks-v1`: not reproduced. Current exact-preview evidence renders 297 dashboard descendants in all five measured viewport/direction cases. Independent same-candidate performance evidence at `.agents/performance-reviewer/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/evidence/observations.json` records 297 descendants, zero long tasks, 321,116 decoded analytical bytes, peak analytical concurrency four, and page-navigation API delta zero.
+- `uat-snapshot-terminal-401-retry-enabled-v1`: not reproduced. Last-good content remains, `#snapshot-refresh` is disabled, retry count is zero, post-terminal call delta is zero, and re-entry-only Hebrew guidance is announced; synthetic private marker is absent.
+- `qc-footer-320-rtl-edge-clipping-v1`: not reproduced. At supplemental 320x844 RTL Chromium content width/innerWidth is 304 and footer bounds are left 16/right 288; scrollWidth equals clientWidth. Required 390x844 and 1440x900 RTL/LTR cases also contain the footer.
+- Footer: exactly one visible marker in ready and direct no-context states; localized three labels; preview value `2f47f48ed056 (Preview)` / Hebrew equivalent; explicit Not released / Hebrew equivalent; zero direct-entry API calls.
+- Host lifecycle: actual controller GuestBridge plus deployed packaged SDK; held old-generation Navigate has zero effect after revoke, fresh generation yields one exact permit Navigate. No adapter/readiness injection occurred.
+- Limitation: controller-fixture permission decisions do not prove deployed tenant permission configuration. No tenant token or tenant request was authorized or used.

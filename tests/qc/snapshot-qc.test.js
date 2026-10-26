@@ -259,53 +259,51 @@ test("T-203/T-204: burst of ten refreshes commits generation ten with no retry s
   assert.equal(changeCount, 11);
 });
 
-test("T-203/T-204/T-205: every refresh entry point shares the application single-flight through settlement", async () => {
+test("T-302/T-303/T-304: authorization verification is single-flight while analytical and snapshot refreshes stay isolated", async () => {
   const appSource = await readFile(new URL("../../site/app.js", import.meta.url), "utf8");
   assert.match(appSource, /snapshotRefreshElement\.addEventListener\("click", \(\) => \{ void refreshAuthorization\(\); \}\)/);
-  assert.match(appSource, /querySelector\("#refresh-button"\)[\s\S]*?void refreshAuthorization\(\)/);
-  assert.match(appSource, /querySelector\("\[data-snapshot-retry\]"\)[\s\S]*?refreshAuthorization\(\{ analytics: false \}\)/);
-  assert.match(appSource, /refreshAnalyticsRequested \|\|= analytics;\s*if \(refreshPending\) return refreshPending;/);
+  assert.match(appSource, /querySelector\("#refresh-button"\)[\s\S]*?refreshAnalyticsAuthorization\(\)/);
+  assert.match(appSource, /querySelector\("\[data-snapshot-retry\]"\)[\s\S]*?refreshSnapshot\(\)/);
+  assert.match(appSource, /if \(refreshPending\) return refreshPending;/);
   assert.match(appSource, /refreshPending = \(async \(\) => \{[\s\S]*?await hostBootstrap\.verify\(\)[\s\S]*?await snapshotController\?\.refresh\(\)[\s\S]*?finally \{[\s\S]*?refreshPending = null;/);
-  assert.match(appSource, /snapshotRefreshElement\.disabled = true;[\s\S]*?analyticalRefresh\.disabled = true/);
+  assert.match(appSource, /snapshotRefreshElement\.disabled = true/);
+  assert.match(appSource, /function refreshAnalyticsAuthorization\(\)[\s\S]*?service\.send\("REFRESH"\)/);
+  const analyticalRefreshSource = appSource.slice(appSource.indexOf("function refreshAnalyticsAuthorization"), appSource.indexOf("function refreshAuthorization"));
+  assert.doesNotMatch(analyticalRefreshSource, /snapshotController\?\.refresh\(\)/);
 
   let verificationCount = 0;
   let snapshotCount = 0;
-  let analyticalCount = 0;
   let release;
   let pending = null;
-  let analyticsRequested = false;
   const gate = () => new Promise(resolve => { release = resolve; });
   let currentGate = gate();
-  const refresh = ({ analytics = true } = {}) => {
-    analyticsRequested ||= analytics;
+  const refreshSnapshot = () => {
     if (pending) return pending;
     pending = (async () => {
       try {
         verificationCount += 1;
         await currentGate;
-        if (analyticsRequested) analyticalCount += 1;
         snapshotCount += 1;
       } finally {
         pending = null;
-        analyticsRequested = false;
       }
     })();
     return pending;
   };
 
-  const burst = [refresh(), refresh({ analytics: false }), ...Array.from({ length: 18 }, () => refresh())];
-  assert.ok(burst.every(run => run === burst[0]), "both controls and retry must join one pending operation");
-  assert.deepEqual({ verificationCount, snapshotCount, analyticalCount }, { verificationCount: 1, snapshotCount: 0, analyticalCount: 0 });
+  const burst = Array.from({ length: 20 }, () => refreshSnapshot());
+  assert.ok(burst.every(run => run === burst[0]), "snapshot refresh and retry must join one pending authorization operation");
+  assert.deepEqual({ verificationCount, snapshotCount }, { verificationCount: 1, snapshotCount: 0 });
   release();
   await Promise.all(burst);
-  assert.deepEqual({ verificationCount, snapshotCount, analyticalCount }, { verificationCount: 1, snapshotCount: 1, analyticalCount: 1 });
+  assert.deepEqual({ verificationCount, snapshotCount }, { verificationCount: 1, snapshotCount: 1 });
 
   currentGate = gate();
-  const afterSettlement = refresh({ analytics: false });
+  const afterSettlement = refreshSnapshot();
   assert.notEqual(afterSettlement, burst[0], "the lock must release after settlement");
   release();
   await afterSettlement;
-  assert.deepEqual({ verificationCount, snapshotCount, analyticalCount }, { verificationCount: 2, snapshotCount: 2, analyticalCount: 1 });
+  assert.deepEqual({ verificationCount, snapshotCount }, { verificationCount: 2, snapshotCount: 2 });
 });
 
 test("T-205: host date and navigation boundaries preserve exact arguments and sequencing", async () => {

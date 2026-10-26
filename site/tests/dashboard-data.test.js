@@ -18,14 +18,15 @@ test("period discovery uses the long discovery range and latest available month"
   const result = await loadPeriods(client, { now: new Date(2026, 7, 20) });
   assert.deepEqual(calls, [{
     key: "periods",
-    range: { FromDate: "2000-01-01T00:00:00", ToDate: "2026-08-31T23:59:59" }
+    range: { FromDate: "2000-01-01T00:00:00", ToDate: "2026-08-31T23:59:59.997" }
   }]);
-  assert.deepEqual(result.selectedPeriod, {
-    year: 2026, month: 8, label: "8/26", eventCount: 2, available: true
+  assert.deepEqual(result.selectedRange, {
+    from: "2026-08-01", to: "2026-08-31",
+    FromDate: "2026-08-01T00:00:00", ToDate: "2026-08-31T23:59:59.997"
   });
 });
 
-test("four selected-month datasets start in parallel with the exact same range and signal", async () => {
+test("four analytical datasets start in parallel with the exact same inclusive range and signal", async () => {
   const calls = [];
   const resolvers = new Map();
   const controller = new AbortController();
@@ -36,12 +37,12 @@ test("four selected-month datasets start in parallel with the exact same range a
     }
   };
 
-  const promise = loadDashboard(client, { year: 2024, month: 2 }, { signal: controller.signal });
+  const promise = loadDashboard(client, { from: "2024-02-01", to: "2024-02-29" }, { signal: controller.signal });
   await Promise.resolve();
   assert.deepEqual(calls.map((call) => call.key), ["division", "summary", "category", "closure"]);
   assert.equal(calls.every((call) => call.signal === controller.signal), true);
   assert.equal(calls.every((call) => call.range.FromDate === "2024-02-01T00:00:00"), true);
-  assert.equal(calls.every((call) => call.range.ToDate === "2024-02-29T23:59:59"), true);
+  assert.equal(calls.every((call) => call.range.ToDate === "2024-02-29T23:59:59.997"), true);
 
   resolvers.get("division")([]);
   resolvers.get("summary")([

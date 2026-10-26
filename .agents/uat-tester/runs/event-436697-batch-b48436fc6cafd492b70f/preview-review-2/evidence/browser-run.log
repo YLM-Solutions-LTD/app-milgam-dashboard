@@ -1,0 +1,592 @@
+{
+  "preview": "https://f9d0c736.app-milgam-dashboard.pages.dev",
+  "head": "2f47f48ed056df72c5d8b861778dad5cc4069703",
+  "browser": "140.0.7339.16",
+  "node": "v20.20.2",
+  "fixture": "controller-owned GuestBridge + deployed packaged guest SDK",
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerBounds": {
+          "left": 72,
+          "right": 1352,
+          "width": 1280,
+          "innerWidth": 1424
+        },
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "labels": [
+          "גרסה",
+          "עדכון אחרון",
+          "תאריך שחרור"
+        ],
+        "values": [
+          "2f47f48ed056 (תצוגה מקדימה)",
+          "26.10.2026, 17:44",
+          "טרם פורסם"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 297,
+        "detailStatus": [
+          "\n    \n    מחובר ל-SimplyLog\n  ",
+          "עודכן: 2026-10-26T09:00:00",
+          "\n    \n      חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        10\n      \n      \n    \n      \n      Division 1\n      10 · 100.0%\n    \n  \n    \n      \n      Division 10\n      0 · 0.0%\n    \n  \n    \n      \n      Division 100\n      0 · 0.0%\n    \n  \n    \n      \n      Division 1000\n      0 · 0.0%\n    \n  \n    \n      \n      Division 101\n      0 · 0.0%\n    \n  \n    \n      \n      Division 102\n      0 · 0.0%\n    \n  \n    \n      \n      Division 103\n      0 · 0.0%\n    \n  \n    \n      \n      Division 104\n      0 · 0.0%\n    \n  \n    \n      \n      Division 105\n      0 · 0.0%\n    \n  \n    \n      \n      Division 106\n      0 · 0.0%\n    \n  \n    הקודם\n    1–10 מתוך 1,000\n    הבא\n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      50.0%\n    \n  \n    \n      סניפים\n      50.0%\n    \n  \n    \n    \n      מטה: 5 · 50.0%\n  \n    \n      סניפים: 5 · 50.0%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      C0\n      \n      5\n    \n  \n    \n      C10\n      \n      0\n    \n  \n    \n      C100\n      \n      0\n    \n  \n    \n      C102\n      \n      0\n    \n  \n    \n      C104\n      \n      0\n    \n  \n    \n      C106\n      \n      0\n    \n  \n    \n      C108\n      \n      0\n    \n  \n    \n      C110\n      \n      0\n    \n  \n    \n      C112\n      \n      0\n    \n  \n    \n      C114\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n      תמהיל קריאות סניפים\n    \n      C1\n      \n      5\n    \n  \n    \n      C101\n      \n      0\n    \n  \n    \n      C103\n      \n      0\n    \n  \n    \n      C105\n      \n      0\n    \n  \n    \n      C107\n      \n      0\n    \n  \n    \n      C109\n      \n      0\n    \n  \n    \n      C11\n      \n      0\n    \n  \n    \n      C111\n      \n      0\n    \n  \n    \n      C113\n      \n      0\n    \n  \n    \n      C115\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          2\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C01.0\n        \n          C10—\n        \n          C100—\n        \n          C102—\n        \n          C104—\n        \n          C106—\n        \n          C108—\n        \n          C110—\n        \n          C112—\n        \n          C114—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          3\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C11.0\n        \n          C101—\n        \n          C103—\n        \n          C105—\n        \n          C107—\n        \n          C109—\n        \n          C11—\n        \n          C111—\n        \n          C113—\n        \n          C115—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n    \n  ",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerBounds": {
+          "left": 16,
+          "right": 358,
+          "width": 342,
+          "innerWidth": 374
+        },
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "labels": [
+          "גרסה",
+          "עדכון אחרון",
+          "תאריך שחרור"
+        ],
+        "values": [
+          "2f47f48ed056 (תצוגה מקדימה)",
+          "26.10.2026, 17:44",
+          "טרם פורסם"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 297,
+        "detailStatus": [
+          "\n    \n    מחובר ל-SimplyLog\n  ",
+          "עודכן: 2026-10-26T09:00:00",
+          "\n    \n      חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        10\n      \n      \n    \n      \n      Division 1\n      10 · 100.0%\n    \n  \n    \n      \n      Division 10\n      0 · 0.0%\n    \n  \n    \n      \n      Division 100\n      0 · 0.0%\n    \n  \n    \n      \n      Division 1000\n      0 · 0.0%\n    \n  \n    \n      \n      Division 101\n      0 · 0.0%\n    \n  \n    \n      \n      Division 102\n      0 · 0.0%\n    \n  \n    \n      \n      Division 103\n      0 · 0.0%\n    \n  \n    \n      \n      Division 104\n      0 · 0.0%\n    \n  \n    \n      \n      Division 105\n      0 · 0.0%\n    \n  \n    \n      \n      Division 106\n      0 · 0.0%\n    \n  \n    הקודם\n    1–10 מתוך 1,000\n    הבא\n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      50.0%\n    \n  \n    \n      סניפים\n      50.0%\n    \n  \n    \n    \n      מטה: 5 · 50.0%\n  \n    \n      סניפים: 5 · 50.0%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      C0\n      \n      5\n    \n  \n    \n      C10\n      \n      0\n    \n  \n    \n      C100\n      \n      0\n    \n  \n    \n      C102\n      \n      0\n    \n  \n    \n      C104\n      \n      0\n    \n  \n    \n      C106\n      \n      0\n    \n  \n    \n      C108\n      \n      0\n    \n  \n    \n      C110\n      \n      0\n    \n  \n    \n      C112\n      \n      0\n    \n  \n    \n      C114\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n      תמהיל קריאות סניפים\n    \n      C1\n      \n      5\n    \n  \n    \n      C101\n      \n      0\n    \n  \n    \n      C103\n      \n      0\n    \n  \n    \n      C105\n      \n      0\n    \n  \n    \n      C107\n      \n      0\n    \n  \n    \n      C109\n      \n      0\n    \n  \n    \n      C11\n      \n      0\n    \n  \n    \n      C111\n      \n      0\n    \n  \n    \n      C113\n      \n      0\n    \n  \n    \n      C115\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          2\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C01.0\n        \n          C10—\n        \n          C100—\n        \n          C102—\n        \n          C104—\n        \n          C106—\n        \n          C108—\n        \n          C110—\n        \n          C112—\n        \n          C114—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          3\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C11.0\n        \n          C101—\n        \n          C103—\n        \n          C105—\n        \n          C107—\n        \n          C109—\n        \n          C11—\n        \n          C111—\n        \n          C113—\n        \n          C115—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n    \n  ",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "narrow-rtl",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "rtl",
+        "scrollWidth": 304,
+        "clientWidth": 304,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerBounds": {
+          "left": 16,
+          "right": 288,
+          "width": 272,
+          "innerWidth": 304
+        },
+        "footerText": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+        "labels": [
+          "גרסה",
+          "עדכון אחרון",
+          "תאריך שחרור"
+        ],
+        "values": [
+          "2f47f48ed056 (תצוגה מקדימה)",
+          "26.10.2026, 17:44",
+          "טרם פורסם"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 297,
+        "detailStatus": [
+          "\n    \n    מחובר ל-SimplyLog\n  ",
+          "עודכן: 2026-10-26T09:00:00",
+          "\n    \n      חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        10\n      \n      \n    \n      \n      Division 1\n      10 · 100.0%\n    \n  \n    \n      \n      Division 10\n      0 · 0.0%\n    \n  \n    \n      \n      Division 100\n      0 · 0.0%\n    \n  \n    \n      \n      Division 1000\n      0 · 0.0%\n    \n  \n    \n      \n      Division 101\n      0 · 0.0%\n    \n  \n    \n      \n      Division 102\n      0 · 0.0%\n    \n  \n    \n      \n      Division 103\n      0 · 0.0%\n    \n  \n    \n      \n      Division 104\n      0 · 0.0%\n    \n  \n    \n      \n      Division 105\n      0 · 0.0%\n    \n  \n    \n      \n      Division 106\n      0 · 0.0%\n    \n  \n    הקודם\n    1–10 מתוך 1,000\n    הבא\n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      50.0%\n    \n  \n    \n      סניפים\n      50.0%\n    \n  \n    \n    \n      מטה: 5 · 50.0%\n  \n    \n      סניפים: 5 · 50.0%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      C0\n      \n      5\n    \n  \n    \n      C10\n      \n      0\n    \n  \n    \n      C100\n      \n      0\n    \n  \n    \n      C102\n      \n      0\n    \n  \n    \n      C104\n      \n      0\n    \n  \n    \n      C106\n      \n      0\n    \n  \n    \n      C108\n      \n      0\n    \n  \n    \n      C110\n      \n      0\n    \n  \n    \n      C112\n      \n      0\n    \n  \n    \n      C114\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n      תמהיל קריאות סניפים\n    \n      C1\n      \n      5\n    \n  \n    \n      C101\n      \n      0\n    \n  \n    \n      C103\n      \n      0\n    \n  \n    \n      C105\n      \n      0\n    \n  \n    \n      C107\n      \n      0\n    \n  \n    \n      C109\n      \n      0\n    \n  \n    \n      C11\n      \n      0\n    \n  \n    \n      C111\n      \n      0\n    \n  \n    \n      C113\n      \n      0\n    \n  \n    \n      C115\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          2\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C01.0\n        \n          C10—\n        \n          C100—\n        \n          C102—\n        \n          C104—\n        \n          C106—\n        \n          C108—\n        \n          C110—\n        \n          C112—\n        \n          C114—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          3\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C11.0\n        \n          C101—\n        \n          C103—\n        \n          C105—\n        \n          C107—\n        \n          C109—\n        \n          C11—\n        \n          C111—\n        \n          C113—\n        \n          C115—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n    \n  ",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "ltr",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerBounds": {
+          "left": 72,
+          "right": 1352,
+          "width": 1280,
+          "innerWidth": 1424
+        },
+        "footerText": "Version\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+        "labels": [
+          "Version",
+          "Last update",
+          "Release date"
+        ],
+        "values": [
+          "2f47f48ed056 (Preview)",
+          "10/26/26, 5:44 PM",
+          "Not released"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 297,
+        "detailStatus": [
+          "\n    \n    מחובר ל-SimplyLog\n  ",
+          "עודכן: 2026-10-26T09:00:00",
+          "\n    \n      חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        10\n      \n      \n    \n      \n      Division 1\n      10 · 100.0%\n    \n  \n    \n      \n      Division 10\n      0 · 0.0%\n    \n  \n    \n      \n      Division 100\n      0 · 0.0%\n    \n  \n    \n      \n      Division 1000\n      0 · 0.0%\n    \n  \n    \n      \n      Division 101\n      0 · 0.0%\n    \n  \n    \n      \n      Division 102\n      0 · 0.0%\n    \n  \n    \n      \n      Division 103\n      0 · 0.0%\n    \n  \n    \n      \n      Division 104\n      0 · 0.0%\n    \n  \n    \n      \n      Division 105\n      0 · 0.0%\n    \n  \n    \n      \n      Division 106\n      0 · 0.0%\n    \n  \n    הקודם\n    1–10 מתוך 1,000\n    הבא\n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      50.0%\n    \n  \n    \n      סניפים\n      50.0%\n    \n  \n    \n    \n      מטה: 5 · 50.0%\n  \n    \n      סניפים: 5 · 50.0%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      C0\n      \n      5\n    \n  \n    \n      C10\n      \n      0\n    \n  \n    \n      C100\n      \n      0\n    \n  \n    \n      C102\n      \n      0\n    \n  \n    \n      C104\n      \n      0\n    \n  \n    \n      C106\n      \n      0\n    \n  \n    \n      C108\n      \n      0\n    \n  \n    \n      C110\n      \n      0\n    \n  \n    \n      C112\n      \n      0\n    \n  \n    \n      C114\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n      תמהיל קריאות סניפים\n    \n      C1\n      \n      5\n    \n  \n    \n      C101\n      \n      0\n    \n  \n    \n      C103\n      \n      0\n    \n  \n    \n      C105\n      \n      0\n    \n  \n    \n      C107\n      \n      0\n    \n  \n    \n      C109\n      \n      0\n    \n  \n    \n      C11\n      \n      0\n    \n  \n    \n      C111\n      \n      0\n    \n  \n    \n      C113\n      \n      0\n    \n  \n    \n      C115\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          2\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C01.0\n        \n          C10—\n        \n          C100—\n        \n          C102—\n        \n          C104—\n        \n          C106—\n        \n          C108—\n        \n          C110—\n        \n          C112—\n        \n          C114—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          3\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C11.0\n        \n          C101—\n        \n          C103—\n        \n          C105—\n        \n          C107—\n        \n          C109—\n        \n          C11—\n        \n          C111—\n        \n          C113—\n        \n          C115—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n    \n  ",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "ltr",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerBounds": {
+          "left": 16,
+          "right": 358,
+          "width": 342,
+          "innerWidth": 374
+        },
+        "footerText": "Version\n2f47f48ed056 (Preview)\nLast update\n10/26/26, 5:44 PM\nRelease date\nNot released",
+        "labels": [
+          "Version",
+          "Last update",
+          "Release date"
+        ],
+        "values": [
+          "2f47f48ed056 (Preview)",
+          "10/26/26, 5:44 PM",
+          "Not released"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 297,
+        "detailStatus": [
+          "\n    \n    מחובר ל-SimplyLog\n  ",
+          "עודכן: 2026-10-26T09:00:00",
+          "\n    \n      חלוקה לפי חטיבות\n    \n      \n        \n          \n          \n        \n        10\n      \n      \n    \n      \n      Division 1\n      10 · 100.0%\n    \n  \n    \n      \n      Division 10\n      0 · 0.0%\n    \n  \n    \n      \n      Division 100\n      0 · 0.0%\n    \n  \n    \n      \n      Division 1000\n      0 · 0.0%\n    \n  \n    \n      \n      Division 101\n      0 · 0.0%\n    \n  \n    \n      \n      Division 102\n      0 · 0.0%\n    \n  \n    \n      \n      Division 103\n      0 · 0.0%\n    \n  \n    \n      \n      Division 104\n      0 · 0.0%\n    \n  \n    \n      \n      Division 105\n      0 · 0.0%\n    \n  \n    \n      \n      Division 106\n      0 · 0.0%\n    \n  \n    הקודם\n    1–10 מתוך 1,000\n    הבא\n  \n    \n  \n      בניין מטה מול סניפים\n    \n    \n      מטה\n      50.0%\n    \n  \n    \n      סניפים\n      50.0%\n    \n  \n    \n    \n      מטה: 5 · 50.0%\n  \n    \n      סניפים: 5 · 50.0%\n  \n  \n    \n    \n      תמהיל קריאות מטה\n    \n      C0\n      \n      5\n    \n  \n    \n      C10\n      \n      0\n    \n  \n    \n      C100\n      \n      0\n    \n  \n    \n      C102\n      \n      0\n    \n  \n    \n      C104\n      \n      0\n    \n  \n    \n      C106\n      \n      0\n    \n  \n    \n      C108\n      \n      0\n    \n  \n    \n      C110\n      \n      0\n    \n  \n    \n      C112\n      \n      0\n    \n  \n    \n      C114\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n      תמהיל קריאות סניפים\n    \n      C1\n      \n      5\n    \n  \n    \n      C101\n      \n      0\n    \n  \n    \n      C103\n      \n      0\n    \n  \n    \n      C105\n      \n      0\n    \n  \n    \n      C107\n      \n      0\n    \n  \n    \n      C109\n      \n      0\n    \n  \n    \n      C11\n      \n      0\n    \n  \n    \n      C111\n      \n      0\n    \n  \n    \n      C113\n      \n      0\n    \n  \n    \n      C115\n      \n      0\n    \n  \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n    \n    \n      \n    \n      ממוצע ימים לסגירת קריאה – מטה\n      \n        \n          סה״כ קריאות סגורות\n          2\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – מטה לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C01.0\n        \n          C10—\n        \n          C100—\n        \n          C102—\n        \n          C104—\n        \n          C106—\n        \n          C108—\n        \n          C110—\n        \n          C112—\n        \n          C114—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n      \n    \n      ממוצע ימים לסגירת קריאה – סניפים\n      \n        \n          סה״כ קריאות סגורות\n          3\n        \n        \n          ממוצע זמן סגירה\n          1.0 ימים\n        \n      \n      \n    \n      \n        ממוצע ימים לסגירת קריאה – סניפים לפי קטגוריה\n        קטגוריהממוצע זמן סגירה (ימים)\n        \n          C11.0\n        \n          C101—\n        \n          C103—\n        \n          C105—\n        \n          C107—\n        \n          C109—\n        \n          C11—\n        \n          C111—\n        \n          C113—\n        \n          C115—\n        \n      \n    \n    \n    הקודם\n    1–10 מתוך 500\n    הבא\n  \n  \n    \n  \n    \n  ",
+          "1–10 מתוך 1,000",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500",
+          "1–10 מתוך 500"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "name": "invalid-reversed",
+      "newCalls": 0,
+      "ariaInvalid": null,
+      "error": "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+      "focused": "to-date",
+      "errors": []
+    },
+    {
+      "name": "navigate-revoke-reentry",
+      "afterOld": {
+        "authorized": false,
+        "generation": 1,
+        "effects": []
+      },
+      "afterFresh": {
+        "authorized": true,
+        "generation": 2,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 2
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "errors": []
+    },
+    {
+      "name": "terminal-401",
+      "retained": true,
+      "oldGenerationCalls": 0,
+      "refreshDisabled": true,
+      "retryButtons": 0,
+      "statusText": "הנתונים המוצגים הם העדכון התקין האחרון. ההרשאה פגה; יש להיכנס מחדש דרך SimplyLog כדי לרענן.",
+      "markerLeaked": false,
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "name": "direct-no-context",
+      "apiRequests": 0,
+      "footer": {
+        "count": 1,
+        "visible": true,
+        "text": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם"
+      }
+    }
+  ],
+  "executableRequests": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/app.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/constants.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/pagination.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://f9d0c736.app-milgam-dashboard.pages.dev/data-mappers.js"
+  ],
+  "blockedRequests": [],
+  "headers": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+  }
+}

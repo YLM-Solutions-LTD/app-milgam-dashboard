@@ -1,0 +1,220 @@
+{
+  "preview": "https://f9d0c736.app-milgam-dashboard.pages.dev",
+  "chromium": "140.0.7339.16",
+  "hosted": {
+    "status": 200,
+    "headers": {
+      "content-length": "315",
+      "content-type": "text/html"
+    },
+    "sourceSecurity": {
+      "sdk": "function",
+      "adapter": "undefined",
+      "scripts": [
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/app.js",
+        "https://f9d0c736.app-milgam-dashboard.pages.dev/assets/release-footer.js"
+      ],
+      "footerCount": 1,
+      "footer": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+      "footerBox": {
+        "left": 16,
+        "right": 288,
+        "width": 272,
+        "innerWidth": 304,
+        "scrollWidth": 304
+      },
+      "dashboardNodes": 297,
+      "injectedElements": [],
+      "pageButtons": 10,
+      "stateText": ""
+    },
+    "initial": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      }
+    ],
+    "calls401": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "401"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "401"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-1",
+        "body": "{}",
+        "phase": "401"
+      }
+    ],
+    "terminalUi": {
+      "refreshDisabled": true,
+      "retryCount": 0,
+      "status": "הנתונים המוצגים הם העדכון התקין האחרון. ההרשאה פגה; יש להיכנס מחדש דרך SimplyLog כדי לרענן."
+    },
+    "denied": [],
+    "reentry": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByDivision/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardSummary/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      },
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardClosureByCategory/Search",
+        "method": "POST",
+        "auth": "Bearer controller-synthetic-generation-2",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2026-10-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59.997\"}",
+        "phase": "normal"
+      }
+    ],
+    "effects": [],
+    "marker401": false,
+    "marker500": false,
+    "errors": [],
+    "dialogs": [],
+    "blocked": [],
+    "externalExecutable": []
+  },
+  "direct": {
+    "api": [],
+    "connection": "ממתין לחיבור מאובטח",
+    "footer": "גרסה\n2f47f48ed056 (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:44\nתאריך שחרור\nטרם פורסם",
+    "blocked": []
+  }
+}

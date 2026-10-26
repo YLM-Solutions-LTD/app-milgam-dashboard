@@ -1,6 +1,5 @@
 import { createApiClient } from "./api-client.js";
 import { loadDashboard, loadPeriods } from "./dashboard-data.js";
-import { selectLatestPeriod } from "./data-mappers.js";
 
 const LOG_PREFIX = "[milgam-dashboard.machine]";
 
@@ -29,21 +28,16 @@ export function createDashboardMachine(XState, dependencies = {}) {
   const { createMachine, assign } = XState;
 
   const selectionTransitions = {
-    YEAR_CHANGED: {
+    RANGE_APPLIED: {
       target: "loadingDashboard",
-      cond: "canSelectYear",
-      actions: "selectYear"
-    },
-    MONTH_CHANGED: {
-      target: "loadingDashboard",
-      cond: "canSelectMonth",
-      actions: "selectMonth"
+      cond: "hasRange",
+      actions: "selectRange"
     }
   };
 
   const retryTransitions = [
     { target: "loadingPeriods", cond: "failedWhileLoadingPeriods", actions: "clearError" },
-    { target: "loadingDashboard", cond: "hasSelectedPeriod", actions: "clearError" },
+    { target: "loadingDashboard", cond: "hasSelectedRange", actions: "clearError" },
     { target: "loadingPeriods", actions: "clearError" }
   ];
 
@@ -69,7 +63,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         runtime: null,
         client: null,
         periods: [],
-        selectedPeriod: null,
+        selectedRange: null,
         data: null,
         error: null,
         failedStage: null,
@@ -95,11 +89,6 @@ export function createDashboardMachine(XState, dependencies = {}) {
           invoke: { src: "periodLoader" },
           on: {
             PERIODS_LOADED: [
-              {
-                target: "empty",
-                cond: "isCurrentEmptyPeriodsResult",
-                actions: "storePeriods"
-              },
               {
                 target: "loadingDashboard",
                 cond: "isCurrentRequest",
@@ -140,12 +129,12 @@ export function createDashboardMachine(XState, dependencies = {}) {
         empty: {
           on: {
             RETRY: [
-              { target: "loadingPeriods", cond: "hasNoSelectedPeriod" },
-              { target: "loadingDashboard" }
+              { target: "loadingDashboard", cond: "hasSelectedRange" },
+              { target: "loadingPeriods" }
             ],
             REFRESH: [
-              { target: "loadingPeriods", cond: "hasNoSelectedPeriod" },
-              { target: "loadingDashboard" }
+              { target: "loadingDashboard", cond: "hasSelectedRange" },
+              { target: "loadingPeriods" }
             ],
             ...selectionTransitions
           }
@@ -195,24 +184,16 @@ export function createDashboardMachine(XState, dependencies = {}) {
         })),
         storePeriods: assign((context, event) => ({
           periods: event.result.periods,
-          selectedPeriod: event.result.selectedPeriod,
-          emptyReason: event.result.selectedPeriod ? null : "periods"
+          selectedRange: context.selectedRange || event.result.selectedRange,
+          emptyReason: null
         })),
         storeDashboard: assign((context, event) => ({
           data: event.result,
           refreshedAt: deps.now(),
           emptyReason: event.result.isEmpty ? "dashboard" : null
         })),
-        selectYear: assign((context, event) => ({
-          selectedPeriod: selectLatestPeriod(context.periods, Number(event.year)),
-          data: null
-        })),
-        selectMonth: assign((context, event) => ({
-          selectedPeriod: context.periods.find((period) => (
-            period.available
-            && period.year === context.selectedPeriod?.year
-            && period.month === Number(event.month)
-          )),
+        selectRange: assign((_context, event) => ({
+          selectedRange: event.range,
           data: null
         })),
         storeError: assign((context, event) => ({
@@ -223,9 +204,6 @@ export function createDashboardMachine(XState, dependencies = {}) {
       guards: {
         hasNoRuntime: (context) => context.runtime === null,
         isCurrentRequest: (context, event) => event.requestId === context.requestId,
-        isCurrentEmptyPeriodsResult: (context, event) => (
-          event.requestId === context.requestId && !event.result.selectedPeriod
-        ),
         isCurrentEmptyDashboardResult: (context, event) => (
           event.requestId === context.requestId && event.result.isEmpty
         ),
@@ -236,14 +214,8 @@ export function createDashboardMachine(XState, dependencies = {}) {
         isNetworkError: currentErrorGuard((error) => error?.kind === "network"),
         isInvalidResponse: currentErrorGuard((error) => error?.kind === "invalid-response"),
         failedWhileLoadingPeriods: (context) => context.failedStage === "periods",
-        hasSelectedPeriod: (context) => Boolean(context.selectedPeriod),
-        hasNoSelectedPeriod: (context) => !context.selectedPeriod,
-        canSelectYear: (context, event) => Boolean(selectLatestPeriod(context.periods, Number(event.year))),
-        canSelectMonth: (context, event) => context.periods.some((period) => (
-          period.available
-          && period.year === context.selectedPeriod?.year
-          && period.month === Number(event.month)
-        ))
+        hasSelectedRange: (context) => Boolean(context.selectedRange),
+        hasRange: (_context, event) => Boolean(event.range?.from && event.range?.to)
       },
       services: {
         periodLoader: (context) => createAbortableService(
@@ -253,7 +225,7 @@ export function createDashboardMachine(XState, dependencies = {}) {
         ),
         dashboardLoader: (context) => createAbortableService(
           context,
-          (signal) => deps.loadDashboard(context.client, context.selectedPeriod, { signal }),
+          (signal) => deps.loadDashboard(context.client, context.selectedRange, { signal }),
           "DASHBOARD_LOADED"
         )
       }

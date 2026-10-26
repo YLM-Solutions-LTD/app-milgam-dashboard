@@ -1,0 +1,425 @@
+{
+  "preview": "https://8248a782.app-milgam-dashboard.pages.dev",
+  "head": "1c5ebdae74cb6a1fae0f818b9f44997e43b8245c",
+  "browser": "140.0.7339.16",
+  "node": "v20.20.2",
+  "fixture": "controller-owned GuestBridge + deployed packaged guest SDK",
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "draftCalls": 4,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "labels": [
+          "גרסה",
+          "עדכון אחרון",
+          "תאריך שחרור"
+        ],
+        "values": [
+          "1c5ebdae74cb (תצוגה מקדימה)",
+          "26.10.2026, 17:18",
+          "טרם פורסם"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 87
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם",
+        "labels": [
+          "גרסה",
+          "עדכון אחרון",
+          "תאריך שחרור"
+        ],
+        "values": [
+          "1c5ebdae74cb (תצוגה מקדימה)",
+          "26.10.2026, 17:18",
+          "טרם פורסם"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 87
+      },
+      "errors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "ltr",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "Version\n1c5ebdae74cb (Preview)\nLast update\n10/26/26, 5:18 PM\nRelease date\nNot released",
+        "labels": [
+          "Version",
+          "Last update",
+          "Release date"
+        ],
+        "values": [
+          "1c5ebdae74cb (Preview)",
+          "10/26/26, 5:18 PM",
+          "Not released"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 87
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "draftCalls": 0,
+      "applyAnalyticalCalls": 4,
+      "applySnapshotCalls": 0,
+      "analyticalBodies": [
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        },
+        {
+          "PageIndex": 1,
+          "StartIndex": 0,
+          "PageSize": 1000,
+          "Filter": null,
+          "OrderBy": null,
+          "SortDirection": null,
+          "OrderBySecondary": null,
+          "SortDirectionSecondary": null,
+          "ItemStatus": 0,
+          "FromDate": "2025-12-31T00:00:00",
+          "ToDate": "2026-01-01T23:59:59.997"
+        }
+      ],
+      "state": {
+        "dir": "ltr",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "footerCount": 1,
+        "footerVisible": true,
+        "footerText": "Version\n1c5ebdae74cb (Preview)\nLast update\n10/26/26, 5:18 PM\nRelease date\nNot released",
+        "labels": [
+          "Version",
+          "Last update",
+          "Release date"
+        ],
+        "values": [
+          "1c5ebdae74cb (Preview)",
+          "10/26/26, 5:18 PM",
+          "Not released"
+        ],
+        "snapshotText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-26\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+        "snapshotNodes": 41,
+        "dashboardNodes": 87
+      },
+      "errors": []
+    },
+    {
+      "name": "invalid-reversed",
+      "newCalls": 0,
+      "ariaInvalid": null,
+      "error": "יש להזין טווח תאריכים תקין; תאריך ההתחלה אינו יכול להיות אחרי תאריך הסיום.",
+      "focused": "to-date",
+      "errors": []
+    },
+    {
+      "name": "navigate-revoke-reentry",
+      "afterOld": {
+        "authorized": false,
+        "generation": 1,
+        "effects": []
+      },
+      "afterFresh": {
+        "authorized": true,
+        "generation": 2,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 2
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "errors": []
+    },
+    {
+      "name": "terminal-401",
+      "retained": true,
+      "oldGenerationCalls": 0,
+      "refreshDisabled": false,
+      "retryButtons": 1,
+      "statusText": "הנתונים המוצגים הם העדכון התקין האחרון. הרענון נכשל. נסו שוב",
+      "markerLeaked": false,
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "name": "direct-no-context",
+      "apiRequests": 0,
+      "footer": {
+        "count": 1,
+        "visible": true,
+        "text": "גרסה\n1c5ebdae74cb (תצוגה מקדימה)\nעדכון אחרון\n26.10.2026, 17:18\nתאריך שחרור\nטרם פורסם"
+      }
+    }
+  ],
+  "executableRequests": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/app.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/assets/release-footer.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/constants.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/dashboard-data.js",
+    "https://8248a782.app-milgam-dashboard.pages.dev/data-mappers.js"
+  ],
+  "blockedRequests": [],
+  "headers": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+  }
+}

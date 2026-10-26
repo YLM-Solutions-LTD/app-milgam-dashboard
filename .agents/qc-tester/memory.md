@@ -1,5 +1,27 @@
 # QC tester memory
 
+## 2026-10-26 — event-436697-batch-b48436fc6cafd492b70f / preview-review-2 / process attempt 1
+
+- Exact target is PR head `2f47f48ed056df72c5d8b861778dad5cc4069703` at `https://f9d0c736.app-milgam-dashboard.pages.dev`.
+- Review shared structure tasks T-301 through T-305 and every remediation-cycle-2 fingerprint using the controller-supplied actual SDK/GuestBridge harness with locally fulfilled synthetic host/API traffic; never request or expose a tenant token.
+- Writes are confined to this memory and `.agents/qc-tester/runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/` plus role `tmp/`; application source, repository tests, shared artifacts, other role homes, prior runs, Git/GitHub, and provider state are read-only.
+- Discover all applicable test extensions and run the complete configured site, QC, UAT, and harness inventories. Exercise functional, responsive, accessibility, visual, RTL/LTR, lifecycle, analytical performance, and all-state release-footer behavior in the exact preview.
+- Preserve the frozen handled action order exactly as declared by `pending-actions.json`; prior-cycle fixes are historical evidence only and every current fingerprint requires fresh cycle-2 evidence.
+- Result: `approve`, outcome `ready`. Exact preview head prefix, responsive RTL/LTR range behavior, terminal 401 recovery, actual GuestBridge Navigate, truthful all-state footer, and no-context gating passed with fully intercepted traffic.
+- Fresh complete suites pass site 72/72, QC 49/49, UAT 33/33, and harness 2/2 with zero skips. The 1,000-row analytical case rendered 297 dashboard descendants with zero observed long tasks; the 320px RTL footer stayed within left=16/right=288 of the 304px client box; terminal 401 disabled refresh and exposed no retry.
+- All three remediation-cycle-2 fingerprints are closed by current-cycle exact-preview evidence. Synthetic fixture permissions do not prove tenant permission configuration, production publication, or controller completion.
+
+## 2026-10-26 — event-436697-batch-b48436fc6cafd492b70f / implementation-planning-2 / process attempt 2
+
+- Active scope is implementation-planning QC only for shared plan revision 12 and structure IDs T-301 through T-305; application source, shared artifacts, preview, and other role homes remain read-only.
+- Current writable run is `.agents/qc-tester/runs/event-436697-batch-b48436fc6cafd492b70f/implementation-planning-2/`; previous run folders are immutable.
+- Preserve frozen handled action order exactly as declared by `pending-actions.json`; list source defects as implementation requirements, not completed fixes.
+- Reassess every remediation-cycle-2 fingerprint against current source, the repaired packaged release-footer template, full JS/MJS/CJS/spec inventory, configured suites, and locally intercepted actual-SDK controller harness.
+- The deployed preview origin is prohibited; exact-preview checks remain a stated limitation and must not be inferred from local evidence.
+- Process attempt 2 result: `approve_with_findings` for implementation planning. The structured report contains only role `qc-tester`, acknowledges exactly `[570021]`, and preserves QC-321 through QC-333 against shared plan revision 13.
+- Fresh complete inventory execution passed site 67/67, QC 43/43, UAT 29/29, and harness 2/2 with zero skips. These baseline passes do not close `perf-preview-analytical-1000-row-unbounded-dom-long-tasks-v1`, `uat-snapshot-terminal-401-retry-enabled-v1`, or `qc-footer-320-rtl-edge-clipping-v1`; all remain implementation requirements with fresh before/after gates.
+- The repaired footer JS/CSS are byte-identical to the builder package, and current tests cover exact preview/production environment acceptance plus five missing/unsupported variants. No prohibited preview, tenant, deployment, or lifecycle API was accessed.
+
 ## Active preview review — cycle 2, attempt 1
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`
@@ -114,3 +136,50 @@
 - Review is read-only outside this QC role home. Use the corrected synthetic controller fixture, actual packaged SDK/GuestBridge, and locally intercepted host/API traffic only; no tenant token or tenant traffic.
 - Re-run complete site, QC (`*.test.js` and `*.test.mjs`), UAT, and controller-harness inventories, then independently reproduce refresh bursts through both controls and retry paths, lock release after error/re-entry, lifecycle races, responsive RTL/LTR, accessibility, CSP, diagnostics, and console/network behavior for T-201 through T-205.
 - Result: `approve`, outcome `ready`. Exact-preview artifacts match local release-candidate bytes; site 61/61, QC 34/34, UAT 23/23, and harness 2/2 passed. Both refresh controls and retry bursts coalesced to exactly three requests, locks released after failure and re-entry, terminal 401/revocation emitted zero old-generation follow-up requests, distinct re-entry automatically emitted three, and all browser scenarios had zero page errors/unhandled rejections. All cycle-3 findings plus `perf-preview-refresh-verification-burst-request-amplification-v1` are closed in the corrected fixture scope.
+
+## 2026-10-26 — implementation-planning cycle 1, process attempt 1
+
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`; scope is read-only planning against shared T-301 through T-305 and frozen handled action `[570021]`.
+- Writes are confined to this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/implementation-planning-1/`; no application source, shared artifacts, or executable repository tests may change.
+- Use the corrected, fully intercepted `https://milgam.ylm.co.il/controller-host-fixture/` with the actual packaged SDK/GuestBridge for later execution. The denied deployed preview must not be accessed.
+- Plan complete functional, responsive, accessibility, visual, RTL/LTR, lifecycle, release-footer, and inventory/suite gates. Existing defects remain implementation requirements until fresh execution closes them.
+- Result: `approve_with_findings`, outcome `ready`. QC-301 through QC-315 cover all acceptance criteria in T-301 through T-305. Fresh complete unchanged-source baselines pass site 61/61, QC 34/34, UAT 23/23, and harness 2/2 with zero skips.
+- Keep `qc-range-controls-current-source-month-only-v1`, `qc-snapshot-decimal-string-counts-rejected-v1`, and `qc-release-footer-missing-current-source-v1` open as implementation requirements; baseline success is not completion evidence.
+
+## 2026-10-26 — test-authoring cycle 1, process attempt 1
+
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`; author and execute deterministic QC for shared structure tasks T-301 through T-305 and preserve frozen handled action order from the controller input.
+- Writes are confined to `tests/qc/`, this memory, and `runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-1/`; app source, shared artifacts, prior runs, Git/GitHub, and other role homes remain read-only.
+- Use only synthetic postMessage/API fixtures and the corrected controller-host harness with the actual packaged SDK/GuestBridge when applicable. Never use a real tenant token or contact the denied deployed preview origin.
+- Discover all applicable test extensions and run the complete configured site, QC, UAT, and harness inventories. Verify functional, responsive, accessibility, visual, RTL/LTR, lifecycle, and release-footer contracts without inferring live-preview results.
+- Result: `approve`, outcome `ready` for deterministic local test-authoring scope. Complete inventory passes site 67/67, QC 43/43, UAT 29/29, and controller harness 2/2 with zero skips. The stale coupled-refresh assertion was replaced by revision-12 behavioral isolation; new range/count/footer QC passes.
+- The forbidden deployed origin was not accessed. Exact-preview screenshots, computed responsive/accessibility/visual behavior, delivered headers, stamped version/head equality, browser performance budgets, and real-tenant permissions remain later controller gates.
+## 2026-10-26 — preview-review cycle 1, process attempt 1 (batch b48436fc6cafd492b70f)
+
+- Exact target: head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`, preview `https://8248a782.app-milgam-dashboard.pages.dev`.
+- Review T-301 through T-305 with the corrected fully intercepted `https://milgam.ylm.co.il/controller-host-fixture/`, actual packaged SimplyVibeClient/GuestBridge, synthetic API fixtures, and no tenant token or traffic.
+- Writes are confined to this QC memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/`; site, tests, shared artifacts, other role homes, prior runs, Git, and provider state remain read-only.
+- Discover and run the complete configured site, QC JS/MJS, UAT MJS, and controller-harness inventories; preserve exact commands/results and verify functional, responsive, accessibility, visual, lifecycle, performance, and all-state truthful footer criteria.
+- Frozen action acknowledgement is exactly `[570021]`; `includeDescription=false`.
+- Result: `approve_with_findings`, outcome `ready`. Complete suites pass site 67/67, QC 43/43, UAT 29/29, and harness 2/2. Required 390x844 and 1440x900 RTL/LTR preview checks pass inclusive ranges, request isolation, decimal-string aggregates, Navigate, truthful head-matched preview footer, CSP, and zero browser errors.
+- Low-severity supplemental finding `qc-footer-320-rtl-edge-clipping-v1`: the footer crosses the viewport edge at 320x844 RTL even though required plan viewports pass without clipping.
+
+## 2026-10-26 — implementation-planning cycle 2, process attempt 1 (batch b48436fc6cafd492b70f)
+
+- Plan QC implementation/tests for shared structure tasks T-301 through T-305 and frozen handled action `[570021]`; application source, shared artifacts, other role homes, and previous runs are read-only.
+- Writes are confined to this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/implementation-planning-2/`; no source fixes or executable test authoring are authorized in this stage.
+- Reassess every current remediation-cycle-2 fingerprint against plan revision 13, the complete test inventory, accepted current-batch plan-review-3 evidence, and the packaged release-footer contract. Existing defects remain open implementation requirements until fresh post-implementation evidence closes them.
+- Use only the corrected fully intercepted controller-host fixture and actual packaged SimplyVibeClient/GuestBridge for planned runtime checks. Never contact a tenant or access the controller-denied deployed preview origin.
+- Result: `approve_with_findings`, outcome `ready`. QC-321 through QC-333 trace every revision-13 acceptance criterion and give explicit before/after gates for all three cycle-2 fingerprints.
+- Fresh complete unchanged-source baselines pass site 67/67, QC 43/43, UAT 29/29, and controller harness 2/2 with zero skips. These passes establish inventory/environment only and do not close the defects.
+- Keep `perf-preview-analytical-1000-row-unbounded-dom-long-tasks-v1`, `uat-snapshot-terminal-401-retry-enabled-v1`, and `qc-footer-320-rtl-edge-clipping-v1` open as `implementation_required` until fresh post-change deterministic and intercepted real-SDK browser evidence satisfies their gates.
+
+## 2026-10-26 — test-authoring cycle 2, process attempt 1 (batch b48436fc6cafd492b70f)
+
+- Author and execute deterministic QC for shared structure tasks T-301 through T-305 and frozen handled action `[570021]` after the cycle-2 remediation implementation.
+- Writes are confined to `tests/qc/`, this memory, and `runs/event-436697-batch-b48436fc6cafd492b70f/test-authoring-2/`; site, shared artifacts, other role homes, prior runs, Git/GitHub, and provider state remain read-only.
+- Reassess every remediation-cycle-2 fingerprint with fresh source/test evidence, discover all applicable test extensions, and run the complete configured site, QC, UAT, and controller-harness inventories.
+- Use only synthetic postMessage/API fixtures and the controller-supplied actual SDK/GuestBridge harness. Never use a tenant token, contact tenant services, or access the prohibited deployed preview origin.
+- Result: `approve`, outcome `ready` for deterministic local scope. Fresh complete inventory passes site 72/72, QC 49/49, final standalone UAT 33/33, and controller harness 2/2 with zero skips.
+- Added `tests/qc/remediation-cycle-2.test.mjs` to close terminal 401/403 retry behavior locally and gate bounded 1,000-row analytical windows plus app-owned 320px footer containment. Exact browser geometry, DOM/long-task measurements, delivered headers, and stamped preview identity remain prohibited/unverified limitations.
+- Preserve the initial non-configured parallel-run UAT mapper-budget failure (184.316ms) as informational `qc-concurrent-suite-performance-contention-v1`; the exact standalone configured command passed at 24.505ms.

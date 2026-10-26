@@ -1,5 +1,130 @@
 # Security reviewer memory
 
+## Current assignment — preview review cycle 2, process attempt 1
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; exact head `2f47f48ed056df72c5d8b861778dad5cc4069703`; exact preview `https://f9d0c736.app-milgam-dashboard.pages.dev`.
+- Review every current shared structure task and every remediation-cycle-2 fingerprint using current-cycle source and exact-preview evidence, with the actual packaged guest SDK/controller GuestBridge and fully local synthetic host/API fixtures only.
+- Verify host/source/origin and bearer confinement, authorization generation disposal, rejected/direct-context denial, bounded diagnostics, executable provenance/CSP, safe untrusted-data rendering, exact Navigate behavior, and the required truthful release footer in loading/error/no-context/preview states.
+- Authorized writes are this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/` only. `site/`, tests, `.agents/shared`, other role homes, prior runs, Git/provider state, deployments, and SimplyLog lifecycle state are immutable/out of scope.
+- Never request a real tenant token or access the explicitly forbidden older preview origin. Preserve the frozen action order and report the exact role value `security-reviewer`.
+
+## Preview review cycle 2 result
+
+- Verdict: approve across `T-301` through `T-305`; no concrete client-security defect reproduced at exact head `2f47f48ed056df72c5d8b861778dad5cc4069703` and preview `f9d0c736`.
+- Current-cycle actual-SDK/GuestBridge evidence closed the terminal-401 and 320px-footer fingerprints: retry is denied until distinct session re-entry, old generation/effects remain blocked, and the truthful Preview/Not released footer stays inside the 320px RTL viewport.
+- Hostile 1,000-row labels remained escaped under bounded pagination (297 dashboard descendants, zero injected executable/event-handler nodes or dialogs). Strict CSP, approved-origin bearer confinement, direct-context denial, held-command revocation, and bounded response diagnostics held.
+- Fresh inventory-aware suites passed site 72, QC 49, UAT 33, and harness 2 (156 total). Synthetic permissions remain non-evidence for tenant policy or controller release authority.
+- Full structured result: `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-2/report.json`.
+
+## Current assignment — preview review cycle 1
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `preview-review`; cycle 1; process attempt 1; exact head `1c5ebdae74cb6a1fae0f818b9f44997e43b8245c`; exact preview `https://8248a782.app-milgam-dashboard.pages.dev`.
+- Review all shared structure tasks `T-301` through `T-305` and acknowledge frozen action `570021` exactly once with `includeDescription=false`.
+- Use only the actual packaged guest SDK with the controller GuestBridge harness at the fully intercepted trusted origin and synthetic API fixtures; never request a real tenant token or access the forbidden older preview origin.
+- Security focus: strict parent/source/origin and API/bearer confinement; revocation and generation isolation; untrusted date/count/error handling; exact Navigate; direct/rejected-context denial; diagnostics redaction; CSP/executable provenance; truthful, non-sensitive release metadata in every state.
+- Authorized writes are this memory and `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/` only. Site, tests, shared artifacts, other role homes, previous runs, Git/provider state, deployments, and SimplyLog lifecycle state remain immutable.
+
+## Preview review cycle 1 result
+
+- Verdict: approve across `T-301` through `T-305`; no concrete client-security defect reproduced at the exact preview/head.
+- Deployed security-relevant assets matched supplied source bytes; strict CSP and same-origin executable provenance held. The real packaged SDK plus intercepted GuestBridge passed bearer/API confinement, direct-context denial, terminal 401 denial, generation-2 re-entry, revoked held-command rejection, and bounded diagnostic disclosure checks.
+- The preview footer was singular, visible, non-overflowing, and truthfully showed version `1c5ebdae74cb`, Preview, trusted source update time, and Not released; no sensitive metadata or footer request path was observed.
+- Complete inventory-aware suites passed site 67, QC 43, UAT 29, and harness 2 (141 total). Synthetic permissions remain non-evidence for tenant policy or controller release authority.
+- Full result: `runs/event-436697-batch-b48436fc6cafd492b70f/preview-review-1/report.md`.
+
+## Current assignment — cycle 3, process attempt 2 contract remediation
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `plan-review`; cycle 3; process attempt 2; shared revision 12; frozen action order `570021`; `includeDescription=false`.
+- Preserve the completed fresh reassessment while correcting the structured report contract from process attempt 1 to process attempt 2. Revalidate current shared hashes, repaired packaged release-footer behavior, host-harness constraints, and current-source trust-boundary evidence before reporting.
+- Review every structure task `T-301` through `T-305`. Treat inputs as untrusted; do not access the forbidden deployed origin or a real tenant, and do not claim implementation, preview, tenant, release, or controller completion.
+- Authorized writes remain this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/` only. Shared artifacts, `site/`, other role homes, previous run folders, Git/provider state, and SimplyLog lifecycle state are read-only/out of scope.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` is currently absent. Record the verified packaging limitation without inventing fingerprints or treating it as an application defect.
+
+## Cycle 3, process attempt 2 result
+
+- Verdict: approve shared revision 12 for implementation planning across `T-301` through `T-305`; no current concrete client-security defect.
+- The report contract now identifies `processAttempt: 2`, exact role `security-reviewer`, exact action `570021`, `includeDescription=false`, and all five structure task IDs.
+- Fresh direct reproduction reconfirmed the repaired footer environment guard: absent, empty, and unsupported values render all facts unavailable; preview and production render only their valid respective states.
+- The remediation manifest remains absent. No missing fingerprint was invented, no forbidden preview/tenant access occurred, and no application/release/controller completion claim was made.
+
+## Fresh cycle-3 reassessment after packaged footer environment repair
+
+- Batch `event-436697-batch-b48436fc6cafd492b70f`; stage `plan-review-3`; process attempt 1; shared plan revision 12; frozen action order `570021`; `includeDescription=false`.
+- Reassess `T-301` through `T-305` read-only against the actual repaired packaged footer renderer, verified local harness/source, current shared plan/tasks, and accepted prior reports. Do not reuse the archived pre-repair verdict as approval evidence.
+- Authorized writes are this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/` only. Shared artifacts, `site/`, other role homes, previous runs, Git/provider state, the denied deployed origin, real tenants, and SimplyLog lifecycle APIs remain out of scope.
+- `/workspace/.simplyvibe/input/remediation-cycle-3.json` was directly checked and is absent. Record that limitation honestly; do not infer its contents.
+- Security focus: parent/source/origin binding, token confinement, authorization generations, untrusted payload handling, actual SDK/GuestBridge interception, bounded diagnostics, and footer metadata provenance including exact `preview`/`production` environment validation.
+
+## Fresh cycle-3 reassessment result
+
+- Verdict: approve revision 12 across `T-301` through `T-305`; no current concrete client-security defect.
+- Closed `simplyvibe:release-footer:invalid-environment-treated-as-production:v1`: the repaired packaged renderer accepts only exact `preview`/`production`; absent, empty, and unsupported environments return unavailable for all release facts in local synthetic reproduction.
+- The measurable-budget and missing-xstate workflow fingerprints remain resolved by current revision/environment evidence. Candidate reruns and exact-preview checks remain later gates.
+- The required remediation manifest remains absent, so no current manifest content was inferred. Full report: `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/report.md`.
+
+## Current assignment — batch b48436fc6cafd492b70f, fresh cycle-3 review after dependency recovery
+
+- Run: `plan-review-3`; process attempt 1; shared plan revision 12; frozen action order `570021`; `includeDescription=false`.
+- Scope: read-only security review of `T-301` through `T-305`, including the new mandatory release footer and the repaired xstate dependency evidence.
+- Authorized writes: this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/` only. Shared plan/tasks, `site/`, other role homes, prior runs, Git, providers, deployed origin, and SimplyLog are immutable/out of scope.
+- The controller-required `/workspace/.simplyvibe/input/remediation-cycle-3.json` is again directly verified absent. Do not reconstruct its fingerprints; reconcile archived fingerprints from accepted reports against current revision/source evidence.
+- Security focus: host and bearer confinement, stale-generation denial, bounded disclosure, actual SDK interception, footer metadata provenance/validation, and controller-owned release authorization.
+
+## Fresh cycle-3 plan review result — revision 12
+
+- Verdict: changes required across `T-301` through `T-305`; one low-severity/high-confidence finding.
+- Stable fingerprint `simplyvibe:release-footer:invalid-environment-treated-as-production:v1`: the plan mandates copying the packaged renderer unchanged, but that renderer treats any environment other than exact `preview` (including missing/malformed) as production and displays valid-looking release facts instead of unavailable values.
+- T-301 through T-304 security safeguards remain implementation-ready. Archived measurable-budget and missing-xstate findings are resolved by current revision/current-environment evidence.
+- `remediation-cycle-3.json` remains absent and no contents were inferred. Full report: `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/report.md`.
+
+## Current assignment — batch b48436fc6cafd492b70f, remediation cycle 3
+
+- Run: `plan-review-3`; process attempt 1; shared plan revision 11.
+- Scope: read-only security review of structure tasks `T-301` through `T-304` and frozen action `570021`, using current plan/source evidence and accepted prior reports only as historical context.
+- Required remediation input path: `/workspace/.simplyvibe/input/remediation-cycle-3.json`; initial filesystem inventory confirms it is absent. Record this controller-packaging fact without inventing findings or manifest content.
+- Authorized writes: this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/` only; shared plan, app source, other role homes, prior runs, Git, providers, and SimplyLog remain immutable.
+- Review current trust-boundary safeguards, reconcile any current fingerprints with revision-11/current-source evidence, and preserve exact handled action order `570021`.
+
+## Plan review 3 result
+
+- Verdict: approve; no concrete plan-level client-security defect across `T-301` through `T-304`.
+- Current source confirms the scoped month-range and number-only aggregate defects; revision 11 supplies strict validation, generation binding, field-limited normalization, reconciliation, bounded diagnostics, terminal denial, actual-SDK interception, and fresh release-authorization acceptance.
+- Historical `perf:plan:range-and-count-release-missing-measurable-budgets:v1` remains resolved by current measurable budgets.
+- `remediation-cycle-3.json` is absent, so no current manifest fingerprints could be enumerated; this was recorded as controller packaging state without inferred content.
+- Full structured result: `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-3/report.md`.
+
+## Current assignment — batch b48436fc6cafd492b70f, remediation cycle 2
+
+- Run: `plan-review-2`; process attempt 2; shared plan revision 9.
+- Scope: read-only security review of `T-301` through `T-304` and frozen action `570021`, with identical current inputs and accepted prior reports.
+- Required remediation input path: `/workspace/.simplyvibe/input/remediation-cycle-2.json`; direct inspection confirms it is absent. For attempt 2, the controller directs that this absence be recorded but not treated as a revision-9 defect or approval blocker.
+- Authorized writes: this memory file and `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-2/` only; all shared/app/other-role/previous-run/Git/provider state is immutable.
+- Reconcile the four attempt-1 missing-manifest fingerprints explicitly as one absent controller artifact outside revision 9, and recheck the accepted historical performance fingerprint against current shared source.
+- Required handled action order: `570021`.
+
+## Plan review 2, process attempt 2 result
+
+- Verdict: approve; no concrete plan-level client-security defect across `T-301` through `T-304`.
+- The four process-attempt-1 missing-manifest fingerprints all identify the same absent controller-owned file and are closed as report-contract artifacts, not defects in revision 9.
+- Historical `perf:plan:range-and-count-release-missing-measurable-budgets:v1` is resolved in current shared source by explicit row/byte, mapping/render, long-task, DOM, request-accounting, concurrency, and burst budgets.
+- Full structured result: `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-2/report.md`.
+
+## Current assignment — batch b48436fc6cafd492b70f
+
+- Batch: `event-436697-batch-b48436fc6cafd492b70f`
+- Run: `plan-review-1`; process attempt 1.
+- Scope: read-only security review of shared tasks `T-301` through `T-304` against frozen action `570021`, sanitized event context, the shared plan/task board, and accepted prior reports as evidence only.
+- Authorized writes: this reviewer home and current run folder only; previous runs, shared artifacts, application source, other role homes, Git, providers, and SimplyLog are immutable/out of scope.
+- Review focus: explicit and testable host/API trust boundaries, untrusted-data rendering, bearer confinement, navigation/command binding, direct/fallback denial, sensitive-data handling, and later exact-preview gates.
+- Required handled actions, exact order: `570021`.
+
+## Plan review 1 result — batch b48436fc6cafd492b70f
+
+- Verdict: approve; no concrete plan-level security defect or missing testable safeguard across `T-301` through `T-304`.
+- Date input is strictly validated before fixed-body requests; analytical commits are request/authorization generation-bound; numeric-string normalization is field-limited and preserves reconciliation; diagnostics exclude untrusted bodies and secrets; terminal authorization loss denies retries/old effects until verified re-entry.
+- The controller fixture must use the actual packaged SDK/GuestBridge with fully intercepted traffic. Exact-preview CSP, origin/bearer confinement, direct/rejected-context denial, diagnostic redaction, generation disposal, and tenant authorization remain later gates.
+- Full result: `runs/event-436697-batch-b48436fc6cafd492b70f/plan-review-1/report.md`.
+
 ## Current assignment
 
 - Batch: `event-436697-batch-7b4c276304a7e351ea41`

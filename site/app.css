@@ -31,10 +31,31 @@ body {
 body {
   min-inline-size: 320px;
   overflow-x: hidden;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 320px) {
+  body { min-inline-size: 0; }
+}
+
+.release-footer {
+  inline-size: min(calc(100% - 2rem), 1280px);
+  max-inline-size: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+.release-footer dl,
+.release-footer dl > div,
+.release-footer dd,
+.release-footer bdi {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
 }
 
 button,
-select {
+select,
+input {
   font: inherit;
 }
 
@@ -159,6 +180,7 @@ h1 {
 
 .controls-card {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   gap: 1rem;
   min-block-size: 92px;
@@ -178,6 +200,7 @@ h1 {
 }
 
 select,
+input,
 .button {
   min-block-size: 44px;
   border: 1px solid #bec9db;
@@ -189,6 +212,8 @@ select,
 select {
   padding: 0.55rem 0.8rem;
 }
+
+input { min-inline-size: 11rem; padding: 0.55rem 0.8rem; }
 
 select:disabled {
   cursor: not-allowed;
@@ -216,6 +241,9 @@ select:disabled {
   color: var(--muted);
   font-size: 0.82rem;
 }
+
+.range-error { flex-basis: 100%; margin: 0; color: var(--danger); font-size: .84rem; }
+.range-error:empty { display: none; }
 
 .state-region:not(:empty) {
   margin-block-start: 1rem;
@@ -480,6 +508,17 @@ select:disabled {
   font-weight: bold;
   text-align: end;
 }
+
+.detail-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  margin-block-start: 1rem;
+}
+
+.detail-range { min-inline-size: 0; color: var(--muted); text-align: center; }
 
 .kpi-grid {
   display: grid;

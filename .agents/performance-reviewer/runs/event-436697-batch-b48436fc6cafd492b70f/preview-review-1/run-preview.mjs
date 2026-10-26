@@ -1,0 +1,37 @@
+import playwright from '/usr/local/lib/node_modules/@playwright/test/node_modules/playwright/index.js';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { performance } from 'node:perf_hooks';
+
+const preview='https://8248a782.app-milgam-dashboard.pages.dev', head='1c5ebdae74cb6a1fae0f818b9f44997e43b8245c';
+const root='/workspace/.simplyvibe/input/controller-host-harness', out=new URL('./evidence/',import.meta.url); await fs.mkdir(out,{recursive:true});
+const browser=await playwright.chromium.launch({executablePath:'/ms-playwright/chromium_headless_shell-1187/chrome-linux/headless_shell',headless:true,args:['--no-sandbox']});
+const equipment=Array.from({length:10000},(_,i)=>({EquipmentId:i+1,IsActive:i%2===0,LastTreatmentDate:null,AsOf:'2026-10-26T09:00:00'}));
+const thousand=Array.from({length:1000},(_,i)=>({DivisionName:`D${i}`,EventCount:i===0?10:0}));
+const fixtures={
+ MilgamDashboardCurrentEvents:{Items:[{ScopeKey:'overall',TotalCount:'12',OpenCount:'5',AsOf:'2026-10-26T09:00:00'},{ScopeKey:'headquarters',TotalCount:'4',OpenCount:'2',AsOf:'2026-10-26T09:00:00'},{ScopeKey:'branches',TotalCount:'8',OpenCount:'3',AsOf:'2026-10-26T09:00:00'}],TotalCount:3},
+ MilgamDashboardCurrentPermits:{Items:[{ValidCount:'7',MissingCount:'2',OverdueCount:'1',AsOf:'2026-10-26T09:00:00',ValueDate:'2026-10-26'}],TotalCount:1},
+ MilgamDashboardCurrentEquipment:{Items:equipment,TotalCount:10000},
+ MilgamDashboardByMonth:{Items:[{Year:2026,Month:10,Label:'10/26',EventCount:10}],TotalCount:1},
+ MilgamDashboardByDivision:{Items:thousand,TotalCount:1000},
+ MilgamDashboardSummary:{Items:[{ScopeKey:'headquarters',ScopeLabel:'מטה',ScopeOrder:1,EventCount:5,ClosedCount:2,EligibleDurationCount:2,InvalidDurationCount:0,AverageCloseDays:1},{ScopeKey:'branches',ScopeLabel:'סניפים',ScopeOrder:2,EventCount:5,ClosedCount:3,EligibleDurationCount:3,InvalidDurationCount:0,AverageCloseDays:1}],TotalCount:2},
+ MilgamDashboardByCategory:{Items:thousand.map((_,i)=>({ScopeKey:i%2?'branches':'headquarters',ScopeLabel:i%2?'סניפים':'מטה',ScopeOrder:i%2?2:1,CategoryName:`C${i}`,EventCount:i<2?5:0})),TotalCount:1000},
+ MilgamDashboardClosureByCategory:{Items:thousand.map((_,i)=>({ScopeKey:i%2?'branches':'headquarters',ScopeLabel:i%2?'סניפים':'מטה',ScopeOrder:i%2?2:1,CategoryName:`C${i}`,ClosedCount:i===0?2:i===1?3:0,EligibleDurationCount:i===0?2:i===1?3:0,InvalidDurationCount:0,AverageCloseDays:i<2?1:null})),TotalCount:1000}
+};
+const keyFor=u=>Object.keys(fixtures).find(k=>u.includes(`/api/Entity/${k}/Search`));
+const result={preview,head,browser:await browser.version(),scenarios:[],unexpected:[],executables:[]};
+async function open(spec){
+ const context=await browser.newContext({viewport:spec.viewport}),page=await context.newPage(),calls=[],errors=[]; let active=0,peak=0;
+ page.on('pageerror',e=>errors.push(`pageerror:${e.message}`)); page.on('console',m=>{if(m.type()==='error')errors.push(`console:${m.text()}`)}); page.on('request',r=>{if(['script','worker'].includes(r.resourceType()))result.executables.push(r.url())});
+ await page.addInitScript(()=>{window.__long=[];new PerformanceObserver(l=>window.__long.push(...l.getEntries().map(e=>e.duration))).observe({type:'longtask',buffered:true})});
+ await page.route('https://milgam.ylm.co.il/controller-host-fixture/**',async r=>{const rel=new URL(r.request().url()).pathname.replace('/controller-host-fixture/','')||'index.html';try{let b=await fs.readFile(path.join(root,rel));if(rel==='host-fixture.js'&&spec.dir==='ltr')b=Buffer.from(b.toString().replace('LanguageDirection: "rtl"','LanguageDirection: "ltr"').replace('LanguageCode: "he"','LanguageCode: "en"'));await r.fulfill({status:200,contentType:rel.endsWith('.js')?'text/javascript':'text/html',body:b})}catch{await r.fulfill({status:404,body:'missing'})}});
+ await page.route('https://api.ylm.co.il/**',async r=>{const q=r.request(),key=keyFor(q.url()),body=JSON.stringify(fixtures[key]||{}),start=performance.now();active++;peak=Math.max(peak,active);calls.push({key,method:q.method(),body:q.postData(),bytes:Buffer.byteLength(body),start});await new Promise(x=>setTimeout(x,25));active--;if(key)await r.fulfill({status:200,contentType:'application/json',body});else await r.abort()});
+ await page.route('**/*',r=>{const u=r.request().url();if(u.startsWith(preview)||u.startsWith('https://milgam.ylm.co.il/controller-host-fixture/')||u.startsWith('https://api.ylm.co.il/'))return r.fallback();result.unexpected.push(u);return r.abort()});
+ await page.goto(`https://milgam.ylm.co.il/controller-host-fixture/index.html?preview=${encodeURIComponent(preview)}`,{waitUntil:'domcontentloaded'});await page.waitForTimeout(400);const frame=page.frames().find(f=>f.url().startsWith(preview));if(!frame)throw Error('preview iframe missing');await frame.locator('#apply-range').waitFor({timeout:20000});await frame.locator('[data-permit]').first().waitFor({timeout:20000});return{context,page,frame,calls,errors,getPeak:()=>peak};
+}
+for(const spec of [{name:'desktop-rtl',viewport:{width:1440,height:900},dir:'rtl'},{name:'phone-ltr',viewport:{width:390,height:844},dir:'ltr'}]){
+ const x=await open(spec),initial=x.calls.length;await x.frame.locator('#from-date').fill('2025-12-31');await x.frame.locator('#to-date').fill('2026-01-02');const before=x.calls.length;const t=performance.now();await x.frame.locator('#apply-range').click();await x.page.waitForTimeout(900);const applied=x.calls.slice(before),m=await x.frame.evaluate(()=>{const f=document.querySelector('[data-simplyvibe-release]'),r=f.getBoundingClientRect();return{dir:document.documentElement.dir,width:[document.documentElement.scrollWidth,document.documentElement.clientWidth],dashboardNodes:document.querySelector('#dashboard').querySelectorAll('*').length,snapshotNodes:document.querySelector('#snapshot-region').querySelectorAll('*').length,footerCount:document.querySelectorAll('[data-simplyvibe-release]').length,footerVisible:r.width>0&&r.height>0,footerText:f.innerText,longTasks:window.__long||[]}});result.scenarios.push({name:spec.name,initialCalls:initial,draftDelta:before-initial,applyCalls:applied.map(c=>c.key),applyBodies:applied.map(c=>c.body),decodedBytes:applied.reduce((n,c)=>n+c.bytes,0),peak:x.getPeak(),elapsedMs:+(performance.now()-t).toFixed(1),metrics:m,errors:x.errors});await x.context.close();
+}
+{const x=await open({viewport:{width:1440,height:900},dir:'rtl'}),base=x.calls.length;await x.frame.evaluate(()=>{for(let i=0;i<10;i++)document.querySelector('#snapshot-refresh').click()});await x.page.waitForTimeout(900);result.scenarios.push({name:'snapshot-refresh-burst',calls:x.calls.slice(base).map(c=>c.key),peak:x.getPeak(),errors:x.errors});await x.context.close()}
+{const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage(),api=[];page.on('request',r=>{if(r.url().includes('api.ylm.co.il'))api.push(r.url())});await page.goto(preview,{waitUntil:'domcontentloaded'});await page.waitForTimeout(800);result.scenarios.push({name:'no-context',apiCalls:api.length,footer:await page.locator('[data-simplyvibe-release]').innerText(),count:await page.locator('[data-simplyvibe-release]').count()});await context.close()}
+result.executables=[...new Set(result.executables)]; result.unexpected=[...new Set(result.unexpected)]; await browser.close(); await fs.writeFile(new URL('observations.json',out),JSON.stringify(result,null,2)); console.log(JSON.stringify(result,null,2));
