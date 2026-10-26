@@ -1,0 +1,3 @@
+# UAT approach
+
+Execute UAT-201 through UAT-210 against exact head `3dc45f69655efd2a2c6b0ad016b1a8cf8f738066` at `https://ef2f1185.app-milgam-dashboard.pages.dev` through the corrected controller-owned fixture origin. Use the deployed packaged SDK and actual GuestBridge, fulfill every host/API route locally, and abort unrelated traffic. Exercise all revision-7 lifecycle findings plus the refresh-guard follow-up across the snapshot refresh control, analytical refresh control, and snapshot retry control. Capture browser, responsive, request, command, console, CSP, artifact-hash, and complete local-suite evidence without modifying app or tests.

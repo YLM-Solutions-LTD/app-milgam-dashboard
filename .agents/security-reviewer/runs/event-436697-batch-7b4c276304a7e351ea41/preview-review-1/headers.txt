@@ -1,0 +1,17 @@
+HTTP/2 200 
+date: Sun, 25 Oct 2026 15:00:41 GMT
+content-type: text/html; charset=utf-8
+content-length: 1912
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+etag: "a12356b072c3eae1bc6353a7660cbc13"
+content-security-policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'
+referrer-policy: no-referrer
+x-content-type-options: nosniff
+x-robots-tag: noindex
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=nj%2BjDfB0K%2B294PG1SH81a6BJFtYkdYUwCPA7BEAguLZJHuXW0RXZOaV5vcdCV2ie%2FCHta%2BZW5QurAuU9aJ8yAmUXx4dMcrCBuJL4JYi63A1yH9S8bq7yKVwTZ4iL2DwSSoaQjRuA3kR2PVoQKstaI%2BFE4%2Fl8BVm22CY%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a502179eff3b8e48-TLV
+alt-svc: h3=":443"; ma=86400
+

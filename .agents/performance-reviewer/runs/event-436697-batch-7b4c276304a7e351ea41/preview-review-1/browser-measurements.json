@@ -1,0 +1,272 @@
+{
+  "measuredAt": "2026-10-25T15:00:22.115Z",
+  "preview": "https://02ea3f16.app-milgam-dashboard.pages.dev/",
+  "commit": "3b3f8d4373ff90c2073fb4e884e1fe622a8595a0",
+  "browserVersion": "140.0.7339.16",
+  "node": "v20.20.2",
+  "harness": "controller-owned real GuestBridge fixture; no injected guest adapter",
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "elapsedMs": 3602,
+      "state": {
+        "hasSimplyVibeClient": false,
+        "hasInjectedAdapter": false,
+        "connectionText": "מחובר ל-SimplyLog",
+        "snapshotStatus": "לא ניתן לטעון את תמונת המצב. נסו שוב",
+        "refreshDisabled": false,
+        "snapshotElements": 8,
+        "equipmentText": null,
+        "documentScrollWidth": 374,
+        "viewportWidth": 374
+      },
+      "harnessState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "apiCalls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}"
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "[milgam-dashboard.api] Network error {dataset: MilgamDashboardByMonth, detail: Failed to fetch}",
+        "[milgam-dashboard.machine] Service failed {successType: PERIODS_LOADED, requestId: 1, errorName: DashboardRequestError, errorKind: network, errorStatus: null}"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        }
+      ],
+      "executableRequests": [
+        {
+          "url": "https://simplylog.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+          "type": "script"
+        },
+        {
+          "url": "https://simplylog.ylm.co.il/controller-host-fixture/host-fixture.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "elapsedMs": 3562,
+      "state": {
+        "hasSimplyVibeClient": false,
+        "hasInjectedAdapter": false,
+        "connectionText": "מחובר ל-SimplyLog",
+        "snapshotStatus": "לא ניתן לטעון את תמונת המצב. נסו שוב",
+        "refreshDisabled": false,
+        "snapshotElements": 8,
+        "equipmentText": null,
+        "documentScrollWidth": 1424,
+        "viewportWidth": 1424
+      },
+      "harnessState": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "apiCalls": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "method": "POST",
+          "body": "{}"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "method": "POST",
+          "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}"
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "[milgam-dashboard.api] Network error {dataset: MilgamDashboardByMonth, detail: Failed to fetch}",
+        "[milgam-dashboard.machine] Service failed {successType: PERIODS_LOADED, requestId: 1, errorName: DashboardRequestError, errorKind: network, errorStatus: null}"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEvents/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentPermits/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardCurrentEquipment/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        },
+        {
+          "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+          "error": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        }
+      ],
+      "executableRequests": [
+        {
+          "url": "https://simplylog.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+          "type": "script"
+        },
+        {
+          "url": "https://simplylog.ylm.co.il/controller-host-fixture/host-fixture.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/app.css",
+          "type": "stylesheet"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/app.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/constants.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/api-client.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/data-mappers.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/host-context.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/current-snapshot.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/host-services.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/date-range.js",
+          "type": "script"
+        },
+        {
+          "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/dashboard-data.js",
+          "type": "script"
+        }
+      ],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+    }
+  ]
+}

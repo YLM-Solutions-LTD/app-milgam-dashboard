@@ -1,0 +1,34 @@
+{
+  "approved": {
+    "apiRequests": [
+      {
+        "url": "https://api.ylm.co.il/api/Entity/MilgamDashboardByMonth/Search",
+        "method": "POST",
+        "auth": "Bearer synthetic-preview-token",
+        "body": "{\"PageIndex\":1,\"StartIndex\":0,\"PageSize\":1000,\"Filter\":null,\"OrderBy\":null,\"SortDirection\":null,\"OrderBySecondary\":null,\"SortDirectionSecondary\":null,\"ItemStatus\":0,\"FromDate\":\"2000-01-01T00:00:00\",\"ToDate\":\"2026-10-31T23:59:59\"}"
+      }
+    ],
+    "executableRequests": [
+      "https://c9756759.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/app.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/constants.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/api-client.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/data-mappers.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/host-context.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/current-snapshot.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/host-services.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/date-range.js",
+      "https://c9756759.app-milgam-dashboard.pages.dev/dashboard-data.js"
+    ],
+    "thirdPartyExecutableRequests": [],
+    "hostCalls": [],
+    "connection": "מחובר ל-SimplyLog",
+    "snapshot": "ללא תלות בחודש הנבחר\n\nתמונת מצב נוכחית\nרענון תמונת מצב\nתמונת המצב הנוכחית אינה מופעלת בסביבה זו."
+  },
+  "direct": {
+    "apiRequests": [],
+    "hostCalls": [],
+    "connection": "ממתין לחיבור מאובטח"
+  }
+}

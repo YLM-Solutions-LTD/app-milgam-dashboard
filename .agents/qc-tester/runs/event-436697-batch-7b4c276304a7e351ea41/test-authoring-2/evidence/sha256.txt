@@ -1,0 +1,4 @@
+e7e45c093bcb07f4a1e8db509c34dee53f66421afb649ffeaaddcb800f262ac1  tests/qc/sdk-bridge-qc.test.mjs
+e83df1d52548e8cef1bd45950074009877fc970fea12152202ada2533d60128e  tests/qc/snapshot-qc.test.js
+ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1  site/assets/simplyvibe-client.js
+ee67f5ae15c70fee8443701b4391946a2275d922acdf9d1797c69dad3c414bf1  ../../..//.simplyvibe/input/controller-host-harness/vendor/simplyvibe-client.js

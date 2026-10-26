@@ -1,0 +1,4 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f2f5fc" />
+    <title>דשבורד קריאות מילגם</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">דלגו לתוכן הראשי</a>
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="brand-mark" aria-hidden="true">M</div>
+        <div>
+          <p class="eyebrow">SimplyLog</p>
+          <h1>דשבורד קריאות מילגם</h1>
+        </div>
+        <div id="connection-status" class="connection-status" role="status" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section id="snapshot-region" class="snapshot-region" aria-labelledby="snapshot-heading">
+        <div class="snapshot-heading-row">
+          <div>
+            <p class="eyebrow">ללא תלות בחודש הנבחר</p>
+            <h2 id="snapshot-heading">תמונת מצב נוכחית</h2>
+          </div>
+          <button id="snapshot-refresh" class="button" type="button">רענון תמונת מצב</button>
+        </div>
+        <div id="snapshot-status" class="snapshot-status" role="status" aria-live="polite" aria-atomic="false"></div>
+        <div id="snapshot-content"></div>
+      </section>
+      <section id="controls" class="controls-card" aria-label="בחירת תקופה"></section>
+      <section id="state-region" class="state-region" aria-live="polite" aria-atomic="true"></section>
+      <div id="dashboard" class="dashboard" aria-live="polite"></div>
+    </main>
+
+    <script src="./assets/xstate-4.38.3.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

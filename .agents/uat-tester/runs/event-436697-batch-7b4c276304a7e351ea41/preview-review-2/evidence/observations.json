@@ -1,0 +1,199 @@
+{
+  "preview": "https://ea51f277.app-milgam-dashboard.pages.dev",
+  "head": "8f1e577bbcb4670878dec24ff570c1382a18d170",
+  "browser": "140.0.7339.16",
+  "node": "v20.20.2",
+  "fixture": "controller-owned GuestBridge + packaged guest SDK",
+  "scenarios": [
+    {
+      "name": "desktop-rtl",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "calls": 3,
+      "exactTransport": true,
+      "startSpreadMs": 5.978829000000019,
+      "decodedBytes": 914331,
+      "analyticalDateAddedCurrentCalls": 0,
+      "snapshotRetained": true,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "charts": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-rtl",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "calls": 3,
+      "exactTransport": true,
+      "startSpreadMs": 3.847447000000102,
+      "decodedBytes": 914331,
+      "analyticalDateAddedCurrentCalls": 0,
+      "snapshotRetained": true,
+      "geometry": {
+        "dir": "rtl",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "charts": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "desktop-ltr",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "calls": 3,
+      "exactTransport": true,
+      "startSpreadMs": 5.2174989999998616,
+      "decodedBytes": 914331,
+      "analyticalDateAddedCurrentCalls": 0,
+      "snapshotRetained": true,
+      "geometry": {
+        "dir": "ltr",
+        "scrollWidth": 1424,
+        "clientWidth": 1424,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "charts": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "phone-ltr",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "calls": 3,
+      "exactTransport": true,
+      "startSpreadMs": 3.4208300000000236,
+      "decodedBytes": 914331,
+      "analyticalDateAddedCurrentCalls": 0,
+      "snapshotRetained": true,
+      "geometry": {
+        "dir": "ltr",
+        "scrollWidth": 374,
+        "clientWidth": 374,
+        "snapshotNodes": 41,
+        "inlineStyles": 0,
+        "charts": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "permit-burst",
+      "whilePending": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "harness": {
+        "authorized": true,
+        "generation": 1,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          },
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 1
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "errors": []
+    },
+    {
+      "name": "command-revoke-reentry",
+      "afterOld": {
+        "authorized": false,
+        "generation": 1,
+        "effects": []
+      },
+      "afterFresh": {
+        "authorized": true,
+        "generation": 2,
+        "effects": [
+          {
+            "name": "Navigate",
+            "url": "#/Permits/Dashboard",
+            "generation": 2
+          }
+        ]
+      },
+      "hash": "#/Permits/Dashboard",
+      "errors": []
+    },
+    {
+      "name": "api-expiry-reentry",
+      "beforeText": "אירועים בכל התקופות\nכלל האתרים\n12 סה״כ · 5 פתוחים\nמטה\n4 סה״כ · 2 פתוחים\nסניפים\n8 סה״כ · 3 פתוחים\nאישורים\nבתוקף\n7\nפתיחת לוח האישורים\nחסרים\n2\nפתיחת לוח האישורים\nבאיחור\n1\nפתיחת לוח האישורים\n\nתאריך ערך: 2026-10-25\n\nציוד\n\n10,000 פריטי ציוד\n\nסיווג טיפול בתוקף / באיחור: לא זמין",
+      "after401Text": "",
+      "retainedAfter401": false,
+      "afterExpiry": {
+        "authorized": true,
+        "generation": 1,
+        "effects": []
+      },
+      "deniedOldGenerationCalls": 3,
+      "freshCurrentCalls": 3,
+      "markerLeaked": false,
+      "finalHarness": {
+        "authorized": true,
+        "generation": 2,
+        "effects": []
+      },
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "name": "stale-retry",
+      "retainedOn500": false,
+      "recoveredOnRetry": true,
+      "errors": [
+        "console:Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "name": "direct-entry",
+      "apiRequests": 0
+    }
+  ],
+  "executableRequests": [
+    "https://milgam.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+    "https://milgam.ylm.co.il/controller-host-fixture/host-fixture.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/assets/xstate-4.38.3.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/assets/simplyvibe-client.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/app.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/constants.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/api-client.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/dashboard-machine.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/data-mappers.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/host-context.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/current-snapshot.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/host-services.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/host-bootstrap.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/date-range.js",
+    "https://ea51f277.app-milgam-dashboard.pages.dev/dashboard-data.js"
+  ],
+  "abortedRequests": [],
+  "headers": {
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.ylm.co.il https://mntapi.ylm.co.il https://localhost:5721; frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721; base-uri 'none'; object-src 'none'; form-action 'none'"
+  }
+}

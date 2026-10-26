@@ -1,0 +1,64 @@
+{
+  "preview": "https://02ea3f16.app-milgam-dashboard.pages.dev",
+  "expectedHead": "3b3f8d4373ff90c2073fb4e884e1fe622a8595a0",
+  "host": "https://ylm.ylm.co.il/controller-host-fixture/",
+  "console": [
+    {
+      "type": "error",
+      "text": "Refused to frame 'https://02ea3f16.app-milgam-dashboard.pages.dev/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721\".\n"
+    },
+    {
+      "type": "warning",
+      "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://02ea3f16.app-milgam-dashboard.pages.dev') does not match the recipient window's origin ('null')."
+    },
+    {
+      "type": "warning",
+      "text": "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://02ea3f16.app-milgam-dashboard.pages.dev') does not match the recipient window's origin ('null')."
+    }
+  ],
+  "pageErrors": [],
+  "requests": [
+    {
+      "url": "https://ylm.ylm.co.il/controller-host-fixture/index.html?preview=https%3A%2F%2F02ea3f16.app-milgam-dashboard.pages.dev",
+      "type": "document",
+      "method": "GET"
+    },
+    {
+      "url": "https://ylm.ylm.co.il/controller-host-fixture/vendor/guest-bridge.js",
+      "type": "script",
+      "method": "GET"
+    },
+    {
+      "url": "https://ylm.ylm.co.il/controller-host-fixture/host-fixture.js",
+      "type": "script",
+      "method": "GET"
+    },
+    {
+      "url": "https://02ea3f16.app-milgam-dashboard.pages.dev/",
+      "type": "document",
+      "method": "GET"
+    }
+  ],
+  "frames": [
+    "https://ylm.ylm.co.il/controller-host-fixture/index.html?preview=https%3A%2F%2F02ea3f16.app-milgam-dashboard.pages.dev",
+    "chrome-error://chromewebdata/"
+  ],
+  "finding": {
+    "fingerprint": "qc-controller-harness-frame-ancestor-missing-v1",
+    "actual": "The exact preview is refused inside the controller fixture before SDK initialization.",
+    "expected": "The preview loads in the supplied trusted controller fixture and completes the real SDK handshake."
+  },
+  "chromium": "140.0.7339.16",
+  "hostState": {
+    "authorized": true,
+    "generation": 1,
+    "effects": []
+  },
+  "guestLoaded": false,
+  "cspFrameErrors": [
+    {
+      "type": "error",
+      "text": "Refused to frame 'https://02ea3f16.app-milgam-dashboard.pages.dev/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors https://mnt.ylm.co.il https://simplylog.ylm.co.il https://milgam.ylm.co.il https://localhost:5500 https://localhost:5721\".\n"
+    }
+  ]
+}
